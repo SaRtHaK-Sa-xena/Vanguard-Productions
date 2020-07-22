@@ -167,7 +167,7 @@ MonoBehaviour:
   m_MinSize: {x: 881, y: 492}
   m_MaxSize: {x: 16006, y: 14042}
   vertical: 0
-  controlID: 58
+  controlID: 119
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 492}
   m_MaxSize: {x: 12005, y: 14042}
   vertical: 1
-  controlID: 59
+  controlID: 120
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 221}
   m_MaxSize: {x: 12005, y: 4021}
   vertical: 0
-  controlID: 60
+  controlID: 121
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -264,8 +264,8 @@ MonoBehaviour:
     y: 0
     width: 585
     height: 569
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -421,7 +421,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 06f8ffff
+      m_ExpandedIDs: 70fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -531,7 +531,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.08636802, y: 0.6598819, z: -0.07676367, w: -0.74243575}
     speed: 2
-    m_Value: {x: -0.08659762, y: 0.65764934, z: -0.076503955, w: -0.74440944}
+    m_Value: {x: -0.08636772, y: 0.6598796, z: -0.0767634, w: -0.7424332}
   m_Size:
     m_Target: 10
     speed: 2
@@ -770,14 +770,14 @@ MonoBehaviour:
   m_LastFolders:
   - Assets
   m_LastFoldersGridSize: 77
-  m_LastProjectPath: C:\Users\s191231\Documents\GitHub\Vanguard-Productions\Unity\Vanguard_Productions_Prototype
+  m_LastProjectPath: C:\Users\s191509\Documents\GitHub\Vanguard-Productions\Unity\Vanguard_Productions_Prototype
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b8390000
-    m_LastClickedID: 14776
-    m_ExpandedIDs: 00000000b8390000c0390000c239000000ca9a3b
+    m_SelectedIDs: 42360000
+    m_LastClickedID: 13890
+    m_ExpandedIDs: 000000004236000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -805,7 +805,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b8390000
+    m_ExpandedIDs: 0000000042360000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
