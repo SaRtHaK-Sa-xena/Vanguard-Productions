@@ -264,8 +264,8 @@ MonoBehaviour:
     y: 0
     width: 585
     height: 569
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -419,9 +419,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 70fbffff
+      m_SelectedIDs: 5e330000
+      m_LastClickedID: 13150
+      m_ExpandedIDs: 70fbffff5a330000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -481,9 +481,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.8430758, y: 1.7652078, z: 2.3293552}
+    m_Target: {x: -1.7505455, y: 1.1825767, z: 1.189028}
     speed: 2
-    m_Value: {x: -1.8430758, y: 1.7652078, z: 2.3293552}
+    m_Value: {x: -1.7505455, y: 1.1825767, z: 1.189028}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -529,9 +529,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.07804194, y: 0.6662076, z: -0.07041803, w: -0.73832583}
+    m_Target: {x: -0.09469823, y: 0.70567113, z: -0.09607073, w: -0.6955846}
     speed: 2
-    m_Value: {x: -0.08036481, y: 0.66488314, z: -0.07229563, w: -0.739084}
+    m_Value: {x: -0.09574116, y: 0.7055238, z: -0.0971288, w: -0.6954394}
   m_Size:
     m_Target: 10
     speed: 2
@@ -764,20 +764,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Animations/Player
   m_ViewMode: 1
   m_StartGridSize: 77
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Animations/Player
   m_LastFoldersGridSize: 77
-  m_LastProjectPath: C:\Users\s191509\Documents\GitHub\Vanguard-Productions\Unity\Vanguard_Productions_Prototype
+  m_LastProjectPath: C:\Users\s191231\Documents\GitHub\Vanguard-Productions\Unity\Vanguard_Productions_Prototype
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 54360000
-    m_LastClickedID: 13908
-    m_ExpandedIDs: 000000004236000000ca9a3b
+    m_SelectedIDs: 4a360000
+    m_LastClickedID: 13898
+    m_ExpandedIDs: 0000000042360000483600004a36000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
