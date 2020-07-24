@@ -14,9 +14,14 @@ public class animationScript : MonoBehaviour
     //  distance to ground
     float distanceToGround = 12.5f;
 
+    private Vector3 characterOrientation;
+
+    bool correctRotation = false;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
+        characterOrientation = transform.parent.eulerAngles;
     }
 
     private void Update()
@@ -36,6 +41,42 @@ public class animationScript : MonoBehaviour
             }
             // ====== side scroller movement ========
 
+            // ====== Character Orientation =========
+            
+            //update character orientation
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                transform.eulerAngles = new Vector3(0,180,0);
+                //characterOrientation.y += 0.1f;
+            }
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                transform.eulerAngles = new Vector3(0,0,0);
+            }
+            else
+            {
+                //correctRotation = true;
+            }
+
+            // update orientation
+            transform.parent.eulerAngles = characterOrientation;
+
+            // ====== Character Orientation =========
+
+
+            if (correctRotation)
+            {
+                Vector3 finalPoint = new Vector3(0, 0, 0);
+                if(Vector3.Distance(transform.eulerAngles, finalPoint) > 0.01f)
+                {
+                    transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, finalPoint, Time.deltaTime);
+                }
+                else
+                {
+                    transform.eulerAngles = finalPoint;
+                    correctRotation = false;
+                }
+            }
 
             //InputZ = Input.GetAxis("Vertical"); //UP and DOWN arrow key
             //InputX = Input.GetAxis("Horizontal"); //LEFT and RIGHT arrow key
