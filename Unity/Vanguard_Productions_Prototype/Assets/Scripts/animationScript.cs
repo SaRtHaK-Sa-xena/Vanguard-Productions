@@ -70,6 +70,31 @@ public class animationScript : MonoBehaviour
         anim.SetTrigger("heavyAttack");
     }
 
+    //Enemy Animations
+    public void EnemyAttack(int attack)
+    {
+        if(attack == 0)
+        {
+            anim.SetTrigger("Attack 1");
+        }
+
+        if (attack == 1)
+        {
+            anim.SetTrigger("Attack 2");
+        }
+
+        if (attack == 2)
+        {
+            anim.SetTrigger("Attack 3");
+        }
+    } // enemy attacks
+
+    public void Play_IdleAnimation()
+    {
+        anim.Play("Idle");
+    }
+
+    // Helper Functions
     public void stopMovement()
     {
         // don't allow player to attack again
