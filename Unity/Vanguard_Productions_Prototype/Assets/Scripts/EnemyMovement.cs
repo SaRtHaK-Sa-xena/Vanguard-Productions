@@ -71,7 +71,7 @@ public class EnemyMovement : MonoBehaviour
             enemyAnim.Walk(false);
 
             followPlayer = false;
-            attackPlayer = false;
+            attackPlayer = true;
         }
     }
 
@@ -89,11 +89,14 @@ public class EnemyMovement : MonoBehaviour
         }
         
         current_Attack_Time += Time.deltaTime;
+        Debug.Log("Current Attack Time: " + current_Attack_Time);
 
         if (current_Attack_Time > default_Attack_Time)
         {
-            enemyAnim.EnemyAttack(Random.Range(0, 3));
+            Debug.Log("Now Attacking");
 
+            enemyAnim.EnemyAttack(Random.Range(0, 3));
+            
             current_Attack_Time = 0f;
         }
 

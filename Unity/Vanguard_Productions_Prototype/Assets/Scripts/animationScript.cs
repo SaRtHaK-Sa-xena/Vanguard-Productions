@@ -14,7 +14,6 @@ public class animationScript : MonoBehaviour
     private bool stopLightAttack;
 
     //private Vector3 characterOrientation;
-
     bool correctRotation = false;
 
     private void Start()
@@ -34,7 +33,7 @@ public class animationScript : MonoBehaviour
                 InputX = Input.GetAxis("Horizontal"); //LEFT and RIGHT arrow key
                 anim.SetFloat("xMov", InputX);
                 anim.SetFloat("zMov", InputX);
-
+            
                 //  if player presses space bar
                 if (Input.GetButtonDown("Jump"))
                 {
@@ -78,17 +77,17 @@ public class animationScript : MonoBehaviour
     {
         if(attack == 0)
         {
-            anim.SetTrigger("Attack 1");
+            anim.SetTrigger("Attack_1");
         }
 
         if (attack == 1)
         {
-            anim.SetTrigger("Attack 2");
+            anim.SetTrigger("Attack_2");
         }
 
         if (attack == 2)
         {
-            anim.SetTrigger("Attack 3");
+            anim.SetTrigger("Attack_3");
         }
     } // enemy attacks
 
