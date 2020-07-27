@@ -63,4 +63,19 @@ public class CharacterAnimationDelegate : MonoBehaviour
     {
         beg_Sword_Attack_Point.tag = "beg_Point";
     }
+    
+    void UnTag_Beg_Sword_Point()
+    {
+        beg_Sword_Attack_Point.tag = "Untagged";
+    }
+
+    void Tag_BegToMid_Sword_Point()
+    {
+        begToMid_Sword_Attack_Point.tag = "begToMid_Point";
+    }
+
+    void UnTag_BegToMid_Sword_Point()
+    {
+        begToMid_Sword_Attack_Point.tag = "Untagged";
+    }
 }

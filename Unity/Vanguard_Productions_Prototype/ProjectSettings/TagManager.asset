@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - beg_Point
+  - begToMid_Point
+  - MidToEnd_Point
+  - End_Point
   layers:
   - Default
   - TransparentFX

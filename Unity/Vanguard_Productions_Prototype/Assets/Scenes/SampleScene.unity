@@ -266,6 +266,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1908474346151921792, guid: d1966f3b713f711428161579f4f74e57,
+        type: 3}
+      propertyPath: m_TagString
+      value: End_Point
+      objectReference: {fileID: 0}
     - target: {fileID: 2651469702472739594, guid: d1966f3b713f711428161579f4f74e57,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -321,10 +326,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3864318084888481997, guid: d1966f3b713f711428161579f4f74e57,
+        type: 3}
+      propertyPath: m_TagString
+      value: begToMid_Point
+      objectReference: {fileID: 0}
     - target: {fileID: 5222089303756897230, guid: d1966f3b713f711428161579f4f74e57,
         type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5227166471734025245, guid: d1966f3b713f711428161579f4f74e57,
+        type: 3}
+      propertyPath: m_TagString
+      value: MidToEnd_Point
       objectReference: {fileID: 0}
     - target: {fileID: 6356576726660936345, guid: d1966f3b713f711428161579f4f74e57,
         type: 3}
@@ -340,6 +355,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7002648118616606377, guid: d1966f3b713f711428161579f4f74e57,
+        type: 3}
+      propertyPath: m_TagString
+      value: beg_Point
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1966f3b713f711428161579f4f74e57, type: 3}
@@ -598,7 +618,6 @@ MonoBehaviour:
   damage: 2
   is_Player: 1
   is_Enemy: 0
-  hit_FX: {fileID: 0}
 --- !u!1 &830660448 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5222089303756897230, guid: d1966f3b713f711428161579f4f74e57,
@@ -1866,7 +1885,6 @@ MonoBehaviour:
   damage: 2
   is_Player: 1
   is_Enemy: 0
-  hit_FX: {fileID: 0}
 --- !u!1 &1031852892 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5227166471734025245, guid: d1966f3b713f711428161579f4f74e57,
@@ -1892,7 +1910,6 @@ MonoBehaviour:
   damage: 2
   is_Player: 1
   is_Enemy: 0
-  hit_FX: {fileID: 0}
 --- !u!1001 &1044340784
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3101,7 +3118,6 @@ MonoBehaviour:
   damage: 2
   is_Player: 1
   is_Enemy: 0
-  hit_FX: {fileID: 0}
 --- !u!1 &1943410846 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5943619279027545907, guid: fa06a1cb226f140429703f821a6f4c37,
@@ -3179,7 +3195,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2025694306}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f929e18aebfb3d5478ad72d9a7476a94, type: 3}
   m_Name: 
