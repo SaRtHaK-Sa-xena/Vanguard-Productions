@@ -27,34 +27,37 @@ public class animationScript : MonoBehaviour
     {
         if (FindObjectOfType<PlayerControl>().allowMovement == true)
         {
-            // ====== side scroller movement ========
-            InputZ = Input.GetAxis("Vertical"); //UP and DOWN arrow key
-            InputX = Input.GetAxis("Horizontal"); //LEFT and RIGHT arrow key
-            anim.SetFloat("xMov", InputX);
-            anim.SetFloat("zMov", InputX);
+            if(gameObject.CompareTag("Player"))
+            {
+                // ====== side scroller movement ========
+                InputZ = Input.GetAxis("Vertical"); //UP and DOWN arrow key
+                InputX = Input.GetAxis("Horizontal"); //LEFT and RIGHT arrow key
+                anim.SetFloat("xMov", InputX);
+                anim.SetFloat("zMov", InputX);
 
-            //  if player presses space bar
-            if (Input.GetButtonDown("Jump"))
-            {
-                anim.SetTrigger("isJump");
-            }
-            // ====== side scroller movement ========
+                //  if player presses space bar
+                if (Input.GetButtonDown("Jump"))
+                {
+                    anim.SetTrigger("isJump");
+                }
+                // ====== side scroller movement ========
 
-            // ====== Character Orientation =========
+                // ====== Character Orientation =========
 
-            //update character orientation
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                transform.eulerAngles = new Vector3(0, 180, 0);
-                //characterOrientation.y += 0.1f;
-            }
-            if (Input.GetKeyDown(KeyCode.D))
-            {
-                transform.eulerAngles = new Vector3(0, 0, 0);
-            }
-            else
-            {
-                //correctRotation = true;
+                //update character orientation
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    transform.eulerAngles = new Vector3(0, 180, 0);
+                    //characterOrientation.y += 0.1f;
+                }
+                if (Input.GetKeyDown(KeyCode.D))
+                {
+                    transform.eulerAngles = new Vector3(0, 0, 0);
+                }
+                else
+                {
+                    //correctRotation = true;
+                }
             }
         }
     }
@@ -94,6 +97,21 @@ public class animationScript : MonoBehaviour
         anim.Play("Idle");
     }
 
+    public void Death()
+    {
+        anim.SetTrigger("Death");
+    }
+
+    public void Hit()
+    {
+        anim.SetTrigger("Hit");
+    }
+
+    public void Walk(bool move)
+    {
+        anim.SetBool("Movement", move);
+    }
+    
     // Helper Functions
     public void stopMovement()
     {

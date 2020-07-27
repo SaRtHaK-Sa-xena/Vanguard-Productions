@@ -33,7 +33,7 @@ GameObject:
   - component: {fileID: 7679564723995526517}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -169,6 +169,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 44d82fef1747c524885724ce7580881b, type: 2}
+    - target: {fileID: -6057140222963153312, guid: 440301042d89b3040b4c3d06cbf5af63,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 440301042d89b3040b4c3d06cbf5af63,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -228,6 +233,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: maria_prop_j_j_ong
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 440301042d89b3040b4c3d06cbf5af63,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: -529800294720967240, guid: 440301042d89b3040b4c3d06cbf5af63,
         type: 3}
