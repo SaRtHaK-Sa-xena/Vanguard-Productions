@@ -72,6 +72,11 @@ public class animationScript : MonoBehaviour
         anim.SetTrigger("heavyAttack");
     }
 
+    public void GrappleHook()
+    {
+        anim.SetTrigger("Grappling_Hook");
+    }
+
     //Enemy Animations
     public void EnemyAttack(int attack)
     {
@@ -106,6 +111,11 @@ public class animationScript : MonoBehaviour
         anim.SetTrigger("Hit");
     }
 
+    public void RangedAttack()
+    {
+        anim.SetTrigger("Ranged_Attack");
+    }
+
     public void Walk(bool move)
     {
         anim.SetBool("Movement", move);
@@ -123,4 +133,15 @@ public class animationScript : MonoBehaviour
         // allow player to attack again
         FindObjectOfType<PlayerAttack>().attack = true;
     }
+
+   //public void freezePosition()
+   //{
+        //anim.speed = 0;
+        //Invoke("unfreeze", 0.5f);
+   //}
+
+   //void unfreeze()
+   //{
+       //anim.speed = 1;
+   //}
 }

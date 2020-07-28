@@ -6,6 +6,10 @@ public class PlayerAttack : MonoBehaviour
 {
     public animationScript playerAnim;
 
+    public Transform spawnPoint;
+    public GameObject Effect;
+
+    public GameObject enemyCollider;
     public bool attack;
 
     private void Awake()
@@ -31,6 +35,7 @@ public class PlayerAttack : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
             playerAnim.lightAttack();
+            GetComponent<Rigidbody>().velocity = Vector3.up * 5f;
         }
     }
 }

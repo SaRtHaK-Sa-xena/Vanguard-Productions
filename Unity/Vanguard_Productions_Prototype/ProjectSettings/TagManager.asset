@@ -8,6 +8,7 @@ TagManager:
   - begToMid_Point
   - MidToEnd_Point
   - End_Point
+  - Enemy
   layers:
   - Default
   - TransparentFX

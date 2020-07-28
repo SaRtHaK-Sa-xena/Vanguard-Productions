@@ -31,29 +31,34 @@ public class HealthScript : MonoBehaviour
         {
             animationScript.Death();
             characterDied = true;
+            GetComponent<EnemyMovement>().enabled = false;
+        }
 
-            if(is_Player)
+        if(is_Player)
+        {
+            return;
+        }
+
+        if(!is_Player)
+        {
+            //Debug.Log("Checking Hit Animate");
+            if(Random.Range(0,3) > 1)
             {
-                return;
+                animationScript.Hit();
+                Debug.Log("Hit Animate");
             }
 
-            if(!is_Player)
-            {
-                if(knockDown)
-                {
-                    if(Random.Range(0,2) > 0)
-                    {
+                //if(knockDown)
+                //{
+                    //if(Random.Range(0,2) > 0)
+                    //{
                         //animationScript.knockDown();
-                    }
-                }
-                else
-                {
-                    if(Random.Range(0,3) > 1)
-                    {
-                        animationScript.Hit();
-                    }
-                }
-            }
+                    //}
+                //}
+                //else
+                //{
+                    // if hit 
+                //}
         }
     }
     

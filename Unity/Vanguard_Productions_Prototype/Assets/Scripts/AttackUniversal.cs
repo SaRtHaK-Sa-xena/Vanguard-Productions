@@ -33,9 +33,10 @@ public class AttackUniversal : MonoBehaviour
         if(hit.Length > 0)
         {
             Debug.Log("Hit" + hit[0]);
-
+            
             if(is_Player)
             {
+                // to set particle effect of hit
                Vector3 hitFX_Pos = hit[0].transform.position;
                hitFX_Pos.y += 1.3f;
 
@@ -51,7 +52,7 @@ public class AttackUniversal : MonoBehaviour
 
                //Instantiate(hit_FX_Prefab, hitFX_Pos, Quaternion.identity);
 
-               if(gameObject.CompareTag("beg_Point") || gameObject.CompareTag("begToMid_Point"))
+               if(gameObject.CompareTag("beg_Point")) //|| gameObject.CompareTag("begToMid_Point"))
                {
                    hit[0].GetComponent<HealthScript>().ApplyDamage(damage, true);
                }

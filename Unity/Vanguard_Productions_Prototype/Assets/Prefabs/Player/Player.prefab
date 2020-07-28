@@ -105,6 +105,36 @@ MonoBehaviour:
   anim: {fileID: 1200715714085364903}
   InputX: 0
   InputZ: 0
+--- !u!114 &1966331887960036635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5222089303756897230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71590963745fb8b47bb21a81d9e556dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  is_Player: 1
+--- !u!114 &7659411726480859386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5222089303756897230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fcf7e8ef95609f498d273224771648f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beg_Sword_Attack_Point: {fileID: 7002648118616606377}
+  begToMid_Sword_Attack_Point: {fileID: 3864318084888481997}
+  MidToEnd_Sword_Attack_Point: {fileID: 5227166471734025245}
+  End_Sword_Attack_Point: {fileID: 1908474346151921792}
 --- !u!1 &5227166471734025245
 GameObject:
   m_ObjectHideFlags: 0
