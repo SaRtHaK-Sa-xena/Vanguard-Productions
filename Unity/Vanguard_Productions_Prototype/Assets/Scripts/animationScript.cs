@@ -53,10 +53,6 @@ public class animationScript : MonoBehaviour
                 {
                     transform.eulerAngles = new Vector3(0, 0, 0);
                 }
-                else
-                {
-                    //correctRotation = true;
-                }
             }
         }
     }
@@ -75,6 +71,21 @@ public class animationScript : MonoBehaviour
     public void GrappleHook()
     {
         anim.SetTrigger("Grappling_Hook");
+    }
+
+    public void Mid_Air_Attack()
+    {
+        anim.SetTrigger("Mid_Air_Attack");
+    }
+
+    public void Play_Falling_Animation()
+    {
+        anim.SetBool("Falling", true);
+    }
+
+    public void Stop_Falling_Animation()
+    {
+        anim.SetBool("Falling", false);
     }
 
     //Enemy Animations
@@ -132,6 +143,17 @@ public class animationScript : MonoBehaviour
     {
         // allow player to attack again
         FindObjectOfType<PlayerAttack>().attack = true;
+    }
+
+    public void Shoot_Stun_Effect()
+    {
+        FindObjectOfType<Ranged_Attack>().Spawn_Stun_Attack();
+    }
+
+    // enable falling in jumpController Script
+    public void enableFalling()
+    {
+        FindObjectOfType<jumpController>().falling = true;
     }
 
    //public void freezePosition()

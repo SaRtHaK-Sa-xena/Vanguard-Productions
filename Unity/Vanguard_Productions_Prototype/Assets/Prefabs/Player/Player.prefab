@@ -30,6 +30,36 @@ Transform:
   m_Father: {fileID: 5812549579777821310}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3775362965533412475
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7650844953758898257}
+  m_Layer: 0
+  m_Name: FX_Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7650844953758898257
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3775362965533412475}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.018, y: 1.09, z: 0.005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2651469702472739594}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3864318084888481997
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,6 +209,8 @@ GameObject:
   - component: {fileID: 1030001204444834717}
   - component: {fileID: 2983923439899644910}
   - component: {fileID: 1318775772294782106}
+  - component: {fileID: 6674391587559222669}
+  - component: {fileID: 3051042298180607907}
   - component: {fileID: 2184457837363967264}
   - component: {fileID: 7679564723995526517}
   m_Layer: 0
@@ -201,6 +233,7 @@ Transform:
   m_Children:
   - {fileID: 9089336437485930973}
   - {fileID: 8825979792951962048}
+  - {fileID: 7650844953758898257}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -280,7 +313,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAnim: {fileID: 0}
+  enemyCollider: {fileID: 0}
   attack: 0
+--- !u!114 &6674391587559222669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6356576726660936345}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bee8d8a721b1fe4d989f3d194d83784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  end_point: {fileID: 0}
+  startPoint: {fileID: 0}
+  speed: 2
+  distance: 2
+  move: 0
+  anim: {fileID: 0}
+  obj_Collider: {fileID: 0}
+--- !u!114 &3051042298180607907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6356576726660936345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b181df40fffad674587b025185eb59e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 7650844953758898257}
+  Effect: {fileID: 6778260161570684467, guid: f89fc2e1dd16fb04492baf6cf19b67e1, type: 3}
+  anim: {fileID: 0}
 --- !u!136 &2184457837363967264
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -354,6 +422,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 440301042d89b3040b4c3d06cbf5af63,
+        type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'Hips'\n\tTransform 'Spine1'\n\tTransform
+        'LeftHandMiddle2'\n\tTransform 'Neck'\n\tTransform 'LeftHandThumb1'\n\tTransform
+        'LeftHandRing2'\n\tTransform 'LeftHandRing3'\n\tTransform 'LeftUpLeg'\n\tTransform
+        'LeftHandIndex2'\n\tTransform 'LeftHandPinky2'\n\tand more ...\n\tFrom animation
+        clip 'Ranged Attack'"
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 440301042d89b3040b4c3d06cbf5af63,
         type: 3}

@@ -13,13 +13,17 @@ public class jumpController : MonoBehaviour
     public SphereCollider col;
     public Rigidbody rb;
 
+    public animationScript anim;
+    public bool falling;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         col = GetComponent<SphereCollider>();
+        anim = GetComponentInChildren<animationScript>();
     }
+
 
     // Update is called once per frame
     void Update()
@@ -28,9 +32,28 @@ public class jumpController : MonoBehaviour
         {
             GetComponent<Rigidbody>().velocity = Vector3.up * jumpForce;
         }
+
+        if(rb.velocity.y < 0f)
+        {
+            falling = true;
+            Debug.Log("Falling");
+        }
+
+        if(falling)
+        {
+            anim.Play_Falling_Animation();
+        }
+        if(IsGrounded())
+        {
+            if(falling)
+            {
+                anim.Stop_Falling_Animation();
+                falling = false;
+            }
+        }
     }
 
-    private bool IsGrounded()
+    public bool IsGrounded()
     {
         return Physics.CheckCapsule
             (col.bounds.center, new Vector3
