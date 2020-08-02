@@ -13,6 +13,9 @@ public class PlayerAttack : MonoBehaviour
 
     private bool airAttack;
 
+    // contains AttackUniversal script in Gameobject
+    public GameObject sword;
+
     private void Awake()
     {
         playerAnim = GetComponentInChildren<animationScript>();
@@ -36,6 +39,7 @@ public class PlayerAttack : MonoBehaviour
             if(attack)
             {
                 playerAnim.heavyAttack();
+                sword.GetComponent<AttackUniversal>().heavy_attack = true;
             }
         }
         if(Input.GetKeyDown(KeyCode.Mouse0))
@@ -44,6 +48,8 @@ public class PlayerAttack : MonoBehaviour
             if(GetComponent<jumpController>().IsGrounded())
             {
                 playerAnim.lightAttack();
+
+                sword.GetComponent<AttackUniversal>().heavy_attack = false;
             }
 
             // if in mid air
@@ -57,6 +63,8 @@ public class PlayerAttack : MonoBehaviour
 
                     // aniimate mid air attack
                     playerAnim.Mid_Air_Attack();
+
+                    sword.GetComponent<AttackUniversal>().heavy_attack = false;
 
                     // Add Force Upwards
                     GetComponent<Rigidbody>().velocity = Vector3.up * 3.5f;

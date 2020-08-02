@@ -13,20 +13,36 @@ public class HealthScript : MonoBehaviour
 
     public bool is_Player;
 
+    private float heavyDMG = 5f;
+
     void Awake()
     {
         animationScript = GetComponentInChildren<animationScript>();
     }
 
-    public void ApplyDamage(float damage, bool knockDown)
+    public void ApplyDamage(float damage, bool heavy)
     {
         if(characterDied)
         {
             return;
         }
 
-        health -= damage;
+        //Calculate Damage
+        // if heavy attack
+        if(heavy)
+        {
+            health -= damage * heavyDMG;
+        }
+        else
+        {
+            // decrement health
+            health -= damage;
+        }
 
+        
+
+
+        // if character died
         if(health <= 0f)
         {
             animationScript.Death();
@@ -41,12 +57,14 @@ public class HealthScript : MonoBehaviour
 
         if(!is_Player)
         {
+            animationScript.Hit();
+
             //Debug.Log("Checking Hit Animate");
-            if(Random.Range(0,3) > 1)
-            {
-                animationScript.Hit();
-                Debug.Log("Hit Animate");
-            }
+            //if(Random.Range(0,3) > 1)
+            //{
+                //animationScript.Hit();
+                //Debug.Log("Hit Animate");
+            //}
 
                 //if(knockDown)
                 //{

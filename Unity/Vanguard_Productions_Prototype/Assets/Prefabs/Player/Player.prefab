@@ -1,35 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1908474346151921792
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5467605947527091722}
-  m_Layer: 0
-  m_Name: '[ST] Sword Attack Point (3)'
-  m_TagString: Untagged
-  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5467605947527091722
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1908474346151921792}
-  m_LocalRotation: {x: -0.0002184485, y: 0.00000004586923, z: -1.0119933e-11, w: 1}
-  m_LocalPosition: {x: 0.594, y: 0.157, z: 0.972}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5812549579777821310}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3775362965533412475
 GameObject:
   m_ObjectHideFlags: 0
@@ -71,7 +41,7 @@ GameObject:
   - component: {fileID: 6519700233069266028}
   m_Layer: 0
   m_Name: '[M] Sword Attack Point'
-  m_TagString: Untagged
+  m_TagString: begToMid_Point
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,40 +131,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fcf7e8ef95609f498d273224771648f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beg_Sword_Attack_Point: {fileID: 7002648118616606377}
+  beg_Sword_Attack_Point: {fileID: 0}
   begToMid_Sword_Attack_Point: {fileID: 3864318084888481997}
-  MidToEnd_Sword_Attack_Point: {fileID: 5227166471734025245}
-  End_Sword_Attack_Point: {fileID: 1908474346151921792}
---- !u!1 &5227166471734025245
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1322979623408846056}
-  m_Layer: 0
-  m_Name: '[T] Sword Attack Point (2)'
-  m_TagString: Untagged
-  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1322979623408846056
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5227166471734025245}
-  m_LocalRotation: {x: -0.0002184485, y: 0.00000004586923, z: -1.0119933e-11, w: 1}
-  m_LocalPosition: {x: 0.442, y: 0.107, z: 0.756}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5812549579777821310}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  MidToEnd_Sword_Attack_Point: {fileID: 0}
+  End_Sword_Attack_Point: {fileID: 0}
 --- !u!1 &6356576726660936345
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,6 +240,8 @@ MonoBehaviour:
   jumpForce: 6
   col: {fileID: 0}
   rb: {fileID: 0}
+  anim: {fileID: 0}
+  falling: 0
 --- !u!114 &1318775772294782106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,6 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAnim: {fileID: 0}
+  col: {fileID: 0}
   enemyCollider: {fileID: 0}
   attack: 0
 --- !u!114 &6674391587559222669
@@ -376,36 +319,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.25098145
   m_Center: {x: 0, y: 0.24901855, z: 0}
---- !u!1 &7002648118616606377
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4550033521023223204}
-  m_Layer: 0
-  m_Name: '[S] Sword Attack Point (1)'
-  m_TagString: Untagged
-  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4550033521023223204
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7002648118616606377}
-  m_LocalRotation: {x: -0.0002184485, y: 0.00000004586923, z: -1.0119933e-11, w: 1}
-  m_LocalPosition: {x: 0.1312, y: 0.073, z: 0.172}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5812549579777821310}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4276585229529162439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -426,13 +339,7 @@ PrefabInstance:
     - target: {fileID: -6057140222963153312, guid: 440301042d89b3040b4c3d06cbf5af63,
         type: 3}
       propertyPath: m_WarningMessage
-      value: "\nBinding warning: Some generic clip(s) animate transforms that are
-        already bound by a Humanoid avatar. These transforms can only be changed
-        by Humanoid clips.\n\tTransform 'Hips'\n\tTransform 'Spine1'\n\tTransform
-        'LeftHandMiddle2'\n\tTransform 'Neck'\n\tTransform 'LeftHandThumb1'\n\tTransform
-        'LeftHandRing2'\n\tTransform 'LeftHandRing3'\n\tTransform 'LeftUpLeg'\n\tTransform
-        'LeftHandIndex2'\n\tTransform 'LeftHandPinky2'\n\tand more ...\n\tFrom animation
-        clip 'Ranged Attack'"
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 440301042d89b3040b4c3d06cbf5af63,
         type: 3}

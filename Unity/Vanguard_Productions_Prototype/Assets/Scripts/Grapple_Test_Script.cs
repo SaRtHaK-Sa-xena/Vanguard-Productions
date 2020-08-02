@@ -17,6 +17,7 @@ public class Grapple_Test_Script : MonoBehaviour
     private float scalar = 2;
 
     public Animator anim;
+    public animationScript playerAnim;
 
     public GameObject obj_Collider;
 
@@ -24,6 +25,9 @@ public class Grapple_Test_Script : MonoBehaviour
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
+
+        playerAnim = GetComponentInChildren<animationScript>();
+
     }
 
     // Update is called once per frame
@@ -31,7 +35,11 @@ public class Grapple_Test_Script : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E))
         {
+            // Set Move to true
             move = true;
+
+            // Play Grappling Hook Anim
+            playerAnim.GrappleHook();
         }
 
         

@@ -9,6 +9,7 @@ TagManager:
   - MidToEnd_Point
   - End_Point
   - Enemy
+  - ranged_attackPoint
   layers:
   - Default
   - TransparentFX

@@ -6,6 +6,8 @@ public class DeactivateGameObject : MonoBehaviour
 {
     public float timer = 2f;
 
+    public CapsuleCollider col;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,5 +17,13 @@ public class DeactivateGameObject : MonoBehaviour
     void DeactivateAfterTime()
     {
         gameObject.SetActive(false);
+    }
+
+    private void Update()
+    {
+        col = GameObject.FindGameObjectWithTag("Enemy").GetComponent<CapsuleCollider>();
+        ParticleSystem particle = GetComponentInChildren<ParticleSystem>();
+
+        particle.trigger.SetCollider(0, col);
     }
 }

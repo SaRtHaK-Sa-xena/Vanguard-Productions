@@ -156,14 +156,14 @@ public class animationScript : MonoBehaviour
         FindObjectOfType<jumpController>().falling = true;
     }
 
-   //public void freezePosition()
-   //{
-        //anim.speed = 0;
-        //Invoke("unfreeze", 0.5f);
-   //}
+    public void freezePosition()
+    {
+        anim.speed = 0;
+        Invoke("unfreeze", 0.5f);
+    }
 
-   //void unfreeze()
-   //{
-       //anim.speed = 1;
-   //}
+    void unfreeze()
+    {
+        anim.speed = 1;
+    }
 }
