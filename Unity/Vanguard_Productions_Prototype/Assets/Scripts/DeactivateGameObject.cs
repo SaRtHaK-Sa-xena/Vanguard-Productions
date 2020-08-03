@@ -26,25 +26,4 @@ public class DeactivateGameObject : MonoBehaviour
 
         particle.trigger.SetCollider(0, col);
     }
-
-    private void OnParticleCollision(GameObject other)
-    {
-        if(other.CompareTag("Enemy"))
-        {
-            Debug.Log("Hit Enemy");
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("Enemy"))
-        {
-            Debug.Log("Hit Enemy [T]");
-        }
-    }
-
-    private void OnParticleTrigger()
-    {
-       
-    }
 }
