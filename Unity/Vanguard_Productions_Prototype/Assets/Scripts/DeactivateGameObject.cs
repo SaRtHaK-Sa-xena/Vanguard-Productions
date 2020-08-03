@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DeactivateGameObject : MonoBehaviour
 {
-    public float timer = 2f;
+    public float timer = 5f;
 
     public CapsuleCollider col;
 
@@ -25,5 +25,26 @@ public class DeactivateGameObject : MonoBehaviour
         ParticleSystem particle = GetComponentInChildren<ParticleSystem>();
 
         particle.trigger.SetCollider(0, col);
+    }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        if(other.CompareTag("Enemy"))
+        {
+            Debug.Log("Hit Enemy");
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Enemy"))
+        {
+            Debug.Log("Hit Enemy [T]");
+        }
+    }
+
+    private void OnParticleTrigger()
+    {
+       
     }
 }
