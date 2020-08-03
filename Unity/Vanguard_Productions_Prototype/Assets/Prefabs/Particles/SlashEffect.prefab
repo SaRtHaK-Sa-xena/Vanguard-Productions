@@ -60,7 +60,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6778260161570684476}
-  - component: {fileID: 1037240053868832889}
   m_Layer: 0
   m_Name: SlashEffect
   m_TagString: Untagged
@@ -83,20 +82,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1037240053868832889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6778260161570684467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcfce0892de4b834dbde2830c3a876c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: 2
-  col: {fileID: 0}
 --- !u!1 &6778260161772311979
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,6 +93,7 @@ GameObject:
   - component: {fileID: 6778260161772311956}
   - component: {fileID: 6778260161772311958}
   - component: {fileID: 6778260161772311957}
+  - component: {fileID: 8895111676935633639}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -3710,9 +3696,9 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 3
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
@@ -3903,7 +3889,7 @@ ParticleSystem:
     collisionShape3: {fileID: 0}
     collisionShape4: {fileID: 0}
     collisionShape5: {fileID: 0}
-    inside: 1
+    inside: 2
     outside: 0
     enter: 0
     exit: 0
@@ -4910,3 +4896,17 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &8895111676935633639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6778260161772311979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcfce0892de4b834dbde2830c3a876c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 2
+  col: {fileID: 0}
