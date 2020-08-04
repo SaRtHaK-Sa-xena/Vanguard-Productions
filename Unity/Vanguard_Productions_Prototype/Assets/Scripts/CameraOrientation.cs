@@ -9,6 +9,8 @@ public class CameraOrientation : MonoBehaviour
 
     public Transform player_Obj;
 
+    public Transform player_Height;
+
     private float startTime;
 
     private void Start()
@@ -33,7 +35,7 @@ public class CameraOrientation : MonoBehaviour
         // Update Camera To Move with Player
         transform.position = Vector3.Lerp(transform.position, //current position
             new Vector3(transform.position.x, // new position
-            transform.position.y,
+            player_Height.position.y,
             player_Obj.transform.position.z), 3f * Time.deltaTime); 
 
     }
