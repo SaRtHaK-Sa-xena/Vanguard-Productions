@@ -1,10 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class DialogueHelper : MonoBehaviour
 {
+    // list of all dialogue objs
     public GameObject[] dialogueObjs;
+
+    // Holds display text objs for help
+    public TextMeshProUGUI nameDisplay; // manually assigned
+    public TextMeshProUGUI sentenceDisplay; // manually assigned
+
+
 
     private void Start()
     {
@@ -19,8 +27,12 @@ public class DialogueHelper : MonoBehaviour
         foreach(GameObject obj in dialogueObjs)
         {
            // if name matches item in list
-           if(obj.GetComponent<DialogueManager>().nameText.ToString() == name)
+           if(obj.GetComponent<DialogueManager>().nameText.text == name)
            {
+                Debug.Log("nameText:" + obj.GetComponent<DialogueManager>().nameText.text + " name: " + name);
+
+                Debug.Log("Obj Name: " + obj.name);
+
                 // remove box collider for item in list
                 obj.GetComponent<BoxCollider>().enabled = false;
            }

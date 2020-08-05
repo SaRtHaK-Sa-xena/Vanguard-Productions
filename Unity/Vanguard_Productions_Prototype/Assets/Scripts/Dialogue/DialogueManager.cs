@@ -7,25 +7,30 @@ public class DialogueManager : MonoBehaviour
 {
     private Queue<string> sentences;
 
-    public TextMeshPro nameText;
-    public TextMeshPro dialogueText;
+    // assigned in start
+    public TextMeshProUGUI nameText;
+    public TextMeshProUGUI dialogueText;
 
     // Start is called before the first frame update
     void Start()
     {
+        nameText = FindObjectOfType<DialogueHelper>().nameDisplay;
+        dialogueText = FindObjectOfType<DialogueHelper>().sentenceDisplay;
         sentences = new Queue<string>();
     }
 
-    private void Update()
+    private void OnTriggerEnter(Collider other)
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
+            //Debug.Log("sentence count: " + sentences.Count);
             if (sentences.Count != 0)
             {
                 DisplayNextSentence();
             }
             else
             {
+                //Debug.Log("sentence count: " + sentences.Count);
                 EndDialogue();
             }
         }
@@ -49,11 +54,11 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
-        if(sentences.Count == 0)
-        {
-            EndDialogue();
-            return;
-        }
+        //if(sentences.Count == 0)
+        //{
+        //    EndDialogue();
+        //    return;
+        //}
 
         string sentence = sentences.Dequeue();
         dialogueText.text = sentence;
@@ -63,6 +68,6 @@ public class DialogueManager : MonoBehaviour
     
     void EndDialogue()
     {
-        FindObjectOfType<DialogueHelper>().EndDialogueObj(nameText.ToString());
+        FindObjectOfType<DialogueHelper>().EndDialogueObj(nameText.text);
     }
 }
