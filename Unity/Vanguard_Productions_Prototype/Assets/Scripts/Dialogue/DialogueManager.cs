@@ -11,26 +11,32 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
 
+    public Animator dialogueBoxAnim;
+
     // Start is called before the first frame update
     void Start()
     {
         nameText = FindObjectOfType<DialogueHelper>().nameDisplay;
         dialogueText = FindObjectOfType<DialogueHelper>().sentenceDisplay;
+        dialogueBoxAnim = FindObjectOfType<DialogueHelper>().dialogueBoxAnim;
         sentences = new Queue<string>();
+        GetComponent<DialogueManager>().enabled = false;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
+    private void Update()
+    { 
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            //Debug.Log("sentence count: " + sentences.Count);
             if (sentences.Count != 0)
             {
+                // set dialogue box animation to true
+                dialogueBoxAnim.SetBool("isOpen", true);
+
+                // Display Next Sentence
                 DisplayNextSentence();
             }
             else
             {
-                //Debug.Log("sentence count: " + sentences.Count);
                 EndDialogue();
             }
         }
@@ -39,6 +45,9 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        // set dialogue box animation to true
+        dialogueBoxAnim.SetBool("isOpen", true);
+
         nameText.text = dialogue.name;
 
         sentences.Clear();
@@ -54,20 +63,29 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
-        //if(sentences.Count == 0)
-        //{
-        //    EndDialogue();
-        //    return;
-        //}
-
         string sentence = sentences.Dequeue();
-        dialogueText.text = sentence;
-        Debug.Log(sentence);
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(sentence));
+    }
+
+    // Type by letter
+    IEnumerator TypeSentence(string sentence)
+    {
+        dialogueText.text = "";
+        foreach(char letter in sentence.ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return null;
+        }
     }
 
     
     void EndDialogue()
     {
-        FindObjectOfType<DialogueHelper>().EndDialogueObj(nameText.text);
+        // set dialogue box animation to false
+        dialogueBoxAnim.SetBool("isOpen", false);
+
+        // remove collider
+        GetComponent<BoxCollider>().enabled = false;
     }
 }

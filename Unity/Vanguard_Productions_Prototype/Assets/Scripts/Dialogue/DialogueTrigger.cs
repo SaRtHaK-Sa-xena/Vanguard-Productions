@@ -8,6 +8,7 @@ public class DialogueTrigger : MonoBehaviour
 
     public void TriggerDialogue()
     {
+        GetComponent<DialogueManager>().enabled = true;
         GetComponent<DialogueManager>().StartDialogue(dialogue);
     }
 
