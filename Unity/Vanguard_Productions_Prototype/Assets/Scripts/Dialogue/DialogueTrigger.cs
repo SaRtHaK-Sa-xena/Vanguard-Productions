@@ -11,12 +11,6 @@ public class DialogueTrigger : MonoBehaviour
         GetComponent<DialogueManager>().StartDialogue(dialogue);
     }
 
-
-    private void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         // on object npc

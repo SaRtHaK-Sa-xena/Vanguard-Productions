@@ -1,10 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
     private Queue<string> sentences;
+
+    public TextMeshPro nameText;
+    public TextMeshPro dialogueText;
 
     // Start is called before the first frame update
     void Start()
@@ -12,9 +16,25 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            if (sentences.Count != 0)
+            {
+                DisplayNextSentence();
+            }
+            else
+            {
+                EndDialogue();
+            }
+        }
+    }
+
+
     public void StartDialogue(Dialogue dialogue)
     {
-        Debug.Log("Starting Conversation with" + dialogue.name);
+        nameText.text = dialogue.name;
 
         sentences.Clear();
 
@@ -26,20 +46,6 @@ public class DialogueManager : MonoBehaviour
         DisplayNextSentence();
     }
 
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Return))
-        {
-            if(sentences.Count != 0)
-            {
-                DisplayNextSentence();
-            }
-            else
-            {
-                EndDialogue();
-            }
-        }
-    }
 
     public void DisplayNextSentence()
     {
@@ -50,15 +56,13 @@ public class DialogueManager : MonoBehaviour
         }
 
         string sentence = sentences.Dequeue();
+        dialogueText.text = sentence;
         Debug.Log(sentence);
     }
 
+    
     void EndDialogue()
     {
-        if(GetComponent<BoxCollider>().enabled)
-        {
-            Debug.Log("End of Convo");
-            GetComponent<BoxCollider>().enabled = false;
-        }
+        FindObjectOfType<DialogueHelper>().EndDialogueObj(nameText.ToString());
     }
 }
