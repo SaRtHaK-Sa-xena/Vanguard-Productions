@@ -1,0 +1,18 @@
+Release Notes:
+How to Play-
+
+Controls-
+Walk : WASD
+Jump : SPACE
+Light Attack : LMB
+Heavy Attack : RMB
+Jump Attack : LMB in AIR
+
+Ranged Attack : R
+Grapple : E
+	
+Dialogue Interaction-
+Press 'Enter' when end of dialogue, near npc.
+
+Work in Progress -
+1. Dialogue: needs to be scaled down

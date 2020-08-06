@@ -9,6 +9,8 @@ public class CharacterAnimationDelegate : MonoBehaviour
 
     public GameObject begToMid_Sword_Attack_Point, rangedAttack;
 
+    private CameraShake shakeCamera;
+    private animationScript animationScript;
     //void beg_Sword_Attack_On()
     //{
     //    beg_Sword_Attack_Point.SetActive(true);
@@ -20,6 +22,18 @@ public class CharacterAnimationDelegate : MonoBehaviour
     //    {
     //        beg_Sword_Attack_Point.SetActive(false);
     //    }
+    //}
+
+    // Camera Shake
+    private void Awake()
+    {
+        animationScript = FindObjectOfType<animationScript>();
+        //shakeCamera = GameObject.FindWithTag("MainCamera").GetComponent<CameraShake>();
+    }
+
+    //void ShakeCameraOnHit()
+    //{
+        //shakeCamera.setShouldShake(true);
     //}
 
     // Ranged Particle
