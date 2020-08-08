@@ -15,7 +15,7 @@ public class animationScript : MonoBehaviour
 
     //private Vector3 characterOrientation;
     bool correctRotation = false;
-
+    private CameraShake shakeCamera;
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -24,6 +24,9 @@ public class animationScript : MonoBehaviour
 
     private void Update()
     {
+
+        shakeCamera = GameObject.FindWithTag("MainCamera").GetComponent<CameraShake>();
+
         if (FindObjectOfType<PlayerControl>().allowMovement == true)
         {
             if(gameObject.CompareTag("Player"))
@@ -78,6 +81,11 @@ public class animationScript : MonoBehaviour
         anim.SetTrigger("Mid_Air_Attack");
     }
 
+    public void ShakeCameraOnHit()
+    {
+        shakeCamera.setShouldShake(true);
+    }
+    
     public void Play_Falling_Animation()
     {
         anim.SetBool("Falling", true);

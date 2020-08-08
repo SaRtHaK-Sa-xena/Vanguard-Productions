@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - ranged_attackPoint
   - Particle
+  - NPC
   layers:
   - Default
   - TransparentFX
