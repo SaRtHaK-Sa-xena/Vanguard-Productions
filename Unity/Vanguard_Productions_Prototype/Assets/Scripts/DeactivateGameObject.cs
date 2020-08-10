@@ -6,12 +6,14 @@ public class DeactivateGameObject : MonoBehaviour
 {
     public float timer = 5f;
 
-    public CapsuleCollider col;
+    public SphereCollider col;
+
+    public List<ParticleCollisionEvent> collisionEvents;
+    public ParticleSystem part;
 
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("DeactivateAfterTime", timer);
     }
 
     void DeactivateAfterTime()
@@ -21,9 +23,28 @@ public class DeactivateGameObject : MonoBehaviour
 
     private void Update()
     {
-        col = GameObject.FindGameObjectWithTag("Enemy").GetComponent<CapsuleCollider>();
-        ParticleSystem particle = GetComponentInChildren<ParticleSystem>();
+        //col = GameObject.FindGameObjectWithTag("Enemy").GetComponent<SphereCollider>();
+        //ParticleSystem particle = GetComponentInChildren<ParticleSystem>();
 
-        particle.trigger.SetCollider(0, col);
+        //particle.trigger.SetCollider(0, col);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //if(other.CompareTag("Enemy"))
+        //{
+        //    Debug.Log("Particle hit Enemy [Script On Particle]");
+        //}
+        //Debug.Log("Touched");
+    }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        // If Enemy
+        if (other.CompareTag("Enemy"))
+        {
+            DeactivateAfterTime();
+            Debug.Log("Enemy Struck");
+        }
     }
 }
