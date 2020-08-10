@@ -16,6 +16,16 @@ public class animationScript : MonoBehaviour
     //private Vector3 characterOrientation;
     bool correctRotation = false;
     private CameraShake shakeCamera;
+
+    private void Awake()
+    {
+        //if (gameObject.CompareTag("Particle"))
+        //{
+        //    Play_StunAnimation();
+        //    Debug.Log("Play Stun");
+        //}
+    }
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -114,6 +124,22 @@ public class animationScript : MonoBehaviour
             anim.SetTrigger("Attack_3");
         }
     } // enemy attacks
+
+    // Play Stunned Animation
+    public void Play_StunAnimation()
+    {
+        anim.SetBool("Stunned", true);
+    }
+
+    public void Stop_StunAnimation()
+    {
+        anim.SetBool("Stunned", false);
+    }
+
+    public void Stun_Enemy()
+    {
+        transform.parent.GetComponent<EnemyMovement>().InvokeStun();
+    }
 
     public void Play_IdleAnimation()
     {

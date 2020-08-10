@@ -16,6 +16,8 @@ public class Ranged_Attack : MonoBehaviour
     // animator
     public animationScript anim;
 
+    
+
     private void Awake()
     {
         anim = GetComponentInChildren<animationScript>();

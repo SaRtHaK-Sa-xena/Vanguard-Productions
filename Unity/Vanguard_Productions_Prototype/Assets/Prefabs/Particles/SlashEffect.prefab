@@ -4909,9 +4909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcfce0892de4b834dbde2830c3a876c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 2
-  col: {fileID: 0}
-  part: {fileID: 0}
+  FX_Stun: {fileID: 5993498446512028770, guid: 679cd7643254dff4ca64240a28dd1975, type: 3}
 --- !u!65 &4905218713719690163
 BoxCollider:
   m_ObjectHideFlags: 0
