@@ -16,6 +16,8 @@ public class jumpController : MonoBehaviour
     public animationScript anim;
     public bool falling;
 
+    public bool jumpRequest;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +32,8 @@ public class jumpController : MonoBehaviour
     {
         if(IsGrounded() && Input.GetButtonDown("Jump"))
         {
-            GetComponent<Rigidbody>().velocity = Vector3.up * jumpForce;
+            jumpRequest = true;
+            //GetComponent<Rigidbody>().velocity = Vector3.up * jumpForce;
         }
 
         if(rb.velocity.y < 0f)
@@ -50,6 +53,17 @@ public class jumpController : MonoBehaviour
                 anim.Stop_Falling_Animation();
                 falling = false;
             }
+        }
+    }
+
+
+    // Better Jumping
+    private void FixedUpdate()
+    {
+        if(jumpRequest)
+        {
+            GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce);
+            jumpRequest = false;
         }
     }
 

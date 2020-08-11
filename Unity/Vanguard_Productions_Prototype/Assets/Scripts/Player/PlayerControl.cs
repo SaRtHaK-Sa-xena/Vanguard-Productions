@@ -13,8 +13,8 @@ using UnityEngine;
 /// </summary>
 public class PlayerControl : MonoBehaviour
 {
-    [SerializeField]
-    private float speed = 5f;
+    //[SerializeField]
+    public float speed = 5f;
 
     [SerializeField]
     private float lookSensitivity = 0.0001f;
@@ -42,7 +42,7 @@ public class PlayerControl : MonoBehaviour
 
             Vector3 movHorizontal = transform.forward * zMov;
 
-            Vector3 m_velocity = (movHorizontal).normalized * halfSpeed;
+            Vector3 m_velocity = (movHorizontal).normalized * speed;
             engine.Move(m_velocity);
             //======================== side scroller movement ========================
 
