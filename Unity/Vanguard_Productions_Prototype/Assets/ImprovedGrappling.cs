@@ -5,9 +5,8 @@ using UnityEngine;
 public class ImprovedGrappling : MonoBehaviour
 {
     private LineRenderer lr;
-    private Vector3 grapplePoint;
-    public LayerMask grappable;
-    public Transform gunTip, player;
+    
+    public Transform gunTip, player, grapplePoint;
     private float maxDistance = 1000f;
     private SpringJoint joint;
 
@@ -45,9 +44,9 @@ public class ImprovedGrappling : MonoBehaviour
     {
         joint = player.gameObject.AddComponent<SpringJoint>();
         joint.autoConfigureConnectedAnchor = false;
-        joint.connectedAnchor = grapplePoint;
+        joint.connectedAnchor = grapplePoint.position;
 
-        float distanceFromPoint = Vector3.Distance(player.position, grapplePoint);
+        float distanceFromPoint = Vector3.Distance(player.position, grapplePoint.position);
 
         joint.maxDistance = distanceFromPoint * 0.0f;
         joint.maxDistance = distanceFromPoint * 0.25f;
@@ -75,7 +74,7 @@ public class ImprovedGrappling : MonoBehaviour
         else
         {
             lr.SetPosition(0, gunTip.position);
-            lr.SetPosition(0, grapplePoint);
+            lr.SetPosition(1, grapplePoint.position);
         }
     }
 }
