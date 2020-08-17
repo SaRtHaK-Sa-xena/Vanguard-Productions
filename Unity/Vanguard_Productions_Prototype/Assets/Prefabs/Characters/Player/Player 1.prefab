@@ -137,7 +137,6 @@ GameObject:
   - component: {fileID: 8515152610360150563}
   - component: {fileID: 537608935571204949}
   - component: {fileID: 5552897881199494487}
-  - component: {fileID: 280018576398447680}
   - component: {fileID: 8436819274945840750}
   - component: {fileID: 4688845846681906413}
   - component: {fileID: 3878069653778472120}
@@ -266,26 +265,6 @@ MonoBehaviour:
   enemyCollider: {fileID: 0}
   attack: 0
   sword: {fileID: 7701771582297508096}
---- !u!114 &280018576398447680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 537608935571204948}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bee8d8a721b1fe4d989f3d194d83784, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  end_point: {fileID: 0}
-  startPoint: {fileID: 0}
-  speed: 2
-  distance: 2
-  move: 0
-  anim: {fileID: 0}
-  playerAnim: {fileID: 0}
-  obj_Collider: {fileID: 0}
 --- !u!114 &8436819274945840750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,6 +322,10 @@ MonoBehaviour:
   gunTip: {fileID: 6864295761254998836}
   player: {fileID: 2405256405653311504}
   grapplePoint: {fileID: 0}
+  autoConfigure: 0
+  damper: 0
+  spring: 0
+  massScale: 0
 --- !u!120 &537608935571204951
 LineRenderer:
   m_ObjectHideFlags: 0

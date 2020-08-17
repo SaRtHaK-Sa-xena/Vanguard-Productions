@@ -12,6 +12,8 @@ TagManager:
   - ranged_attackPoint
   - Particle
   - NPC
+  - DeathPoint
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX
