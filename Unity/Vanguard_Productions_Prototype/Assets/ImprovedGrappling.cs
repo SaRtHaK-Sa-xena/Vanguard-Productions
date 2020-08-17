@@ -10,6 +10,8 @@ public class ImprovedGrappling : MonoBehaviour
     private float maxDistance = 1000f;
     private SpringJoint joint;
 
+    public bool autoConfigure;
+    public float damper, spring, massScale;
 
     private void Awake()
     {
@@ -19,12 +21,16 @@ public class ImprovedGrappling : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        autoConfigure = false;
+        spring = 4.5f;
+        damper = 7f;
+        massScale = 4.5f;
     }
 
     // Update is called once per frame
     void Update()
     {
+        jointUpdate();
         if(Input.GetKeyDown(KeyCode.E))
         {
             startGrapple();
@@ -58,13 +64,28 @@ public class ImprovedGrappling : MonoBehaviour
         lr.positionCount = 2;
     }
 
+    void jointUpdate()
+    {
+        joint.autoConfigureConnectedAnchor = autoConfigure;
 
+        joint.spring = spring;
+        joint.damper = damper;
+        joint.massScale = massScale;
+    }
+
+    /// <summary>
+    /// Destroy Joint and remove line
+    /// </summary>
     void stopGrapple()
     {
         lr.positionCount = 0;
         Destroy(joint);
     }
 
+
+    /// <summary>
+    /// Draws Rope through Line renderer
+    /// </summary>
     void DrawRope()
     {
         if (!joint)
