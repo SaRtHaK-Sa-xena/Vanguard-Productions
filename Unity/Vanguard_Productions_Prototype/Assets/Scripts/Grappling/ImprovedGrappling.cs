@@ -10,8 +10,17 @@ public class ImprovedGrappling : MonoBehaviour
     private float maxDistance = 1000f;
     private SpringJoint joint;
 
+    // Changable Through editor
     public bool autoConfigure;
     public float damper, spring, massScale;
+
+
+    // Checks the range
+    public void checkPosition()
+    {
+        
+    }
+    
 
     private void Awake()
     {
@@ -30,6 +39,8 @@ public class ImprovedGrappling : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        checkPosition();
+
         //jointUpdate();
         if(Input.GetKeyDown(KeyCode.E))
         {
@@ -49,7 +60,7 @@ public class ImprovedGrappling : MonoBehaviour
     void startGrapple()
     {
         joint = player.gameObject.AddComponent<SpringJoint>();
-        joint.autoConfigureConnectedAnchor = false;
+        joint.autoConfigureConnectedAnchor = autoConfigure;
         joint.connectedAnchor = grapplePoint.position;
 
         float distanceFromPoint = Vector3.Distance(player.position, grapplePoint.position);
@@ -57,9 +68,9 @@ public class ImprovedGrappling : MonoBehaviour
         joint.maxDistance = distanceFromPoint * 0.0f;
         joint.maxDistance = distanceFromPoint * 0.25f;
 
-        joint.spring = 4.5f;
-        joint.damper = 7f;
-        joint.massScale = 4.5f;
+        joint.spring = spring;
+        joint.damper = damper;
+        joint.massScale = massScale;
 
         lr.positionCount = 2;
     }

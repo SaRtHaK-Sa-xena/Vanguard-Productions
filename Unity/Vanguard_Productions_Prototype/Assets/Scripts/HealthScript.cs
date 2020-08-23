@@ -59,6 +59,8 @@ public class HealthScript : MonoBehaviour
         {
             animationScript.Hit();
 
+            GetComponent<EnemyMovement>().staggered = true;
+
             //Debug.Log("Checking Hit Animate");
             //if(Random.Range(0,3) > 1)
             //{

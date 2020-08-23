@@ -91,11 +91,18 @@ public class animationScript : MonoBehaviour
         anim.SetTrigger("Mid_Air_Attack");
     }
 
+    // On enemy 
     public void ShakeCameraOnHit()
     {
         shakeCamera.setShouldShake(true);
     }
     
+    // stop stagger on enemy
+    public void stopStagger()
+    {
+       transform.parent.GetComponent<EnemyMovement>().staggered = false;
+    }
+
     public void Play_Falling_Animation()
     {
         anim.SetBool("Falling", true);

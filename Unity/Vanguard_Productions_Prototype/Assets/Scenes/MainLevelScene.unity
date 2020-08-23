@@ -1141,6 +1141,119 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 230154597}
   m_Mesh: {fileID: -7513297493162946847, guid: 3002eb45841e10545aeb9517724b6b15, type: 3}
+--- !u!1 &243390115 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 89437334921495789, guid: 01af7af27b3a9f54b87309eae3b6f75d,
+    type: 3}
+  m_PrefabInstance: {fileID: 5929201936859653367}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &243390116
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243390115}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.22
+  m_Center: {x: 0, y: 0.22, z: 0.02}
+--- !u!1 &249326691
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 249326692}
+  - component: {fileID: 249326695}
+  - component: {fileID: 249326694}
+  - component: {fileID: 249326693}
+  m_Layer: 8
+  m_Name: car_4 (1)
+  m_TagString: small_jump
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &249326692
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249326691}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 8.3, y: 0.5580947, z: 12.08}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5006512736171412000}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &249326693
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249326691}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 284831314452778695, guid: 3002eb45841e10545aeb9517724b6b15, type: 3}
+--- !u!23 &249326694
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249326691}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 506705819354183807, guid: 3002eb45841e10545aeb9517724b6b15, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &249326695
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249326691}
+  m_Mesh: {fileID: 284831314452778695, guid: 3002eb45841e10545aeb9517724b6b15, type: 3}
 --- !u!1 &339975015
 GameObject:
   m_ObjectHideFlags: 0
@@ -1285,7 +1398,7 @@ GameObject:
   - component: {fileID: 442073581}
   m_Layer: 8
   m_Name: car_5 (1)
-  m_TagString: Untagged
+  m_TagString: small_jump
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4992,7 +5105,7 @@ GameObject:
   - component: {fileID: 1584683909}
   m_Layer: 8
   m_Name: car_5 (2)
-  m_TagString: Untagged
+  m_TagString: small_jump
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -12877,7 +12990,7 @@ GameObject:
   - component: {fileID: 1422318520}
   m_Layer: 8
   m_Name: car_5
-  m_TagString: Untagged
+  m_TagString: small_jump
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -40682,6 +40795,7 @@ Transform:
   - {fileID: 230154598}
   - {fileID: 442073580}
   - {fileID: 1584683908}
+  - {fileID: 249326692}
   m_Father: {fileID: 1976390429}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
@@ -47107,7 +47221,7 @@ GameObject:
   - component: {fileID: 1399775566}
   m_Layer: 8
   m_Name: car_4
-  m_TagString: Untagged
+  m_TagString: small_jump
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -47126,7 +47240,7 @@ GameObject:
   - component: {fileID: 1422318521}
   m_Layer: 8
   m_Name: car_4
-  m_TagString: Untagged
+  m_TagString: small_jump
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -48242,6 +48356,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 739863229}
     m_Modifications:
+    - target: {fileID: 89437334921495785, guid: 01af7af27b3a9f54b87309eae3b6f75d,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.2532754
+      objectReference: {fileID: 0}
+    - target: {fileID: 89437334921495785, guid: 01af7af27b3a9f54b87309eae3b6f75d,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0.06295729
+      objectReference: {fileID: 0}
+    - target: {fileID: 89437334921495786, guid: 01af7af27b3a9f54b87309eae3b6f75d,
+        type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 89437334921495786, guid: 01af7af27b3a9f54b87309eae3b6f75d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 89437334921495786, guid: 01af7af27b3a9f54b87309eae3b6f75d,
+        type: 3}
+      propertyPath: defaultStunnedTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 89437334921495786, guid: 01af7af27b3a9f54b87309eae3b6f75d,
+        type: 3}
+      propertyPath: smallEnemyJump
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 89437334921495786, guid: 01af7af27b3a9f54b87309eae3b6f75d,
+        type: 3}
+      propertyPath: groundLayers.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 89437334921495786, guid: 01af7af27b3a9f54b87309eae3b6f75d,
+        type: 3}
+      propertyPath: col
+      value: 
+      objectReference: {fileID: 243390116}
     - target: {fileID: 89437334921495787, guid: 01af7af27b3a9f54b87309eae3b6f75d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -48250,12 +48404,12 @@ PrefabInstance:
     - target: {fileID: 89437334921495787, guid: 01af7af27b3a9f54b87309eae3b6f75d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.4147955
+      value: -1.397
       objectReference: {fileID: 0}
     - target: {fileID: 89437334921495787, guid: 01af7af27b3a9f54b87309eae3b6f75d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -30.75
+      value: -32.87
       objectReference: {fileID: 0}
     - target: {fileID: 89437334921495787, guid: 01af7af27b3a9f54b87309eae3b6f75d,
         type: 3}
@@ -48301,6 +48455,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127277631336896424, guid: 01af7af27b3a9f54b87309eae3b6f75d,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127277631336896424, guid: 01af7af27b3a9f54b87309eae3b6f75d,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127277631336896424, guid: 01af7af27b3a9f54b87309eae3b6f75d,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127277631336896424, guid: 01af7af27b3a9f54b87309eae3b6f75d,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01af7af27b3a9f54b87309eae3b6f75d, type: 3}
@@ -54966,6 +55140,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: car_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826707104907345383, guid: ce0688e270f207e45baf1fe56034043f,
+        type: 3}
+      propertyPath: m_TagString
+      value: small_jump
       objectReference: {fileID: 0}
     - target: {fileID: 7883612234176319362, guid: ce0688e270f207e45baf1fe56034043f,
         type: 3}
@@ -70518,7 +70697,7 @@ GameObject:
   - component: {fileID: 1399775567}
   m_Layer: 8
   m_Name: car_3
-  m_TagString: Untagged
+  m_TagString: small_jump
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -70537,7 +70716,7 @@ GameObject:
   - component: {fileID: 1422318522}
   m_Layer: 8
   m_Name: car_3
-  m_TagString: Untagged
+  m_TagString: small_jump
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
