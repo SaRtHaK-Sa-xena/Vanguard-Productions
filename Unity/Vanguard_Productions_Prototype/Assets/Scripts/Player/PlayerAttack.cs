@@ -13,8 +13,33 @@ public class PlayerAttack : MonoBehaviour
 
     private bool airAttack;
 
+
+    // Combos
+    public enum ComboState
+    {
+        NONE,
+        LIGHT_1,
+        LIGHT_2,
+        LIGHT_3,
+        HEAVY_1,
+        HEAVY_2
+    }
+
+    private bool activateTimerToReset;
+
+    private float default_Combo_Timer = 0.4f;
+    private float current_Combo_Timer;
+
+    private ComboState current_Combo_State;
+
     // contains AttackUniversal script in Gameobject
     public GameObject sword;
+
+    private void Start()
+    {
+        current_Combo_Timer = default_Combo_Timer;
+        current_Combo_State = ComboState.NONE;
+    }
 
     private void Awake()
     {
@@ -25,6 +50,7 @@ public class PlayerAttack : MonoBehaviour
     private void Update()
     {
         ComboAttacks();
+        ResetComboState();
     }
 
     void ComboAttacks()
@@ -38,15 +64,70 @@ public class PlayerAttack : MonoBehaviour
         {
             if(attack)
             {
+                if(current_Combo_State == ComboState.HEAVY_2 ||
+                   current_Combo_State == ComboState.LIGHT_3)
+                {
+                    return;
+                }
+
+                if(current_Combo_State == ComboState.NONE ||
+                    current_Combo_State == ComboState.LIGHT_1 ||
+                    current_Combo_State == ComboState.LIGHT_2)
+                {
+                    current_Combo_State = ComboState.HEAVY_1;
+                }
+                else if(current_Combo_State == ComboState.HEAVY_1)
+                {
+                    current_Combo_State++;
+                }
+
+                activateTimerToReset = true;
+                current_Combo_Timer = default_Combo_Timer;
+
+                if(current_Combo_State == ComboState.HEAVY_1)
+                {
+                    // Heavy attack 1
+                }
+
+                if (current_Combo_State == ComboState.HEAVY_2)
+                {
+                    // Heavy attack 2
+                }
+
+
                 playerAnim.heavyAttack();
                 sword.GetComponent<AttackUniversal>().heavy_attack = true;
             }
         }
-        if(Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             // Check if player in grounded
-            if(GetComponent<jumpController>().IsGrounded())
+            if (GetComponent<jumpController>().IsGrounded())
             {
+                if (current_Combo_State == ComboState.LIGHT_3 ||
+                    current_Combo_State == ComboState.HEAVY_1 ||
+                    current_Combo_State == ComboState.HEAVY_2)
+                {
+                    return;
+                }
+
+                // Combo
+                current_Combo_State++;
+                activateTimerToReset = true;
+                current_Combo_Timer = default_Combo_Timer;
+
+                if (current_Combo_State == ComboState.LIGHT_1)
+                {
+                    // play light attack 1
+                    playerAnim.lightAttack();
+                }
+
+                if (current_Combo_State == ComboState.LIGHT_1)
+                {
+                    // play light attack 1
+                    playerAnim.lightAttack();
+                }
+
                 playerAnim.lightAttack();
 
                 sword.GetComponent<AttackUniversal>().heavy_attack = false;
@@ -71,6 +152,23 @@ public class PlayerAttack : MonoBehaviour
                 }
             }
         }
+    }
+
+
+    void ResetComboState()
+    {
+        if(activateTimerToReset)
+        {
+            current_Combo_Timer -= Time.deltaTime;
+            if(current_Combo_Timer <= 0f)
+            {
+                current_Combo_State = ComboState.NONE;
+
+                activateTimerToReset = false;
+                current_Combo_Timer = default_Combo_Timer;
+            }
+        }
+        
     }
 
 }

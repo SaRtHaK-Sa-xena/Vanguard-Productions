@@ -2615,12 +2615,6 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!4 &814777040 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6864295761254998836, guid: 97028423d7d20404983eb6226816dfb0,
-    type: 3}
-  m_PrefabInstance: {fileID: 6864295761513964004}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &825511160
 GameObject:
   m_ObjectHideFlags: 0
@@ -55442,11 +55436,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 696783635}
     m_Modifications:
-    - target: {fileID: 450443695512574252, guid: 97028423d7d20404983eb6226816dfb0,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
     - target: {fileID: 537608935571204948, guid: 97028423d7d20404983eb6226816dfb0,
         type: 3}
       propertyPath: m_Name
@@ -55457,145 +55446,16 @@ PrefabInstance:
       propertyPath: grapplePoint
       value: 
       objectReference: {fileID: 339975016}
-    - target: {fileID: 537608935571204950, guid: 97028423d7d20404983eb6226816dfb0,
+    - target: {fileID: 3003618655684215190, guid: 97028423d7d20404983eb6226816dfb0,
         type: 3}
-      propertyPath: gunTip
-      value: 
-      objectReference: {fileID: 814777040}
-    - target: {fileID: 537608935571204950, guid: 97028423d7d20404983eb6226816dfb0,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 2651469701090415395}
-    - target: {fileID: 537608935571204951, guid: 97028423d7d20404983eb6226816dfb0,
-        type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 537608935571204951, guid: 97028423d7d20404983eb6226816dfb0,
-        type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 537608935571204951, guid: 97028423d7d20404983eb6226816dfb0,
-        type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 537608935571204951, guid: 97028423d7d20404983eb6226816dfb0,
-        type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 537608935571204951, guid: 97028423d7d20404983eb6226816dfb0,
-        type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 537608935571204951, guid: 97028423d7d20404983eb6226816dfb0,
-        type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].inWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 537608935571204951, guid: 97028423d7d20404983eb6226816dfb0,
-        type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].outWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 537608935571204951, guid: 97028423d7d20404983eb6226816dfb0,
-        type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].inWeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 537608935571204951, guid: 97028423d7d20404983eb6226816dfb0,
-        type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].outWeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 537608935571204951, guid: 97028423d7d20404983eb6226816dfb0,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 36dc07842ed4a5742bd696fb51228281, type: 2}
-    - target: {fileID: 537608935571204951, guid: 97028423d7d20404983eb6226816dfb0,
-        type: 3}
-      propertyPath: m_Parameters.colorGradient.atime0
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 537608935571204951, guid: 97028423d7d20404983eb6226816dfb0,
-        type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 537608935571204951, guid: 97028423d7d20404983eb6226816dfb0,
-        type: 3}
-      propertyPath: m_Parameters.colorGradient.atime1
-      value: 31611
-      objectReference: {fileID: 0}
-    - target: {fileID: 537608935571204951, guid: 97028423d7d20404983eb6226816dfb0,
-        type: 3}
-      propertyPath: m_Parameters.colorGradient.ctime1
-      value: 65535
-      objectReference: {fileID: 0}
-    - target: {fileID: 537608935571204951, guid: 97028423d7d20404983eb6226816dfb0,
-        type: 3}
-      propertyPath: m_Parameters.colorGradient.key1.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 537608935571204951, guid: 97028423d7d20404983eb6226816dfb0,
-        type: 3}
-      propertyPath: m_Parameters.colorGradient.key2.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 537608935571204951, guid: 97028423d7d20404983eb6226816dfb0,
-        type: 3}
-      propertyPath: m_Parameters.colorGradient.atime2
-      value: 65535
-      objectReference: {fileID: 0}
-    - target: {fileID: 537608935571204951, guid: 97028423d7d20404983eb6226816dfb0,
-        type: 3}
-      propertyPath: m_Parameters.colorGradient.m_NumAlphaKeys
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 537608935571204951, guid: 97028423d7d20404983eb6226816dfb0,
-        type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 537608935571204951, guid: 97028423d7d20404983eb6226816dfb0,
-        type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 537608935571204951, guid: 97028423d7d20404983eb6226816dfb0,
-        type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 537608935571204951, guid: 97028423d7d20404983eb6226816dfb0,
-        type: 3}
-      propertyPath: m_Parameters.colorGradient.ctime0
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 537608935571204951, guid: 97028423d7d20404983eb6226816dfb0,
-        type: 3}
-      propertyPath: m_Parameters.colorGradient.key1.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 537608935571204951, guid: 97028423d7d20404983eb6226816dfb0,
-        type: 3}
-      propertyPath: m_Parameters.colorGradient.key1.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 537608935571204951, guid: 97028423d7d20404983eb6226816dfb0,
-        type: 3}
-      propertyPath: m_Parameters.colorGradient.key1.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 537608935571204951, guid: 97028423d7d20404983eb6226816dfb0,
-        type: 3}
-      propertyPath: m_Parameters.widthMultiplier
-      value: 0.5
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'LeftToeBase_jnt'\n\tTransform 'RightWrist_jnt'\n\tTransform
+        'RightLeg_jnt'\n\tTransform 'RightFoot_jnt'\n\tTransform 'Hips_jnt'\n\tTransform
+        'LeftWrist_jnt'\n\tTransform 'RightHandRing3_jnt'\n\tTransform 'RightHandThumb3_jnt'\n\tTransform
+        'RightHandPinky3_jnt'\n\tTransform 'RightHandThumb2_jnt'\n\tand more ...\n\tFrom
+        animation clip 'ANI_Lyra_Idle'"
       objectReference: {fileID: 0}
     - target: {fileID: 8901656056635519687, guid: 97028423d7d20404983eb6226816dfb0,
         type: 3}
