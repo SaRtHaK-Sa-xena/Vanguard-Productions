@@ -41,31 +41,45 @@ public class animationScript : MonoBehaviour
         {
             if(gameObject.CompareTag("Player"))
             {
-                // ====== side scroller movement ========
-                InputZ = Input.GetAxis("Vertical"); //UP and DOWN arrow key
-                InputX = Input.GetAxis("Horizontal"); //LEFT and RIGHT arrow key
-                anim.SetFloat("xMov", InputX);
-                anim.SetFloat("zMov", InputX);
-            
                 //  if player presses space bar
                 if (Input.GetButtonDown("Jump"))
                 {
                     anim.SetTrigger("isJump");
                 }
+
+                if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
+                {
+                    //InputZ = 0;
+                    //InputX = 0;
+                    InputX = 0f;
+                    anim.SetFloat("xMov", InputX);
+                    return;
+                }
+
+                // ====== side scroller movement ========
+                //InputZ = Input.GetAxis("Vertical"); //UP and DOWN arrow key
+                //anim.SetFloat("zMov", InputX);
+
+                InputX = Input.GetAxis("Horizontal"); //LEFT and RIGHT arrow key
+                anim.SetFloat("xMov", InputX);
+
+                
                 // ====== side scroller movement ========
 
                 // ====== Character Orientation =========
 
                 //update character orientation
-                if (Input.GetKeyDown(KeyCode.A))
+                if (Input.GetKey(KeyCode.A))
                 {
                     transform.eulerAngles = new Vector3(0, 180, 0);
                     //characterOrientation.y += 0.1f;
                 }
-                if (Input.GetKeyDown(KeyCode.D))
+                else if (Input.GetKey(KeyCode.D))
                 {
                     transform.eulerAngles = new Vector3(0, 0, 0);
                 }
+
+                
             }
         }
     }

@@ -39,6 +39,14 @@ public class PlayerControl : MonoBehaviour
         {
             //======================== side scroller movement ========================
             float zMov = Input.GetAxisRaw("Horizontal");
+            //if(Input.GetKeyDown(KeyCode.A))
+            //{
+            //    zMov = Input.GetAxisRaw("Horizontal");
+            //}
+            //else if(Input.GetKeyDown(KeyCode.D))
+            //{
+            //    zMov = Input.GetAxisRaw("Horizontal");
+            //}
 
             Vector3 movHorizontal = transform.forward * zMov;
 
