@@ -71,9 +71,24 @@ public class animationScript : MonoBehaviour
     }
 
     // Animations For Attack
-    public void lightAttack()
+
+    // Light attacks
+    public void light_1()
     {
-        anim.SetTrigger("lightAttack");
+        anim.SetTrigger("light_1");
+    }
+
+    // Light Attack 2
+    public void light_2()
+    {
+        anim.SetTrigger("light_2");
+    }
+
+
+    // Light Attack 3
+    public void light_3()
+    {
+        anim.SetTrigger("light_3");
     }
 
     public void heavyAttack()
