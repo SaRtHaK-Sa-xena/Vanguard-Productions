@@ -16,6 +16,16 @@ public class animationScript : MonoBehaviour
     //private Vector3 characterOrientation;
     bool correctRotation = false;
     private CameraShake shakeCamera;
+
+    private void Awake()
+    {
+        //if (gameObject.CompareTag("Particle"))
+        //{
+        //    Play_StunAnimation();
+        //    Debug.Log("Play Stun");
+        //}
+    }
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -31,39 +41,68 @@ public class animationScript : MonoBehaviour
         {
             if(gameObject.CompareTag("Player"))
             {
-                // ====== side scroller movement ========
-                InputZ = Input.GetAxis("Vertical"); //UP and DOWN arrow key
-                InputX = Input.GetAxis("Horizontal"); //LEFT and RIGHT arrow key
-                anim.SetFloat("xMov", InputX);
-                anim.SetFloat("zMov", InputX);
-            
                 //  if player presses space bar
                 if (Input.GetButtonDown("Jump"))
                 {
                     anim.SetTrigger("isJump");
                 }
+
+                if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
+                {
+                    //InputZ = 0;
+                    //InputX = 0;
+                    InputX = 0f;
+                    anim.SetFloat("xMov", InputX);
+                    return;
+                }
+
+                // ====== side scroller movement ========
+                //InputZ = Input.GetAxis("Vertical"); //UP and DOWN arrow key
+                //anim.SetFloat("zMov", InputX);
+
+                InputX = Input.GetAxis("Horizontal"); //LEFT and RIGHT arrow key
+                anim.SetFloat("xMov", InputX);
+
+                
                 // ====== side scroller movement ========
 
                 // ====== Character Orientation =========
 
                 //update character orientation
-                if (Input.GetKeyDown(KeyCode.A))
+                if (Input.GetKey(KeyCode.A))
                 {
                     transform.eulerAngles = new Vector3(0, 180, 0);
                     //characterOrientation.y += 0.1f;
                 }
-                if (Input.GetKeyDown(KeyCode.D))
+                else if (Input.GetKey(KeyCode.D))
                 {
                     transform.eulerAngles = new Vector3(0, 0, 0);
                 }
+
+                
             }
         }
     }
 
     // Animations For Attack
-    public void lightAttack()
+
+    // Light attacks
+    public void light_1()
     {
-        anim.SetTrigger("lightAttack");
+        anim.SetTrigger("light_1");
+    }
+
+    // Light Attack 2
+    public void light_2()
+    {
+        anim.SetTrigger("light_2");
+    }
+
+
+    // Light Attack 3
+    public void light_3()
+    {
+        anim.SetTrigger("light_3");
     }
 
     public void heavyAttack()
@@ -81,11 +120,18 @@ public class animationScript : MonoBehaviour
         anim.SetTrigger("Mid_Air_Attack");
     }
 
+    // On enemy 
     public void ShakeCameraOnHit()
     {
         shakeCamera.setShouldShake(true);
     }
     
+    // stop stagger on enemy
+    public void stopStagger()
+    {
+       transform.parent.GetComponent<EnemyMovement>().staggered = false;
+    }
+
     public void Play_Falling_Animation()
     {
         anim.SetBool("Falling", true);
@@ -114,6 +160,22 @@ public class animationScript : MonoBehaviour
             anim.SetTrigger("Attack_3");
         }
     } // enemy attacks
+
+    // Play Stunned Animation
+    public void Play_StunAnimation()
+    {
+        anim.SetBool("Stunned", true);
+    }
+
+    public void Stop_StunAnimation()
+    {
+        anim.SetBool("Stunned", false);
+    }
+
+    public void Stun_Enemy()
+    {
+        transform.parent.GetComponent<EnemyMovement>().InvokeStun();
+    }
 
     public void Play_IdleAnimation()
     {

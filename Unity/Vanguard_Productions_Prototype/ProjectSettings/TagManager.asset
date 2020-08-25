@@ -12,6 +12,10 @@ TagManager:
   - ranged_attackPoint
   - Particle
   - NPC
+  - DeathPoint
+  - SpawnPoint
+  - small_jump
+  - big_jump
   layers:
   - Default
   - TransparentFX
@@ -24,7 +28,7 @@ TagManager:
   - Ground
   - Player
   - Enemy
-  - 
+  - Grab
   - 
   - 
   - 
