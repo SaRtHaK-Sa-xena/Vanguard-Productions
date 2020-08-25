@@ -42,11 +42,12 @@ public class animationScript : MonoBehaviour
             if(gameObject.CompareTag("Player"))
             {
                 // ====== side scroller movement ========
-                InputZ = Input.GetAxis("Vertical"); //UP and DOWN arrow key
+                //InputZ = Input.GetAxis("Vertical"); //UP and DOWN arrow key
+                //anim.SetFloat("zMov", InputX);
+
                 InputX = Input.GetAxis("Horizontal"); //LEFT and RIGHT arrow key
                 anim.SetFloat("xMov", InputX);
-                anim.SetFloat("zMov", InputX);
-            
+
                 //  if player presses space bar
                 if (Input.GetButtonDown("Jump"))
                 {
@@ -62,9 +63,17 @@ public class animationScript : MonoBehaviour
                     transform.eulerAngles = new Vector3(0, 180, 0);
                     //characterOrientation.y += 0.1f;
                 }
-                if (Input.GetKeyDown(KeyCode.D))
+                else if (Input.GetKeyDown(KeyCode.D))
                 {
                     transform.eulerAngles = new Vector3(0, 0, 0);
+                }
+
+                if (Input.GetKeyDown(KeyCode.A) && Input.GetKeyDown(KeyCode.D))
+                {
+                    //InputZ = 0;
+                    //InputX = 0;
+                    anim.SetFloat("xMov", 0);
+                    //return;
                 }
             }
         }
