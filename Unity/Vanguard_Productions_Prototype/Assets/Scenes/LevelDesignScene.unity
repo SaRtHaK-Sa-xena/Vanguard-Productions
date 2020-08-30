@@ -11978,7 +11978,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 720785687}
-  m_LocalRotation: {x: -0.0010012345, y: 0.99864054, z: -0.047718003, w: -0.020953797}
+  m_LocalRotation: {x: -0.0010012332, y: 0.99864054, z: -0.047718022, w: -0.020953761}
   m_LocalPosition: {x: -0.06614804, y: -1.8169746, z: 10.964433}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -15587,7 +15587,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 979976435}
-  m_LocalRotation: {x: 0.022202507, y: -0.8601711, z: 0.037584476, w: 0.5081341}
+  m_LocalRotation: {x: 0.022202497, y: -0.8601711, z: 0.037584465, w: 0.50813407}
   m_LocalPosition: {x: 11.2, y: -0, z: 3.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -15624,7 +15624,7 @@ MonoBehaviour:
   m_SmoothingTime: 0
   m_Damping: 0
   m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 2.5
+  m_OptimalTargetDistance: 5
 --- !u!1 &986176361
 GameObject:
   m_ObjectHideFlags: 0
@@ -16151,7 +16151,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030343600}
-  m_LocalRotation: {x: 0.022202507, y: -0.8601711, z: 0.037584476, w: 0.5081341}
+  m_LocalRotation: {x: 0.022202497, y: -0.8601711, z: 0.037584465, w: 0.50813407}
   m_LocalPosition: {x: 10.766148, y: 2.0669746, z: 6.0455666}
   m_LocalScale: {x: 0.63304, y: 1, z: 1}
   m_Children: []
@@ -31374,7 +31374,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1838837322}
-  m_LocalRotation: {x: -0.022659687, y: 0.96722656, z: -0.09322777, w: -0.23509148}
+  m_LocalRotation: {x: -0.022839097, y: 0.96605206, z: -0.091773525, w: -0.24041526}
   m_LocalPosition: {x: 11.990001, y: 2.2299995, z: 21.780006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -31446,7 +31446,7 @@ MonoBehaviour:
   m_SmoothingTime: 0
   m_Damping: 0
   m_DampingWhenOccluded: 0
-  m_OptimalTargetDistance: 5
+  m_OptimalTargetDistance: 7
 --- !u!1 &1840734238
 GameObject:
   m_ObjectHideFlags: 0
