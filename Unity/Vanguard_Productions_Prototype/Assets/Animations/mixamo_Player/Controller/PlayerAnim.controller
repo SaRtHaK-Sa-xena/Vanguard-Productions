@@ -635,7 +635,7 @@ BlendTree:
     m_DirectBlendParameter: zMov
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 1827226128182048838, guid: 3324c39a574647b4a9034e5075c28c46,
+    m_Motion: {fileID: 1827226128182048838, guid: 9b543cfb0c5746e46a7768320a789927,
       type: 3}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
@@ -650,22 +650,6 @@ BlendTree:
     m_TimeScale: 2
     m_CycleOffset: 0
     m_DirectBlendParameter: zMov
-    m_Mirror: 0
-  - serializedVersion: 2
-    m_Motion: {fileID: 0}
-    m_Threshold: 2
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: xMov
-    m_Mirror: 0
-  - serializedVersion: 2
-    m_Motion: {fileID: 0}
-    m_Threshold: 3
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: xMov
     m_Mirror: 0
   m_BlendParameter: xMov
   m_BlendParameterY: zMov

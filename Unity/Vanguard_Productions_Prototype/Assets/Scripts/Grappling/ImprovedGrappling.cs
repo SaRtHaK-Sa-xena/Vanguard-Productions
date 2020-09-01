@@ -14,39 +14,37 @@ public class ImprovedGrappling : MonoBehaviour
     public bool autoConfigure;
     public float damper, spring, massScale;
 
+    public bool grappable;
 
-    // Checks the range
-    public void checkPosition()
-    {
-        
-    }
-    
 
     private void Awake()
     {
         lr = GetComponent<LineRenderer>();
+        grappable = false;
     }
 
     // Start is called before the first frame update
     void Start()
     {
         autoConfigure = false;
-        spring = 4.5f;
-        damper = 7f;
+        spring = 2f;
+        damper = 10f;
         massScale = 4.5f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        checkPosition();
-
         //jointUpdate();
-        if(Input.GetKeyDown(KeyCode.E))
+
+        if (grappable)
         {
-            startGrapple();
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                startGrapple();
+            }
         }
-        if(Input.GetKeyUp(KeyCode.E))
+        if (Input.GetKeyUp(KeyCode.E))
         {
             stopGrapple();
         }
