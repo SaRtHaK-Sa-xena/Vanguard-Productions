@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3324c39a574647b4a9034e5075c28c46
+guid: 46c2d1e8f0e2fc44fbfe2371d6876be3
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
@@ -21,11 +21,7 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
-      might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'LeftForeArm_jnt' has translation animation
-      that will be discarded.\n\t'LeftWrist_jnt' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n"
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -109,23 +105,23 @@ ModelImporter:
     serializedVersion: 3
     human: []
     skeleton:
-    - name: ANI_Lyra_Idle(Clone)
+    - name: Humanoid_Idle(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: SK_Lyra
-      parentName: ANI_Lyra_Idle(Clone)
+      parentName: Humanoid_Idle(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Grapple
-      parentName: ANI_Lyra_Idle(Clone)
+      parentName: Humanoid_Idle(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Bind_Bones
-      parentName: ANI_Lyra_Idle(Clone)
+      parentName: Humanoid_Idle(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
@@ -410,7 +406,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
