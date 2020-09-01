@@ -35,7 +35,9 @@ public class ImprovedGrappling : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(grappable)
+        jointUpdate();
+
+        if (grappable)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
