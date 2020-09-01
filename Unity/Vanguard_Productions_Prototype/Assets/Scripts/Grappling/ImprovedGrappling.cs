@@ -27,15 +27,15 @@ public class ImprovedGrappling : MonoBehaviour
     void Start()
     {
         autoConfigure = false;
-        spring = 4.5f;
-        damper = 7f;
+        spring = 2f;
+        damper = 10f;
         massScale = 4.5f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        jointUpdate();
+        //jointUpdate();
 
         if (grappable)
         {
