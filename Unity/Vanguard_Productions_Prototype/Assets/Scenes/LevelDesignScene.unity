@@ -8854,7 +8854,7 @@ MonoBehaviour:
   dialogue:
     name: Mini Bot
     sentences:
-    - Learn to jump by pressing "space".
+    - Learn to jump by pressing "B".
 --- !u!65 &623579317
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9249,8 +9249,7 @@ MonoBehaviour:
   dialogue:
     name: Tutorial #2
     sentences:
-    - Learn to Grapple Hook!
-    - Press "E" when indicated.
+    - Use Grapple Hook by pressing 'E'
 --- !u!65 &659404929
 BoxCollider:
   m_ObjectHideFlags: 0
