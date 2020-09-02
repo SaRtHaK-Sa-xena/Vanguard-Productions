@@ -39,7 +39,7 @@ public class jumpController : MonoBehaviour
         if(rb.velocity.y < 0f)
         {
             falling = true;
-            Debug.Log("Falling");
+            //Debug.Log("Falling");
         }
 
         if(falling)

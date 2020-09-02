@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraOrientation : MonoBehaviour
 {
     public Vector3 fixedRotation;
+    
     public Vector3 fixedPosition;
 
     public Transform player_Obj;
@@ -36,7 +37,6 @@ public class CameraOrientation : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, //current position
             new Vector3(transform.position.x, // new position
             player_Height.position.y,
-            player_Obj.transform.position.z), 3f * Time.deltaTime); 
-
+            player_Obj.transform.position.z), 3f * Time.deltaTime);
     }
 }
