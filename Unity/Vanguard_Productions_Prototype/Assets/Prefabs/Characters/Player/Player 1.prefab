@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 8436819274945840750}
   - component: {fileID: 4688845846681906413}
   - component: {fileID: 3878069653778472120}
+  - component: {fileID: 537608935571204950}
   - component: {fileID: 537608935571204951}
   m_Layer: 9
   m_Name: Player 1
@@ -308,6 +309,26 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.25098145
   m_Center: {x: 0, y: 0.24901855, z: 0}
+--- !u!114 &537608935571204950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537608935571204948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b2294717f3b7b479686a7d401ef24f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunTip: {fileID: 6864295761254998836}
+  player: {fileID: 8901656056635519687}
+  grapplePoint: {fileID: 0}
+  autoConfigure: 0
+  damper: 0
+  spring: 0
+  massScale: 0
+  grappable: 0
 --- !u!120 &537608935571204951
 LineRenderer:
   m_ObjectHideFlags: 0
