@@ -4,47 +4,21 @@ using UnityEngine;
 
 public class lookUp : MonoBehaviour
 {
-    public float speedOfLook = 1;
-    public float distanceUp = 1.3f;
-
-    float first = 0.5f;
-
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W))
         {
-            GetComponent<Cinemachine.CinemachineVirtualCamera>().GetCinemachineComponent<Cinemachine.CinemachineFramingTransposer>().m_ScreenY = Mathf.Lerp(GetComponent<Cinemachine.CinemachineVirtualCamera>().GetCinemachineComponent<Cinemachine.CinemachineFramingTransposer>().m_ScreenY, distanceUp, speedOfLook * Time.deltaTime);
+            //GetComponent<Cinemachine.CinemachineVirtualCamera>().GetCinemachineComponent<Cinemachine.CinemachineFramingTransposer>().m_ScreenY = Mathf.Lerp(GetComponent<Cinemachine.CinemachineVirtualCamera>().GetCinemachineComponent<Cinemachine.CinemachineFramingTransposer>().m_ScreenY, distanceUp, speedOfLook * Time.deltaTime);
+
+            // Set priority to lower number
+            GetComponent<Cinemachine.CinemachineVirtualCamera>().Priority = 3;
         }
-        //if(Input.GetKeyUp(KeyCode.W))
-        //{
-            //Debug.Log("Player Move Camera Dwn");
-            //GetComponent<Cinemachine.CinemachineVirtualCamera>().GetCinemachineComponent<Cinemachine.CinemachineFramingTransposer>().m_ScreenY = Mathf.Lerp(GetComponent<Cinemachine.CinemachineVirtualCamera>().GetCinemachineComponent<Cinemachine.CinemachineFramingTransposer>().m_ScreenY, first, speedOfLook * Time.deltaTime);
-        //}
         else
         {
-            Debug.Log("Player Move Camera Dwn");
-            GetComponent<Cinemachine.CinemachineVirtualCamera>().GetCinemachineComponent<Cinemachine.CinemachineFramingTransposer>().m_ScreenY = Mathf.Lerp(GetComponent<Cinemachine.CinemachineVirtualCamera>().GetCinemachineComponent<Cinemachine.CinemachineFramingTransposer>().m_ScreenY, first, speedOfLook * Time.deltaTime);
+            // keep the priority high
+            GetComponent<Cinemachine.CinemachineVirtualCamera>().Priority = 5;
         }
-
-
-
-        // Look up on 
-        //LookUp();
     }
 
-    void LookUp()
-    {
-        //if(Input.GetKey(KeyCode.W))
-        //{
-            //float first = 0.5f;
-            //GetComponent<Cinemachine.CinemachineVirtualCamera>().GetCinemachineComponent<Cinemachine.CinemachineFramingTransposer>().m_ScreenY = Mathf.Lerp(GetComponent<Cinemachine.CinemachineVirtualCamera>().GetCinemachineComponent<Cinemachine.CinemachineFramingTransposer>().m_ScreenY, distanceUp, speedOfLook * Time.deltaTime);
-        //}
-        //else
-        //{
-           //GetComponent<Cinemachine.CinemachineVirtualCamera>().GetCinemachineComponent<Cinemachine.CinemachineFramingTransposer>().m_ScreenY = 0.5f;
-           //float first = 1.3f;
-           //GetComponent<Cinemachine.CinemachineVirtualCamera>().GetCinemachineComponent<Cinemachine.CinemachineFramingTransposer>().m_ScreenY = Mathf.Lerp(distanceUp, 0.5f, speedOfLook * Time.deltaTime);
-        //}
-    }
 }
