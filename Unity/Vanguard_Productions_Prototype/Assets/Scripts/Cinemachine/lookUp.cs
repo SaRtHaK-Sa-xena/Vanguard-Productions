@@ -16,11 +16,18 @@ public class lookUp : MonoBehaviour
         {
             GetComponent<Cinemachine.CinemachineVirtualCamera>().GetCinemachineComponent<Cinemachine.CinemachineFramingTransposer>().m_ScreenY = Mathf.Lerp(GetComponent<Cinemachine.CinemachineVirtualCamera>().GetCinemachineComponent<Cinemachine.CinemachineFramingTransposer>().m_ScreenY, distanceUp, speedOfLook * Time.deltaTime);
         }
-        if(Input.GetKeyUp(KeyCode.W))
+        //if(Input.GetKeyUp(KeyCode.W))
+        //{
+            //Debug.Log("Player Move Camera Dwn");
+            //GetComponent<Cinemachine.CinemachineVirtualCamera>().GetCinemachineComponent<Cinemachine.CinemachineFramingTransposer>().m_ScreenY = Mathf.Lerp(GetComponent<Cinemachine.CinemachineVirtualCamera>().GetCinemachineComponent<Cinemachine.CinemachineFramingTransposer>().m_ScreenY, first, speedOfLook * Time.deltaTime);
+        //}
+        else
         {
             Debug.Log("Player Move Camera Dwn");
             GetComponent<Cinemachine.CinemachineVirtualCamera>().GetCinemachineComponent<Cinemachine.CinemachineFramingTransposer>().m_ScreenY = Mathf.Lerp(GetComponent<Cinemachine.CinemachineVirtualCamera>().GetCinemachineComponent<Cinemachine.CinemachineFramingTransposer>().m_ScreenY, first, speedOfLook * Time.deltaTime);
         }
+
+
 
         // Look up on 
         //LookUp();
