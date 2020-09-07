@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_metalGrate
+  m_Name: M_mossy
   m_Shader: {fileID: -6465566751694194690, guid: 376cdab529cdaad408fc3e7aa4750be8,
     type: 3}
   m_ShaderKeywords: 
@@ -25,7 +25,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_75FA374F:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 6b347156b735ae940b1b2f3e6d301e89, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_7670F1CE:
@@ -33,21 +33,21 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_92694E8C:
-        m_Texture: {fileID: 2800000, guid: 4d8b10c806ffeb949a5968571029fa67, type: 3}
+        m_Texture: {fileID: 2800000, guid: 954a38e940365ad47af470954789d171, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_97700C50:
-        m_Texture: {fileID: 2800000, guid: 693fc131198cad5419b3fd47126e08ce, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9c8610faa482a79479c6d7588122df7e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_A2EB7337:
-        m_Texture: {fileID: 2800000, guid: cd0dc25bfa27d7e409cca740d6e1f6b1, type: 3}
+        m_Texture: {fileID: 2800000, guid: a9491aa57b0719a418e6aee4637f191b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_AC919869:
-        m_Texture: {fileID: 2800000, guid: 16a4407d5778ba841a4a39b4144a807d, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_82B81C53: 3.96
+    - Vector1_82B81C53: 2.84
     m_Colors: []
