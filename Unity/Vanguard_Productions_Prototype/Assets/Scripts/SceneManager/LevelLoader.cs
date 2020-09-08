@@ -29,10 +29,5 @@ public class LevelLoader : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
 
         SceneManager.LoadScene(levelIndex);
-        // Play Anim
-
-        // Wait
-
-        // Load Scene
     }
 }
