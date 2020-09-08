@@ -45,7 +45,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -736,7 +736,7 @@ Transform:
   - {fileID: 1851156965}
   - {fileID: 2007099292}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &92679487
 GameObject:
@@ -821,7 +821,7 @@ Transform:
   - {fileID: 135305008}
   - {fileID: 1276484869}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &103575628
 Mesh:
@@ -8672,7 +8672,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 979976435}
   m_LocalRotation: {x: 0.058114473, y: -0.70471466, z: 0.058114503, w: 0.70471466}
-  m_LocalPosition: {x: 19.296566, y: -0.6665611, z: 0.7403574}
+  m_LocalPosition: {x: 19.296566, y: -0.6665611, z: 0.7403078}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 318974939}
@@ -14542,7 +14542,7 @@ Transform:
   - {fileID: 182359205}
   - {fileID: 32741365}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1541468702
 Animator:
@@ -17291,7 +17291,7 @@ Transform:
   - {fileID: 623579314}
   - {fileID: 659404926}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1837139226 stripped
 GameObject:
@@ -19252,7 +19252,7 @@ Transform:
   - {fileID: 92679488}
   - {fileID: 267771293}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2087226415
 GameObject:
