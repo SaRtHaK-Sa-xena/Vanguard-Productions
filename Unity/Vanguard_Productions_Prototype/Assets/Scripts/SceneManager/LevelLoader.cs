@@ -11,10 +11,10 @@ public class LevelLoader : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0))
-        {
-            LoadNextLevel();
-        }
+        //if(Input.GetMouseButtonDown(0))
+        //{
+        //    LoadNextLevel();
+        //}
     }
 
     public void LoadNextLevel()
@@ -29,5 +29,10 @@ public class LevelLoader : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
 
         SceneManager.LoadScene(levelIndex);
+    }
+
+    public void QuitGame ()
+    {
+        Application.Quit();
     }
 }
