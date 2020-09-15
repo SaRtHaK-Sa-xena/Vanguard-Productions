@@ -27,8 +27,8 @@ public class ImprovedGrappling : MonoBehaviour
     void Start()
     {
         autoConfigure = false;
-        spring = 2f;
-        damper = 10f;
+        spring = 3f;
+        damper = 6f;
         massScale = 4.5f;
     }
 
