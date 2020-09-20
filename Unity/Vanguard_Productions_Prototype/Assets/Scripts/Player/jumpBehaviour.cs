@@ -23,6 +23,7 @@ public class jumpBehaviour : MonoBehaviour
         }
         else if(rb.velocity.y > 0 && !Input.GetButton("Jump"))
         {
+            //Debug.Log("In this");
             rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
     }

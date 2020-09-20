@@ -16,11 +16,26 @@ public class ImprovedGrappling : MonoBehaviour
 
     public bool grappable;
 
+    PlayerControls controller;
+
+    private void OnEnable()
+    {
+        controller.Gameplay.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controller.Gameplay.Disable();
+    }
 
     private void Awake()
     {
         lr = GetComponent<LineRenderer>();
         grappable = false;
+        controller = new PlayerControls();
+        
+        controller.Gameplay.GrappleHook.performed += context => startGrapple();
+        controller.Gameplay.GrappleHook.canceled += context => stopGrapple();
     }
 
     // Start is called before the first frame update
@@ -35,8 +50,6 @@ public class ImprovedGrappling : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //jointUpdate();
-
         if (grappable)
         {
             if (Input.GetKeyDown(KeyCode.E))
@@ -57,20 +70,23 @@ public class ImprovedGrappling : MonoBehaviour
 
     void startGrapple()
     {
-        joint = player.gameObject.AddComponent<SpringJoint>();
-        joint.autoConfigureConnectedAnchor = autoConfigure;
-        joint.connectedAnchor = grapplePoint.position;
+        if(grappable)
+        {
+            joint = player.gameObject.AddComponent<SpringJoint>();
+            joint.autoConfigureConnectedAnchor = autoConfigure;
+            joint.connectedAnchor = grapplePoint.position;
 
-        float distanceFromPoint = Vector3.Distance(player.position, grapplePoint.position);
+            float distanceFromPoint = Vector3.Distance(player.position, grapplePoint.position);
 
-        joint.maxDistance = distanceFromPoint * 0.0f;
-        joint.maxDistance = distanceFromPoint * 0.25f;
+            joint.maxDistance = distanceFromPoint * 0.0f;
+            joint.maxDistance = distanceFromPoint * 0.25f;
 
-        joint.spring = spring;
-        joint.damper = damper;
-        joint.massScale = massScale;
+            joint.spring = spring;
+            joint.damper = damper;
+            joint.massScale = massScale;
 
-        lr.positionCount = 2;
+            lr.positionCount = 2;
+        }
     }
 
     void jointUpdate()
