@@ -269,6 +269,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0a50bc8ff9c995478d180590a58955c, type: 3}
+--- !u!1 &734452612 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 1a9b1abbedfc6834e93879b42d6b8b3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 772102204}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &734452613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734452612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf10c9e8e8461403eae9e48b0bc3670e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceToolName: Distance Tool 1
+  lineColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  initialized: 1
+  initialName: Distance Tool 1
+  startPoint: {x: 2.3365953, y: -0.15010698, z: -3.0069401}
+  endPoint: {x: 2.3441577, y: 1.4922674, z: -3.13219}
+  distance: 0
+  gizmoRadius: 0.1
+  scaleToPixels: 0
+  pixelPerUnit: 128
 --- !u!1001 &772102204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -618,7 +646,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 41ea38848ac3c0e4782f91737692be9e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.2219234
+      value: -5.271
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 41ea38848ac3c0e4782f91737692be9e,
         type: 3}
@@ -750,3 +778,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2139052106 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 41ea38848ac3c0e4782f91737692be9e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1168426458}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2139052107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139052106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf10c9e8e8461403eae9e48b0bc3670e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceToolName: Distance Tool 3
+  lineColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  initialized: 1
+  initialName: Distance Tool 3
+  startPoint: {x: 1.4751022, y: -0.1348486, z: -5.1951113}
+  endPoint: {x: 1.4559226, y: 2.9935665, z: -5.2017603}
+  distance: 0
+  gizmoRadius: 0.1
+  scaleToPixels: 0
+  pixelPerUnit: 128
