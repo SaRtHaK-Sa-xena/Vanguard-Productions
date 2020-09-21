@@ -235,7 +235,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: f0a50bc8ff9c995478d180590a58955c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f0a50bc8ff9c995478d180590a58955c,
         type: 3}
@@ -269,6 +269,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0a50bc8ff9c995478d180590a58955c, type: 3}
+--- !u!1 &734452612 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 1a9b1abbedfc6834e93879b42d6b8b3d,
+    type: 3}
+  m_PrefabInstance: {fileID: 772102204}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &734452613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734452612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf10c9e8e8461403eae9e48b0bc3670e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceToolName: Distance Tool 1
+  lineColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  initialized: 1
+  initialName: Distance Tool 1
+  startPoint: {x: 2.3365953, y: -0.15010698, z: -3.0069401}
+  endPoint: {x: 2.3441577, y: 1.4922674, z: -3.13219}
+  distance: 0
+  gizmoRadius: 0.1
+  scaleToPixels: 0
+  pixelPerUnit: 128
 --- !u!1001 &772102204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -314,7 +342,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 1a9b1abbedfc6834e93879b42d6b8b3d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1a9b1abbedfc6834e93879b42d6b8b3d,
         type: 3}
@@ -434,7 +462,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &948143932
 GameObject:
@@ -527,7 +555,7 @@ Transform:
   m_LocalScale: {x: 256.95444, y: -1.7605492, z: 256.95444}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1044573822
 PrefabInstance:
@@ -574,7 +602,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 1a9b1abbedfc6834e93879b42d6b8b3d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1a9b1abbedfc6834e93879b42d6b8b3d,
         type: 3}
@@ -598,6 +626,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a9b1abbedfc6834e93879b42d6b8b3d, type: 3}
+--- !u!1001 &1168426458
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -4216859302048453862, guid: 41ea38848ac3c0e4782f91737692be9e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.5370739
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 41ea38848ac3c0e4782f91737692be9e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.15972537
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 41ea38848ac3c0e4782f91737692be9e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.271
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 41ea38848ac3c0e4782f91737692be9e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 41ea38848ac3c0e4782f91737692be9e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 41ea38848ac3c0e4782f91737692be9e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 41ea38848ac3c0e4782f91737692be9e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 41ea38848ac3c0e4782f91737692be9e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 41ea38848ac3c0e4782f91737692be9e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 41ea38848ac3c0e4782f91737692be9e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 41ea38848ac3c0e4782f91737692be9e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 41ea38848ac3c0e4782f91737692be9e,
+        type: 3}
+      propertyPath: m_Name
+      value: SK_Warden
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 41ea38848ac3c0e4782f91737692be9e, type: 3}
 --- !u!1 &1396805314
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,3 +778,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2139052106 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 41ea38848ac3c0e4782f91737692be9e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1168426458}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2139052107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139052106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf10c9e8e8461403eae9e48b0bc3670e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceToolName: Distance Tool 3
+  lineColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  initialized: 1
+  initialName: Distance Tool 3
+  startPoint: {x: 1.4751022, y: -0.1348486, z: -5.1951113}
+  endPoint: {x: 1.4559226, y: 2.9935665, z: -5.2017603}
+  distance: 0
+  gizmoRadius: 0.1
+  scaleToPixels: 0
+  pixelPerUnit: 128
