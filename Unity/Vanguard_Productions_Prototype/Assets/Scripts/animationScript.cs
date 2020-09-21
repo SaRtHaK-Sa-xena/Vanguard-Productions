@@ -38,14 +38,14 @@ public class animationScript : MonoBehaviour
 
     private void OnEnable()
     {
-        animationControls.Animation.Enable();
-        animationControls.Gameplay.Enable();
+       animationControls.Animation.Enable();
+       animationControls.Gameplay.Enable();
     }
 
     private void OnDisable()
     {
-        animationControls.Animation.Disable();
-        animationControls.Gameplay.Disable();
+       animationControls.Animation.Disable();
+       animationControls.Gameplay.Disable();
     }
 
     private void Start()
@@ -96,11 +96,15 @@ public class animationScript : MonoBehaviour
                 if (Input.GetKey(KeyCode.A) || InputX < 0)
                 {
                     transform.eulerAngles = new Vector3(0, 180, 0);
+                    FindObjectOfType<Ranged_Attack>().Effect.transform.GetChild(0).GetComponent<ParticleSystemRenderer>().flip = new Vector3(0, 0, 0);
+                    FindObjectOfType<Ranged_Attack>().spawnPoint.transform.eulerAngles = new Vector3(0, 180, 0);
                     //characterOrientation.y += 0.1f;
                 }
                 else if (Input.GetKey(KeyCode.D) || InputX > 0)
                 {
                     transform.eulerAngles = new Vector3(0, 0, 0);
+                    FindObjectOfType<Ranged_Attack>().Effect.transform.GetChild(0).GetComponent<ParticleSystemRenderer>().flip = new Vector3(1, 0, 0);
+                    FindObjectOfType<Ranged_Attack>().spawnPoint.transform.eulerAngles = new Vector3(0, 0, 0);
                 }
 
                 
@@ -156,6 +160,12 @@ public class animationScript : MonoBehaviour
         shakeCamera.setShouldShake(true);
     }
     
+    // Death 
+    public void DeleteEnemy()
+    {
+        Destroy(this.gameObject);
+    }
+
     // stop stagger on enemy
     public void stopStagger()
     {

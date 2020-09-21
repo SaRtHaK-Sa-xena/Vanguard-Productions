@@ -51,6 +51,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
+                    ""name"": ""Ranged Attack"",
+                    ""type"": ""Button"",
+                    ""id"": ""b0082996-2a0c-4d0e-afdd-17d5ab355e6c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
                     ""name"": ""GrappleHook"",
                     ""type"": ""PassThrough"",
                     ""id"": ""46ec852d-5a15-4323-88c1-abcac15c2a88"",
@@ -136,6 +144,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""GrappleHook"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6af448b4-85b8-4d1b-8027-f5a5d789b3a0"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ranged Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -197,6 +216,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Gameplay_Jump = m_Gameplay.FindAction("Jump", throwIfNotFound: true);
         m_Gameplay_LightAttack = m_Gameplay.FindAction("LightAttack", throwIfNotFound: true);
         m_Gameplay_HeavyAttack = m_Gameplay.FindAction("HeavyAttack", throwIfNotFound: true);
+        m_Gameplay_RangedAttack = m_Gameplay.FindAction("Ranged Attack", throwIfNotFound: true);
         m_Gameplay_GrappleHook = m_Gameplay.FindAction("GrappleHook", throwIfNotFound: true);
         // Animation
         m_Animation = asset.FindActionMap("Animation", throwIfNotFound: true);
@@ -254,6 +274,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_Jump;
     private readonly InputAction m_Gameplay_LightAttack;
     private readonly InputAction m_Gameplay_HeavyAttack;
+    private readonly InputAction m_Gameplay_RangedAttack;
     private readonly InputAction m_Gameplay_GrappleHook;
     public struct GameplayActions
     {
@@ -263,6 +284,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Jump => m_Wrapper.m_Gameplay_Jump;
         public InputAction @LightAttack => m_Wrapper.m_Gameplay_LightAttack;
         public InputAction @HeavyAttack => m_Wrapper.m_Gameplay_HeavyAttack;
+        public InputAction @RangedAttack => m_Wrapper.m_Gameplay_RangedAttack;
         public InputAction @GrappleHook => m_Wrapper.m_Gameplay_GrappleHook;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
@@ -285,6 +307,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @HeavyAttack.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnHeavyAttack;
                 @HeavyAttack.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnHeavyAttack;
                 @HeavyAttack.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnHeavyAttack;
+                @RangedAttack.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRangedAttack;
+                @RangedAttack.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRangedAttack;
+                @RangedAttack.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRangedAttack;
                 @GrappleHook.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnGrappleHook;
                 @GrappleHook.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnGrappleHook;
                 @GrappleHook.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnGrappleHook;
@@ -304,6 +329,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @HeavyAttack.started += instance.OnHeavyAttack;
                 @HeavyAttack.performed += instance.OnHeavyAttack;
                 @HeavyAttack.canceled += instance.OnHeavyAttack;
+                @RangedAttack.started += instance.OnRangedAttack;
+                @RangedAttack.performed += instance.OnRangedAttack;
+                @RangedAttack.canceled += instance.OnRangedAttack;
                 @GrappleHook.started += instance.OnGrappleHook;
                 @GrappleHook.performed += instance.OnGrappleHook;
                 @GrappleHook.canceled += instance.OnGrappleHook;
@@ -350,6 +378,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnLightAttack(InputAction.CallbackContext context);
         void OnHeavyAttack(InputAction.CallbackContext context);
+        void OnRangedAttack(InputAction.CallbackContext context);
         void OnGrappleHook(InputAction.CallbackContext context);
     }
     public interface IAnimationActions

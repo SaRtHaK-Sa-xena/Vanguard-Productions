@@ -54,20 +54,22 @@ public class AttackUniversal : MonoBehaviour
 
                 //Instantiate(hit_FX_Prefab, hitFX_Pos, Quaternion.identity);
 
-                if (gameObject.CompareTag("begToMid_Point") || gameObject.CompareTag("ranged_attackPoint")) //|| gameObject.CompareTag("begToMid_Point"))
+               if (gameObject.CompareTag("begToMid_Point") || gameObject.CompareTag("ranged_attackPoint")) //|| gameObject.CompareTag("begToMid_Point"))
                {
                     if(heavy_attack)
                     {
+                        // set higher damage
                         hit[0].GetComponent<HealthScript>().ApplyDamage(damage, true);
                     }
                     else
                     {
+                        // set lower damage
                         hit[0].GetComponent<HealthScript>().ApplyDamage(damage, false);
                     }
                }
             }
 
-
+            Debug.Log("Setting GameObject To InActive");
             gameObject.SetActive(false); 
         }
     }

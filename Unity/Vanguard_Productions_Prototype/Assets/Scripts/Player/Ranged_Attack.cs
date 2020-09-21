@@ -16,20 +16,45 @@ public class Ranged_Attack : MonoBehaviour
     // animator
     public animationScript anim;
 
-    
+    PlayerControls attackController;
+
+    private bool doRangeAnim;
+
+    private void OnEnable()
+    {
+        attackController.Gameplay.Enable();
+    }
+
+    private void OnDisable()
+    {
+        attackController.Gameplay.Disable();
+    }
 
     private void Awake()
     {
+        attackController = new PlayerControls();
         anim = GetComponentInChildren<animationScript>();
+    }
+
+    private void Start()
+    {
+        attackController.Gameplay.RangedAttack.performed += _ => setRangedActive();
+    }
+
+    void setRangedActive()
+    {
+        doRangeAnim = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         // ====== Controls ========
-        if(Input.GetKeyDown(KeyCode.R))
+        //if(Input.GetKeyDown(KeyCode.R))
+        if(doRangeAnim)
         {
             RangedAttack();
+            doRangeAnim = false;
         }
 
         //Rotation
@@ -44,7 +69,7 @@ public class Ranged_Attack : MonoBehaviour
         {
             spawnPoint.transform.eulerAngles = new Vector3(0, 0, 0);
             Effect.transform.GetChild(0).GetComponent<ParticleSystemRenderer>().flip = new Vector3(1, 0, 0);
-            transform.GetChild(0).transform.eulerAngles = new Vector3(0, 0, 0);
+            //transform.GetChild(0).transform.eulerAngles = new Vector3(0, 0, 0);
         }
     }
 

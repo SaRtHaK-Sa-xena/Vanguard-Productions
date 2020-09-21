@@ -15,6 +15,8 @@ public class HealthScript : MonoBehaviour
 
     private float heavyDMG = 5f;
 
+    private int noPlayerLayer = 13;
+
     void Awake()
     {
         animationScript = GetComponentInChildren<animationScript>();
@@ -45,9 +47,15 @@ public class HealthScript : MonoBehaviour
         // if character died
         if(health <= 0f)
         {
-            animationScript.Death();
-            characterDied = true;
-            GetComponent<EnemyMovement>().enabled = false;
+            if(!is_Player)
+            {
+                // player will not be able to touch enemy
+                gameObject.layer = noPlayerLayer;
+                animationScript.Death();
+                characterDied = true;
+                GetComponent<EnemyMovement>().enabled = false;
+            }
+            
         }
 
         if(is_Player)

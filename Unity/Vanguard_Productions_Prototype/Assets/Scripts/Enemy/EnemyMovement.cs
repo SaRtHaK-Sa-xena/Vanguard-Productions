@@ -9,7 +9,7 @@ public class EnemyMovement : MonoBehaviour
     private Rigidbody myBody;
     public float speed = 5f;
 
-    private Transform playerTarget;
+    public Transform playerTarget;
 
     public float attack_Distance = 1f;
     private float chase_Player_After_Attack = 1f;
@@ -29,21 +29,21 @@ public class EnemyMovement : MonoBehaviour
     private bool animationPlaying = false;
 
     //  Enemy jumps
-    public float smallEnemyJump = 10f;
-    public float bigEnemyJump = 20f;
+    //public float smallEnemyJump = 10f;
+    //public float bigEnemyJump = 20f;
 
     // Sphere collider
     public SphereCollider col;
 
     // Layer mask
-    public LayerMask groundLayers;
+    //public LayerMask groundLayers;
 
     private void Awake()
     {
         enemyAnim = GetComponentInChildren<animationScript>();
         myBody = GetComponent<Rigidbody>();
 
-        playerTarget = GameObject.FindWithTag("Player").transform;
+        //playerTarget = GameObject.FindWithTag("Player").transform;
 
         // set stunned time to default
         stunnedTime = defaultStunnedTime;
@@ -60,10 +60,10 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!IsGrounded())
-        {
-            GetComponentInChildren<animationScript>().Walk(false);
-        }
+        //if(!IsGrounded())
+        //{
+        //    GetComponentInChildren<animationScript>().Walk(false);
+        //}
 
         if (stunned)
         {
@@ -109,14 +109,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(IsGrounded())
-        {
-            jumped = false;
-        }
-        if(!jumped)
-        {
-            FollowTarget();
-        }
+        FollowTarget();
     }
 
     // Follow Target
@@ -225,34 +218,34 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("Collider entered enemy trigger");
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    Debug.Log("Collider entered enemy trigger");
 
-        if (other.CompareTag("small_jump"))
-        {
-            Debug.Log("small");
-            jumped = true;
-            //GetComponentInChildren<animationScript>().Walk(false);
-            GetComponent<Rigidbody>().AddForce(Vector3.up * smallEnemyJump);
-        }
-        if(other.CompareTag("big_jump"))
-        {
-            Debug.Log("big");
-            jumped = true;
-            //GetComponentInChildren<animationScript>().Walk(false);
-            GetComponent<Rigidbody>().AddForce(Vector3.up * bigEnemyJump);
-        }
-    }
+    //    if (other.CompareTag("small_jump"))
+    //    {
+    //        Debug.Log("small");
+    //        jumped = true;
+    //        //GetComponentInChildren<animationScript>().Walk(false);
+    //        GetComponent<Rigidbody>().AddForce(Vector3.up * smallEnemyJump);
+    //    }
+    //    if(other.CompareTag("big_jump"))
+    //    {
+    //        Debug.Log("big");
+    //        jumped = true;
+    //        //GetComponentInChildren<animationScript>().Walk(false);
+    //        GetComponent<Rigidbody>().AddForce(Vector3.up * bigEnemyJump);
+    //    }
+    //}
 
 
-    public bool IsGrounded()
-    {
-        return Physics.CheckCapsule
-            (col.bounds.center, new Vector3
-            (col.bounds.center.x, col.bounds.min.y, col.bounds.center.z),
-            col.radius * .9f, groundLayers);
-    }
+    //public bool IsGrounded()
+    //{
+    //    return Physics.CheckCapsule
+    //        (col.bounds.center, new Vector3
+    //        (col.bounds.center.x, col.bounds.min.y, col.bounds.center.z),
+    //        col.radius * .9f, groundLayers);
+    //}
 
     public void JumpOverObstacle(string tag_obj)
     {

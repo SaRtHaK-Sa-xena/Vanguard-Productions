@@ -33,16 +33,34 @@ public class PlayerAttack : MonoBehaviour
     private ComboState current_Combo_State;
 
     // contains AttackUniversal script in Gameobject
-    public GameObject sword;
+    //public GameObject sword;
+
+    PlayerControls attackControls;
+    public bool attackNow;
+
+    private void OnEnable()
+    {
+        attackControls.Gameplay.Enable();
+    }
+
+    private void OnDisable()
+    {
+        attackControls.Gameplay.Disable();
+    }
 
     private void Start()
     {
         current_Combo_Timer = default_Combo_Timer;
         current_Combo_State = ComboState.NONE;
+        //attackControls.Gameplay.LightAttack.performed += pressedAttack => Input.GetMouseButton(0);
+        attackControls.Gameplay.LightAttack.performed += pressedAttack => Attack();
+        //attackControls.Gameplay.LightAttack.performed += pressedAttack => ComboAttacks();
+        // check also with just calling ComboAttacks().
     }
 
     private void Awake()
     {
+        attackControls = new PlayerControls();
         playerAnim = GetComponentInChildren<animationScript>();
         attack = true;
     }
@@ -53,15 +71,20 @@ public class PlayerAttack : MonoBehaviour
         ResetComboState();
     }
 
+    void Attack()
+    {
+        attackNow = true;
+    }
+
     void ComboAttacks()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        //if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (attackNow)
         {
             if (current_Combo_State == ComboState.LIGHT_3 ||
                 current_Combo_State == ComboState.HEAVY_1 ||
                 current_Combo_State == ComboState.HEAVY_2)
             {
-                Debug.Log("Return");
                 return;
             }
 
@@ -87,7 +110,51 @@ public class PlayerAttack : MonoBehaviour
                 // play light attack 1
                 playerAnim.light_3();
             }
+
+            // set attack to false again
+            attackNow = false;
         }
+    }
+
+        //_____________________________________________________________________
+        ////if (Input.GetKeyDown(KeyCode.Mouse0))
+        //if (attackNow)
+        //{
+        //    if (current_Combo_State == ComboState.LIGHT_3 ||
+        //        current_Combo_State == ComboState.HEAVY_1 ||
+        //        current_Combo_State == ComboState.HEAVY_2)
+        //    {
+        //        return;
+        //    }
+
+        //    // Combo
+        //    current_Combo_State++;
+        //    activateTimerToReset = true;
+        //    current_Combo_Timer = default_Combo_Timer;
+
+        //    if (current_Combo_State == ComboState.LIGHT_1)
+        //    {
+        //        // play light attack 1
+        //        playerAnim.light_1();
+        //    }
+
+        //    if (current_Combo_State == ComboState.LIGHT_2)
+        //    {
+        //        // play light attack 1
+        //        playerAnim.light_2();
+        //    }
+
+        //    if (current_Combo_State == ComboState.LIGHT_3)
+        //    {
+        //        // play light attack 1
+        //        playerAnim.light_3();
+        //    }
+
+        //    attackNow = false;
+        //}
+        //_____________________________________________________________________
+
+
 
         //if (GetComponent<jumpController>().IsGrounded())
         //{
@@ -192,7 +259,6 @@ public class PlayerAttack : MonoBehaviour
         //        }
         //    }
         //}
-    }
 
 
     void ResetComboState()
