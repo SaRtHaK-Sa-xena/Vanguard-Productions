@@ -26,19 +26,44 @@ public class PlayerControl : MonoBehaviour
 
     public bool allowMovement = true;
 
-    
+    PlayerControls controls;
+
+    Vector3 movement;
 
     void Start()
     {
         engine = GetComponent<PlayerEngine>();
     }
 
+    private void OnEnable()
+    {
+        controls.Gameplay.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Gameplay.Disable();
+    }
+
+    private void Awake()
+    {
+        controls = new PlayerControls();
+        //controls.Gameplay.Movement.performed += ctx => movement = ctx.ReadValue<Vector3>();
+        //controls.Gameplay.Movement.canceled += ctx => movement = Vector3.zero;
+    }
+
     void Update()
     {
         if(allowMovement)
         {
+            //Vector3 move = new Vector3(movement.x, movement.y, movement.z) * Time.deltaTime;
+            //transform.Translate(move, Space.World);
+
             //======================== side scroller movement ========================
-            float zMov = Input.GetAxisRaw("Horizontal");
+            //float zMov = Input.GetAxisRaw("Horizontal");
+
+            float zMov = controls.Gameplay.Movement.ReadValue<float>();
+            //float zMov = movement.z;
             //if(Input.GetKeyDown(KeyCode.A))
             //{
             //    zMov = Input.GetAxisRaw("Horizontal");
@@ -52,6 +77,14 @@ public class PlayerControl : MonoBehaviour
 
             Vector3 m_velocity = (movHorizontal).normalized * speed;
             engine.Move(m_velocity);
+            //Vector3 m_velocity = (move).normalized * speed;
+            //engine.Move(m_velocity);
+
+            //float movementInput = controls.Gameplay.Movement.ReadValue<float>();
+            // = transform.position;
+            //Vector3 currentPosition  = (movementInput) * speed * Time.deltaTime;
+            //engine.Move(currentPosition);
+        
             //======================== side scroller movement ========================
 
 

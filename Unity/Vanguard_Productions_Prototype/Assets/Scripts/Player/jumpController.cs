@@ -18,12 +18,32 @@ public class jumpController : MonoBehaviour
 
     public bool jumpRequest;
 
+    private PlayerControls controller;
+
+    private void OnEnable()
+    {
+        controller.Gameplay.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controller.Gameplay.Disable();
+    }
+
+    private void Awake()
+    {
+        controller = new PlayerControls();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         col = GetComponent<SphereCollider>();
         anim = GetComponentInChildren<animationScript>();
+
+        // set jump settings
+        controller.Gameplay.Jump.performed += context => Jump();
     }
 
 
@@ -64,6 +84,14 @@ public class jumpController : MonoBehaviour
         {
             GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce);
             jumpRequest = false;
+        }
+    }
+
+    public void Jump()
+    {
+        if(IsGrounded())
+        {
+            jumpRequest = true;
         }
     }
 

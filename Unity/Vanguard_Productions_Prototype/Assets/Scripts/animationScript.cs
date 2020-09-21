@@ -17,13 +17,35 @@ public class animationScript : MonoBehaviour
     bool correctRotation = false;
     private CameraShake shakeCamera;
 
+    PlayerControls animationControls;
+
     private void Awake()
     {
+        animationControls = new PlayerControls();
+
+        // Jump
+        animationControls.Gameplay.Jump.performed += _ => Jump();
+
+        //animationControls.Animation.Running.performed += ctx => move = ctx.ReadValue<Vector2>();
+        //animationControls.Animation.Running.canceled += ctx => move = Vector2.zero;
+
         //if (gameObject.CompareTag("Particle"))
         //{
         //    Play_StunAnimation();
         //    Debug.Log("Play Stun");
         //}
+    }
+
+    private void OnEnable()
+    {
+        animationControls.Animation.Enable();
+        animationControls.Gameplay.Enable();
+    }
+
+    private void OnDisable()
+    {
+        animationControls.Animation.Disable();
+        animationControls.Gameplay.Disable();
     }
 
     private void Start()
@@ -39,7 +61,7 @@ public class animationScript : MonoBehaviour
 
         if (FindObjectOfType<PlayerControl>().allowMovement == true)
         {
-            if(gameObject.CompareTag("Player"))
+            if (gameObject.CompareTag("Player"))
             {
                 //  if player presses space bar
                 if (Input.GetButtonDown("Jump"))
@@ -60,21 +82,23 @@ public class animationScript : MonoBehaviour
                 //InputZ = Input.GetAxis("Vertical"); //UP and DOWN arrow key
                 //anim.SetFloat("zMov", InputX);
 
-                InputX = Input.GetAxis("Horizontal"); //LEFT and RIGHT arrow key
+                //InputX = Input.GetAxis("Horizontal"); //LEFT and RIGHT arrow key
+                InputX = animationControls.Animation.Running.ReadValue<float>();
+                //InputX = move.x;
                 anim.SetFloat("xMov", InputX);
 
-                
+
                 // ====== side scroller movement ========
 
                 // ====== Character Orientation =========
 
                 //update character orientation
-                if (Input.GetKey(KeyCode.A))
+                if (Input.GetKey(KeyCode.A) || InputX < 0)
                 {
                     transform.eulerAngles = new Vector3(0, 180, 0);
                     //characterOrientation.y += 0.1f;
                 }
-                else if (Input.GetKey(KeyCode.D))
+                else if (Input.GetKey(KeyCode.D) || InputX > 0)
                 {
                     transform.eulerAngles = new Vector3(0, 0, 0);
                 }
@@ -82,6 +106,12 @@ public class animationScript : MonoBehaviour
                 
             }
         }
+    }
+
+    // Jump Function
+    public void Jump()
+    {
+        anim.SetTrigger("isJump");
     }
 
     // Animations For Attack
