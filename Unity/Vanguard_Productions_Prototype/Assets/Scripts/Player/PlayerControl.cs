@@ -63,6 +63,7 @@ public class PlayerControl : MonoBehaviour
             //float zMov = Input.GetAxisRaw("Horizontal");
 
             float zMov = controls.Gameplay.Movement.ReadValue<float>();
+            zMov = Input.GetAxisRaw("Horizontal");
             //float zMov = movement.z;
             //if(Input.GetKeyDown(KeyCode.A))
             //{
