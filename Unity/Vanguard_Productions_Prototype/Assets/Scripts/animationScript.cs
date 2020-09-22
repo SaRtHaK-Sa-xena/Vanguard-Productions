@@ -84,7 +84,7 @@ public class animationScript : MonoBehaviour
 
                 //InputX = Input.GetAxis("Horizontal"); //LEFT and RIGHT arrow key
                 InputX = animationControls.Animation.Running.ReadValue<float>();
-                //InputX = move.x;
+                InputX = Input.GetAxisRaw("Horizontal");
                 anim.SetFloat("xMov", InputX);
 
 

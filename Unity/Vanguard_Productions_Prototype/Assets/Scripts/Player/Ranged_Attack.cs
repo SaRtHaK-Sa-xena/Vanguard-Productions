@@ -51,7 +51,7 @@ public class Ranged_Attack : MonoBehaviour
     {
         // ====== Controls ========
         //if(Input.GetKeyDown(KeyCode.R))
-        if(doRangeAnim)
+        if(doRangeAnim || Input.GetKeyDown(KeyCode.R)) 
         {
             RangedAttack();
             doRangeAnim = false;

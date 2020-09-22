@@ -1,0 +1,50 @@
+84134c2f Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+1fa84a4a Player Bug Fix
+ad0cb3f4 Updated Lyra's SK_mesh
+def70d9b Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+3f908fe3 Final Alpha Changes
+df1a10d3 Level Design Scene
+9ac6034d Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+c9b94068 Level Design Scene
+c68f16a3 Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+1eb111c3 Updated master material
+9bf33f8a Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+4794a89a added new warden animation
+257944cd Edit cam again
+f575ac99 Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+9e3fe4ab Edit Cam
+a72a50a8 Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+835892b9 updated the warden's attack
+6c811aa3 Fixed cam triggers
+11bc2c08 Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+c85a866d Added cams to Level Design
+e2e917d2 Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+f869a141 updated all animations to use the new sk_mesh
+b050df9e Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+daff7575 Added sand level
+880f9f1d Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+edb6372f updated the Lyra sk model
+81fc73cc Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+9d2bc3f8 Port to Controller.
+e6d47fa1 Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+ebd5df62 Pushing the warden and an attack anim for it
+29424eeb Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+05894538 Finished Level Design
+2bae3136 Backup Save
+a08b5f0b Top Level almost finished
+980141bb Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+adbb829c Further level designing
+0b6e40bc Player Bug Fixed
+21a2ed08 Edit Grapple Speed
+b4d47809 Added New Level Block Out
+c7f1e43f Added Fonts into project and updated dialogue box
+6ad7e8bf Updated Main Level Scene with assets and textures
+31a554e4 Updated PauseMenu
+992f7aa4 Added PauseMenu
+c818008e Change LoadLevel Script - Added Quit Game Function
+8207c90f Removed a script
+7b6d6d0c Edit LevelLoader
+c92cd4a6 Fix SceneLoader
+519bdd5b Added LevelLoader
+de1dcc26 Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+b6903078 Added SceneLoader

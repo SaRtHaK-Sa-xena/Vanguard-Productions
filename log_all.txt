@@ -1,0 +1,1681 @@
+commit 84134c2f09b3ee6c76a556546ff02515d0d41c0a
+Merge: 1fa84a4a ad0cb3f4
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Tue Sep 22 12:15:17 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit 1fa84a4a3c0b4f342b093e68a8956d52bc686abe
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Tue Sep 22 12:15:04 2020 +1000
+
+    Player Bug Fix
+    
+    Added new fixed model to player.
+    Reassigned everything to new model.
+
+commit ad0cb3f4da428f405aa47c11e5454bf1f8419247
+Author: Mackenzie Hart <s191231@students.aie.edu.au>
+Date:   Tue Sep 22 12:10:11 2020 +1000
+
+    Updated Lyra's SK_mesh
+    
+    I've finally fixed it's skinning on the new mesh.
+
+commit def70d9bd167d66fe89d5ea87b676a9666991cb2
+Merge: 3f908fe3 df1a10d3
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Mon Sep 21 22:10:07 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit 3f908fe34829cc61e439f098d5e82cc98167db97
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Mon Sep 21 22:09:22 2020 +1000
+
+    Final Alpha Changes
+    
+    Added Controller input for light, and ranged attacks.
+    Added enemy death.
+
+commit df1a10d37db2cae7ef3370fe1b8c8098b69a82d3
+Author: BrokenPIG <david.eammano@yahoo.com.au>
+Date:   Mon Sep 21 21:58:14 2020 +1000
+
+    Level Design Scene
+    
+    Added Ruster Material to all Mid Level Platforms
+    Edited PBR Materials within project - Increased Tiling
+
+commit 9ac6034dd00c6357ee14587f9220cad727cb4e79
+Merge: c9b94068 c68f16a3
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Sep 21 16:56:54 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit c9b940687ffbd6ceabdbd45403ff2e7d9855d4d2
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Sep 21 16:56:50 2020 +1000
+
+    Level Design Scene
+    
+    Blocked out bottom level environment
+
+commit c68f16a3534a077aaedf73137a8e1bce6eac1ca1
+Merge: 1eb111c3 9bf33f8a
+Author: MWighton <tillypop11@gmail.com>
+Date:   Mon Sep 21 16:35:51 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit 1eb111c36f29d886e56a272f70c118bafba67e8f
+Author: MWighton <tillypop11@gmail.com>
+Date:   Mon Sep 21 16:35:42 2020 +1000
+
+    Updated master material
+    
+    Roughness, metaillic and Occlusion maps are now condensed into the one map. _S textures will go into the Splat option
+
+commit 9bf33f8afadefd4a396abe0dfe9bc9925ba5bc6c
+Merge: 4794a89a 257944cd
+Author: Mackenzie <mackenzie.hart77@gmail.com>
+Date:   Mon Sep 21 16:24:24 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit 4794a89a78762ebf395d81db14be3c6217ec97f8
+Author: Mackenzie <mackenzie.hart77@gmail.com>
+Date:   Mon Sep 21 16:24:20 2020 +1000
+
+    added new warden animation
+    
+    Added the idle animation for the warden
+
+commit 257944cdc6eba02357f3ec3a4fa3348533c12ed8
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Sep 21 15:12:36 2020 +1000
+
+    Edit cam again
+
+commit f575ac99b18b2fac4b68199146817774e87765b1
+Merge: 9e3fe4ab a72a50a8
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Sep 21 15:09:40 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit 9e3fe4ab3ea1ca673f3bb4269a8231ea0fcef8e8
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Sep 21 15:09:27 2020 +1000
+
+    Edit Cam
+
+commit a72a50a83a6ad0363195f8be1bebf7803c5c1469
+Merge: 835892b9 6c811aa3
+Author: Mackenzie <mackenzie.hart77@gmail.com>
+Date:   Mon Sep 21 14:53:36 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit 835892b90c698f7509a64393b17c48720f329aef
+Author: Mackenzie <mackenzie.hart77@gmail.com>
+Date:   Mon Sep 21 14:53:32 2020 +1000
+
+    updated the warden's attack
+
+commit 6c811aa3c4464b467a51981ee25f81dd741991d0
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Sep 21 14:36:54 2020 +1000
+
+    Fixed cam triggers
+
+commit 11bc2c08823bd77dcaf107e5fc238204cd54c0b3
+Merge: c85a866d e2e917d2
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Sep 21 14:35:17 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit c85a866d6ce58613b08222c6a1bdc698b1ea23de
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Sep 21 14:35:13 2020 +1000
+
+    Added cams to Level Design
+
+commit e2e917d2aaa3a811ce856a6494807605840f60d3
+Merge: f869a141 b050df9e
+Author: Mackenzie <mackenzie.hart77@gmail.com>
+Date:   Mon Sep 21 12:05:14 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit f869a141ef8aa2e1cf4a2114247af393b5a31281
+Author: Mackenzie <mackenzie.hart77@gmail.com>
+Date:   Mon Sep 21 12:05:09 2020 +1000
+
+    updated all animations to use the new sk_mesh
+    
+    skinning is a bit screwed atm I'll go back and redo it in beta.
+
+commit b050df9e874a4d789bbc3809074c7048cffdaa25
+Merge: daff7575 880f9f1d
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Sep 21 10:48:40 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit daff7575657160989b38eb3a2cc290c558df79e8
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Sep 21 10:46:59 2020 +1000
+
+    Added sand level
+
+commit 880f9f1deb94cd062c1c5072172e99455b4194a5
+Merge: edb6372f 81fc73cc
+Author: Mackenzie <mackenzie.hart77@gmail.com>
+Date:   Mon Sep 21 10:06:38 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit edb6372f4e64b5d9ebce5dd60c650e67164e1178
+Author: Mackenzie <mackenzie.hart77@gmail.com>
+Date:   Mon Sep 21 10:05:37 2020 +1000
+
+    updated the Lyra sk model
+
+commit 81fc73ccd9449fdaf4abae63917d53f71c9a42b9
+Merge: 9d2bc3f8 29424eeb
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Mon Sep 21 09:35:06 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit 9d2bc3f812506b1295f8761af035f189f7f3bc80
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Mon Sep 21 09:34:46 2020 +1000
+
+    Port to Controller.
+    
+    Ported to controller, for movement.
+
+commit e6d47fa1c05ec057cad954a04e6f24e439cb57c2
+Merge: ebd5df62 29424eeb
+Author: Mackenzie <mackenzie.hart77@gmail.com>
+Date:   Mon Sep 21 09:22:10 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit ebd5df6219b054963b22d4f6303d23b4f68cdcce
+Author: Mackenzie <mackenzie.hart77@gmail.com>
+Date:   Mon Sep 21 09:21:49 2020 +1000
+
+    Pushing the warden and an attack anim for it
+
+commit 29424eeb0f521ccbd551b98b20b194cbb919976d
+Merge: 05894538 2bae3136
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Wed Sep 16 16:12:28 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit 05894538c58c34d517af70d5be1da6b00a27beb7
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Wed Sep 16 15:57:57 2020 +1000
+
+    Finished Level Design
+
+commit 2bae3136028dc82f6660eff4d9d76d2d9dcc25c1
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Wed Sep 16 10:32:57 2020 +1000
+
+    Backup Save
+
+commit a08b5f0b261a136d509db78330ec0b9a82b29608
+Author: Tanongsak Eammano <s191274@students.aie.edu.au>
+Date:   Tue Sep 15 16:38:18 2020 +1000
+
+    Top Level almost finished
+
+commit 980141bb4d58d377de3bfcf0af9e6015ffa9947b
+Merge: 0b6e40bc adbb829c
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Tue Sep 15 15:12:52 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit adbb829c41aa74ddc4aa23b6160388cdc4bfb901
+Author: Tanongsak Eammano <s191274@students.aie.edu.au>
+Date:   Tue Sep 15 15:14:22 2020 +1000
+
+    Further level designing
+
+commit 0b6e40bce1619ba3cd1c9452119722f2f65ca4a2
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Tue Sep 15 15:12:38 2020 +1000
+
+    Player Bug Fixed
+    
+    Player Getting Stuck to walls.
+    Added Slippery Physics Material to player collider.
+
+commit 21a2ed08be7c76317e6ff5f2df2ea811ddf5a42d
+Author: Tanongsak Eammano <s191274@students.aie.edu.au>
+Date:   Tue Sep 15 11:52:36 2020 +1000
+
+    Edit Grapple Speed
+
+commit b4d478091465cf90cbbccfd9cd32ea1d31f40f53
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Sep 14 16:44:53 2020 +1000
+
+    Added New Level Block Out
+
+commit c7f1e43fe0d56ae2314b85f65ad70eacd244c369
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Sep 14 14:25:08 2020 +1000
+
+    Added Fonts into project and updated dialogue box
+
+commit 6ad7e8bf4cdffd1f5b879c4890c9025da99811f2
+Author: BrokenPIG <david.eammano@yahoo.com.au>
+Date:   Tue Sep 8 20:04:42 2020 +1000
+
+    Updated Main Level Scene with assets and textures
+
+commit 31a554e4df4b9afa0db516f39837f3af63926a8c
+Author: BrokenPIG <david.eammano@yahoo.com.au>
+Date:   Tue Sep 8 19:42:34 2020 +1000
+
+    Updated PauseMenu
+
+commit 992f7aa4f6f7bb70dd6f7cc010357fc7cec82e61
+Author: BrokenPIG <david.eammano@yahoo.com.au>
+Date:   Tue Sep 8 19:38:11 2020 +1000
+
+    Added PauseMenu
+
+commit c818008ebcb1b9ed369ef0a1f8fe703abdca87a8
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Sep 8 15:49:51 2020 +1000
+
+    Change LoadLevel Script - Added Quit Game Function
+
+commit 8207c90f0d0a50c5d434b37d03af3842dbf92546
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Sep 8 15:17:41 2020 +1000
+
+    Removed a script
+
+commit 7b6d6d0c7bd4d178cde3683320eb10030c90efb2
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Sep 8 15:13:13 2020 +1000
+
+    Edit LevelLoader
+
+commit c92cd4a6f772b1f995eee520a2b10082dbb8c299
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Sep 8 15:01:52 2020 +1000
+
+    Fix SceneLoader
+
+commit 519bdd5bb060e89bf36ac5b5acab3c34200dd757
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Sep 8 14:54:21 2020 +1000
+
+    Added LevelLoader
+
+commit de1dcc26c0a5f24146e2df229f3a3f8fddbc8e1c
+Merge: b6903078 0c9cdf0c
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Sep 8 14:40:05 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit b6903078e772ebc214664ff75bacd607b02aa87a
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Sep 8 14:39:59 2020 +1000
+
+    Added SceneLoader
+
+commit 0c9cdf0c911fc0cd12c58456d9bef2b34b62c248
+Merge: 47b939af 13ea3765
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Tue Sep 8 14:36:06 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit 47b939af4f573f1eafb365f253bdc16975568f2d
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Tue Sep 8 14:35:53 2020 +1000
+
+    Look Up + Camera Setting Scripts
+    
+    Added Second Camera for level above base level.
+    Added scripts which handle the cameras priorities and editted Look up script.
+
+commit 13ea376583837f451fbcc78fb5f559722a7992cc
+Author: MWighton <tillypop11@gmail.com>
+Date:   Tue Sep 8 13:51:11 2020 +1000
+
+    Added new materials
+    
+    -Material for boat wall
+    -Decal shader
+    -Updated rusty metal material
+
+commit e298194215d26a0dad89b24f688c73f43b51e717
+Merge: 0404f70e e1c25142
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Mon Sep 7 22:26:23 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit 0404f70e368b5cf3510f66f734ba398f25357419
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Mon Sep 7 22:25:29 2020 +1000
+
+    Look Up Function
+    
+    Fixed to look up when pressed 'w'.
+    Now only changes priority to low and high.
+
+commit e1c25142350ea1ec8efa3af39ab2bd6097733522
+Merge: 0cd5aa4c 2fefdf50
+Author: Mackenzie Hart <s191231@students.aie.edu.au>
+Date:   Mon Sep 7 16:40:47 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit 0cd5aa4cca4d37fc3e36ac98d35005d3e416cda0
+Author: Mackenzie Hart <s191231@students.aie.edu.au>
+Date:   Mon Sep 7 16:40:38 2020 +1000
+
+    added a new alpha for a possible blade beam particle
+
+commit 2fefdf50f5c1835f223dbf932daf8b61cfa57501
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Sep 7 16:37:00 2020 +1000
+
+    Added Materials onto Object
+
+commit 34089d3b08048406aff4cd573ce650becae6375f
+Merge: 44405e5d 03b80448
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Sep 7 14:45:06 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit 44405e5da8d992e68aebaa90f3c6a0deb6509d9e
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Sep 7 14:44:45 2020 +1000
+
+    Adding assets into scene
+
+commit 03b80448f8665863f6e9ca9569b9ddc086c41dce
+Author: MWighton <tillypop11@gmail.com>
+Date:   Mon Sep 7 14:33:48 2020 +1000
+
+    Master Material
+    
+    Created a material to be instanced from to be used in engine.
+
+commit b0535b3ec50c7fd9d35658347ff2f5747a3a8af9
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Sep 7 13:55:31 2020 +1000
+
+    New Unwrapped Level
+
+commit f7f2ebd658271f953c4bda929f396a2f68b7a0af
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Sep 7 11:30:40 2020 +1000
+
+    Fixed camera
+
+commit 929862e359ec24a186152550bf567f15f1ecf1f9
+Merge: 92347a26 0115b4a3
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Mon Sep 7 11:20:45 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit 92347a26bd1e6d293e995806c2be2e16efbd1f4e
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Mon Sep 7 11:20:25 2020 +1000
+
+    Look Up Function
+    
+    [Work in Progress]
+    Tweaking Distance, and camera.
+
+commit 0115b4a3e0e925bd419bc9ecb379a49b88eae89e
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Sep 7 11:11:32 2020 +1000
+
+    Exported level as FBX
+
+commit d54eaa7ce8b789eab7cdb74776d068c551c0fc20
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Wed Sep 2 16:41:03 2020 +1000
+
+    level designe scene
+
+commit 087f85998aaec2d10b518499a59005aa3b49cacf
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Wed Sep 2 16:12:50 2020 +1000
+
+    Changed character movement
+
+commit d2f4d8eb8c5158b6842c5325e43f6c154deeb791
+Merge: 209e8563 65ecb65b
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Wed Sep 2 16:04:25 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit 209e8563a7d10f7a7abb87c6b397cb2e0a4c106d
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Wed Sep 2 16:04:12 2020 +1000
+
+    Added environment assets
+
+commit 65ecb65b525d26ea08913ca638b156991a72350e
+Merge: 65f4c41e 655342a4
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Wed Sep 2 15:59:52 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit 65f4c41ee65b8f5e3ffb520d9a868da0752041d7
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Wed Sep 2 15:59:16 2020 +1000
+
+    Script Look UP
+
+commit 655342a41f332056aaafe3e0d87b8f604b197a0d
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Wed Sep 2 15:37:43 2020 +1000
+
+    Dialogue in Level Design
+
+commit f1d4fd3687171081723ae0c289a02921628ce8e3
+Merge: 3a6006c7 f482eec4
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Wed Sep 2 15:26:58 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit 3a6006c7c7c167153e51dbf6a7edfb3bb689bbc9
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Wed Sep 2 15:26:54 2020 +1000
+
+    Added dialogue into Level Design
+
+commit f482eec4828b495ca0d919101034f28cbfbfc65d
+Author: Mackenzie <mackenzie.hart77@gmail.com>
+Date:   Wed Sep 2 14:53:58 2020 +1000
+
+    added Lyra idle with head tilted up
+    
+    (mask it over the current idle Anim)
+
+commit 6185a00c957427902f42af2941dc6fb5f81d2ff8
+Merge: 5386e17c a8f04f5e
+Author: Mackenzie <mackenzie.hart77@gmail.com>
+Date:   Wed Sep 2 14:42:25 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit 5386e17c44092a4b98c0d9e4c181a4ed86877bef
+Author: Mackenzie <mackenzie.hart77@gmail.com>
+Date:   Wed Sep 2 14:42:21 2020 +1000
+
+    did a bit of clean up on the light attacks
+
+commit a8f04f5e11d60a9008d76f3f7e511104b64ea00f
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Wed Sep 2 14:15:50 2020 +1000
+
+    Updated main level scene
+
+commit a56307d109c1bb6285528536db4142876a8d156a
+Merge: f498145c 0d6f96b7
+Author: Mackenzie <mackenzie.hart77@gmail.com>
+Date:   Wed Sep 2 11:44:28 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit f498145c8a6b0d5cea89b4a1f3669e2404aeeed0
+Author: Mackenzie <mackenzie.hart77@gmail.com>
+Date:   Wed Sep 2 11:44:23 2020 +1000
+
+    Fixed and plugged in the new animations
+    
+    Plz don't break ;-;
+
+commit 0d6f96b72ccb02f7181f16aa662037796eca5f2c
+Author: BrokenPIG <david.eammano@yahoo.com.au>
+Date:   Wed Sep 2 09:20:45 2020 +1000
+
+    Level Design Changes
+
+commit 19b823327cc99c25a255a3c77f449bc86c3e552b
+Merge: 3f3bb950 ce6d27af
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Sep 1 16:58:39 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit 3f3bb95024802e9f9e5a67f1400dac7b3201b933
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Sep 1 16:58:36 2020 +1000
+
+    Grapple Hook In Level Design
+
+commit ce6d27afd09f3bf1f336906acb9c5b9614b3061c
+Merge: bdcca547 ef21c986
+Author: Mackenzie <mackenzie.hart77@gmail.com>
+Date:   Tue Sep 1 16:32:51 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit bdcca547a3252b5d187efb9a2c4eecf17bc534d0
+Author: Mackenzie <mackenzie.hart77@gmail.com>
+Date:   Tue Sep 1 16:32:47 2020 +1000
+
+    Added an aerial attack for Lyra
+    
+    Let's hope this doesn't break anything...
+
+commit ef21c9862ac1f2d330c43f5757a34bf49999af38
+Merge: e50738e8 63cf59a9
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Sep 1 16:04:54 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit e50738e8336d2582276bf69fd61e43710790eb45
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Sep 1 16:04:51 2020 +1000
+
+    Script changes
+
+commit 63cf59a9e3aeb20b72ef00d90613bf54ec8232b3
+Merge: 172e546d bed8aeae
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Tue Sep 1 15:47:26 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit 172e546d28bb90f8bb25b482430ac97ab6e7b45b
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Tue Sep 1 15:46:04 2020 +1000
+
+    Idle Fix
+    
+    Added old Idle as new Idle animation currently broken.
+
+commit bed8aeae1b2c377d09bad6aa15fadfb1ae6be964
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Sep 1 15:08:29 2020 +1000
+
+    Added jointUpdate() into ImprovedGrapple
+
+commit ab4f8018af9df5708af419bbac217f35b5a9afde
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Sep 1 15:06:38 2020 +1000
+
+    Grappling Hook in Level Design Scene
+
+commit a146c91b18a45a6089f7e9e91c3f4f31f48670c5
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Sep 1 14:36:01 2020 +1000
+
+    Added grappling hook
+
+commit 23b9fe269fec6660c520349738e1b1af03e904f7
+Merge: aace84c3 000557f8
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Tue Sep 1 14:20:41 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit aace84c3adac6b09be7f67515521a0420bb1106e
+Merge: 75094a3b c80169ed
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Tue Sep 1 14:20:17 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit 000557f8d2ab846b9e48a555c90401cfa4802704
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Sep 1 14:18:40 2020 +1000
+
+    Some meta changes
+
+commit c80169ed3be738c58d38e7be2ae3a46fb9463271
+Merge: cb4252e5 92d9f3a1
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Sep 1 14:17:47 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit cb4252e5a83c3ab64441bb2a12c224a22d89610c
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Sep 1 14:17:43 2020 +1000
+
+    Level Design
+
+commit 75094a3b567c3b71b0314ae2879261fc86e7492c
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Tue Sep 1 14:15:38 2020 +1000
+
+    Grapple Update
+    
+    Added Grappling area which lets player grapple in only specific places.
+
+commit 92d9f3a1539d06d47cdb014f66692e4f221d189c
+Merge: a73de44c ce5cb361
+Author: MWighton <tillypop11@gmail.com>
+Date:   Tue Sep 1 11:48:43 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit a73de44c4e3f5c03ce4e15b308234cab956ed07a
+Author: MWighton <tillypop11@gmail.com>
+Date:   Tue Sep 1 11:47:44 2020 +1000
+
+    Reimported prefabs
+
+commit ce5cb361bc7e1deffec9ee69bbe4af8e7e21d874
+Merge: b97a44d4 62ddd410
+Author: Mackenzie <mackenzie.hart77@gmail.com>
+Date:   Tue Sep 1 11:44:19 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit b97a44d45d32584fda0500dd5ff80547abf7bae1
+Author: Mackenzie <mackenzie.hart77@gmail.com>
+Date:   Tue Sep 1 11:44:12 2020 +1000
+
+    Second pass Idle and Run
+
+commit 62ddd410101a6b84879799571fa9c8ae353b5b71
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Sep 1 11:35:19 2020 +1000
+
+    Cleaned up Level Design Scene
+
+commit 4393f9ba1f16979aeb92a8c18f98978e6dbc4963
+Author: Hatokasai <66928981+Hatokasai@users.noreply.github.com>
+Date:   Tue Sep 1 11:27:34 2020 +1000
+
+    Made lighting scene
+
+commit 7bafec675ac1360463e396f17cca72a3b959ede5
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Sep 1 11:12:49 2020 +1000
+
+    Iterated Level Design
+
+commit 342e8391512a52dad7112bf32f94464928964f8a
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Aug 31 16:49:32 2020 +1000
+
+    Further camera development
+
+commit 660c73acc2903b05ef56ce3d66a6e898068e20a3
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Aug 31 15:27:52 2020 +1000
+
+    More Camera Testing + Lighting
+
+commit 575e1f83b123b4ed31a7b26b47a72671569deb04
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Aug 31 12:25:59 2020 +1000
+
+    Further Camera Testing
+
+commit ed31c0733053cd0f13ff7231967079e031fb9ec1
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Aug 31 09:11:49 2020 +1000
+
+    CAMERA WORK
+
+commit 56d48e9e58007000d2cfcf267cd3b45f6c2aa62e
+Author: BrokenPIG <david.eammano@yahoo.com.au>
+Date:   Wed Aug 26 03:24:16 2020 +1000
+
+    CINEMACHINE TESTING!!!!
+
+commit 975c9d6bdd5d2991781df59c2e3858aa4751bf11
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Aug 25 18:22:35 2020 +1000
+
+    Fixed Camera Issues
+
+commit a5afa7143e90b7d9cd58d345d8e999bb8891afea
+Merge: 42183caa 1ff06175
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Aug 25 17:31:05 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit 1ff061751160a5f65f48c4c93373ff673653ca0e
+Merge: 1333e734 df4bb76f
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Aug 25 16:55:52 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit 1333e73486432405d682e036129a67a3d9a8938e
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Aug 25 16:55:46 2020 +1000
+
+    Edited Grey Box
+
+commit df4bb76f66f79c06f777876c0759562c4b9002b7
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Tue Aug 25 15:01:06 2020 +1000
+
+    Update Player Controller
+    
+    Player now unable to play running animation when both 'A' and 'D' held.
+
+commit 338914d160abb93fa20183adc0d510459c2e665e
+Merge: 20b4ba78 cc9077c2
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Tue Aug 25 14:51:29 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit cc9077c267ae5d608d883b1f9b5c56a386b1c9ab
+Merge: 4756c9ac e65ce97a
+Author: Mackenzie <mackenzie.hart77@gmail.com>
+Date:   Tue Aug 25 14:52:41 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit 4756c9accb80005fa684984a12edc8eaa13773c8
+Author: Mackenzie <mackenzie.hart77@gmail.com>
+Date:   Tue Aug 25 14:52:27 2020 +1000
+
+    Added range stun attack swing
+
+commit 20b4ba78f17000f0bb15bf12cddfe51ff099714c
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Tue Aug 25 14:51:20 2020 +1000
+
+    Update Scene
+    
+    Attempting Correct push.
+
+commit e65ce97a2bdc1b68e53ce0536608dcbebdfcd3f1
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Aug 25 14:42:52 2020 +1000
+
+    Deleted Snaps Package
+
+commit c31b5ea989ee44e61385fda202f8f4db9575bfcb
+Merge: 0e4c065d 65fb1a0c
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Aug 25 14:07:52 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit 0e4c065dfbdc32aef8a75e0a93979554cc0f22ea
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Aug 25 14:07:45 2020 +1000
+
+    CINEMACHINE
+
+commit 65fb1a0ce1bf0ba4ed4a7083a5e3cb2fd0fd0029
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Tue Aug 25 13:58:45 2020 +1000
+
+    Resolving Conflicts.
+
+commit 65a48775e7ab7cb8a916a1caddaf251d0a7b9124
+Merge: aedc7026 0321aab0
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Tue Aug 25 13:58:31 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit aedc7026c4486ed5dcc6e23d8ebbd24a220d5391
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Tue Aug 25 13:55:45 2020 +1000
+
+    Update Lyra Animations
+    
+    Added all animations to Lyra.
+    Added all relevant scripts to Lyra Model.
+
+commit 0321aab0aaa51c5278b1059d6af4a53f1fe1b41a
+Author: Mackenzie <mackenzie.hart77@gmail.com>
+Date:   Tue Aug 25 10:07:23 2020 +1000
+
+    checked on loop time for idle anims
+
+commit 6c63613aee3b26359b53da60476d40d3e400d976
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Tue Aug 25 09:07:50 2020 +1000
+
+    Working On Main Scene
+    
+    Trying to animate the new model with new animations.
+    Updating Player Prefab.
+
+commit 6329ddbed3a2583661764aedc20764e4155a341d
+Merge: 63b33192 26ce29bf
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Aug 24 16:43:21 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit 63b33192aa9c4f713f26b82e317781bdeba31807
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Aug 24 16:43:17 2020 +1000
+
+    First Grey Box finished
+
+commit 26ce29bf031cf2cff1f54997307dcf1212c049fd
+Merge: 727c349e a25344f8
+Author: Mackenzie Hart <s191231@students.aie.edu.au>
+Date:   Mon Aug 24 15:12:42 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit 727c349ee42dfeaf1f1607232c6c40e07f4e0b08
+Author: Mackenzie Hart <s191231@students.aie.edu.au>
+Date:   Mon Aug 24 15:12:34 2020 +1000
+
+    Added in grapple fire and idle anims and sk mesh for the grapple hook
+    
+    Animations may need a bit of work but it's a start.
+
+commit a25344f8da68e63deb297c707a4776e67c3ce2b3
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Aug 24 14:20:24 2020 +1000
+
+    Grayboxing further
+
+commit a5c2f7a849d11eaddf83ed1057688e4a23966bba
+Merge: 69d32556 aa83e39c
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Aug 24 10:00:39 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit 69d32556652d0e942cfdfe04155a88d015cd2aa0
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Aug 24 10:00:19 2020 +1000
+
+    Added Lyra into Level Design Scene and attached all scripts
+
+commit aa83e39c0006fdffaffed3cc8c2b192a9c3e105d
+Merge: 7bc81838 19e6e166
+Author: Mackenzie Hart <s191231@students.aie.edu.au>
+Date:   Mon Aug 24 09:58:48 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit 7bc81838fa7074a1ad1f50c181ba1d5fe94f697a
+Author: Mackenzie Hart <s191231@students.aie.edu.au>
+Date:   Mon Aug 24 09:58:32 2020 +1000
+
+    Renamed animation takes
+
+commit 19e6e1662d947798c09f0eb0bea647b971812dd6
+Merge: c02b6dfc af07881d
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Aug 24 09:52:49 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit c02b6dfc38ef299a192cb35100b68010441b6e91
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Aug 24 09:52:34 2020 +1000
+
+    Cool
+
+commit af07881d138711689bbceb6b5ba77963abec81b3
+Author: Mackenzie Hart <s191231@students.aie.edu.au>
+Date:   Mon Aug 24 09:51:41 2020 +1000
+
+    Imported animations for Lyra
+
+commit 96685bc2bcc70e98eea7e69b1c1237c51c9e3713
+Author: Mackenzie Hart <s191231@students.aie.edu.au>
+Date:   Mon Aug 24 09:45:31 2020 +1000
+
+    redo of that last one
+
+commit b1e9d87d2ab1027b5f191d4a556013847a9eed1f
+Merge: e81f2221 e1be8731
+Author: Mackenzie Hart <s191231@students.aie.edu.au>
+Date:   Mon Aug 24 09:45:05 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit e81f2221edd8074b5d2d97d8a854945d03a1c0bb
+Author: Mackenzie Hart <s191231@students.aie.edu.au>
+Date:   Mon Aug 24 09:44:45 2020 +1000
+
+    Imported Lyra SK meshes
+
+commit e1be87312d577bf5578a1cd8af6facf86af88ffb
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Aug 24 09:44:23 2020 +1000
+
+    More Grey Boxing
+
+commit 76fd2c5bab64bedb3c085b661c41ff63cf92b3d5
+Merge: b68faa63 51615eb6
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Sun Aug 23 20:17:53 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit b68faa63892184e27be2caee764155ca264301ed
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Sun Aug 23 20:17:42 2020 +1000
+
+    Working Update
+
+commit 51615eb69a76163a9ddee29d992f624d1906c46e
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Wed Aug 19 16:49:55 2020 +1000
+
+    GreyBoxxxxx
+
+commit c8bba9abcdfadf1e526a4f198d4cceb8a5adaf16
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Aug 18 16:47:31 2020 +1000
+
+    More greyboxing
+
+commit da9c0ece11f00dd9634d61daceddca332446fb6a
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Aug 18 16:37:42 2020 +1000
+
+    A LOT OF GREYBOXING IN LEVELDESIGN SIGN
+
+commit 7524c33cdf253dc1d63b74ba11a987fb5c14a8f7
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Mon Aug 17 16:58:22 2020 +1000
+
+    Update Checkpoint
+    
+    Checkpoint functions works as a first pass.
+
+commit fbb50814b578bbe94b45edc6eca6f83570129b54
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Aug 17 15:53:27 2020 +1000
+
+    Added a folder for Lyra animations
+
+commit e46876f42217edac1710ffb95cb8975240a46449
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Aug 17 15:51:26 2020 +1000
+
+    More Folder Clean Up
+    
+    All good now
+
+commit ad517e7109d769bfbe32ffec584a64a9dc3a13d5
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Aug 17 15:50:31 2020 +1000
+
+    Cleaned up folders in project
+
+commit 7fa69a6a5efb9138fae1304608be7fa2c6241aa7
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Mon Aug 17 15:32:46 2020 +1000
+
+    Update Checkpoint
+    
+    Saving checkpoint script status and project status.
+
+commit 45eff4c39883b4cc69f189582c0dacd333263c1e
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Mon Aug 17 14:01:08 2020 +1000
+
+    Grappling Hook Update
+    
+    Fixed Grappling Hook, added better functionality.
+
+commit bbc8e30f59f6693fc0804bb0d6064e8c4544bae5
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Mon Aug 17 10:25:40 2020 +1000
+
+    Update FPS Counter
+    
+    Added FPS Script that allows the fps to be tracked.
+    Attach to text and will display frames.
+
+commit 615cb6d7888c878868c39def9636663dc6f5a818
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Aug 11 16:51:42 2020 +1000
+
+    Made placeholder prefabs for level editor
+
+commit 2de24b9e286a17cc0011546d3c3c52c774d6daf0
+Author: Mackenzie <mackenzie.hart77@gmail.com>
+Date:   Tue Aug 11 16:03:55 2020 +1000
+
+    Addednewscene
+    
+    Just adding my own level for animation testing
+
+commit 1e39c4ace881b854fc24c93dd8fa6149d634a12f
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Aug 11 16:01:51 2020 +1000
+
+    Changed level editor onto the Z axis
+
+commit fc66df958870f2c3006324b8c64883c7c5646840
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Aug 11 15:42:16 2020 +1000
+
+    Added Level Design Script, Rotated the level onto the X axis
+
+commit de120c3e17710f5bf3843ee5f7ed771cce16fe57
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Aug 11 14:53:12 2020 +1000
+
+    Added Cinemachine
+
+commit 2b8c3143170b6dff4ff21113bf2be239fc49fe26
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Aug 11 13:21:47 2020 +1000
+
+    Further Blocking out done
+
+commit af561870f619e0472837ddf49ae7554021026b26
+Merge: 13063b88 889b6095
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Aug 11 11:30:20 2020 +1000
+
+    Merge branch 'Alpha' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions into Alpha
+
+commit 13063b88d62322dfe752c4868a759223feae9927
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Aug 11 11:30:02 2020 +1000
+
+    Designing Blocklevel in LevelDesign
+
+commit 889b6095d5f71b0095d7ca3b37f5c53b95e2b8de
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Tue Aug 11 11:26:42 2020 +1000
+
+    Update Jump Test
+    
+    Added Depth to jump script.
+    Held Spacebar will jump higher.
+    Character will fall faster.
+
+commit cadff8d644ed35126556966eedee6feedb10092c
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Tue Aug 11 09:52:35 2020 +1000
+
+    Update Ranged Stun Attack, Animation
+    
+    Added stunned animation.
+    Attack now stuns enemy with animation.
+
+commit 036b5cd95336487337006dd9ede35a33ebbd01fe
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Mon Aug 10 11:26:58 2020 +1000
+
+    Update Stun Animation
+    
+    Added Working Stun Animation.
+
+commit 553294fa313fa93a1b78a4456cd534789b215775
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Mon Aug 10 10:54:35 2020 +1000
+
+    Update Scenes, Ranged Stun Attack, Animation
+    
+    Duplicated Level Design Scene and named it Main Level Scene. Removed Main Level Scene 1.
+    Added Function to detect collision with Particles.
+    Added Stun Effect Animation into Project.
+
+commit 77ebe6554d4229ed9e542b3b33b83f9265c45fde
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Sun Aug 9 00:13:26 2020 +1000
+
+    Dialogue UI Update
+    
+    Fixed Dialogue UI in Game.
+
+commit f0a503d20f00f10a4cc61bed0e7f035aa0f48819
+Merge: 73adda3e e73a15fe
+Author: BrokenPIG <david.eammano@yahoo.com.au>
+Date:   Sat Aug 8 23:16:41 2020 +1000
+
+    Merge branch 'master' into Alpha
+
+commit 42183caa179bed05f287ea2a5d2b326fd6761346
+Merge: 73adda3e e73a15fe
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Fri Aug 7 08:15:41 2020 +1000
+
+    Merge branch 'master' into Alpha
+
+commit e73a15fed7b2040e8ed4904c30f1798f0db09962
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Fri Aug 7 08:15:07 2020 +1000
+
+    Added Lyra prefab into player folder
+
+commit 1a61acafe636c8b2b74dcc9a3b829f249f7e1bdd
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Wed Aug 5 16:29:36 2020 +1000
+
+    Release Notes
+    
+    release Notes added in release folder.
+
+commit 2d970b161bda86f4abc1e9e6eae185db79ebfc07
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Wed Aug 5 16:18:07 2020 +1000
+
+    Release Build
+
+commit 420d9a163264f82c2dcb020d0f3e30f022695223
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Wed Aug 5 15:50:54 2020 +1000
+
+    Update Dialogue
+    
+    Added Animation to Dialogue Box in Level Design Scene.
+    
+    Added fully functioning dialogue system.
+
+commit fbc5458e251687f42b92f94cb914ead5738bd877
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Wed Aug 5 15:00:22 2020 +1000
+
+    Added A temporary fix for scene
+    
+    Added prefab which includes everything.
+    Prefabs->Everything->
+
+commit ba2023d0e4a5523e31f2c1babd75788702646a4c
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Wed Aug 5 13:51:52 2020 +1000
+
+    Update Dialogue, TextMeshPro, UI
+    
+    Added script Dialogue helper which correctly removes the right dialogue.
+    Added Text mesh pro to project.
+    Added UI that displays dialogue.
+
+commit 0ba66720c89b3b19e482c7a558ce7ff956b2dad4
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Wed Aug 5 12:22:05 2020 +1000
+
+    Update Dialogue, Camera
+    
+    Added Dialogue, Working on creating a better dialogue system manageable by everyone in team.
+    Added vertical camera follow to player in Scene.
+
+commit 76a801b7a8a7bfe5c136f78b43b509819a976eb3
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Tue Aug 4 15:58:12 2020 +1000
+
+    Update
+    
+    Added Camera Shake
+
+commit d5d3c756812dc35dbda0f655c3143f7b20c85177
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Tue Aug 4 09:45:53 2020 +1000
+
+    Added to MainLevelScene
+
+commit 73adda3e1390aa6c02ec1acedc308f4313087d75
+Author: BrokenPIG <david.eammano@yahoo.com.au>
+Date:   Mon Aug 3 21:28:25 2020 +1000
+
+    Revert "Revert "Test""
+    
+    This reverts commit a5882a47ff091fb1f246e1cc2bcd2c1a8f31783a.
+
+commit a5882a47ff091fb1f246e1cc2bcd2c1a8f31783a
+Author: BrokenPIG <david.eammano@yahoo.com.au>
+Date:   Mon Aug 3 21:28:22 2020 +1000
+
+    Revert "Test"
+    
+    This reverts commit 26fe7a29a5de2196567aeb5a05e7c8e0730048b0.
+
+commit 26fe7a29a5de2196567aeb5a05e7c8e0730048b0
+Author: BrokenPIG <david.eammano@yahoo.com.au>
+Date:   Mon Aug 3 21:28:14 2020 +1000
+
+    Test
+
+commit a01d0fea5ba725d69b204c10458ba23becfe0e87
+Author: BrokenPIG <david.eammano@yahoo.com.au>
+Date:   Mon Aug 3 21:27:10 2020 +1000
+
+    Test
+
+commit 0e56d23642a87ef20d0b6429d9965dcdc8fe9d7e
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Aug 3 17:02:02 2020 +1000
+
+    lighting and camera
+
+commit c82e49cfa96e7ec63b8aa3f558c030e7a774fed7
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Aug 3 15:44:43 2020 +1000
+
+    Lighting Changes
+
+commit e41663b0bfc4c91d0d2f4168fcc36054025c5f90
+Merge: 64d1eb9d 12f1fa97
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Aug 3 14:09:54 2020 +1000
+
+    Merge branch 'master' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions
+
+commit 64d1eb9dc405524839cbd5303f79dbf7ec6f3a0d
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Aug 3 14:09:25 2020 +1000
+
+    Lighting
+
+commit 12f1fa97768790d79681d639a667cf8229f69110
+Merge: 6fddb92f a1fde8f0
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Mon Aug 3 14:08:14 2020 +1000
+
+    Merge branch 'master' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions
+
+commit 6fddb92f633a7978ed19e15625624117cc0dd0de
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Mon Aug 3 14:08:09 2020 +1000
+
+    Created Particle
+    
+    Testing Fog.
+
+commit a1fde8f0c6fa2676d714ced0b06b4fbc9a3ee154
+Merge: 04962f83 637c10ba
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Aug 3 12:49:26 2020 +1000
+
+    Merge branch 'master' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions
+
+commit 04962f836030d1231c22e37f73a266d7180eef3a
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Aug 3 12:49:21 2020 +1000
+
+    Lighting to Level Design Scene
+
+commit 637c10bac51165f114c83eb5543002c13b7bcb49
+Merge: c3f21aff b1c507cd
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Mon Aug 3 12:22:13 2020 +1000
+
+    Merge branch 'master' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions
+
+commit c3f21aff523a14fa2e55fd03ff68d7bcd6decb90
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Mon Aug 3 12:21:55 2020 +1000
+
+    Updateing Prefab
+    
+    Working on Particle Prefab.
+
+commit b1c507cd5471ebcac08af3a115491064b38fbad8
+Merge: 476459d3 a92cc784
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Aug 3 12:07:00 2020 +1000
+
+    Merge branch 'master' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions
+
+commit 476459d355eeaa7ccf356e40765b0cc72f765bd2
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Aug 3 12:06:46 2020 +1000
+
+    Changes to Main Scene
+
+commit a92cc784356b4d23cfe502f46aad92b446982a5b
+Merge: e4ecdf9d 3ecb14e8
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Mon Aug 3 11:59:06 2020 +1000
+
+    Merge branch 'master' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions
+
+commit e4ecdf9d58021ad19788e4f919104eaf99eab9d1
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Mon Aug 3 11:58:52 2020 +1000
+
+    Saving Changes
+    
+    Script editing
+
+commit 3ecb14e80151b1aa23da7caa4132807c4d73b586
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Aug 3 11:56:03 2020 +1000
+
+    Changes to Scene
+
+commit b70900dc595838657d1c1ddd8dbf91ecfa24f258
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Aug 3 11:32:54 2020 +1000
+
+    test
+
+commit 6f6608f231dc430fb116373d952b1335d1520a98
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Mon Aug 3 11:29:32 2020 +1000
+
+    Testing Scene
+
+commit 6475a03299f427b89c94a0af7e143a75feff2be1
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Mon Aug 3 11:28:01 2020 +1000
+
+    Testing Commit
+    
+    Testing Scene issue.
+
+commit 167e35795cc9a028a82af840add40f108047787a
+Author: David Eammano <david.eammano@yahoo.com.au>
+Date:   Mon Aug 3 11:19:46 2020 +1000
+
+    Renamed and added new scene
+
+commit 64f38ff8a28e794b558093a26be0cfbd495cb871
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Sun Aug 2 22:39:52 2020 +1000
+
+    Saving Changes
+
+commit a796d472f2639c084d3e6c0f53701ba7f1fb8220
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Fri Jul 31 00:39:02 2020 +1000
+
+    Update Animations, RigidBody, Falling, Jump Attack
+    
+    Added RigidBody to model, with frozen x,y,z positons.
+    Added Root motion to animator.
+    Added Falling, Jump Attack Animations In Game.
+    
+    Implemented Jump Attack with success.
+    Implemented Falling animation, need to rework jump to make it look good.
+
+commit cefe3d080754dcd8fa442b1a405c0e3ef1e3e38a
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Tue Jul 28 20:26:00 2020 +1000
+
+    Testing Unity
+    
+    Testing to see if Unity breaks.
+
+commit e2fd03b725dc927eddbdf79096bf1cd7a6dfb090
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Tue Jul 28 15:57:14 2020 +1000
+
+    Update
+    
+    Saving Changes.
+
+commit 6031546c50be0a9bce6eb83ad08ea115a673098d
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Mon Jul 27 23:14:29 2020 +1000
+
+    Saving Changes
+    
+    Updated Character Animation Delegate and Attack Universal Script.
+
+commit 584f5196f4b8731adc29505dd4065af339f4d3f2
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Mon Jul 27 16:31:09 2020 +1000
+
+    Saving Changes
+    
+    Saving Changes.
+
+commit bbf4fca114e64e54d65c33e746b694d208f14be1
+Author: gtmuc <spencerdalton250@gmail.com>
+Date:   Mon Jul 27 14:02:25 2020 +1000
+
+    robothead, powerpole and lamp
+
+commit e1663e30160bbdaf59d725b00f1a280328e3a8d8
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Mon Jul 27 13:59:42 2020 +1000
+
+    Update
+    
+    Saving Progress.
+    Created Build.
+
+commit 59a0d7fbee52ec51d2f91efc2a65c5e815d7d528
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Mon Jul 27 13:31:39 2020 +1000
+
+    Update Enemy
+    
+    Enemy Follows Player and attacks Player.
+
+commit 3e9f98f67da9bdb6b700f8a0b374a502ca74c029
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Mon Jul 27 12:15:09 2020 +1000
+
+    Update
+    
+    Saving Changes.
+    Added Enemy Movement Script.
+
+commit 29639f2ae507aca7dc4d9f630f548a40666f7941
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Sun Jul 26 23:02:56 2020 +1000
+
+    Update Animations
+    
+    Added Enemy Animations.
+    Sofisticated animations folders.
+
+commit fc6861e6dbc49a38388a1da529b89b83f740ab94
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Sat Jul 25 00:15:23 2020 +1000
+
+    Update Animations
+    
+    Updated Sword Slash (light Attack) speed.
+    Changed to 2.5 instead of 1.
+    
+    Added heavy attack layer with own avatar mask.
+
+commit b8c9112758e0dd14936fb3ddbcbf3f4286ab5b43
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Fri Jul 24 23:51:33 2020 +1000
+
+    Updated Animations + Animation Controller + Masks + Objects
+    
+    Added more animations for female w/ sword.
+    Added attacking layer.
+    Added avatar mask to attacking layer. (only moves the torso.
+
+commit ecdbb7d1dd85850acfd0e868e85c9435e34306a2
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Fri Jul 24 17:00:20 2020 +1000
+
+    Cleaning Animations Folder
+    
+    Deleted useless animations that were used to test character rotation.
+
+commit c0ba0833898961be507c165b57f123ecc9fa72af
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Fri Jul 24 16:42:26 2020 +1000
+
+    Model Addition
+    
+    Added Maria Model w/ Sword
+
+commit f5432c0133670206b9235c4d198a5257ec422269
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Fri Jul 24 16:10:25 2020 +1000
+
+    Animation Update
+    
+    Added Camera Script to move smoothly with player.
+    Added correct animations for player moving left and right.
+    
+    Edit: Need to work on cleaner code for animations, and better animations for jump and fall.
+
+commit b60eca1cbaaaa5a863ee33f7a3bf084eceb99590
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Wed Jul 22 18:57:10 2020 +1000
+
+    Update Prototype
+    
+    Added tough walk, idle animation.
+    Working on creating a script that rotates the character around.
+
+commit 1e81c5a2c78fe0fef3592243974c168b8598f2dc
+Author: Hatokasai <66928981+Hatokasai@users.noreply.github.com>
+Date:   Wed Jul 22 16:43:16 2020 +1000
+
+    Updated rendering pipeline and shader graph plugin
+
+commit aa99ab22d83d29640921db667feefb5da0db31ec
+Author: gtmuc <spencerdalton250@gmail.com>
+Date:   Wed Jul 22 15:29:49 2020 +1000
+
+    Added GrayBox
+    
+    Added fbx model in prefab
+
+commit 67200cbc97d6bf32bbbb6629f94bf9255fd5add3
+Author: Hatokasai <66928981+Hatokasai@users.noreply.github.com>
+Date:   Wed Jul 22 15:22:48 2020 +1000
+
+    Added files for managing shaders and materials, modified test scene
+
+commit 3e4d0bc45874352d16575d3421c28b9628649ac4
+Author: Mackenzie <mackenzie.hart77@gmail.com>
+Date:   Wed Jul 22 14:09:48 2020 +1000
+
+    deleted garbage files
+
+commit 9260f0e9b2c23cf17b9bbd93f67bfbfce9301f99
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Wed Jul 22 13:46:49 2020 +1000
+
+    Project Update
+    
+    Updated Project Contains
+    -Shader Graph Package
+    -Animations for Player.
+
+commit 535bf961697ccb88bd3a713ed7e797c2b14e33df
+Merge: f32941a2 d326cc23
+Author: Hatokasai <66928981+Hatokasai@users.noreply.github.com>
+Date:   Wed Jul 22 13:39:41 2020 +1000
+
+    Merge branch 'master' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions
+
+commit f32941a2c47bd11d540b69f36847594bce73414b
+Author: Hatokasai <66928981+Hatokasai@users.noreply.github.com>
+Date:   Wed Jul 22 13:36:23 2020 +1000
+
+    Uploaded shader graph package
+    
+    yay
+
+commit d326cc23f8af278307b842f15ba8a6a7b199bfcf
+Author: Mackenzie <mackenzie.hart77@gmail.com>
+Date:   Wed Jul 22 13:34:41 2020 +1000
+
+    Test anims
+    
+    Added test animations
+
+commit 9c8386a473d2c982575fd1da759ca148b1cac897
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Wed Jul 22 13:18:52 2020 +1000
+
+    Saving Progress
+    
+    Saving Progress.
+
+commit 4d9c81b23137ce1d8cf5e759fa28096c8586c069
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Wed Jul 22 13:06:54 2020 +1000
+
+    Commit- Stage 1 Project
+    
+    This should be the first commit with the working project.
+
+commit 1126e4bf9e595544062a957453035585d0930e47
+Merge: 8d9cdf56 153da0fd
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Wed Jul 22 12:35:54 2020 +1000
+
+    Merge branch 'master' of https://github.com/SaRtHaK-Sa-xena/Vanguard-Productions
+
+commit 8d9cdf56d65c95e0cdee90136ec09dbb4eb9dde6
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Wed Jul 22 12:35:33 2020 +1000
+
+    Update
+    
+    Commit Unknown Changes.
+
+commit 153da0fd27e86445d10ddb9391e1f052d6edf65a
+Author: Mackenzie <mackenzie.hart77@gmail.com>
+Date:   Wed Jul 22 12:34:15 2020 +1000
+
+    Test Commit
+    
+    Deleted Folders. Pushing Commit.
+
+commit c5b6aae8019039dc0682521c22978b5dc402b62b
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Wed Jul 22 12:11:36 2020 +1000
+
+    Commit Update Project
+    
+    Added Previous Folder Package.
+
+commit f33fd6a0832ee0aeb275fc77031b0b7ee2dfccbf
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Wed Jul 22 10:22:02 2020 +1000
+
+    Update Github Folder
+    
+    Removed Incorrect Version Unity Project.
+    Added Correct Version Unity Project.
+
+commit d5bb7fbf65f940dedfa803b444f6ae9dea31500d
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Tue Jul 21 23:02:22 2020 +1000
+
+    TDD
+    
+    Uploading TDD skeleton.
+
+commit 6020c7b3602146e317bcb3cbc6689b593663b5d6
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Tue Jul 21 22:45:04 2020 +1000
+
+    First Commit
+    
+    Added Prototype Building.
+    -Added Model with forward, jump and back animation.
+    -Added Movement Controls for Side Scroller with adjustable speed.
+
+commit 1da6771dc3c1719a3b8b50a4983680a0817a125d
+Author: Sarthak Saxena <34013565+SaRtHaK-Sa-xena@users.noreply.github.com>
+Date:   Tue Jul 21 19:11:21 2020 +1000
+
+    Initial commit
