@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 7c2b5d221583f2e4681d98f02042c2eb
+guid: 8e76ce057730769499881eec213f7b88
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: ANI_Lyra_Turnaround
+    second: ANI_Lyra_Knockback
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: ANI_Lyra_Turnaround
+      name: ANI_Lyra_Knockback
       takeName: Take 001
       internalID: 0
       firstFrame: 0
-      lastFrame: 24
+      lastFrame: 26
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
