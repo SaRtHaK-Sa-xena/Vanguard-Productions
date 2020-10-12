@@ -52,7 +52,7 @@ public class PlayerControl : MonoBehaviour
         //controls.Gameplay.Movement.canceled += ctx => movement = Vector3.zero;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if(allowMovement)
         {
