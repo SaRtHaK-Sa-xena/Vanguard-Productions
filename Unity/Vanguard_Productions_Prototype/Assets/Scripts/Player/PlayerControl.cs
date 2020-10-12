@@ -66,6 +66,10 @@ public class PlayerControl : MonoBehaviour
 
             float zMov = controls.Gameplay.Movement.ReadValue<float>();
             zMov = Input.GetAxisRaw("Horizontal");
+            Vector3 movHorizontal = transform.forward * zMov;
+            Vector3 m_velocity = (movHorizontal).normalized * speed;
+            engine.Move(m_velocity);
+
             //float zMov = movement.z;
             //if(Input.GetKeyDown(KeyCode.A))
             //{
@@ -76,11 +80,7 @@ public class PlayerControl : MonoBehaviour
             //    zMov = Input.GetAxisRaw("Horizontal");
             //}
 
-            Vector3 movHorizontal = transform.forward * zMov;
 
-            Vector3 m_velocity = (movHorizontal).normalized * speed;
-            publicVelocity = m_velocity;
-            engine.Move(m_velocity);
             //Vector3 m_velocity = (move).normalized * speed;
             //engine.Move(m_velocity);
 
@@ -88,7 +88,7 @@ public class PlayerControl : MonoBehaviour
             // = transform.position;
             //Vector3 currentPosition  = (movementInput) * speed * Time.deltaTime;
             //engine.Move(currentPosition);
-        
+
             //======================== side scroller movement ========================
 
 

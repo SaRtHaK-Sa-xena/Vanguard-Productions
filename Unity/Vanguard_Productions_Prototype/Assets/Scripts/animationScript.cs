@@ -69,7 +69,7 @@ public class animationScript : MonoBehaviour
                     anim.SetTrigger("isJump");
                 }
 
-                if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
+                if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.RightArrow))
                 {
                     //InputZ = 0;
                     //InputX = 0;
@@ -93,14 +93,14 @@ public class animationScript : MonoBehaviour
                 // ====== Character Orientation =========
 
                 //update character orientation
-                if (Input.GetKey(KeyCode.A) || InputX < 0)
+                if (Input.GetKey(KeyCode.LeftArrow) || InputX < 0)
                 {
                     transform.eulerAngles = new Vector3(0, 180, 0);
                     FindObjectOfType<Ranged_Attack>().Effect.transform.GetChild(0).GetComponent<ParticleSystemRenderer>().flip = new Vector3(0, 0, 0);
                     FindObjectOfType<Ranged_Attack>().spawnPoint.transform.eulerAngles = new Vector3(0, 180, 0);
                     //characterOrientation.y += 0.1f;
                 }
-                else if (Input.GetKey(KeyCode.D) || InputX > 0)
+                else if (Input.GetKey(KeyCode.RightArrow) || InputX > 0)
                 {
                     transform.eulerAngles = new Vector3(0, 0, 0);
                     FindObjectOfType<Ranged_Attack>().Effect.transform.GetChild(0).GetComponent<ParticleSystemRenderer>().flip = new Vector3(1, 0, 0);
