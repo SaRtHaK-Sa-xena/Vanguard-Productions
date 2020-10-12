@@ -52,9 +52,12 @@ public class CollisionDetector : MonoBehaviour
 
                 if (MyNormal == MyRayHit.transform.up) {
                     hitDirection = HitDirection.Top;
+
+                    //player.GetComponent<PlayerControl>().allowMovement = true;
+
                     // or Left
                     // Put Force Left
-                    player.GetComponent<Rigidbody>().AddForce(Vector3.left * 20, ForceMode.Impulse);
+                    //player.GetComponent<Rigidbody>().AddForce(Vector3.left * 20, ForceMode.Impulse);
                 }
                 if (MyNormal == -MyRayHit.transform.up)
                 { 
@@ -70,10 +73,10 @@ public class CollisionDetector : MonoBehaviour
                     //engine.Move(a_Velocity);
 
                     //GetComponent<PlayerControl>().allowMovement = false;
-                    GetComponent<Rigidbody>().velocity = new Vector3(GetComponent<Rigidbody>().velocity.x, GetComponent<Rigidbody>().velocity.y, 0);
+                    //GetComponent<Rigidbody>().velocity = new Vector3(GetComponent<Rigidbody>().velocity.x, GetComponent<Rigidbody>().velocity.y, 0);
 
                     //player.GetComponent<PlayerControl>().allowMovement = false;
-                    player.GetComponent<Rigidbody>().AddForce(Vector3.forward * force, ForceMode.Impulse);
+                    //player.GetComponent<Rigidbody>().AddForce(Vector3.forward * force, ForceMode.Impulse);
                     
                     
 
@@ -82,7 +85,7 @@ public class CollisionDetector : MonoBehaviour
                 }
                 if (MyNormal == -MyRayHit.transform.forward)
                 {
-                    player.GetComponent<Rigidbody>().AddForce(Vector3.right * force * Time.deltaTime, ForceMode.Impulse);
+                    //player.GetComponent<Rigidbody>().AddForce(Vector3.right * force * Time.deltaTime, ForceMode.Impulse);
                     hitDirection = HitDirection.Back;
                 }
                 if (MyNormal == MyRayHit.transform.right)
