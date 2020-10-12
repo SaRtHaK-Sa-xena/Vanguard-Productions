@@ -30,6 +30,8 @@ public class PlayerControl : MonoBehaviour
 
     Vector3 movement;
 
+    public Vector3 publicVelocity;
+
     void Start()
     {
         engine = GetComponent<PlayerEngine>();
@@ -77,6 +79,7 @@ public class PlayerControl : MonoBehaviour
             Vector3 movHorizontal = transform.forward * zMov;
 
             Vector3 m_velocity = (movHorizontal).normalized * speed;
+            publicVelocity = m_velocity;
             engine.Move(m_velocity);
             //Vector3 m_velocity = (move).normalized * speed;
             //engine.Move(m_velocity);

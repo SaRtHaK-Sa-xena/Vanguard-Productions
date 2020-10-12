@@ -12,16 +12,24 @@ public class CollisionDetector : MonoBehaviour
 
     public float force;
 
+    private PlayerEngine engine;
+
+    public float speed;
+    public bool inCollision;
+    public Vector3 a_Velocity;
+
     private void Start()
     {
         // get box collider
         BC = GetComponent<BoxCollider>();
+
+        engine = GetComponent<PlayerEngine>();
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log(ReturnDirection(collision.gameObject, this.gameObject));
-        player.GetComponent<PlayerControl>().allowMovement = false;
+        //player.GetComponent<PlayerControl>().allowMovement = false;
     }
 
     private enum HitDirection { None, Top, Bottom, Forward, Back, Left, Right}
@@ -56,8 +64,19 @@ public class CollisionDetector : MonoBehaviour
                 {
                     hitDirection = HitDirection.Forward;
                     //Vector3 back = new Vector3(0, 0, player.transform.position.z - 0.01f);
+
+                    //a_Velocity = GetComponent<PlayerControl>().publicVelocity;
+
+                    //engine.Move(a_Velocity);
+
+                    //GetComponent<PlayerControl>().allowMovement = false;
+                    GetComponent<Rigidbody>().velocity = new Vector3(GetComponent<Rigidbody>().velocity.x, GetComponent<Rigidbody>().velocity.y, 0);
+
                     //player.GetComponent<PlayerControl>().allowMovement = false;
-                    player.GetComponent<Rigidbody>().AddForce(Vector3.forward * force);
+                    player.GetComponent<Rigidbody>().AddForce(Vector3.forward * force, ForceMode.Impulse);
+                    
+                    
+
                     //player.transform.position += back;
 
                 }
@@ -81,5 +100,11 @@ public class CollisionDetector : MonoBehaviour
         //    player.GetComponent<Rigidbody>().AddForce(Vector3.right* 20, ForceMode.Impulse);
         //}
         return hitDirection;
+    }
+
+
+    public void SetForce(Vector3 m_Velocity)
+    {
+        
     }
 }
