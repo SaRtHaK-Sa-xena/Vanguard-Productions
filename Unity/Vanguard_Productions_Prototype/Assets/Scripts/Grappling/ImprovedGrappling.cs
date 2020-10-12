@@ -10,6 +10,8 @@ public class ImprovedGrappling : MonoBehaviour
     private float maxDistance = 1000f;
     private SpringJoint joint;
 
+    public SpringJoint referenceJoint;
+
     // Changable Through editor
     public bool autoConfigure;
     public float damper, spring, massScale;
@@ -17,6 +19,9 @@ public class ImprovedGrappling : MonoBehaviour
     public bool grappable;
 
     PlayerControls controller;
+
+    Vector3 lastPos = new Vector3();
+    float moveSpeed;
 
     private void OnEnable()
     {
@@ -32,8 +37,9 @@ public class ImprovedGrappling : MonoBehaviour
     {
         lr = GetComponent<LineRenderer>();
         grappable = false;
-        controller = new PlayerControls();
         
+        // Controller settings
+        controller = new PlayerControls();
         controller.Gameplay.GrappleHook.performed += context => startGrapple();
         controller.Gameplay.GrappleHook.canceled += context => stopGrapple();
     }
@@ -42,9 +48,21 @@ public class ImprovedGrappling : MonoBehaviour
     void Start()
     {
         autoConfigure = false;
-        spring = 3f;
+        spring = 30f;
         damper = 6f;
         massScale = 4.5f;
+
+        StartCoroutine(CalcVelocity());
+    }
+
+    IEnumerator CalcVelocity()
+    {
+        while (Application.isPlaying)
+        {
+            lastPos = player.transform.position;
+            yield return new WaitForFixedUpdate();
+            moveSpeed = Mathf.RoundToInt(Vector3.Distance(player.transform.position, lastPos) / Time.fixedDeltaTime);
+        }
     }
 
     // Update is called once per frame
@@ -63,6 +81,14 @@ public class ImprovedGrappling : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Debug Grapple Test #1
+    /// Assign the 'E' command to set a boolean to true on hold
+    /// if value true then create grapple
+    /// else remove grapple
+    /// </summary>
+
+
     private void LateUpdate()
     {
         DrawRope();
@@ -78,14 +104,23 @@ public class ImprovedGrappling : MonoBehaviour
 
             float distanceFromPoint = Vector3.Distance(player.position, grapplePoint.position);
 
-            joint.maxDistance = distanceFromPoint * 0.0f;
-            joint.maxDistance = distanceFromPoint * 0.25f;
+            // distance grapple will try to keep player away from grapple point
+            joint.maxDistance = distanceFromPoint * 0.00f; //20
+            joint.minDistance = distanceFromPoint * 0.50f;
+
+            if(distanceFromPoint <= 5f)
+            {
+                joint.spring = 3f;
+                Debug.Log("Reduce Spring");
+            }
 
             joint.spring = spring;
             joint.damper = damper;
             joint.massScale = massScale;
 
             lr.positionCount = 2;
+
+            referenceJoint = joint;
         }
     }
 

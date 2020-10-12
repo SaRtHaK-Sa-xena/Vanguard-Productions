@@ -4284,11 +4284,11 @@ GameObject:
   - component: {fileID: 5321660096421428650}
   - component: {fileID: 261339486535259048}
   - component: {fileID: 4303813679382335633}
+  - component: {fileID: 5669941578904514044}
   - component: {fileID: 1134218431518194194}
   - component: {fileID: 8898556642097744455}
   - component: {fileID: 5321660096421428648}
   - component: {fileID: 5669941578904514045}
-  - component: {fileID: 5669941578904514044}
   m_Layer: 9
   m_Name: Player_Updated 1
   m_TagString: Player
@@ -4431,6 +4431,26 @@ MonoBehaviour:
   spawnPoint: {fileID: 8917144305409300323}
   Effect: {fileID: 6778260161570684467, guid: f89fc2e1dd16fb04492baf6cf19b67e1, type: 3}
   anim: {fileID: 0}
+--- !u!114 &5669941578904514044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5321660096421428651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b2294717f3b7b479686a7d401ef24f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunTip: {fileID: 4612103158581096958}
+  player: {fileID: 3829929773466592312}
+  grapplePoint: {fileID: 0}
+  autoConfigure: 1
+  damper: 2
+  spring: 2
+  massScale: 1
+  grappable: 0
 --- !u!136 &1134218431518194194
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4572,7 +4592,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5321660096421428651}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
@@ -4583,26 +4603,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5669941578904514044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5321660096421428651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66b2294717f3b7b479686a7d401ef24f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gunTip: {fileID: 4612103158581096958}
-  player: {fileID: 3829929773466592312}
-  grapplePoint: {fileID: 0}
-  autoConfigure: 1
-  damper: 2
-  spring: 2
-  massScale: 1
-  grappable: 0
 --- !u!1 &5333309471200594213
 GameObject:
   m_ObjectHideFlags: 0
