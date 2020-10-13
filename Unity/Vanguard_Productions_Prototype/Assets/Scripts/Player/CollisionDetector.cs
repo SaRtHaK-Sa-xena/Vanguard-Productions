@@ -18,6 +18,10 @@ public class CollisionDetector : MonoBehaviour
     public bool inCollision;
     public Vector3 a_Velocity;
 
+    public bool display;
+
+    private Vector3 norm;
+
     private void Start()
     {
         // get box collider
@@ -28,9 +32,21 @@ public class CollisionDetector : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        // if tagged wall then add force
+        norm = collision.contacts[0].normal;
+
         Debug.Log(ReturnDirection(collision.gameObject, this.gameObject));
-        //player.GetComponent<PlayerControl>().allowMovement = false;
     }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Wall"))
+        {
+            player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        }
+    }
+
+
 
     private enum HitDirection { None, Top, Bottom, Forward, Back, Left, Right}
     private HitDirection ReturnDirection(GameObject Object, GameObject ObjectHit)
@@ -66,6 +82,17 @@ public class CollisionDetector : MonoBehaviour
                 if (MyNormal == MyRayHit.transform.forward)
                 {
                     hitDirection = HitDirection.Forward;
+
+                    Debug.Log("Velocity: " + GetComponent<Rigidbody>().velocity);
+
+                    //Vector3 back = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z + force);
+
+                    //GetComponent<Rigidbody>().MovePosition(back);
+
+                    player.GetComponent<Rigidbody>().AddForce(norm * force);
+
+
+                    //==================Previous Attempt ===================================================
                     //Vector3 back = new Vector3(0, 0, player.transform.position.z - 0.01f);
 
                     //a_Velocity = GetComponent<PlayerControl>().publicVelocity;
@@ -77,10 +104,10 @@ public class CollisionDetector : MonoBehaviour
 
                     //player.GetComponent<PlayerControl>().allowMovement = false;
                     //player.GetComponent<Rigidbody>().AddForce(Vector3.forward * force, ForceMode.Impulse);
-                    
-                    
 
                     //player.transform.position += back;
+                    //==================Previous Attempt ===================================================
+
 
                 }
                 if (MyNormal == -MyRayHit.transform.forward)
