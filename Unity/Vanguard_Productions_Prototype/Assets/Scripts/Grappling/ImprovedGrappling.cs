@@ -52,12 +52,12 @@ public class ImprovedGrappling : MonoBehaviour
     {
         if (grappable)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.X))
             {
                 startGrapple();
             }
         }
-        if (Input.GetKeyUp(KeyCode.E))
+        if (Input.GetKeyUp(KeyCode.X))
         {
             stopGrapple();
         }
