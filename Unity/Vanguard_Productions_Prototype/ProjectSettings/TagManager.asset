@@ -16,6 +16,7 @@ TagManager:
   - SpawnPoint
   - small_jump
   - big_jump
+  - Wall
   layers:
   - Default
   - TransparentFX

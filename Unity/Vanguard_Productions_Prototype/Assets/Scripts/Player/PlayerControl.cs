@@ -68,6 +68,12 @@ public class PlayerControl : MonoBehaviour
             zMov = Input.GetAxisRaw("Horizontal");
             Vector3 movHorizontal = transform.forward * zMov;
             Vector3 m_velocity = (movHorizontal).normalized * speed;
+            
+            if(Input.GetKeyUp(KeyCode.A))
+            {
+                m_velocity = new Vector3(m_velocity.x, m_velocity.y, 0);
+            }
+            
             engine.Move(m_velocity);
 
             //float zMov = movement.z;
