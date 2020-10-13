@@ -11,6 +11,7 @@ public class EnemyPatrol : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             Enemy.GetComponent<EnemyMovement>().patrol = false;
+            Enemy.GetComponent<EnemyMovement>().followPlayer = true;
         }
     }
 
@@ -18,7 +19,8 @@ public class EnemyPatrol : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            Enemy.GetComponent<EnemyMovement>().patrol = false;
+            Enemy.GetComponent<EnemyMovement>().patrol = false; 
+            Enemy.GetComponent<EnemyMovement>().followPlayer = true;
         }
     }
 
@@ -27,6 +29,8 @@ public class EnemyPatrol : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             Enemy.GetComponent<EnemyMovement>().patrol = true;
+            Enemy.GetComponent<EnemyMovement>().followPlayer = false;
+
         }
     }
 

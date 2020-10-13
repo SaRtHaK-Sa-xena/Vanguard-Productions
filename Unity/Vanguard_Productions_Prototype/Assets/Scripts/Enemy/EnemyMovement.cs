@@ -23,7 +23,7 @@ public class EnemyMovement : MonoBehaviour
     private float current_Attack_Time;
     private float default_Attack_Time = 2f;
 
-    private bool followPlayer, attackPlayer;
+    public bool followPlayer, attackPlayer;
 
     public bool stunned; //Checked through Ranged Stun Attack Particle Script
     public float defaultStunnedTime; //manually edited in Editor
@@ -52,7 +52,8 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        followPlayer = true;
+        followPlayer = false;
+        patrol = true;
         current_Attack_Time = default_Attack_Time;
 
         waypointIndex = 0;
@@ -140,32 +141,32 @@ public class EnemyMovement : MonoBehaviour
             return;
         }
 
-        else if(!patrol)
-        {
-            if (Vector3.Distance(transform.position, patrolPoints[0].position) > attack_Distance)
-            {
-                // if the enemy is not staggered
-                if (!staggered)
-                {
-                    // if target position z less
-                    if (playerTarget.position.z < transform.position.z)
-                    {
-                        transform.eulerAngles = new Vector3(0, 180, 0);
-                    }
-                    if (playerTarget.position.z > transform.position.z)
-                    {
-                        transform.eulerAngles = new Vector3(0, 0, 0);
-                    }
+        //else if(!patrol)
+        //{
+        //if (Vector3.Distance(transform.position, patrolPoints[0].position) > attack_Distance)
+        //{
+        //    // if the enemy is not staggered
+        //    if (!staggered)
+        //    {
+        //        // if target position z less
+        //        if (playerTarget.position.z < transform.position.z)
+        //        {
+        //            transform.eulerAngles = new Vector3(0, 180, 0);
+        //        }
+        //        if (playerTarget.position.z > transform.position.z)
+        //        {
+        //            transform.eulerAngles = new Vector3(0, 0, 0);
+        //        }
 
-                    myBody.velocity = transform.forward * speed;
+        //        myBody.velocity = transform.forward * speed;
 
-                    if (myBody.velocity.sqrMagnitude != 0)
-                    {
-                        enemyAnim.Walk(true);
-                    }
-                }
-            }
-        }
+        //        if (myBody.velocity.sqrMagnitude != 0)
+        //        {
+        //            enemyAnim.Walk(true);
+        //        }
+        //    }
+        //}
+        //}
 
         else if (Vector3.Distance(transform.position, playerTarget.position) > attack_Distance)
         {
@@ -257,15 +258,15 @@ public class EnemyMovement : MonoBehaviour
         }
 
         // if patrol
-        if(!patrol)
+        //if(!patrol)
+        //{
+        // too far then set follow player to true
+        if (Vector3.Distance(transform.position, playerTarget.position) > attack_Distance + chase_Player_After_Attack)
         {
-            // too far then set follow player to true
-            if (Vector3.Distance(transform.position, playerTarget.position) > attack_Distance + chase_Player_After_Attack)
-            {
-                attackPlayer = false;
-                followPlayer = true;
-            }
+            attackPlayer = false;
+            followPlayer = true;
         }
+        //}
     }
 
 
@@ -275,6 +276,8 @@ public class EnemyMovement : MonoBehaviour
     /// </summary>
     public void Patrol()
     {
+        myBody.transform.LookAt(patrolPoints[waypointIndex]);
+
         myBody.velocity = transform.forward * speed;
 
         //if (patrolPoints[waypointIndex].position.z < transform.position.z)
