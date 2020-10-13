@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: bce12eb577a3cb94f9e7d407c555e6f5
+guid: fe1a1960795049643810be7768e6be6b
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: ANI_Warden_Attack
+    second: ANI_Warden_Attack3
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: ANI_Warden_Attack
+      name: ANI_Warden_Attack3
       takeName: Take 001
       internalID: 0
       firstFrame: 0
-      lastFrame: 57
+      lastFrame: 113
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
