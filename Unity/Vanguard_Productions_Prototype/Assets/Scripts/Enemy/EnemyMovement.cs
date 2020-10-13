@@ -11,6 +11,12 @@ public class EnemyMovement : MonoBehaviour
 
     public Transform playerTarget;
 
+    public bool patrol;
+    public Transform[] patrolPoints;
+
+    private int waypointIndex;
+    private float dist;
+
     public float attack_Distance = 1f;
     private float chase_Player_After_Attack = 1f;
 
@@ -28,15 +34,8 @@ public class EnemyMovement : MonoBehaviour
 
     private bool animationPlaying = false;
 
-    //  Enemy jumps
-    //public float smallEnemyJump = 10f;
-    //public float bigEnemyJump = 20f;
-
     // Sphere collider
     public SphereCollider col;
-
-    // Layer mask
-    //public LayerMask groundLayers;
 
     private void Awake()
     {
@@ -45,7 +44,7 @@ public class EnemyMovement : MonoBehaviour
 
         //playerTarget = GameObject.FindWithTag("Player").transform;
 
-        // set stunned time to default
+        // set stunned time to defaults
         stunnedTime = defaultStunnedTime;
         staggered = false;
     }
@@ -55,16 +54,14 @@ public class EnemyMovement : MonoBehaviour
     {
         followPlayer = true;
         current_Attack_Time = default_Attack_Time;
+
+        waypointIndex = 0;
+        transform.LookAt(patrolPoints[waypointIndex].position);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if(!IsGrounded())
-        //{
-        //    GetComponentInChildren<animationScript>().Walk(false);
-        //}
-
         if (stunned)
         {
             if (!animationPlaying)
@@ -83,6 +80,8 @@ public class EnemyMovement : MonoBehaviour
             }
             followPlayer = false;
 
+            // patrol to false
+            patrol = false;
 
             // start calculating time stunned
             timeTracker += 0.1f;
@@ -100,16 +99,35 @@ public class EnemyMovement : MonoBehaviour
         }
         else
         {
-            Attack();
-            GetComponentInChildren<animationScript>().Stop_StunAnimation();
-            GetComponentInChildren<animationScript>().Walk(true);
-            animationPlaying = false;
+            if (!patrol)
+            {
+                Attack();
+                GetComponentInChildren<animationScript>().Stop_StunAnimation();
+                GetComponentInChildren<animationScript>().Walk(true);
+                animationPlaying = false;
+            }
+            else
+            {
+                dist = Vector3.Distance(transform.position, patrolPoints[waypointIndex].position);
+                if (dist < 1f)
+                {
+                    IncreaseIndex();
+                }
+                Patrol();
+            }
         }
     }
 
     private void FixedUpdate()
     {
-        FollowTarget();
+        if(!patrol)
+        {
+            FollowTarget();
+        }
+        else
+        {
+            Patrol();
+        }
     }
 
     // Follow Target
@@ -122,10 +140,35 @@ public class EnemyMovement : MonoBehaviour
             return;
         }
 
+        else if(!patrol)
+        {
+            if (Vector3.Distance(transform.position, patrolPoints[0].position) > attack_Distance)
+            {
+                // if the enemy is not staggered
+                if (!staggered)
+                {
+                    // if target position z less
+                    if (playerTarget.position.z < transform.position.z)
+                    {
+                        transform.eulerAngles = new Vector3(0, 180, 0);
+                    }
+                    if (playerTarget.position.z > transform.position.z)
+                    {
+                        transform.eulerAngles = new Vector3(0, 0, 0);
+                    }
+
+                    myBody.velocity = transform.forward * speed;
+
+                    if (myBody.velocity.sqrMagnitude != 0)
+                    {
+                        enemyAnim.Walk(true);
+                    }
+                }
+            }
+        }
+
         else if (Vector3.Distance(transform.position, playerTarget.position) > attack_Distance)
         {
-            //transform.LookAt(playerTarget);
-
             // if the enemy is not staggered
             if (!staggered)
             {
@@ -172,11 +215,13 @@ public class EnemyMovement : MonoBehaviour
     {
         stunned = false;
         followPlayer = true;
+
+        // check if the helper object has the
+        // patrol symbol to true
+
         staggered = false;
 
         Debug.Log("Played!");
-
-        //transform.GetChild(1).transform.GetChild(0).GetComponent<animationScript>().Stop_StunAnimation();
 
         if (transform.GetChild(1).transform.childCount > 0)
         {
@@ -211,53 +256,52 @@ public class EnemyMovement : MonoBehaviour
             current_Attack_Time = 0f;
         }
 
-        if (Vector3.Distance(transform.position, playerTarget.position) > attack_Distance + chase_Player_After_Attack)
+        // if patrol
+        if(!patrol)
         {
-            attackPlayer = false;
-            followPlayer = true;
+            // too far then set follow player to true
+            if (Vector3.Distance(transform.position, playerTarget.position) > attack_Distance + chase_Player_After_Attack)
+            {
+                attackPlayer = false;
+                followPlayer = true;
+            }
         }
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    Debug.Log("Collider entered enemy trigger");
 
-    //    if (other.CompareTag("small_jump"))
-    //    {
-    //        Debug.Log("small");
-    //        jumped = true;
-    //        //GetComponentInChildren<animationScript>().Walk(false);
-    //        GetComponent<Rigidbody>().AddForce(Vector3.up * smallEnemyJump);
-    //    }
-    //    if(other.CompareTag("big_jump"))
-    //    {
-    //        Debug.Log("big");
-    //        jumped = true;
-    //        //GetComponentInChildren<animationScript>().Walk(false);
-    //        GetComponent<Rigidbody>().AddForce(Vector3.up * bigEnemyJump);
-    //    }
-    //}
-
-
-    //public bool IsGrounded()
-    //{
-    //    return Physics.CheckCapsule
-    //        (col.bounds.center, new Vector3
-    //        (col.bounds.center.x, col.bounds.min.y, col.bounds.center.z),
-    //        col.radius * .9f, groundLayers);
-    //}
-
-    public void JumpOverObstacle(string tag_obj)
+    /// <summary>
+    /// Make sure player survey rather than go for player
+    /// Patrol targets
+    /// </summary>
+    public void Patrol()
     {
-        // if the jump is small 
-        if(tag_obj == "small_jump")
-        {
-        }
+        myBody.velocity = transform.forward * speed;
 
-        // if the jump is big
-        if (tag_obj == "big_jump")
+        //if (patrolPoints[waypointIndex].position.z < transform.position.z)
+        //{
+           // transform.eulerAngles = new Vector3(0, 180, 0);
+        //}
+        //if (patrolPoints[waypointIndex].position.z > transform.position.z)
+        //{
+           // transform.eulerAngles = new Vector3(0, 0, 0);
+        //}
+
+        //myBody.velocity = transform.forward * speed;
+
+        if (myBody.velocity.sqrMagnitude != 0)
         {
+            enemyAnim.Walk(true);
         }
+    }
+
+    void IncreaseIndex()
+    {
+        waypointIndex++;
+        if(waypointIndex >= patrolPoints.Length)
+        {
+            waypointIndex = 0;
+        }
+        transform.LookAt(patrolPoints[waypointIndex].position);
     }
 
 
@@ -265,4 +309,33 @@ public class EnemyMovement : MonoBehaviour
     {
         Invoke("TurnOffStun", stunnedTime);
     }
+
+    // Patrol--
+    // Enemy go to trnsform points on platform.
+
+    // The enemy will patrol until the player comes into attack distance
+    // 'Attack Distance' what is that
+    // easy method: 
+    // box collider with a trigger
+    // which holds enemy and the 
+    // 
+
+    // Attack--
+    // Already Created
+
+    // Follow--
+    // Already Created
+
+    // Rules--
+    // Create box collider with layer EnemyBlocker
+    // Make the layer unable to interact with everything but enemy
+
+
+ 
+
+
+
+
+
+
 }
