@@ -20,6 +20,9 @@ public class jumpController : MonoBehaviour
 
     private PlayerControls controller;
 
+    // Debug Check Player Collision
+    public GameObject box;
+
     private void OnEnable()
     {
         controller.Gameplay.Enable();
@@ -50,9 +53,10 @@ public class jumpController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(IsGrounded() && Input.GetButtonDown("Jump"))
+        if(IsGrounded() && Input.GetKeyDown(KeyCode.Z))
         {
             jumpRequest = true;
+            
             //GetComponent<Rigidbody>().velocity = Vector3.up * jumpForce;
         }
 
@@ -83,6 +87,10 @@ public class jumpController : MonoBehaviour
         if(jumpRequest)
         {
             GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce);
+            
+            // Set velocity of z to zero
+            GetComponent<Rigidbody>().velocity = new Vector3(GetComponent<Rigidbody>().velocity.x, GetComponent<Rigidbody>().velocity.y, 0);
+            
             jumpRequest = false;
         }
     }

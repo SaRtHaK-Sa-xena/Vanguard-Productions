@@ -4,7 +4,7 @@
         "m_EditorHideFlags": 0,
         "m_Name": "",
         "m_EditorClassIdentifier": "Unity.Formats.Fbx.Editor:UnityEditor.Formats.Fbx.Exporter:ExportSettings",
-        "ExportOutsideProject": false,
+        "ExportOutsideProject": true,
         "Verbose": false,
         "launchAfterInstallation": true,
         "HideSendToUnityMenu": true,
@@ -16,6 +16,7 @@
             "."
         ],
         "fbxSavePaths": [
+            "C:/Users/s191262/Desktop/Enigma Project/exports",
             "."
         ],
         "selectedFbxPath": 0,
@@ -26,7 +27,7 @@
             "exportFormat": 0,
             "animatedSkinnedMesh": false,
             "mayaCompatibleNaming": true,
-            "include": 2,
+            "include": 0,
             "lodLevel": 0,
             "objectPosition": 0,
             "exportUnrendered": true

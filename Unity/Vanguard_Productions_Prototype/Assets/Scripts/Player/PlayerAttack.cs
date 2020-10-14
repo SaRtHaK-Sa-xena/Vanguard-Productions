@@ -79,7 +79,7 @@ public class PlayerAttack : MonoBehaviour
     void ComboAttacks()
     {
         //if (Input.GetKeyDown(KeyCode.Mouse0))
-        if (attackNow || Input.GetKeyDown(KeyCode.Mouse0))
+        if (attackNow || Input.GetKeyDown(KeyCode.C))
         {
             if (current_Combo_State == ComboState.LIGHT_3 ||
                 current_Combo_State == ComboState.HEAVY_1 ||
