@@ -3604,20 +3604,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
---- !u!114 &3783221039275004736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4435553899470778813}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71590963745fb8b47bb21a81d9e556dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  is_Player: 1
 --- !u!114 &3783221039275004737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3632,6 +3618,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   begToMid_Sword_Attack_Point: {fileID: 5669941579188678863}
   rangedAttack: {fileID: 0}
+  Left_Arm_Attack_Point: {fileID: 0}
+  Right_Arm_Attack_Point: {fileID: 0}
 --- !u!114 &3783221039275004799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4321,6 +4309,7 @@ GameObject:
   - component: {fileID: 5669941578904514044}
   - component: {fileID: 537608936483508621}
   - component: {fileID: 537608936483508620}
+  - component: {fileID: 535495728540712201}
   m_Layer: 9
   m_Name: Player_Updated 1
   m_TagString: Player
@@ -4634,8 +4623,8 @@ MonoBehaviour:
   player: {fileID: 3829929773466592312}
   grapplePoint: {fileID: 0}
   autoConfigure: 1
-  damper: 6
-  spring: 3
+  damper: 0.7
+  spring: 0.7
   massScale: 4.5
   grappable: 0
 --- !u!65 &537608936483508621
@@ -4670,6 +4659,20 @@ MonoBehaviour:
   inCollision: 0
   a_Velocity: {x: 0, y: 0, z: 0}
   display: 0
+--- !u!114 &535495728540712201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5321660096421428651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71590963745fb8b47bb21a81d9e556dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  is_Player: 1
 --- !u!1 &5333309471200594213
 GameObject:
   m_ObjectHideFlags: 0
@@ -7779,6 +7782,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -966249585170727915, guid: 1a9b1abbedfc6834e93879b42d6b8b3d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2934713025d4c784da26e6cd3f5fcd85, type: 2}
     - target: {fileID: -927199367670048503, guid: 1a9b1abbedfc6834e93879b42d6b8b3d,
         type: 3}
       propertyPath: m_Name

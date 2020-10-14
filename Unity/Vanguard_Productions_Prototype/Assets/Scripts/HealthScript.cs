@@ -34,26 +34,33 @@ public class HealthScript : MonoBehaviour
         if(heavy)
         {
             health -= damage * heavyDMG;
+            GetComponent<Rigidbody>().AddForce(-transform.forward * 2f);
         }
         else
         {
             // decrement health
             health -= damage;
+            GetComponent<Rigidbody>().AddForce(-transform.forward * 2f);
         }
 
-        
+
 
 
         // if character died
-        if(health <= 0f)
+        if (health <= 0f)
         {
-            if(!is_Player)
+            if (!is_Player)
             {
                 // player will not be able to touch enemy
                 gameObject.layer = noPlayerLayer;
                 animationScript.Death();
                 characterDied = true;
                 GetComponent<EnemyMovement>().enabled = false;
+            }
+            else
+            {
+                // Start teleport
+                FindObjectOfType<CheckPoint>().teleportPlayer();
             }
             
         }

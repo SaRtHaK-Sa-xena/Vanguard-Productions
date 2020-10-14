@@ -232,6 +232,8 @@ public class animationScript : MonoBehaviour
         anim.SetTrigger("Hit");
     }
 
+    // KnockBack
+
     public void RangedAttack()
     {
         anim.SetTrigger("Ranged_Attack");

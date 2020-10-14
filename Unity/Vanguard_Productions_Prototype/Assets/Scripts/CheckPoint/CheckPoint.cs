@@ -20,6 +20,7 @@ public class CheckPoint : MonoBehaviour
     public void teleportPlayer()
     {
         Player.transform.position = spawnPosition.position;
+        GetComponent<HealthScript>().health = 100;
     }
 
     public void checkTeleportCondition()
