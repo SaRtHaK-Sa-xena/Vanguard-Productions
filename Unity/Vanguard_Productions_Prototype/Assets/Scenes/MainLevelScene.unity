@@ -31402,7 +31402,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1070624600}
   m_LocalRotation: {x: 0.048334174, y: -0.7054529, z: 0.04833418, w: 0.7054529}
-  m_LocalPosition: {x: 18.351446, y: 2.611763, z: 4.524088}
+  m_LocalPosition: {x: 18.351446, y: 2.611763, z: 4.5237617}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 189890688}
@@ -44774,7 +44774,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20704
+  m_Name: pb_Mesh569206
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -59507,7 +59507,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2084039306}
   m_LocalRotation: {x: 0.048334174, y: -0.7054529, z: 0.04833418, w: 0.7054529}
-  m_LocalPosition: {x: 18.351446, y: 4.0649834, z: 4.524088}
+  m_LocalPosition: {x: 18.351446, y: 4.0649834, z: 4.5237617}
   m_LocalScale: {x: 0.63304, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1380806395}
@@ -100923,6 +100923,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player_Updated
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669941578904514044, guid: 18cf1121a0e8b4549931b1dcca71224c,
+        type: 3}
+      propertyPath: spring
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669941578904514044, guid: 18cf1121a0e8b4549931b1dcca71224c,
+        type: 3}
+      propertyPath: damper
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18cf1121a0e8b4549931b1dcca71224c, type: 3}

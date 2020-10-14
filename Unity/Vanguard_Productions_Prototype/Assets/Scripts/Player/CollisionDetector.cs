@@ -38,7 +38,8 @@ public class CollisionDetector : MonoBehaviour
         if(norm == zVector || norm == zNegVector)
         {
             Debug.Log("Norm: " + norm);
-            player.GetComponent<Rigidbody>().AddForce(norm * force);
+            //player.GetComponent<Rigidbody>().AddForce(norm * force * Time.deltaTime);
+            GetComponent<PlayerControl>().allowMovement = false;
         }
 
         //Debug.Log(ReturnDirection(collision.gameObject, this.gameObject));
@@ -56,6 +57,14 @@ public class CollisionDetector : MonoBehaviour
         //}
     }
 
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            player.GetComponent<Rigidbody>().AddForce(collision.contacts[0].normal * force * Time.deltaTime);
+        }
+    }
+
     private void OnCollisionExit(Collision collision)
     {
         // if player exits collision on wall
@@ -63,6 +72,8 @@ public class CollisionDetector : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             GetComponent<Rigidbody>().velocity = new Vector3(GetComponent<Rigidbody>().velocity.x, GetComponent<Rigidbody>().velocity.y, 0);
+            player.GetComponent<Rigidbody>().AddForce(transform.up * force * Time.deltaTime);
+            GetComponent<PlayerControl>().allowMovement = true;
         }
     }
 

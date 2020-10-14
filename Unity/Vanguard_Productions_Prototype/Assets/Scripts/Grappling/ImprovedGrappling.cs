@@ -42,9 +42,9 @@ public class ImprovedGrappling : MonoBehaviour
     void Start()
     {
         autoConfigure = false;
-        spring = 3f;
-        damper = 6f;
-        massScale = 4.5f;
+        //spring = 0f;
+        //damper = 6f;
+        //massScale = 4.5f;
     }
 
     // Update is called once per frame
