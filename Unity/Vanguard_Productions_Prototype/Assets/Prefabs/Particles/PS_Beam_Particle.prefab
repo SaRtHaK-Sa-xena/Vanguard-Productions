@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1063087526198986432}
   - component: {fileID: 1063087526198986433}
   m_Layer: 0
-  m_Name: PS_Beam
+  m_Name: PS_Beam_Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4709,7 +4709,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a779e5d9af6918c48946c8f7af25cf34, type: 2}
+  - {fileID: 2100000, guid: 8259000df6dcaee45902f48778ce9ba2, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
