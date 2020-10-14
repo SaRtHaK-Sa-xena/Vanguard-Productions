@@ -71,7 +71,7 @@ public class PlayerControl : MonoBehaviour
             
             // Additional measure
             // if the player not holding A or D set velocity to zero
-            if(Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.E))
+            if(Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.E) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
             {
                 m_velocity = new Vector3(m_velocity.x, m_velocity.y, 0);
             }

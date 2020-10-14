@@ -30,6 +30,9 @@ public class Helper_Grapple : MonoBehaviour
         // If player in the area
         if(other.CompareTag("Player"))
         {
+
+            if (!Input.GetKeyDown(KeyCode.X)) return;
+
             //assign the grapple Point to the grapple script
             FindObjectOfType<ImprovedGrappling>().grappable = true;
 
