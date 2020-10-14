@@ -25,7 +25,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     { 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             if (sentences.Count != 0)
             {

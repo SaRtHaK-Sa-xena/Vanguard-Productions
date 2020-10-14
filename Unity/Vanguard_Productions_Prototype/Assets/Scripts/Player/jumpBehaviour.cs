@@ -21,7 +21,7 @@ public class jumpBehaviour : MonoBehaviour
         {
             rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         }
-        else if(rb.velocity.y > 0 && !Input.GetButton("Jump"))
+        else if(rb.velocity.y > 0 && !Input.GetKeyDown(KeyCode.Z))
         {
             //Debug.Log("In this");
             rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
