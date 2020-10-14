@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class DeactivateGameObject : MonoBehaviour
 {
+    /// <summary>
+    /// Delete Stun Particle Completely not inactive.
+    /// </summary>
+
+
     // Stun FX
     public GameObject FX_Stun;
 
