@@ -53,7 +53,7 @@ public class jumpController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(IsGrounded() && Input.GetKeyDown(KeyCode.Z))
+        if(IsGrounded() && Input.GetKeyDown(KeyCode.Space))
         {
             jumpRequest = true;
             

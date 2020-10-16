@@ -64,7 +64,7 @@ public class animationScript : MonoBehaviour
             if (gameObject.CompareTag("Player"))
             {
                 //  if player presses space bar
-                if (Input.GetKeyDown(KeyCode.Z))
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
                     anim.SetTrigger("isJump");
                 }
