@@ -54,10 +54,7 @@ public class PlayerAttack : MonoBehaviour
     {
         current_Combo_Timer = default_Combo_Timer;
         current_Combo_State = ComboState.NONE;
-        //attackControls.Gameplay.LightAttack.performed += pressedAttack => Input.GetMouseButton(0);
         attackControls.Gameplay.LightAttack.performed += pressedAttack => Attack();
-        //attackControls.Gameplay.LightAttack.performed += pressedAttack => ComboAttacks();
-        // check also with just calling ComboAttacks().
     }
 
     private void Awake()
@@ -69,8 +66,9 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        ComboAttacks();
-        ResetComboState();
+        if(GetComponent<PlayerControl>().allowMovement)
+            ComboAttacks();
+            ResetComboState();
     }
 
     void Attack()
@@ -80,41 +78,44 @@ public class PlayerAttack : MonoBehaviour
 
     void ComboAttacks()
     {
-        //if (Input.GetKeyDown(KeyCode.Mouse0))
-        if (attackNow || Input.GetKeyDown(KeyCode.C))
+        if(GetComponent<PlayerControl>().allowMovement)
         {
-            if (current_Combo_State == ComboState.LIGHT_3 ||
-                current_Combo_State == ComboState.HEAVY_1 ||
-                current_Combo_State == ComboState.HEAVY_2)
+            //if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (attackNow || Input.GetKeyDown(KeyCode.C))
             {
-                return;
+                if (current_Combo_State == ComboState.LIGHT_3 ||
+                    current_Combo_State == ComboState.HEAVY_1 ||
+                    current_Combo_State == ComboState.HEAVY_2)
+                {
+                    return;
+                }
+
+                // Combo
+                current_Combo_State++;
+                activateTimerToReset = true;
+                current_Combo_Timer = default_Combo_Timer;
+
+                if (current_Combo_State == ComboState.LIGHT_1)
+                {
+                    // play light attack 1
+                    playerAnim.light_1();
+                }
+
+                if (current_Combo_State == ComboState.LIGHT_2)
+                {
+                    // play light attack 1
+                    playerAnim.light_2();
+                }
+
+                if (current_Combo_State == ComboState.LIGHT_3)
+                {
+                    // play light attack 1
+                    playerAnim.light_3();
+                }
+
+                // set attack to false again
+                attackNow = false;
             }
-
-            // Combo
-            current_Combo_State++;
-            activateTimerToReset = true;
-            current_Combo_Timer = default_Combo_Timer;
-
-            if (current_Combo_State == ComboState.LIGHT_1)
-            {
-                // play light attack 1
-                playerAnim.light_1();
-            }
-
-            if (current_Combo_State == ComboState.LIGHT_2)
-            {
-                // play light attack 1
-                playerAnim.light_2();
-            }
-
-            if (current_Combo_State == ComboState.LIGHT_3)
-            {
-                // play light attack 1
-                playerAnim.light_3();
-            }
-
-            // set attack to false again
-            attackNow = false;
         }
     }
 

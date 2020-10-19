@@ -24,7 +24,9 @@ public class DialogueManager : MonoBehaviour
     }
 
     private void Update()
-    { 
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
         if (Input.GetKeyDown(KeyCode.C))
         {
             if (sentences.Count != 0)
@@ -34,10 +36,13 @@ public class DialogueManager : MonoBehaviour
 
                 // Display Next Sentence
                 DisplayNextSentence();
+
+                player.GetComponent<PlayerControl>().stopMovement();
             }
             else
             {
                 EndDialogue();
+                player.GetComponent<PlayerControl>().startMovement();
             }
         }
     }

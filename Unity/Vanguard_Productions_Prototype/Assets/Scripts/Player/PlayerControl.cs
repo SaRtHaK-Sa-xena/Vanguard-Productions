@@ -54,6 +54,27 @@ public class PlayerControl : MonoBehaviour
         //controls.Gameplay.Movement.canceled += ctx => movement = Vector3.zero;
     }
 
+    public void stopMovement()
+    {
+        // stop movement keys
+        allowMovement = false;
+
+        // stop velocity
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+
+        // get child of player
+        GameObject playerChild = transform.GetChild(0).gameObject;
+    
+        // set animation to zero
+        playerChild.GetComponent<animationScript>().anim.SetFloat("xMov", 0);
+    }
+
+    public void startMovement()
+    {
+        // enable movement keys
+        allowMovement = true;
+    }
+
     void Update()
     {
         if(allowMovement)
