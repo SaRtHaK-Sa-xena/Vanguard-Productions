@@ -15,21 +15,21 @@ public class FootSteps : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void Step(AnimationEvent animationEvent)
-    {
-        if (animationEvent.animatorClipInfo.weight > 0.5)
-        {
-            AudioClip clip = GetRandomClip();
-            audioSource.PlayOneShot(clip);
-        }
-    }
-
-    // private void Step()
+    //public void Step(AnimationEvent animationEvent)
     //{
-    //AudioClip clip = GetRandomClip();
-    //audioSource.PlayOneShot(clip);
-
+    //    if (animationEvent.animatorClipInfo.weight > 0.5)
+    //    {
+    //        AudioClip clip = GetRandomClip();
+    //        audioSource.PlayOneShot(clip);
+    //    }
     //}
+
+    private void Step()
+    {
+        AudioClip clip = GetRandomClip();
+        audioSource.PlayOneShot(clip);
+
+    }
 
     private AudioClip GetRandomClip ()
     {
