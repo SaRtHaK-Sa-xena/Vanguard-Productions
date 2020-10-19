@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    ControlManager CM;
+
     public animationScript playerAnim;
 
     public SphereCollider col;
@@ -75,8 +77,6 @@ public class PlayerAttack : MonoBehaviour
     {
         attackNow = true;
     }
-
-    public string value = "10";
 
     void ComboAttacks()
     {
