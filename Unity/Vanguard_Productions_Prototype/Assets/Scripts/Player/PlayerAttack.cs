@@ -76,6 +76,8 @@ public class PlayerAttack : MonoBehaviour
         attackNow = true;
     }
 
+    public string value = "10";
+
     void ComboAttacks()
     {
         //if (Input.GetKeyDown(KeyCode.Mouse0))

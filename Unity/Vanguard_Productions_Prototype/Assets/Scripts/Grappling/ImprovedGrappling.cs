@@ -52,12 +52,9 @@ public class ImprovedGrappling : MonoBehaviour
     {
         if (grappable)
         {
-            if (Input.GetKeyDown(KeyCode.X))
-            {
-                startGrapple();
-            }
+            startGrapple();
         }
-        if (Input.GetKeyUp(KeyCode.X))
+        else
         {
             stopGrapple();
         }
@@ -72,7 +69,10 @@ public class ImprovedGrappling : MonoBehaviour
     {
         if(grappable)
         {
-            joint = player.gameObject.AddComponent<SpringJoint>();
+            if(!joint)
+            {
+                joint = player.gameObject.AddComponent<SpringJoint>();
+            }
             joint.autoConfigureConnectedAnchor = autoConfigure;
             joint.connectedAnchor = grapplePoint.position;
 
@@ -85,7 +85,7 @@ public class ImprovedGrappling : MonoBehaviour
             joint.damper = damper;
             joint.massScale = massScale;
 
-            lr.positionCount = 2;
+            lr.positionCount = 2;           
         }
     }
 
@@ -105,6 +105,7 @@ public class ImprovedGrappling : MonoBehaviour
     {
         lr.positionCount = 0;
         Destroy(joint);
+        Debug.Log("Destroyed Joint");
     }
 
 
