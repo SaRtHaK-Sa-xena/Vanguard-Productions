@@ -911,7 +911,7 @@ BlendTree:
     m_DirectBlendParameter: zMov
     m_Mirror: 0
   m_BlendParameter: xMov
-  m_BlendParameterY: zMov
+  m_BlendParameterY: xMov
   m_MinThreshold: -1
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 0
@@ -1009,7 +1009,7 @@ AnimatorStateMachine:
     m_Position: {x: 450, y: 50, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7277971877113031861}
-    m_Position: {x: 270, y: -30, z: 0}
+    m_Position: {x: 270, y: -20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4443949186672658421}
     m_Position: {x: 40, y: -20, z: 0}

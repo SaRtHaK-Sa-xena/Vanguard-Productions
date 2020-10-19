@@ -56,7 +56,6 @@ public class animationScript : MonoBehaviour
 
     private void Update()
     {
-
         shakeCamera = GameObject.FindWithTag("MainCamera").GetComponent<CameraShake>();
 
         if (FindObjectOfType<PlayerControl>().allowMovement == true)

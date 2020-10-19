@@ -66,7 +66,7 @@ public class PlayerControl : MonoBehaviour
         GameObject playerChild = transform.GetChild(0).gameObject;
     
         // set animation to zero
-        playerChild.GetComponent<animationScript>().anim.SetFloat("xMov", 0);
+        playerChild.GetComponent<animationScript>().anim.SetFloat("xMov", 0f);
     }
 
     public void startMovement()
