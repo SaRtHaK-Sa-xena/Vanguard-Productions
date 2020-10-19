@@ -37,7 +37,7 @@ public class CollisionDetector : MonoBehaviour
 
         if(norm == zVector || norm == zNegVector)
         {
-            Debug.Log("Norm: " + norm);
+            //Debug.Log("Norm: " + norm);
             //player.GetComponent<Rigidbody>().AddForce(norm * force * Time.deltaTime);
             GetComponent<PlayerControl>().allowMovement = false;
         }

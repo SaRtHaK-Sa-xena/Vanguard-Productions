@@ -69,6 +69,8 @@ public class ImprovedGrappling : MonoBehaviour
     {
         if(grappable)
         {
+
+
             if(!joint)
             {
                 joint = player.gameObject.AddComponent<SpringJoint>();
@@ -105,7 +107,7 @@ public class ImprovedGrappling : MonoBehaviour
     {
         lr.positionCount = 0;
         Destroy(joint);
-        Debug.Log("Destroyed Joint");
+        //Debug.Log("Destroyed Joint");
     }
 
 

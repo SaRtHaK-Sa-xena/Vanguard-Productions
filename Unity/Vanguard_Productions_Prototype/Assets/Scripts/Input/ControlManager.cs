@@ -11,6 +11,7 @@ public class ControlManager : MonoBehaviour
     public KeyCode jump;
     public KeyCode panUp;
 
+
     void ChangeKeyCode(string layout)
     {
         if(layout == "normal")
@@ -24,6 +25,10 @@ public class ControlManager : MonoBehaviour
         if(layout == "mouse")
         {
             lightAttack = KeyCode.Mouse0;
+            rangedAttack = KeyCode.Mouse1;
+            grapple = KeyCode.Mouse2;
+            jump = KeyCode.Mouse3;
+            panUp = KeyCode.Mouse4;
         }
     }
 }
