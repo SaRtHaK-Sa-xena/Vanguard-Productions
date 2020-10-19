@@ -36,8 +36,6 @@ public class DialogueManager : MonoBehaviour
 
                 // Display Next Sentence
                 DisplayNextSentence();
-
-                player.GetComponent<PlayerControl>().stopMovement();
             }
             else
             {
