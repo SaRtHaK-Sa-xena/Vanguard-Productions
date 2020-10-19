@@ -25,27 +25,55 @@ public class Helper_Grapple : MonoBehaviour
         //}
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        //if (other.CompareTag("Player"))
+        //{
+        //    if (!Input.GetKeyDown(KeyCode.X)) 
+        //    {
+        //        //Debug.Log("Not Holding X [OnTriggerEnter]");
+        //        FindObjectOfType<ImprovedGrappling>().grappable = false;
+        //        return;
+        //    }
+
+        //    //assign the grapple Point to the grapple script
+        //    FindObjectOfType<ImprovedGrappling>().grappable = true;
+
+        //    FindObjectOfType<ImprovedGrappling>().grapplePoint = GrapplePoint.transform;
+        //}
+    }
+
     private void OnTriggerStay(Collider other)
     {
         // If player in the area
         if(other.CompareTag("Player"))
         {
+            //if (!Input.GetKeyDown(KeyCode.X)) 
+            if (Input.GetKeyDown(KeyCode.X)) 
+            {
+                //Debug.Log("Not Holding X [OnTriggerStay]");
+                FindObjectOfType<ImprovedGrappling>().grappable = true;
+                FindObjectOfType<ImprovedGrappling>().grapplePoint = GrapplePoint.transform;
+            }
 
-            if (!Input.GetKeyDown(KeyCode.X)) return;
+            if (Input.GetKeyUp(KeyCode.X))
+            {
+                //Debug.Log("Not Holding X [OnTriggerStay]");
+                FindObjectOfType<ImprovedGrappling>().grappable = false;
+                Destroy(other.GetComponent<SpringJoint>());
+            }
 
             //assign the grapple Point to the grapple script
-            FindObjectOfType<ImprovedGrappling>().grappable = true;
-
-            FindObjectOfType<ImprovedGrappling>().grapplePoint = GrapplePoint.transform;
+            //FindObjectOfType<ImprovedGrappling>().grappable = true;
         }
     }
     // When player leaves the player cannot grapple
     private void OnTriggerExit(Collider other)
     {
-        if(other.CompareTag("Player"))
-        {
-            FindObjectOfType<ImprovedGrappling>().grappable = false;
-        }
+        //if (other.CompareTag("Player"))
+        //{
+        //    FindObjectOfType<ImprovedGrappling>().grappable = false;
+        //}
     }
 
 }

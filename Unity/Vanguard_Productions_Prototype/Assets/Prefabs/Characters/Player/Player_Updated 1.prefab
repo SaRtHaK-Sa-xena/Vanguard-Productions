@@ -4307,7 +4307,6 @@ GameObject:
   - component: {fileID: 5321660096421428648}
   - component: {fileID: 5669941578904514045}
   - component: {fileID: 5669941578904514044}
-  - component: {fileID: 537608936483508621}
   - component: {fileID: 537608936483508620}
   - component: {fileID: 535495728540712201}
   m_Layer: 9
@@ -4440,6 +4439,7 @@ MonoBehaviour:
   enemyCollider: {fileID: 0}
   attack: 0
   attackNow: 0
+  value: 
 --- !u!114 &4303813679382335633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4627,19 +4627,6 @@ MonoBehaviour:
   spring: 0.7
   massScale: 4.5
   grappable: 0
---- !u!65 &537608936483508621
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5321660096421428651}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.58764815, y: 1.6858217, z: 0.36670494}
-  m_Center: {x: -0.009720206, y: 0.83834034, z: -1.10884}
 --- !u!114 &537608936483508620
 MonoBehaviour:
   m_ObjectHideFlags: 0
