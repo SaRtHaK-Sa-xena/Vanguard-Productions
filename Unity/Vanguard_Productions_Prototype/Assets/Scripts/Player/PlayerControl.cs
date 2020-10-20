@@ -73,6 +73,9 @@ public class PlayerControl : MonoBehaviour
     {
         // enable movement keys
         allowMovement = true;
+        Time.timeScale = 1;
+        //GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Discrete;
+        //GetComponent<Rigidbody>().isKinematic = false;
     }
 
     void Update()

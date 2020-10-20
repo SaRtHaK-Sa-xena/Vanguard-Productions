@@ -6,6 +6,8 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
 
+    private Transform storedTransform;
+
     public void TriggerDialogue()
     {
         GetComponent<DialogueManager>().enabled = true;
@@ -23,6 +25,10 @@ public class DialogueTrigger : MonoBehaviour
                 TriggerDialogue();
 
                 other.GetComponent<PlayerControl>().stopMovement();
+
+               // other.GetComponent<Rigidbody>().isKinematic = true;
+                Time.timeScale = 0;
+                //other.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
             }
         }
     }
