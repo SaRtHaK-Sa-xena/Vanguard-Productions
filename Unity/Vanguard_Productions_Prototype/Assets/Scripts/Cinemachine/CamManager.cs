@@ -9,7 +9,7 @@ public class CamManager : MonoBehaviour
 
     public Cinemachine.CinemachineVirtualCamera currentCam;
 
-    public Cinemachine.CinemachineVirtualCamera CM_LookUp;
+    public Cinemachine.CinemachineVirtualCamera CM_BaseCam;
 
     private void Update()
     {
@@ -17,12 +17,12 @@ public class CamManager : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             // Set Look up Camera priority to HIGH
-            CM_LookUp.Priority = 10;
+            CM_BaseCam.Priority = 1;
         }
         else
         {
             // Set Look up Camera priority to LOW
-            CM_LookUp.Priority = 0;
+            CM_BaseCam.Priority = 1;
         }
     }
 

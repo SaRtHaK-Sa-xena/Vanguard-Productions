@@ -7,6 +7,8 @@ public class SetCamera : MonoBehaviour
     // Virtual Camera
     public Cinemachine.CinemachineVirtualCamera CM_Camera;
 
+    public Cinemachine.CinemachineVirtualCamera CM_baseCam;
+
     public GameObject PlayerObj;
 
     // When player enters trigger
@@ -26,5 +28,12 @@ public class SetCamera : MonoBehaviour
             // set camera to current in camera manager
             FindObjectOfType<CamManager>().currentCam = CM_Camera;
        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        CM_Camera.Priority = 0;
+
+        CM_baseCam.Priority = 1;
     }
 }
