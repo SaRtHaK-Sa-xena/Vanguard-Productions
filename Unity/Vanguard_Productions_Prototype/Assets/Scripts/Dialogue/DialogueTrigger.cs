@@ -21,6 +21,8 @@ public class DialogueTrigger : MonoBehaviour
             {
                 // Interacting with Player
                 TriggerDialogue();
+
+                other.GetComponent<PlayerControl>().stopMovement();
             }
         }
     }
