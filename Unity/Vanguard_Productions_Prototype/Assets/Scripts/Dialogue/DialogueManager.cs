@@ -24,7 +24,9 @@ public class DialogueManager : MonoBehaviour
     }
 
     private void Update()
-    { 
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
         if (Input.GetKeyDown(KeyCode.C))
         {
             if (sentences.Count != 0)
@@ -38,6 +40,7 @@ public class DialogueManager : MonoBehaviour
             else
             {
                 EndDialogue();
+                player.GetComponent<PlayerControl>().startMovement();
             }
         }
     }

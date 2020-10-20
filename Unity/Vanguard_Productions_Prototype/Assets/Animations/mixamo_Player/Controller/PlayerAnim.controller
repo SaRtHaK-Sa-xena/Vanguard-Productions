@@ -911,7 +911,7 @@ BlendTree:
     m_DirectBlendParameter: zMov
     m_Mirror: 0
   m_BlendParameter: xMov
-  m_BlendParameterY: zMov
+  m_BlendParameterY: xMov
   m_MinThreshold: -1
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 0

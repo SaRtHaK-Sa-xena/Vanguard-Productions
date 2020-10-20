@@ -53,12 +53,16 @@ public class jumpController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(IsGrounded() && Input.GetKeyDown(KeyCode.Space))
+        if(GetComponent<PlayerControl>().allowMovement)
         {
-            jumpRequest = true;
-            
-            //GetComponent<Rigidbody>().velocity = Vector3.up * jumpForce;
+            if (IsGrounded() && Input.GetKeyDown(KeyCode.Space))
+            {
+                jumpRequest = true;
+
+                //GetComponent<Rigidbody>().velocity = Vector3.up * jumpForce;
+            }
         }
+        
 
         if(rb.velocity.y < 0f)
         {
@@ -84,15 +88,19 @@ public class jumpController : MonoBehaviour
     // Better Jumping
     private void FixedUpdate()
     {
-        if(jumpRequest)
+        if (GetComponent<PlayerControl>().allowMovement)
         {
-            GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce);
-            
-            // Set velocity of z to zero
-            GetComponent<Rigidbody>().velocity = new Vector3(GetComponent<Rigidbody>().velocity.x, GetComponent<Rigidbody>().velocity.y, 0);
-            
-            jumpRequest = false;
+            if (jumpRequest)
+            {
+                GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce);
+
+                // Set velocity of z to zero
+                GetComponent<Rigidbody>().velocity = new Vector3(GetComponent<Rigidbody>().velocity.x, GetComponent<Rigidbody>().velocity.y, 0);
+
+                jumpRequest = false;
+            }
         }
+        
     }
 
     public void Jump()
