@@ -51,25 +51,32 @@ public class Ranged_Attack : MonoBehaviour
     {
         // ====== Controls ========
         //if(Input.GetKeyDown(KeyCode.R))
-        if(doRangeAnim || Input.GetKeyDown(KeyCode.Z)) 
-        {
-            RangedAttack();
-            doRangeAnim = false;
-        }
 
-        //Rotation
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            spawnPoint.transform.eulerAngles = new Vector3(0, 180, 0);
-            Effect.transform.GetChild(0).GetComponent<ParticleSystemRenderer>().flip = new Vector3(0, 0, 0);
 
-            //characterOrientation.y += 0.1f;
-        }
-        if (Input.GetKeyDown(KeyCode.D))
+        // If player control active
+        if(GetComponent<PlayerControl>().allowMovement)
         {
-            spawnPoint.transform.eulerAngles = new Vector3(0, 0, 0);
-            Effect.transform.GetChild(0).GetComponent<ParticleSystemRenderer>().flip = new Vector3(1, 0, 0);
-            //transform.GetChild(0).transform.eulerAngles = new Vector3(0, 0, 0);
+            // if key pressed
+            if (doRangeAnim || Input.GetKeyDown(KeyCode.Z))
+            {
+                RangedAttack();
+                doRangeAnim = false;
+            }
+
+            //Rotation
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                spawnPoint.transform.eulerAngles = new Vector3(0, 180, 0);
+                Effect.transform.GetChild(0).GetComponent<ParticleSystemRenderer>().flip = new Vector3(0, 0, 0);
+
+                //characterOrientation.y += 0.1f;
+            }
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                spawnPoint.transform.eulerAngles = new Vector3(0, 0, 0);
+                Effect.transform.GetChild(0).GetComponent<ParticleSystemRenderer>().flip = new Vector3(1, 0, 0);
+                //transform.GetChild(0).transform.eulerAngles = new Vector3(0, 0, 0);
+            }
         }
     }
 

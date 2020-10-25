@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 
 /// <summary>
 /// Handles objectives
 /// </summary>
 public class Objectives : MonoBehaviour
 {
-    public const float totalFragments = 4;
+    public const float totalFragments = 3;
 
     // holds memory fragment count
     public float m_Fragment = 0;
@@ -23,12 +23,12 @@ public class Objectives : MonoBehaviour
     }
 
     // Change string based upon collected fragments
-    public void UpdateMemoryFragmentObj(Text text)
+    public void UpdateMemoryFragmentObj(TextMeshProUGUI text)
     {
         // Change text upon fragment count
         // create basic string
         string basic = "Collect Memory Fragments (";
-        string basic_end = "/ 4)";
+        string basic_end = "/ 3)";
         float fragCount = m_Fragment;
 
         // concatenate into one string

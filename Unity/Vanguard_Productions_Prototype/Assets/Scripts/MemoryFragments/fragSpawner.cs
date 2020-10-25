@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class fragSpawner : MonoBehaviour
 {
+    public Transform[] spawnPoints;
+
+    public GameObject memoryFrag;
+
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // spawn fragment in each spawnpoint
+        foreach(Transform spawn in spawnPoints)
+        {
+            Instantiate(memoryFrag, spawn);
+        }
     }
 }
