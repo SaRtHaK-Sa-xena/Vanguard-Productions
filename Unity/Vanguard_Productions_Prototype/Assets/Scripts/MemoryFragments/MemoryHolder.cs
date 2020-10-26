@@ -9,6 +9,9 @@ public class MemoryHolder : MonoBehaviour
 
     private void OnEnable()
     {
-        GetComponent<Image>().sprite = MemoryManager.GetComponent<memoryManager>().currentMemory;
+        if(MemoryManager.GetComponent<memoryManager>().currentMemory)
+        {
+            GetComponent<Image>().sprite = MemoryManager.GetComponent<memoryManager>().currentMemory;
+        }
     }
 }

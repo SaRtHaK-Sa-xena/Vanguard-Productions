@@ -25,6 +25,9 @@ public class PauseMenu : MonoBehaviour
     public GameObject memoryBackgroundGraphic;
     public GameObject memoryPanel;
 
+    // Reference to memory manager
+    public GameObject memoryManager;
+
     // Current Memory gained from fragment interaction
     public Sprite currentMemorySprite;
 
@@ -106,6 +109,20 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         GamePaused = false;
+    }
+
+    // On Click in Collections Display
+    // Whem clicking image
+    public void setSpriteInManager()
+    {
+        if(GetComponent<Image>())
+        {
+            // set current sprite on obj to current memory on memory manager
+            memoryManager.GetComponent<memoryManager>().currentMemory = GetComponent<Image>().sprite;
+
+            // Display Memory
+            DisplayMemory();
+        }
     }
 
     public void DisplayCollections()

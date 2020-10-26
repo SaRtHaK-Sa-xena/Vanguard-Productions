@@ -22,6 +22,7 @@ public class Objectives : MonoBehaviour
     public GameObject collection2;
     public GameObject collection3;
 
+    // sprite assigned to collection pieces
     public Sprite sprite;
 
     private void Awake()
@@ -37,8 +38,8 @@ public class Objectives : MonoBehaviour
 
         // Change text upon fragment count
         // create basic string
-        string basic = "Collect Memory Fragments (";
-        string basic_end = "/ 3)";
+        string basic = "Collect Memory Fragments - ";
+        string basic_end = "/ 3";
         float fragCount = m_Fragment;
 
         // concatenate into one string
@@ -54,11 +55,7 @@ public class Objectives : MonoBehaviour
         UpdateCollections();
     }
 
-    private void FixedUpdate()
-    {
-
-    }
-
+    // Set sprite on collection display upon collection
     public void UpdateCollections()
     {
         if(m_Fragment == 1)
@@ -75,6 +72,7 @@ public class Objectives : MonoBehaviour
         }
     }
 
+    // increment objective if fragments collected greater than total
     public void UpdateObjectiveCount()
     {
         // if all fragments collected
@@ -88,5 +86,12 @@ public class Objectives : MonoBehaviour
     public void IncrementObj()
     {
         displayedObj++;
+    }
+
+    // set sprite from FragmentInteraction script
+    // on collision set sprite to sprite on fragment
+    public void setSprite(Sprite a_sprite)
+    {
+        sprite = a_sprite;
     }
 }

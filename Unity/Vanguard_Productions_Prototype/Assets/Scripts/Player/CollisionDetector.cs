@@ -59,9 +59,19 @@ public class CollisionDetector : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Wall"))
+        // if tagged wall then add force
+        norm = collision.contacts[0].normal;
+
+        // if normal point right or left
+        Vector3 zVector = new Vector3(0.0f, 0.0f, 1.0f);
+        Vector3 zNegVector = new Vector3(0.0f, 0.0f, -1.0f);
+
+        if (norm == zVector || norm == zNegVector)
         {
-            player.GetComponent<Rigidbody>().AddForce(collision.contacts[0].normal * force * Time.deltaTime);
+            if (collision.gameObject.CompareTag("Wall"))
+            {
+                player.GetComponent<Rigidbody>().AddForce(collision.contacts[0].normal * force * Time.deltaTime);
+            }
         }
     }
 
