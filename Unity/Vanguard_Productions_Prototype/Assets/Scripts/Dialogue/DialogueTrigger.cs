@@ -24,11 +24,8 @@ public class DialogueTrigger : MonoBehaviour
                 // Interacting with Player
                 TriggerDialogue();
 
+                // Set Stop Movement
                 other.GetComponent<PlayerControl>().stopMovement();
-
-               // other.GetComponent<Rigidbody>().isKinematic = true;
-                Time.timeScale = 0;
-                //other.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
             }
         }
     }
