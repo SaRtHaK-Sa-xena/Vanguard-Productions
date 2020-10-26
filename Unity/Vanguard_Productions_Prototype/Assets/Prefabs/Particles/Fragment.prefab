@@ -107,3 +107,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objText: {fileID: 8942950992986145788, guid: 1412f2c788f4b934ea81450bc9bac698, type: 3}
+  memoryDisplay: {fileID: 2022205672750698190, guid: 31f96879672c0014282f3f0ed9b3d263,
+    type: 3}
+  sprite: {fileID: 0}

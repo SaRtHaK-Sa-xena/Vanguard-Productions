@@ -8,6 +8,10 @@ public class fragSpawner : MonoBehaviour
 
     public GameObject memoryFrag;
 
+    public Sprite[] Sprites;
+
+    int i = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +19,8 @@ public class fragSpawner : MonoBehaviour
         foreach(Transform spawn in spawnPoints)
         {
             GameObject frag = Instantiate(memoryFrag, spawn);
+            frag.GetComponent<fragmentInteraction>().sprite = Sprites[i];
+            i++;
         }
     }
 }
