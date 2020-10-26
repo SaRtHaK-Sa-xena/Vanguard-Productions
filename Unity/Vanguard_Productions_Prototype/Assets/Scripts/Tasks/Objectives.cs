@@ -17,6 +17,13 @@ public class Objectives : MonoBehaviour
     // holds integer for quest number
     public int displayedObj;
 
+    //====Fragment Collection=====
+    public GameObject collection1;
+    public GameObject collection2;
+    public GameObject collection3;
+
+    public Sprite sprite;
+
     private void Awake()
     {
         displayedObj = 1;
@@ -42,11 +49,30 @@ public class Objectives : MonoBehaviour
 
         // Update the Objective Count
         UpdateObjectiveCount();
+
+        // Update Collections in Menu
+        UpdateCollections();
     }
 
     private void FixedUpdate()
     {
 
+    }
+
+    public void UpdateCollections()
+    {
+        if(m_Fragment == 1)
+        {
+            collection1.GetComponent<Image>().sprite = sprite;
+        }
+        if(m_Fragment == 2)
+        {
+            collection2.GetComponent<Image>().sprite = sprite;
+        }
+        if(m_Fragment == 3)
+        {
+            collection3.GetComponent<Image>().sprite = sprite;
+        }
     }
 
     public void UpdateObjectiveCount()

@@ -14,7 +14,7 @@ public class fragSpawner : MonoBehaviour
         // spawn fragment in each spawnpoint
         foreach(Transform spawn in spawnPoints)
         {
-            Instantiate(memoryFrag, spawn);
+            GameObject frag = Instantiate(memoryFrag, spawn);
         }
     }
 }
