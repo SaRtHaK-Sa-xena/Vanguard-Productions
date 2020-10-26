@@ -25,6 +25,9 @@ public class Objectives : MonoBehaviour
     // Change string based upon collected fragments
     public void UpdateMemoryFragmentObj(TextMeshProUGUI text)
     {
+        // increment fragment
+        m_Fragment++;
+
         // Change text upon fragment count
         // create basic string
         string basic = "Collect Memory Fragments (";
