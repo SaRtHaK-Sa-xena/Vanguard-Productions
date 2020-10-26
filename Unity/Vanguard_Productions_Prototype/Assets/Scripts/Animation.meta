@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Unity/Vanguard_Productions_Prototype/Assets/Prefabs/Mesh Colliders.meta
+guid: 780bcdbc9b35de948bc1e6f38e4b46c9
+=======
 guid: bdddeaea72369be49b640a346e61668f
+>>>>>>> c3ddabacc3b18a2f6d85b37c6e61c996106ac8df:Unity/Vanguard_Productions_Prototype/Assets/Scripts/Animation.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

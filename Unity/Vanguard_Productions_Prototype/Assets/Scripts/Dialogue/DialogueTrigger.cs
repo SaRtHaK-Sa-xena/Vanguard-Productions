@@ -6,6 +6,8 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
 
+    private Transform storedTransform;
+
     public void TriggerDialogue()
     {
         GetComponent<DialogueManager>().enabled = true;
@@ -22,6 +24,7 @@ public class DialogueTrigger : MonoBehaviour
                 // Interacting with Player
                 TriggerDialogue();
 
+                // Set Stop Movement
                 other.GetComponent<PlayerControl>().stopMovement();
             }
         }

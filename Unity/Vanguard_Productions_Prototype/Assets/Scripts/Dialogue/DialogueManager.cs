@@ -13,6 +13,8 @@ public class DialogueManager : MonoBehaviour
 
     public Animator dialogueBoxAnim;
 
+    GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +27,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
 
         if (Input.GetKeyDown(KeyCode.C))
         {
@@ -40,7 +42,6 @@ public class DialogueManager : MonoBehaviour
             else
             {
                 EndDialogue();
-                player.GetComponent<PlayerControl>().startMovement();
             }
         }
     }
@@ -90,5 +91,9 @@ public class DialogueManager : MonoBehaviour
 
         // remove collider
         GetComponent<BoxCollider>().enabled = false;
+
+        player.GetComponent<PlayerControl>().startMovement();
+
+        Debug.Log("End Of Dialogue");
     }
 }

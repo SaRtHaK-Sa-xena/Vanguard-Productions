@@ -59,9 +59,6 @@ public class PlayerControl : MonoBehaviour
         // stop movement keys
         allowMovement = false;
 
-        // stop velocity
-        GetComponent<Rigidbody>().velocity = Vector3.zero;
-
         // get child of player
         GameObject playerChild = transform.GetChild(0).gameObject;
     
@@ -79,12 +76,6 @@ public class PlayerControl : MonoBehaviour
     {
         if(allowMovement)
         {
-            //Vector3 move = new Vector3(movement.x, movement.y, movement.z) * Time.deltaTime;
-            //transform.Translate(move, Space.World);
-
-            //======================== side scroller movement ========================
-            //float zMov = Input.GetAxisRaw("Horizontal");
-
             float zMov = controls.Gameplay.Movement.ReadValue<float>();
             zMov = Input.GetAxisRaw("Horizontal");
             Vector3 movHorizontal = transform.forward * zMov;
@@ -98,71 +89,73 @@ public class PlayerControl : MonoBehaviour
             }
             
             engine.Move(m_velocity);
-
-            //float zMov = movement.z;
-            //if(Input.GetKeyDown(KeyCode.A))
-            //{
-            //    zMov = Input.GetAxisRaw("Horizontal");
-            //}
-            //else if(Input.GetKeyDown(KeyCode.D))
-            //{
-            //    zMov = Input.GetAxisRaw("Horizontal");
-            //}
-
-
-            //Vector3 m_velocity = (move).normalized * speed;
-            //engine.Move(m_velocity);
-
-            //float movementInput = controls.Gameplay.Movement.ReadValue<float>();
-            // = transform.position;
-            //Vector3 currentPosition  = (movementInput) * speed * Time.deltaTime;
-            //engine.Move(currentPosition);
-
-            //======================== side scroller movement ========================
-
-
-            //================= No Player Movement==============
-            //float xMov = Input.GetAxisRaw("Horizontal");
-            //float zMov = Input.GetAxisRaw("Vertical");
-            //Vector3 movHorizontal = transform.right * xMov;
-            //Vector3 movVertical = transform.forward * zMov;
-
-
-            //Calculate speed depending on movement
-            //  if walking backwards, or strafing left and right
-            //if (zMov < 0 || xMov != 0)
-            //{
-            //  half the speed
-            //speed = halfSpeed;
-            //}
-            //else
-            //{
-            //speed = 5f;
-            //}
-
-            //Vector3 m_velocity = (movHorizontal).normalized * speed;
-            //engine.Move(m_velocity);
-            //================= No Player Movement==============
-
-            //Calculate Horizontal Rotation
-            //float xRotation = Input.GetAxisRaw("Mouse X");
-
-            //Vector3 m_rotation = new Vector3(0f, xRotation, 0f) * lookSensitivity;
-            //Call rotate
-            //engine.Rotate(m_rotation);
-
-
-            //Calculate Vertical Rotation
-            //float yRotation = Input.GetAxisRaw("Mouse Y");
-
-            //Vector3 cameraRotation = new Vector3(yRotation, 0f, 0f) * lookSensitivity;
-
-            //Call rotate
-            //engine.RotateCamera(cameraRotation);
         }
     }
 }
 
+//Vector3 move = new Vector3(movement.x, movement.y, movement.z) * Time.deltaTime;
+//transform.Translate(move, Space.World);
+
+//======================== side scroller movement ========================
+//float zMov = Input.GetAxisRaw("Horizontal");
+
+//float zMov = movement.z;
+//if(Input.GetKeyDown(KeyCode.A))
+//{
+//    zMov = Input.GetAxisRaw("Horizontal");
+//}
+//else if(Input.GetKeyDown(KeyCode.D))
+//{
+//    zMov = Input.GetAxisRaw("Horizontal");
+//}
 
 
+//Vector3 m_velocity = (move).normalized * speed;
+//engine.Move(m_velocity);
 
+//float movementInput = controls.Gameplay.Movement.ReadValue<float>();
+// = transform.position;
+//Vector3 currentPosition  = (movementInput) * speed * Time.deltaTime;
+//engine.Move(currentPosition);
+
+//======================== side scroller movement ========================
+
+
+//================= No Player Movement==============
+//float xMov = Input.GetAxisRaw("Horizontal");
+//float zMov = Input.GetAxisRaw("Vertical");
+//Vector3 movHorizontal = transform.right * xMov;
+//Vector3 movVertical = transform.forward * zMov;
+
+
+//Calculate speed depending on movement
+//  if walking backwards, or strafing left and right
+//if (zMov < 0 || xMov != 0)
+//{
+//  half the speed
+//speed = halfSpeed;
+//}
+//else
+//{
+//speed = 5f;
+//}
+
+//Vector3 m_velocity = (movHorizontal).normalized * speed;
+//engine.Move(m_velocity);
+//================= No Player Movement==============
+
+//Calculate Horizontal Rotation
+//float xRotation = Input.GetAxisRaw("Mouse X");
+
+//Vector3 m_rotation = new Vector3(0f, xRotation, 0f) * lookSensitivity;
+//Call rotate
+//engine.Rotate(m_rotation);
+
+
+//Calculate Vertical Rotation
+//float yRotation = Input.GetAxisRaw("Mouse Y");
+
+//Vector3 cameraRotation = new Vector3(yRotation, 0f, 0f) * lookSensitivity;
+
+//Call rotate
+//engine.RotateCamera(cameraRotation);

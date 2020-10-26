@@ -312,15 +312,16 @@ public class EnemyMovement : MonoBehaviour
         Invoke("TurnOffStun", stunnedTime);
     }
 
-    // Patrol--
+    //Patrol--
     // Enemy go to trnsform points on platform.
 
     // The enemy will patrol until the player comes into attack distance
     // 'Attack Distance' what is that
     // easy method: 
     // box collider with a trigger
-    // which holds enemy and the 
-    // 
+    // which holds enemy and the
+
+
 
     // Attack--
     // Already Created
@@ -333,7 +334,6 @@ public class EnemyMovement : MonoBehaviour
     // Make the layer unable to interact with everything but enemy
 
 
- 
 
 
 
