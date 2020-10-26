@@ -17,6 +17,7 @@ TagManager:
   - small_jump
   - big_jump
   - Wall
+  - memoryManager
   layers:
   - Default
   - TransparentFX

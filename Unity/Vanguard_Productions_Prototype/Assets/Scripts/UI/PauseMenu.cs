@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
@@ -15,8 +16,17 @@ public class PauseMenu : MonoBehaviour
     public GameObject Quit_txt;
     public GameObject Collections_txt;
 
-    // Display Case
+    // Display Collections
     public GameObject collectionsDisplay;
+
+    // Display the Memory
+    public GameObject memoryHolder;
+
+    public GameObject memoryBackgroundGraphic;
+    public GameObject memoryPanel;
+
+    // Current Memory gained from fragment interaction
+    public Sprite currentMemorySprite;
 
     // holds memoryFrags
     public List<GameObject> memoryFrags;
@@ -62,6 +72,42 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene(SceneName);
     }
 
+    public void DisplayMemory()
+    {
+        // display memory
+        //memoryHolder.SetActive(true);
+
+        memoryBackgroundGraphic.SetActive(true);
+        memoryPanel.SetActive(true);
+
+        // set sprite of memory holder
+        // to sprite from currentMemorySprite
+        // gained from fragmentInteraction script
+        //Debug.Log(currentMemorySprite.name);
+        //memoryHolder.GetComponent<Image>().sprite = currentMemorySprite;
+
+        // stop game
+        Time.timeScale = 0f;
+    }
+
+    public void stopDisplayMemory()
+    {
+        // set memory false
+        //memoryHolder.SetActive(false);
+
+        memoryBackgroundGraphic.SetActive(false);
+        memoryPanel.SetActive(false);
+
+        // resume
+        Resume();
+    }
+
+    public void unPauseGame()
+    {
+        Time.timeScale = 1.0f;
+        GamePaused = false;
+    }
+
     public void DisplayCollections()
     {
         // set all UI to false
@@ -73,6 +119,7 @@ public class PauseMenu : MonoBehaviour
         // display collections point
         collectionsDisplay.SetActive(true);
 
+        // set collections to true
         openedCollections = true;
     }
 
