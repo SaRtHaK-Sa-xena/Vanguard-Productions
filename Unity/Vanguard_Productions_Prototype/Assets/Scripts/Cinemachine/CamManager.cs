@@ -19,11 +19,6 @@ public class CamManager : MonoBehaviour
             // Set Look up Camera priority to HIGH
             CM_BaseCam.Priority = 1;
         }
-        else
-        {
-            // Set Look up Camera priority to LOW
-            CM_BaseCam.Priority = 1;
-        }
     }
 
     public void SetAllCamerasToZero()
