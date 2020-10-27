@@ -77,6 +77,23 @@ public class PauseMenu : MonoBehaviour
         GamePaused = true;
     }
 
+    public void BackToCollections()
+    {
+        // turn on previous menu
+        pauseMenuUI.SetActive(true);
+        Menu_txt.SetActive(false);
+        Quit_txt.SetActive(false);
+        Collections_txt.SetActive(false);
+        Resume_txt.SetActive(false);
+
+        // set memory display false
+        memoryBackgroundGraphic.SetActive(false);
+        memoryPanel.SetActive(false);
+
+        collectionsDisplay.SetActive(true);
+        GamePaused = true;
+    }
+
     public void Menu (string SceneName)
     {
         Time.timeScale = 1f;
