@@ -25,6 +25,9 @@ public class Objectives : MonoBehaviour
     // sprite assigned to collection pieces
     public Sprite sprite;
 
+    // memory Manager
+    public GameObject memoryManager;
+
     private void Awake()
     {
         displayedObj = 1;
@@ -93,5 +96,13 @@ public class Objectives : MonoBehaviour
     public void setSprite(Sprite a_sprite)
     {
         sprite = a_sprite;
+    }
+
+    public void setManagerSprite(Sprite collectionSprite)
+    {
+        if(memoryManager.GetComponent<memoryManager>().currentMemory)
+        {
+            memoryManager.GetComponent<memoryManager>().currentMemory = collectionSprite;
+        }
     }
 }
