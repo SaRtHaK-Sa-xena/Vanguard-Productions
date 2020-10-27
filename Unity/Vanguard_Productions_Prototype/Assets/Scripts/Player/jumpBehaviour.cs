@@ -17,8 +17,8 @@ public class jumpBehaviour : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(GetComponent<PlayerControl>().allowMovement)
-        {
+        //if(GetComponent<PlayerControl>().allowMovement)
+        //{
             if (rb.velocity.y < 0)
             {
                 rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
@@ -28,6 +28,6 @@ public class jumpBehaviour : MonoBehaviour
                 //Debug.Log("In this");
                 rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
             }
-        }
+        //}
     }
 }

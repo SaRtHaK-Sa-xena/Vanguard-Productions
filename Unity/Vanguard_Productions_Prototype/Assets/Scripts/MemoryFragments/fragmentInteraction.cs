@@ -31,6 +31,9 @@ public class fragmentInteraction : MonoBehaviour
         // on collision with player
         if (other.CompareTag("Player"))
         {
+            // Set sprite in Collections
+            FindObjectOfType<Objectives>().setSprite(sprite);
+
             // update objective Manager
             FindObjectOfType<Objectives>().UpdateMemoryFragmentObj(objText);
 

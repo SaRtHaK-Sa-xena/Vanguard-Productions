@@ -25,6 +25,9 @@ public class PauseMenu : MonoBehaviour
     public GameObject memoryBackgroundGraphic;
     public GameObject memoryPanel;
 
+    // Reference to memory manager
+    public GameObject objectivesManager;
+
     // Current Memory gained from fragment interaction
     public Sprite currentMemorySprite;
 
@@ -50,6 +53,8 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
+
+        Debug.Log(GamePaused);
     }
 
     public void Resume () // Pause menu Closed
@@ -62,6 +67,14 @@ public class PauseMenu : MonoBehaviour
     public void Pause () // Pause menu Opened
     {
         pauseMenuUI.SetActive(true);
+
+        Resume_txt.SetActive(true);
+        Menu_txt.SetActive(true);
+        Quit_txt.SetActive(true);
+        Collections_txt.SetActive(true);
+
+        collectionsDisplay.SetActive(false);
+
         Time.timeScale = 0f;
         GamePaused = true;
     }
@@ -106,6 +119,23 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         GamePaused = false;
+    }
+
+    // On Click in Collections Display
+    // Whem clicking image
+    public void setSpriteInManager(GameObject gO)
+    {
+        Debug.Log(this.gameObject.name);
+
+        // if image exists
+        if(gO.GetComponent<Image>().sprite.name != "memoryFragment")
+        {
+            // set manager sprite though objectives manager
+            objectivesManager.GetComponent<Objectives>().setManagerSprite(gO.GetComponent<Image>().sprite);
+
+            // Display Memory
+            DisplayMemory();
+        }
     }
 
     public void DisplayCollections()
