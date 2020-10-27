@@ -91,6 +91,12 @@ public class Objectives : MonoBehaviour
         displayedObj++;
     }
 
+    /// turn text of next objective on
+    public void FindPostMan()
+    {
+
+    }
+
     // set sprite from FragmentInteraction script
     // on collision set sprite to sprite on fragment
     public void setSprite(Sprite a_sprite)
