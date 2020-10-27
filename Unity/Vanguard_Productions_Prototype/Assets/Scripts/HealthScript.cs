@@ -56,6 +56,8 @@ public class HealthScript : MonoBehaviour
                 animationScript.Death();
                 characterDied = true;
                 GetComponent<EnemyMovement>().enabled = false;
+                GetComponent<EnemyMovement>().timeTracker = 0;
+                GetComponent<EnemyMovement>().TurnOffStun();
             }
             else
             {

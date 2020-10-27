@@ -32,6 +32,9 @@ public class EnemyMovement : MonoBehaviour
     public bool staggered;
     public bool jumped;
 
+    // checks if dead
+    public bool dead;
+
     private bool animationPlaying = false;
 
     // Sphere collider
