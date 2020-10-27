@@ -19,17 +19,32 @@ public class CollisionDetector : MonoBehaviour
     public bool display;
 
     private Vector3 norm;
-
+    private float mouseHor;
 
     private void Start()
     {
         engine = GetComponent<PlayerEngine>();
     }
 
+    private void Update()
+    {
+        mouseHor = Input.GetAxisRaw("Horizontal");
+        // if player running right, and contact norm pointing left               
+        if (mouseHor == norm.z)
+        {
+            GetComponent<PlayerControl>().allowMovement = true;
+            //player.GetComponent<Rigidbody>().AddForce(norm * force * Time.deltaTime);
+            //transform.GetChild(0).GetComponent<animationScript>().anim.SetFloat("xMov", 0);
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
-        // if tagged wall then add force
-        norm = collision.contacts[0].normal;
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            // if tagged wall then add force
+            norm = collision.contacts[0].normal;
+        }
 
         // if normal point right or left
         Vector3 zVector = new Vector3(0.0f, 0.0f, 1.0f);
@@ -39,7 +54,7 @@ public class CollisionDetector : MonoBehaviour
         {
             //Debug.Log("Norm: " + norm);
             //player.GetComponent<Rigidbody>().AddForce(norm * force * Time.deltaTime);
-            GetComponent<PlayerControl>().allowMovement = false;
+            //GetComponent<PlayerControl>().allowMovement = false;
         }
 
         //Debug.Log(ReturnDirection(collision.gameObject, this.gameObject));
@@ -48,29 +63,60 @@ public class CollisionDetector : MonoBehaviour
 
         Vector3 direction = collision.contacts[0].point - rayCastPos.transform.position;
 
-        //if(Physics.Raycast(rayCastPos.transform.position, transform.forward, out rayInfo))
-        //{
-        //    if(rayInfo.collider)
-        //    {
-        //        Debug.DrawRay(rayCastPos.transform.position, collision.contacts[0].point, Color.green, 5f);
-        //    }
-        //}
     }
 
     private void OnCollisionStay(Collision collision)
     {
-        // if tagged wall then add force
-        norm = collision.contacts[0].normal;
-
         // if normal point right or left
         Vector3 zVector = new Vector3(0.0f, 0.0f, 1.0f);
         Vector3 zNegVector = new Vector3(0.0f, 0.0f, -1.0f);
-
-        if (norm == zVector || norm == zNegVector)
+       
+        //if (norm == zVector || norm == zNegVector)
         {
             if (collision.gameObject.CompareTag("Wall"))
             {
-                player.GetComponent<Rigidbody>().AddForce(collision.contacts[0].normal * force * Time.deltaTime);
+                // if player running right, and contact norm pointing left
+                // if (norm.y == 1 || norm.y == -1)
+                // return;
+
+                // mouse horz > 0 && norm.z < 0
+
+                if (norm.z > 0)
+                    norm.z = 1;
+                else if (norm.z < 0)
+                    norm.z = -1;
+
+                if (mouseHor != norm.z)
+                {               
+                    transform.GetChild(0).GetComponent<animationScript>().anim.SetFloat("xMov", 0);
+                    GetComponent<PlayerControl>().allowMovement = false;
+
+                    
+                    //if(Input.GetKeyDown(KeyCode.Space))
+                    //{
+                    //    player.GetComponent<Rigidbody>().AddForce(player.transform.up * force * Time.deltaTime);
+                    //}
+                }
+
+                if (norm.z == 0)
+                {
+                    GetComponent<PlayerControl>().allowMovement = true;
+                }
+
+                //if(!GetComponent<PlayerControl>().allowMovement)
+                //{
+                //    if (GetComponent<jumpController>().IsGrounded() && !Input.GetKeyDown(KeyCode.Space))
+                //    {
+                //        player.GetComponent<Rigidbody>().AddForce(collision.contacts[0].normal * force * Time.deltaTime);
+                //        Debug.Log("No JUmp up!");
+                //    }
+                //    else if(GetComponent<jumpController>().IsGrounded() && Input.GetKeyDown(KeyCode.Space))
+                //    {
+                //        player.GetComponent<Rigidbody>().AddForce(collision.contacts[0].normal * (force * 200) * Time.deltaTime);
+                //        player.GetComponent<Rigidbody>().AddForce(player.transform.up * force * Time.deltaTime);
+                //        Debug.Log("Jump up!");
+                //    }
+                //}
             }
         }
     }
@@ -81,9 +127,13 @@ public class CollisionDetector : MonoBehaviour
         // set velocity of z to 0
         if (collision.gameObject.CompareTag("Wall"))
         {
-            GetComponent<Rigidbody>().velocity = new Vector3(GetComponent<Rigidbody>().velocity.x, GetComponent<Rigidbody>().velocity.y, 0);
-            player.GetComponent<Rigidbody>().AddForce(transform.up * force * Time.deltaTime);
-            GetComponent<PlayerControl>().allowMovement = true;
+           norm.z = 0;
+
+            // if tagged wall then add force
+            //norm = collision.contacts[0].normal;
+            //GetComponent<Rigidbody>().velocity = new Vector3(GetComponent<Rigidbody>().velocity.x, GetComponent<Rigidbody>().velocity.y, 0);
+            //player.GetComponent<Rigidbody>().AddForce(transform.up * force * Time.deltaTime);
+            // GetComponent<PlayerControl>().allowMovement = true;
         }
     }
 
