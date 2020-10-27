@@ -21,6 +21,8 @@ public class CollisionDetector : MonoBehaviour
     private Vector3 norm;
     private float mouseHor;
 
+    public GameObject rayCastFeet;
+
     private void Start()
     {
         engine = GetComponent<PlayerEngine>();
@@ -29,12 +31,39 @@ public class CollisionDetector : MonoBehaviour
     private void Update()
     {
         mouseHor = Input.GetAxisRaw("Horizontal");
+        if (mouseHor < 0)
+            rayCastFeet.transform.eulerAngles = new Vector3(0, 180, 0);
+        else
+            rayCastFeet.transform.eulerAngles = new Vector3(0, 0, 0);
+
         // if player running right, and contact norm pointing left               
         if (mouseHor == norm.z)
         {
             GetComponent<PlayerControl>().allowMovement = true;
             //player.GetComponent<Rigidbody>().AddForce(norm * force * Time.deltaTime);
             //transform.GetChild(0).GetComponent<animationScript>().anim.SetFloat("xMov", 0);
+        }
+
+
+
+        // ==== create ray cast from feet
+        // ==== create when player jumped
+        // ==== if(nothing in front)
+        // ==== turn movement to true
+        if(!GetComponent<jumpController>().IsGrounded())
+        {
+            RaycastHit info;
+            if (Physics.Raycast(rayCastFeet.transform.position, rayCastFeet.transform.TransformDirection(Vector3.forward), out info, 2f))
+            {
+                // Debug To check
+                Debug.Log("Ray Hit Something");
+                Debug.DrawRay(rayCastFeet.transform.position, rayCastFeet.transform.TransformDirection(Vector3.forward) * info.distance, Color.green);
+                Debug.Log(info.collider.tag);
+                if(!info.collider.CompareTag("Wall"))
+                {
+                    GetComponent<PlayerControl>().allowMovement = true;
+                }
+            }
         }
     }
 
