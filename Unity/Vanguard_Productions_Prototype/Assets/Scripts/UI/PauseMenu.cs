@@ -34,10 +34,22 @@ public class PauseMenu : MonoBehaviour
     // holds memoryFrags
     public List<GameObject> memoryFrags;
 
+    // opened normally through menu
     public bool openedCollections = false;
+
+    // opened through interaction
+    public bool openedThroughInteraction = false;
 
     void Update() // CHeck if key is pressed to open/close Pause Menu
     {
+        if(Input.GetKeyDown(KeyCode.C))
+        {
+            if(openedThroughInteraction)
+            {
+                Resume();
+            }
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (GamePaused)
@@ -91,6 +103,9 @@ public class PauseMenu : MonoBehaviour
         memoryPanel.SetActive(false);
 
         collectionsDisplay.SetActive(true);
+
+
+
         GamePaused = true;
     }
 
