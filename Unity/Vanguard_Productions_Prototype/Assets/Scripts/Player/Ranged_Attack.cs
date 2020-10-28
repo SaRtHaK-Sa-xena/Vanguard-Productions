@@ -94,7 +94,7 @@ public class Ranged_Attack : MonoBehaviour
         if (GetComponent<PlayerControl>().allowMovement)
         {
             // if not fired ranged attack
-            if(!firedRangedAttack)
+            if (!firedRangedAttack && !FindObjectOfType<PauseMenu>().GamePaused)
             {
                 // if key pressed
                 if (doRangeAnim || Input.GetKeyDown(KeyCode.Z))

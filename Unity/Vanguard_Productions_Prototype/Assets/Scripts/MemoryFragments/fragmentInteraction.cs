@@ -17,6 +17,8 @@ public class fragmentInteraction : MonoBehaviour
 
     public Sprite sprite;
 
+    public Sprite[] memoryFragments;
+
     private void Start()
     {
         GameObject fragObjUI = FindObjectOfType<Objectives>().gameObject.transform.GetChild(0).gameObject;
@@ -31,8 +33,12 @@ public class fragmentInteraction : MonoBehaviour
         // on collision with player
         if (other.CompareTag("Player"))
         {
+            memoryManager.GetComponent<memoryManager>().setNextSprite();
+
+            Sprite currentSprite = memoryManager.GetComponent<memoryManager>().currentMemory;
+
             // Set sprite in Collections
-            FindObjectOfType<Objectives>().setSprite(sprite);
+            FindObjectOfType<Objectives>().setSprite(currentSprite);
 
             // update objective Manager
             FindObjectOfType<Objectives>().UpdateMemoryFragmentObj(objText);
@@ -40,7 +46,8 @@ public class fragmentInteraction : MonoBehaviour
             // set sprite of memory display to fragment sprite
             //memoryDisplay.GetComponent<Image>().sprite = sprite;
 
-            memoryManager.GetComponent<memoryManager>().currentMemory = sprite;
+            //memoryManager.GetComponent<memoryManager>().currentMemory = sprite;
+
 
             //memoryDisplay.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<Image>().sprite = sprite;
 
