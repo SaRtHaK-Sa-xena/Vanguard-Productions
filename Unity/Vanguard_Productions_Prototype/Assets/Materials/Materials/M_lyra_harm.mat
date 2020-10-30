@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Lyra_HArm
+  m_Name: M_lyra_harm
   m_Shader: {fileID: -6465566751694194690, guid: 376cdab529cdaad408fc3e7aa4750be8,
     type: 3}
   m_ShaderKeywords: 
