@@ -473,8 +473,8 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 3
-    m_ConditionEvent: xMov
+  - m_ConditionMode: 1
+    m_ConditionEvent: Falling
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7581883882339092150}
@@ -621,7 +621,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0
+  m_TransitionDuration: 0.1
   m_TransitionOffset: 0
   m_ExitTime: 3.7002584e-10
   m_HasExitTime: 0
@@ -1009,10 +1009,10 @@ AnimatorStateMachine:
     m_Position: {x: 450, y: 50, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7277971877113031861}
-    m_Position: {x: 270, y: -20, z: 0}
+    m_Position: {x: 160, y: -30, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4443949186672658421}
-    m_Position: {x: 40, y: -20, z: 0}
+    m_Position: {x: -60, y: -20, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -6055816904409927800}
@@ -1398,7 +1398,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Jump_Beg
-  m_Speed: 107.7
+  m_Speed: 20
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 5645541842096635673}
