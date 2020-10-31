@@ -90,8 +90,6 @@ public class jumpController : MonoBehaviour
     {
         //if (GetComponent<PlayerControl>().allowMovement)
         //{
-
-
         if (jumpRequest)
         {
             // jump
