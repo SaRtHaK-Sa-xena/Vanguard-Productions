@@ -63,10 +63,10 @@ public class animationScript : MonoBehaviour
             if (gameObject.CompareTag("Player"))
             {
                 //  if player presses space bar
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    anim.SetTrigger("isJump");
-                }
+                //if (Input.GetKeyDown(KeyCode.Space))
+                //{
+                    //anim.SetTrigger("isJump");
+                //}
 
                 if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.RightArrow))
                 {
@@ -153,6 +153,11 @@ public class animationScript : MonoBehaviour
         anim.SetTrigger("Mid_Air_Attack");
     }
 
+    public void setPlayerOnFloor()
+    {
+        anim.SetTrigger("IsGround");
+    }
+
     // On enemy 
     public void ShakeCameraOnHit()
     {
@@ -169,6 +174,16 @@ public class animationScript : MonoBehaviour
     public void stopStagger()
     {
        transform.parent.GetComponent<EnemyMovement>().staggered = false;
+    }
+
+
+    // play stagger effect
+    public void playStaggerEffect()
+    {
+        GameObject rigidBodyObj = transform.parent.gameObject;
+        Debug.Log("Working");
+        rigidBodyObj.GetComponent<Rigidbody>().AddForce(rigidBodyObj.transform.up * 300f);
+        rigidBodyObj.GetComponent<Rigidbody>().AddForce(-rigidBodyObj.transform.forward * 600f);
     }
 
     public void Play_Falling_Animation()

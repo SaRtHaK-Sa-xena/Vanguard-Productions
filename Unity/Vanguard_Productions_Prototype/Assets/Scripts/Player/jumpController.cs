@@ -90,15 +90,20 @@ public class jumpController : MonoBehaviour
     {
         //if (GetComponent<PlayerControl>().allowMovement)
         //{
-            if (jumpRequest)
-            {
-                GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce);
 
-                // Set velocity of z to zero
-                GetComponent<Rigidbody>().velocity = new Vector3(GetComponent<Rigidbody>().velocity.x, GetComponent<Rigidbody>().velocity.y, 0);
 
-                jumpRequest = false;
-            }
+        if (jumpRequest)
+        {
+            // jump
+            anim.Jump();
+
+            GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce);
+
+            // Set velocity of z to zero
+            GetComponent<Rigidbody>().velocity = new Vector3(GetComponent<Rigidbody>().velocity.x, GetComponent<Rigidbody>().velocity.y, 0);
+
+            jumpRequest = false;
+        }
         //}
         
     }
