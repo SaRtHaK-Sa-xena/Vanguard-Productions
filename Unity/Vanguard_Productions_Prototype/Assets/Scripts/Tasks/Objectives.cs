@@ -9,6 +9,7 @@ using TMPro;
 /// </summary>
 public class Objectives : MonoBehaviour
 {
+    // total fragments
     public const float totalFragments = 3;
 
     // holds memory fragment count
@@ -27,6 +28,9 @@ public class Objectives : MonoBehaviour
 
     // memory Manager
     public GameObject memoryManager;
+
+    // task
+    public TextMeshProUGUI secondTask;
 
     private void Awake()
     {
@@ -52,7 +56,7 @@ public class Objectives : MonoBehaviour
         text.text = result;
 
         // Update the Objective Count
-        UpdateObjectiveCount();
+        UpdateObjectiveCount(text);
 
         // Update Collections in Menu
         UpdateCollections();
@@ -76,19 +80,19 @@ public class Objectives : MonoBehaviour
     }
 
     // increment objective if fragments collected greater than total
-    public void UpdateObjectiveCount()
+    public void UpdateObjectiveCount(TextMeshProUGUI text)
     {
         // if all fragments collected
         if(m_Fragment >= totalFragments)
         {
-            // increment objective
-            IncrementObj();
+            text.gameObject.SetActive(false);
+            secondTask.gameObject.SetActive(true);
         }
     }
 
-    public void IncrementObj()
+    public void completeMemoryFragment()
     {
-        displayedObj++;
+        
     }
 
     /// turn text of next objective on

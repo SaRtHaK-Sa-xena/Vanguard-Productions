@@ -56,9 +56,9 @@ public class CollisionDetector : MonoBehaviour
             if (Physics.Raycast(rayCastFeet.transform.position, rayCastFeet.transform.TransformDirection(Vector3.forward), out info, 2f))
             {
                 // Debug To check
-                Debug.Log("Ray Hit Something");
-                Debug.DrawRay(rayCastFeet.transform.position, rayCastFeet.transform.TransformDirection(Vector3.forward) * info.distance, Color.green);
-                Debug.Log(info.collider.tag);
+                //Debug.Log("Ray Hit Something");
+                //Debug.DrawRay(rayCastFeet.transform.position, rayCastFeet.transform.TransformDirection(Vector3.forward) * info.distance, Color.green);
+                //Debug.Log(info.collider.tag);
                 if(!info.collider.CompareTag("Wall"))
                 {
                     GetComponent<PlayerControl>().allowMovement = true;

@@ -94,6 +94,6 @@ public class DialogueManager : MonoBehaviour
 
         player.GetComponent<PlayerControl>().startMovement();
 
-        Debug.Log("End Of Dialogue");
+        //Debug.Log("End Of Dialogue");
     }
 }

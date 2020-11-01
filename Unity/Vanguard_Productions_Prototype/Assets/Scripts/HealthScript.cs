@@ -24,6 +24,7 @@ public class HealthScript : MonoBehaviour
 
     public void ApplyDamage(float damage, bool heavy)
     {
+
         if(characterDied)
         {
             return;
@@ -38,9 +39,19 @@ public class HealthScript : MonoBehaviour
         }
         else
         {
+            if(!is_Player)
+            {
+                //GetComponent<EnemyMovement>().enabled = false;
+                //GetComponent<Rigidbody>().velocity = Vector3.zero;
+                //GetComponent<Rigidbody>().AddForce(transform.up * 200f);
+                //GetComponent<Rigidbody>().AddForce(-transform.forward * 300f);
+                //GetComponent<EnemyMovement>().followPlayer = true;
+
+                //GetComponent<EnemyMovement>().enabled = true;
+            }
             // decrement health
             health -= damage;
-            GetComponent<Rigidbody>().AddForce(-transform.forward * 2f);
+            //GetComponent<Rigidbody>().AddForce(-transform.forward * 2f);
         }
 
 
@@ -56,6 +67,8 @@ public class HealthScript : MonoBehaviour
                 animationScript.Death();
                 characterDied = true;
                 GetComponent<EnemyMovement>().enabled = false;
+                GetComponent<EnemyMovement>().timeTracker = 0;
+                GetComponent<EnemyMovement>().TurnOffStun();
             }
             else
             {

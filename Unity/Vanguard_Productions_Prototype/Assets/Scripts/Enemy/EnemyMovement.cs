@@ -32,6 +32,9 @@ public class EnemyMovement : MonoBehaviour
     public bool staggered;
     public bool jumped;
 
+    // checks if dead
+    public bool dead;
+
     private bool animationPlaying = false;
 
     // Sphere collider
@@ -141,6 +144,7 @@ public class EnemyMovement : MonoBehaviour
             return;
         }
 
+
         //else if(!patrol)
         //{
         //if (Vector3.Distance(transform.position, patrolPoints[0].position) > attack_Distance)
@@ -189,6 +193,8 @@ public class EnemyMovement : MonoBehaviour
                 {
                     enemyAnim.Walk(true);
                 }
+
+                Debug.Log("Going To Player");
             }
         }
         else if (Vector3.Distance(transform.position, playerTarget.position) <= attack_Distance)
@@ -281,11 +287,11 @@ public class EnemyMovement : MonoBehaviour
 
         //if (patrolPoints[waypointIndex].position.z < transform.position.z)
         //{
-           // transform.eulerAngles = new Vector3(0, 180, 0);
+        // transform.eulerAngles = new Vector3(0, 180, 0);
         //}
         //if (patrolPoints[waypointIndex].position.z > transform.position.z)
         //{
-           // transform.eulerAngles = new Vector3(0, 0, 0);
+        // transform.eulerAngles = new Vector3(0, 0, 0);
         //}
 
         //myBody.velocity = transform.forward * speed;
@@ -295,6 +301,7 @@ public class EnemyMovement : MonoBehaviour
             enemyAnim.Walk(true);
         }
     }
+
 
     void IncreaseIndex()
     {

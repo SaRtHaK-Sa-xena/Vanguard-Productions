@@ -14,7 +14,11 @@ public class Helper_Grapple : MonoBehaviour
 
     GameObject m_other;
 
+    [SerializeField] private float inRange = 1f;
+    
     private bool startChecking;
+
+    public GameObject UIAboveGrapple;
 
     private void Start()
     {
@@ -93,13 +97,18 @@ public class Helper_Grapple : MonoBehaviour
             //}
             var grapple = other.GetComponent<ImprovedGrappling>().grappable;
 
+            if(!grapple)
+            {
+                UIAboveGrapple.SetActive(true);
+            }
+
             if (Input.GetKey(KeyCode.X) && !grapple)
             {
                 other.GetComponent<ImprovedGrappling>().grappable = true;
                 FindObjectOfType<ImprovedGrappling>().grapplePoint = GrapplePoint.transform;
             }
 
-            
+
 
             //if(Input.GetKeyUp(KeyCode.X))
             //{
@@ -121,10 +130,11 @@ public class Helper_Grapple : MonoBehaviour
     // When player leaves the player cannot grapple
     private void OnTriggerExit(Collider other)
     {
-        //if (other.CompareTag("Player"))
-        //{
+        if (other.CompareTag("Player"))
+        {
+            UIAboveGrapple.SetActive(false);
         //    FindObjectOfType<ImprovedGrappling>().grappable = false;
-        //}
+        }
     }
 
 }

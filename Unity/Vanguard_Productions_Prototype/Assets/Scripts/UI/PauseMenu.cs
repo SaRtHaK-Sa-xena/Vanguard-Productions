@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool GamePaused = false;
+    public bool GamePaused = false;
 
     public GameObject pauseMenuUI;
 
@@ -34,10 +34,22 @@ public class PauseMenu : MonoBehaviour
     // holds memoryFrags
     public List<GameObject> memoryFrags;
 
+    // opened normally through menu
     public bool openedCollections = false;
+
+    // opened through interaction
+    public bool openedThroughInteraction = false;
 
     void Update() // CHeck if key is pressed to open/close Pause Menu
     {
+        if(Input.GetKeyDown(KeyCode.C))
+        {
+            if(openedThroughInteraction)
+            {
+                Resume();
+            }
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (GamePaused)
@@ -74,6 +86,26 @@ public class PauseMenu : MonoBehaviour
         collectionsDisplay.SetActive(false);
 
         Time.timeScale = 0f;
+        GamePaused = true;
+    }
+
+    public void BackToCollections()
+    {
+        // turn on previous menu
+        pauseMenuUI.SetActive(true);
+        Menu_txt.SetActive(false);
+        Quit_txt.SetActive(false);
+        Collections_txt.SetActive(false);
+        Resume_txt.SetActive(false);
+
+        // set memory display false
+        memoryBackgroundGraphic.SetActive(false);
+        memoryPanel.SetActive(false);
+
+        collectionsDisplay.SetActive(true);
+
+        openedThroughInteraction = true;
+
         GamePaused = true;
     }
 
