@@ -60,53 +60,91 @@ public class animationScript : MonoBehaviour
 
         if (FindObjectOfType<PlayerControl>().allowMovement == true)
         {
+            // if script on player
             if (gameObject.CompareTag("Player"))
             {
-                //  if player presses space bar
-                //if (Input.GetKeyDown(KeyCode.Space))
-                //{
-                    //anim.SetTrigger("isJump");
-                //}
-
-                if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.RightArrow))
-                {
-                    //InputZ = 0;
-                    //InputX = 0;
-                    InputX = 0f;
-                    anim.SetFloat("xMov", InputX);
-                    return;
-                }
-
-                // ====== side scroller movement ========
-                //InputZ = Input.GetAxis("Vertical"); //UP and DOWN arrow key
-                //anim.SetFloat("zMov", InputX);
-
-                //InputX = Input.GetAxis("Horizontal"); //LEFT and RIGHT arrow key
-                InputX = animationControls.Animation.Running.ReadValue<float>();
-                InputX = Input.GetAxisRaw("Horizontal");
-                anim.SetFloat("xMov", InputX);
-
-
-                // ====== side scroller movement ========
-
-                // ====== Character Orientation =========
-
-                //update character orientation
-                if (Input.GetKey(KeyCode.LeftArrow) || InputX < 0)
-                {
-                    transform.eulerAngles = new Vector3(0, 180, 0);
-                    FindObjectOfType<Ranged_Attack>().Effect.transform.GetChild(0).GetComponent<ParticleSystemRenderer>().flip = new Vector3(0, 0, 0);
-                    FindObjectOfType<Ranged_Attack>().spawnPoint.transform.eulerAngles = new Vector3(0, 180, 0);
-                    //characterOrientation.y += 0.1f;
-                }
-                else if (Input.GetKey(KeyCode.RightArrow) || InputX > 0)
-                {
-                    transform.eulerAngles = new Vector3(0, 0, 0);
-                    FindObjectOfType<Ranged_Attack>().Effect.transform.GetChild(0).GetComponent<ParticleSystemRenderer>().flip = new Vector3(1, 0, 0);
-                    FindObjectOfType<Ranged_Attack>().spawnPoint.transform.eulerAngles = new Vector3(0, 0, 0);
-                }
-
                 
+
+                // if key mapping set to wasd
+                if (transform.parent.GetComponent<PlayerControl>().wasd)
+                {
+                    InputX = animationControls.Animation.Running.ReadValue<float>();
+                    
+                    if(!Input.GetKey(KeyCode.LeftArrow) || !Input.GetKey(KeyCode.RightArrow))
+                    {
+                        InputX = Input.GetAxisRaw("Horizontal");
+                    }
+
+                    anim.SetFloat("xMov", InputX);
+
+
+                    // if both movement directions pressed
+                    if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.RightArrow))
+                    {
+                        //InputZ = 0;
+                        //InputX = 0;
+                        InputX = 0f;
+                        anim.SetFloat("xMov", InputX);
+                        return;
+                    }
+
+                    // ====== Character Orientation =========
+                    //update character orientation
+                    if (Input.GetKey(KeyCode.A) || InputX < 0)
+                    {
+                        transform.eulerAngles = new Vector3(0, 180, 0);
+                        FindObjectOfType<Ranged_Attack>().Effect.transform.GetChild(0).GetComponent<ParticleSystemRenderer>().flip = new Vector3(0, 0, 0);
+                        FindObjectOfType<Ranged_Attack>().spawnPoint.transform.eulerAngles = new Vector3(0, 180, 0);
+                        //characterOrientation.y += 0.1f;
+                    }
+                    else if (Input.GetKey(KeyCode.D) || InputX > 0)
+                    {
+                        transform.eulerAngles = new Vector3(0, 0, 0);
+                        FindObjectOfType<Ranged_Attack>().Effect.transform.GetChild(0).GetComponent<ParticleSystemRenderer>().flip = new Vector3(1, 0, 0);
+                        FindObjectOfType<Ranged_Attack>().spawnPoint.transform.eulerAngles = new Vector3(0, 0, 0);
+                    }
+                }
+                else
+                {
+                    InputX = animationControls.Animation.Running.ReadValue<float>();
+
+                    if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+                    {
+                        Debug.Log("Pressing A");
+                    }
+                    else
+                    {
+                        InputX = Input.GetAxisRaw("Horizontal");
+                    }
+
+                    anim.SetFloat("xMov", InputX);
+
+                    // if both movement directions pressed
+                    if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
+                    {
+                        //InputZ = 0;
+                        //InputX = 0;
+                        InputX = 0f;
+                        anim.SetFloat("xMov", InputX);
+                        return;
+                    }
+
+                    // ====== Character Orientation =========
+                    //update character orientation
+                    if (Input.GetKey(KeyCode.LeftArrow) || InputX < 0)
+                    {
+                        transform.eulerAngles = new Vector3(0, 180, 0);
+                        FindObjectOfType<Ranged_Attack>().Effect.transform.GetChild(0).GetComponent<ParticleSystemRenderer>().flip = new Vector3(0, 0, 0);
+                        FindObjectOfType<Ranged_Attack>().spawnPoint.transform.eulerAngles = new Vector3(0, 180, 0);
+                        //characterOrientation.y += 0.1f;
+                    }
+                    else if (Input.GetKey(KeyCode.RightArrow) || InputX > 0)
+                    {
+                        transform.eulerAngles = new Vector3(0, 0, 0);
+                        FindObjectOfType<Ranged_Attack>().Effect.transform.GetChild(0).GetComponent<ParticleSystemRenderer>().flip = new Vector3(1, 0, 0);
+                        FindObjectOfType<Ranged_Attack>().spawnPoint.transform.eulerAngles = new Vector3(0, 0, 0);
+                    }
+                }
             }
         }
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    private animationScript enemyAnim;
+    public animationScript enemyAnim;
 
     private Rigidbody myBody;
     public float speed = 5f;
@@ -42,7 +42,6 @@ public class EnemyMovement : MonoBehaviour
 
     private void Awake()
     {
-        enemyAnim = GetComponentInChildren<animationScript>();
         myBody = GetComponent<Rigidbody>();
 
         //playerTarget = GameObject.FindWithTag("Player").transform;
@@ -71,13 +70,13 @@ public class EnemyMovement : MonoBehaviour
             if (!animationPlaying)
             {
                 // play stun animation
-                GetComponentInChildren<animationScript>().Play_StunAnimation();
+                enemyAnim.GetComponent<animationScript>().Play_StunAnimation();
 
                 // Debug Purposes
                 Debug.Log("Play Animation");
 
                 // turn the movement anim to false
-                GetComponentInChildren<animationScript>().Walk(false);
+                enemyAnim.GetComponent<animationScript>().Walk(false);
 
                 // set animation playing condition to true
                 animationPlaying = true;
