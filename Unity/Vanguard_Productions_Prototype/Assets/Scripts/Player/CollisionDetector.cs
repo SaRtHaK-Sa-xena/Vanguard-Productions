@@ -53,7 +53,7 @@ public class CollisionDetector : MonoBehaviour
         if(!GetComponent<jumpController>().IsGrounded())
         {
             RaycastHit info;
-            if (Physics.Raycast(rayCastFeet.transform.position, rayCastFeet.transform.TransformDirection(Vector3.forward), out info, 2f))
+            if (Physics.Raycast(rayCastFeet.transform.position, rayCastFeet.transform.TransformDirection(Vector3.forward), out info, 5f))
             {
                 // Debug To check
                 //Debug.Log("Ray Hit Something");
