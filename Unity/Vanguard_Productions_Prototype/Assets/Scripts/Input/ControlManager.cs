@@ -11,24 +11,31 @@ public class ControlManager : MonoBehaviour
     public KeyCode jump;
     public KeyCode panUp;
 
+    public GameObject Player;
 
-    void ChangeKeyCode(string layout)
+    public void ChangeKeyCode(string layout)
     {
-        if(layout == "normal")
+        if(layout == "Set 1")
         {
             lightAttack = KeyCode.C;
             rangedAttack = KeyCode.Z;
             grapple = KeyCode.X;
             jump = KeyCode.Space;
-            panUp = KeyCode.W;
+            Player.GetComponent<PlayerControl>().wasd = false;
         }
-        if(layout == "mouse")
+        if(layout == "Set 2")
         {
-            lightAttack = KeyCode.Mouse0;
-            rangedAttack = KeyCode.Mouse1;
-            grapple = KeyCode.Mouse2;
-            jump = KeyCode.Mouse3;
-            panUp = KeyCode.Mouse4;
+            lightAttack = KeyCode.J;
+            rangedAttack = KeyCode.K;
+            grapple = KeyCode.S;
+            jump = KeyCode.Space;
+            Player.GetComponent<PlayerControl>().wasd = true;
         }
+    }
+
+    private void Awake()
+    {
+        // default
+        ChangeKeyCode("Set 1");
     }
 }

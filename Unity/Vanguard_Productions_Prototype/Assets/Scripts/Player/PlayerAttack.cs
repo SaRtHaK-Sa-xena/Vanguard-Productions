@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    ControlManager CM;
+    public ControlManager CM;
 
     public animationScript playerAnim;
 
@@ -81,7 +81,7 @@ public class PlayerAttack : MonoBehaviour
         if(GetComponent<PlayerControl>().allowMovement)
         {
             //if (Input.GetKeyDown(KeyCode.Mouse0))
-            if (attackNow || Input.GetKeyDown(KeyCode.C))
+            if (attackNow || Input.GetKeyDown(CM.lightAttack))
             {
                 if (current_Combo_State == ComboState.LIGHT_3 ||
                     current_Combo_State == ComboState.HEAVY_1 ||

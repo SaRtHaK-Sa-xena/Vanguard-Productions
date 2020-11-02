@@ -32,6 +32,8 @@ public class PlayerControl : MonoBehaviour
 
     public Vector3 publicVelocity;
 
+    public bool wasd = false;
+
     void Start()
     {
         engine = GetComponent<PlayerEngine>();
@@ -87,6 +89,28 @@ public class PlayerControl : MonoBehaviour
             {
                 m_velocity = new Vector3(m_velocity.x, m_velocity.y, 0);
             }
+
+
+            //====Checks if the mapping is set to a or d
+            //====if not then remove ability to use a and d
+
+            // key map set to left and righ arrow key
+            if (!wasd)
+            {
+                if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+                {
+                    m_velocity = new Vector3(m_velocity.x, m_velocity.y, 0);
+                }
+            }
+            else
+            {
+                if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+                {
+                    m_velocity = new Vector3(m_velocity.x, m_velocity.y, 0);
+                }
+            }
+
+            
             
             engine.Move(m_velocity);
         }

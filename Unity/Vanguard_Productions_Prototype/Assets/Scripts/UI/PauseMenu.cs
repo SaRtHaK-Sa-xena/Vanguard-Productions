@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -15,15 +16,19 @@ public class PauseMenu : MonoBehaviour
     public GameObject Menu_txt;
     public GameObject Quit_txt;
     public GameObject Collections_txt;
+    public GameObject Options_txt;
 
     // Display Collections
     public GameObject collectionsDisplay;
 
-    // Display the Memory
-    public GameObject memoryHolder;
 
+    // Display the Memory=========
+    public GameObject memoryHolder;
+    // graphic and panel
     public GameObject memoryBackgroundGraphic;
     public GameObject memoryPanel;
+    // Display the Memory=========
+
 
     // Reference to memory manager
     public GameObject objectivesManager;
@@ -34,34 +39,58 @@ public class PauseMenu : MonoBehaviour
     // holds memoryFrags
     public List<GameObject> memoryFrags;
 
+    // Collections Conditions =================
     // opened normally through menu
     public bool openedCollections = false;
-
+    
     // opened through interaction
     public bool openedThroughInteraction = false;
+    // Collections Conditions =================
+
+    // Options KeyMapping
+    public GameObject optionsDisplay;
+    public bool optionsOpen;
+
+    // Input manger
+    public GameObject InputManager;
 
     void Update() // CHeck if key is pressed to open/close Pause Menu
     {
+        // if the user presses C
         if(Input.GetKeyDown(KeyCode.C))
         {
+            // if pressed when the collection was opened through interaction
             if(openedThroughInteraction)
             {
+                // resume back to game
                 Resume();
             }
         }
 
+        // if escape pressed
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            // if the game is set to pause
             if (GamePaused)
             {
+                // if the collections was opened
                 if(openedCollections)
                 {
+                    // close collection
                     CloseCollections();
                 }
+                if(optionsOpen)
+                {
+                    CloseSettings();
+                }
+                // resume to game
                 Resume();
             }
+
+            // if game not paused
             else
             {
+                // pause game
                 Pause();
             }
         }
@@ -82,6 +111,8 @@ public class PauseMenu : MonoBehaviour
         Menu_txt.SetActive(true);
         Quit_txt.SetActive(true);
         Collections_txt.SetActive(true);
+        Options_txt.SetActive(true);
+
 
         collectionsDisplay.SetActive(false);
 
@@ -97,6 +128,7 @@ public class PauseMenu : MonoBehaviour
         Quit_txt.SetActive(false);
         Collections_txt.SetActive(false);
         Resume_txt.SetActive(false);
+        Options_txt.SetActive(false);
 
         // set memory display false
         memoryBackgroundGraphic.SetActive(false);
@@ -175,6 +207,7 @@ public class PauseMenu : MonoBehaviour
         Menu_txt.SetActive(false);
         Quit_txt.SetActive(false);
         Collections_txt.SetActive(false);
+        Options_txt.SetActive(false);
 
         // display collections point
         collectionsDisplay.SetActive(true);
@@ -190,6 +223,7 @@ public class PauseMenu : MonoBehaviour
         Menu_txt.SetActive(true);
         Quit_txt.SetActive(true);
         Collections_txt.SetActive(true);
+        Options_txt.SetActive(true);
 
         //don't display collections point
         collectionsDisplay.SetActive(false);
@@ -199,4 +233,54 @@ public class PauseMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    // Options===========
+    // Key Mapping
+    // Displays Debug info of new value selected
+    // in control schemes
+
+    // open settings menu
+    public void OpenSettings()
+    {
+        // turn all menu items off
+        Resume_txt.SetActive(false);
+        Menu_txt.SetActive(false);
+        Quit_txt.SetActive(false);
+        Collections_txt.SetActive(false);
+        Options_txt.SetActive(false);
+        
+        // turn on options menu
+        optionsDisplay.SetActive(true);
+
+        // set condition for options to true
+        optionsOpen = true;
+    }
+
+
+    public void CloseSettings()
+    {
+        // turn all menu items off
+        Resume_txt.SetActive(true);
+        Menu_txt.SetActive(true);
+        Quit_txt.SetActive(true);
+        Collections_txt.SetActive(true);
+        Options_txt.SetActive(true);
+
+        // turn on options menu
+        optionsDisplay.SetActive(false);
+
+        // set condition for options to true
+        optionsOpen = false;
+    }
+
+    // Change values in keymapping settings
+    public void ChangeKeyMapping(TMP_Dropdown a_dropDown)
+    {
+        // send data of value and run new key mapping function
+        InputManager.GetComponent<ControlManager>().ChangeKeyCode(a_dropDown.options[a_dropDown.value].text);
+
+        // Debug purposes
+        Debug.Log(a_dropDown.options[a_dropDown.value].text);
+    }
+
 }
