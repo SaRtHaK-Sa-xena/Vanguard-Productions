@@ -10,6 +10,7 @@ public class EnemyMovement : MonoBehaviour
     public float speed = 5f;
 
     public Transform playerTarget;
+    public GameObject Player;
 
     public bool patrol;
     public Transform[] patrolPoints;
@@ -32,6 +33,13 @@ public class EnemyMovement : MonoBehaviour
     public bool staggered;
     public bool jumped;
 
+    public float jumpHeight = 5000f;
+    public float distanceFromPlayer;
+
+    [SerializeField] Transform player;
+    [SerializeField] Transform groundCheck;
+    [SerializeField] LayerMask groundLayers;
+
     // checks if dead
     public bool dead;
 
@@ -49,6 +57,13 @@ public class EnemyMovement : MonoBehaviour
         // set stunned time to defaults
         stunnedTime = defaultStunnedTime;
         staggered = false;
+
+        if(gameObject.name == "CrabBoy")
+        {
+            patrol = false;
+            followPlayer = false;
+            attackPlayer = false;
+        }
     }
 
     // Start is called before the first frame update
@@ -60,11 +75,22 @@ public class EnemyMovement : MonoBehaviour
 
         waypointIndex = 0;
         transform.LookAt(patrolPoints[waypointIndex].position);
+
+        col = GetComponent<SphereCollider>();
+
+        if (gameObject.name == "CrabBoy")
+        {
+            patrol = false;
+            followPlayer = false;
+            attackPlayer = false;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        distanceFromPlayer = playerTarget.position.z - transform.position.z;
+
         if (stunned)
         {
             if (!animationPlaying)
@@ -105,8 +131,11 @@ public class EnemyMovement : MonoBehaviour
             if (!patrol)
             {
                 Attack();
-                GetComponentInChildren<animationScript>().Stop_StunAnimation();
-                GetComponentInChildren<animationScript>().Walk(true);
+                if(GetComponentInChildren<animationScript>())
+                {
+                    GetComponentInChildren<animationScript>().Stop_StunAnimation();
+                    GetComponentInChildren<animationScript>().Walk(true);
+                }
                 animationPlaying = false;
             }
             else
@@ -119,7 +148,13 @@ public class EnemyMovement : MonoBehaviour
                 Patrol();
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            jumpAttack();
+        }
     }
+
 
     private void FixedUpdate()
     {
@@ -130,6 +165,34 @@ public class EnemyMovement : MonoBehaviour
         else
         {
             Patrol();
+        }
+    }
+
+    
+
+    public void jumpAttack()
+    {
+        //float distanceFromPlayer = Vector3.Distance(playerTarget.position, transform.position);
+        
+        
+        if(IsGrounded())
+        {
+            // if target position z less
+            //if (playerTarget.position.z < transform.position.z)
+            //{
+            //    distanceFromPlayer = -distanceFromPlayer;
+            //}
+
+            // add force
+
+            if (playerTarget.position.z < transform.position.z)
+            {
+                myBody.AddForce(new Vector3(0, jumpHeight, distanceFromPlayer - 5), ForceMode.Impulse);
+            }
+            else
+            {
+                myBody.AddForce(new Vector3(0, jumpHeight, distanceFromPlayer + 5), ForceMode.Impulse);
+            }
         }
     }
 
@@ -316,6 +379,14 @@ public class EnemyMovement : MonoBehaviour
     public void InvokeStun()
     {
         Invoke("TurnOffStun", stunnedTime);
+    }
+
+    public bool IsGrounded()
+    {
+        return Physics.CheckCapsule
+            (col.bounds.center, new Vector3
+            (col.bounds.center.x, col.bounds.min.y, col.bounds.center.z),
+            col.radius, groundLayers);
     }
 
     //Patrol--
