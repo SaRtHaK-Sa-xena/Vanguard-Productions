@@ -32,4 +32,10 @@ public class ControlManager : MonoBehaviour
             Player.GetComponent<PlayerControl>().wasd = true;
         }
     }
+
+    private void Awake()
+    {
+        // default
+        ChangeKeyCode("Set 1");
+    }
 }

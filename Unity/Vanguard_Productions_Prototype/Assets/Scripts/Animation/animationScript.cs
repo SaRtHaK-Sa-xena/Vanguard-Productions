@@ -69,8 +69,12 @@ public class animationScript : MonoBehaviour
                 if (transform.parent.GetComponent<PlayerControl>().wasd)
                 {
                     InputX = animationControls.Animation.Running.ReadValue<float>();
-                    
-                    if(!Input.GetKey(KeyCode.LeftArrow) || !Input.GetKey(KeyCode.RightArrow))
+
+                    if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+                    {
+
+                    }
+                    else
                     {
                         InputX = Input.GetAxisRaw("Horizontal");
                     }
