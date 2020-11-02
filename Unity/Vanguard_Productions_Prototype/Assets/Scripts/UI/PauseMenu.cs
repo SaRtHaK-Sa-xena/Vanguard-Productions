@@ -111,6 +111,7 @@ public class PauseMenu : MonoBehaviour
         Menu_txt.SetActive(true);
         Quit_txt.SetActive(true);
         Collections_txt.SetActive(true);
+        Options_txt.SetActive(true);
 
 
         collectionsDisplay.SetActive(false);
@@ -127,6 +128,7 @@ public class PauseMenu : MonoBehaviour
         Quit_txt.SetActive(false);
         Collections_txt.SetActive(false);
         Resume_txt.SetActive(false);
+        Options_txt.SetActive(false);
 
         // set memory display false
         memoryBackgroundGraphic.SetActive(false);
@@ -205,6 +207,7 @@ public class PauseMenu : MonoBehaviour
         Menu_txt.SetActive(false);
         Quit_txt.SetActive(false);
         Collections_txt.SetActive(false);
+        Options_txt.SetActive(false);
 
         // display collections point
         collectionsDisplay.SetActive(true);
@@ -220,6 +223,7 @@ public class PauseMenu : MonoBehaviour
         Menu_txt.SetActive(true);
         Quit_txt.SetActive(true);
         Collections_txt.SetActive(true);
+        Options_txt.SetActive(true);
 
         //don't display collections point
         collectionsDisplay.SetActive(false);
