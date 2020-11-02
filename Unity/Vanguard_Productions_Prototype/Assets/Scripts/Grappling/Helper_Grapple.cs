@@ -11,6 +11,7 @@ public class Helper_Grapple : MonoBehaviour
 
     // Sphere Collider
     SphereCollider col;
+    public ControlManager CM;
 
     GameObject m_other;
 
@@ -23,6 +24,7 @@ public class Helper_Grapple : MonoBehaviour
     private void Start()
     {
         col = GetComponent<SphereCollider>();
+        CM = FindObjectOfType<ControlManager>();
     }
 
     private void Update()
@@ -38,7 +40,7 @@ public class Helper_Grapple : MonoBehaviour
         //    Destroy(m_other.GetComponent<SpringJoint>());
         //}
 
-        if (Input.GetKeyUp(KeyCode.X) && FindObjectOfType<ImprovedGrappling>().grappable)
+        if (Input.GetKeyUp(CM.grapple) && FindObjectOfType<ImprovedGrappling>().grappable)
         {
             FindObjectOfType<ImprovedGrappling>().grappable = false;
             Destroy(Player.GetComponent<SpringJoint>());
@@ -102,7 +104,7 @@ public class Helper_Grapple : MonoBehaviour
                 UIAboveGrapple.SetActive(true);
             }
 
-            if (Input.GetKey(KeyCode.X) && !grapple)
+            if (Input.GetKey(CM.grapple) && !grapple)
             {
                 other.GetComponent<ImprovedGrappling>().grappable = true;
                 FindObjectOfType<ImprovedGrappling>().grapplePoint = GrapplePoint.transform;

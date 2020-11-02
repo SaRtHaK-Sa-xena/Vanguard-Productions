@@ -19,6 +19,7 @@ public class jumpController : MonoBehaviour
     public bool jumpRequest;
 
     private PlayerControls controller;
+    public ControlManager CM;
 
     // Debug Check Player Collision
     public GameObject box;
@@ -55,7 +56,7 @@ public class jumpController : MonoBehaviour
     {
         //if(GetComponent<PlayerControl>().allowMovement)
         //{
-            if (IsGrounded() && Input.GetKeyDown(KeyCode.Space))
+            if (IsGrounded() && Input.GetKeyDown(CM.jump))
             {
                 jumpRequest = true;
 
