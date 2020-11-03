@@ -21,6 +21,8 @@ public class jumpController : MonoBehaviour
     private PlayerControls controller;
     public ControlManager CM;
 
+    public float MaxVelocity;
+
     // Debug Check Player Collision
     public GameObject box;
 
@@ -59,7 +61,6 @@ public class jumpController : MonoBehaviour
             if (IsGrounded() && Input.GetKeyDown(CM.jump))
             {
                 jumpRequest = true;
-
                 //GetComponent<Rigidbody>().velocity = Vector3.up * jumpForce;
             }
         //}
@@ -83,6 +84,12 @@ public class jumpController : MonoBehaviour
                 falling = false;
             }
         }
+
+        //Vector3 v = rb.velocity;
+        //v.y = 0;
+        //v = Vector3.ClampMagnitude(v, MaxVelocity);
+        //v.y = rb.velocity.y;
+        //rb.velocity = v;
     }
 
 

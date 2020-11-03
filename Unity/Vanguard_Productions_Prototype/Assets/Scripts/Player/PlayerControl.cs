@@ -16,6 +16,8 @@ public class PlayerControl : MonoBehaviour
     //[SerializeField]
     public float speed = 5f;
 
+    public float grapplingSpeed = 2f;
+
     [SerializeField]
     private float lookSensitivity = 0.0001f;
 
@@ -109,9 +111,6 @@ public class PlayerControl : MonoBehaviour
                     m_velocity = new Vector3(m_velocity.x, m_velocity.y, 0);
                 }
             }
-
-            
-            
             engine.Move(m_velocity);
         }
     }

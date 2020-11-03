@@ -58,7 +58,7 @@ public class EnemyMovement : MonoBehaviour
         stunnedTime = defaultStunnedTime;
         staggered = false;
 
-        if(gameObject.name == "CrabBoy")
+        if(gameObject.name == "CrabBoy" || gameObject.name == "Warden")
         {
             patrol = false;
             followPlayer = false;
@@ -78,7 +78,7 @@ public class EnemyMovement : MonoBehaviour
 
         col = GetComponent<SphereCollider>();
 
-        if (gameObject.name == "CrabBoy")
+        if (gameObject.name == "CrabBoy" || gameObject.name == "Warden")
         {
             patrol = false;
             followPlayer = false;
@@ -343,7 +343,8 @@ public class EnemyMovement : MonoBehaviour
     /// </summary>
     public void Patrol()
     {
-        myBody.transform.LookAt(patrolPoints[waypointIndex]);
+        if(gameObject.name != "Warden")
+            myBody.transform.LookAt(patrolPoints[waypointIndex]);
 
         myBody.velocity = transform.forward * speed;
 
@@ -409,12 +410,4 @@ public class EnemyMovement : MonoBehaviour
     // Rules--
     // Create box collider with layer EnemyBlocker
     // Make the layer unable to interact with everything but enemy
-
-
-
-
-
-
-
-
 }

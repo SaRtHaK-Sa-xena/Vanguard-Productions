@@ -18,6 +18,8 @@ public class ImprovedGrappling : MonoBehaviour
 
     PlayerControls controller;
 
+    public bool grappling;
+
     private void OnEnable()
     {
         controller.Gameplay.Enable();
@@ -69,7 +71,7 @@ public class ImprovedGrappling : MonoBehaviour
     {
         if(grappable)
         {
-
+            grappling = true;
 
             if(!joint)
             {
