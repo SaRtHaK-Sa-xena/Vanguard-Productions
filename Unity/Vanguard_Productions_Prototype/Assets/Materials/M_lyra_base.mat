@@ -29,10 +29,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_97700C50:
-        m_Texture: {fileID: 2800000, guid: 8d6aa14636c2b8a42afaa7c60625a1d5, type: 3}
+        m_Texture: {fileID: 2800000, guid: 896db427ca9a7f848a383db2e80d7a4e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_209110F2: 0.152
     - Vector1_82B81C53: 1
-    m_Colors: []
+    m_Colors:
+    - Vector2_7A9AF3FC: {r: 0, g: 0, b: 0, a: 0}
