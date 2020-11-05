@@ -7,13 +7,13 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Plants_02
+  m_Name: M_MemoryFragment
   m_Shader: {fileID: -6465566751694194690, guid: 376cdab529cdaad408fc3e7aa4750be8,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 1
+  m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
@@ -25,7 +25,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_92694E8C:
-        m_Texture: {fileID: 2800000, guid: a9c4107f441e3804e835633ee6995b70, type: 3}
+        m_Texture: {fileID: 2800000, guid: df2ea68f9ebbce041a2b30581c1788d0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_97700C50:
