@@ -33,7 +33,7 @@ public class EnemyMovement : MonoBehaviour
     public bool staggered;
     public bool jumped;
 
-    public float jumpHeight = 5000f;
+    public float jumpHeight = 12f;
     public float distanceFromPlayer;
 
     [SerializeField] Transform player;
