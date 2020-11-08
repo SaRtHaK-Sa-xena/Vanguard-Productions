@@ -15,6 +15,8 @@ public class Ranged_Attack : MonoBehaviour
     // Effect being used
     public GameObject Effect;
 
+    public ControlManager CM;
+
     // animator
     public animationScript anim;
 
@@ -97,21 +99,21 @@ public class Ranged_Attack : MonoBehaviour
             if (!firedRangedAttack && !FindObjectOfType<PauseMenu>().GamePaused)
             {
                 // if key pressed
-                if (doRangeAnim || Input.GetKeyDown(KeyCode.Z))
+                if (doRangeAnim || Input.GetKeyDown(CM.rangedAttack))
                 {
                     RangedAttack();
                     doRangeAnim = false;
                 }
 
                 //Rotation
-                if (Input.GetKeyDown(KeyCode.A))
+                if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
                 {
                     spawnPoint.transform.eulerAngles = new Vector3(0, 180, 0);
                     Effect.transform.GetChild(0).GetComponent<ParticleSystemRenderer>().flip = new Vector3(0, 0, 0);
 
                     //characterOrientation.y += 0.1f;
                 }
-                if (Input.GetKeyDown(KeyCode.D))
+                if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
                 {
                     spawnPoint.transform.eulerAngles = new Vector3(0, 0, 0);
                     Effect.transform.GetChild(0).GetComponent<ParticleSystemRenderer>().flip = new Vector3(1, 0, 0);

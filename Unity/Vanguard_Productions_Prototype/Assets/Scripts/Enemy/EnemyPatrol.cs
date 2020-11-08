@@ -8,30 +8,59 @@ public class EnemyPatrol : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if(Enemy.gameObject.name != "CrabBoy")
         {
-            Enemy.GetComponent<EnemyMovement>().patrol = false;
-            Enemy.GetComponent<EnemyMovement>().followPlayer = true;
+            if (other.CompareTag("Player"))
+            {
+                Enemy.GetComponent<EnemyMovement>().patrol = false;
+                Enemy.GetComponent<EnemyMovement>().followPlayer = true;
+            }
+        }
+        else
+        {
+            if (other.CompareTag("Player"))
+            {
+                Enemy.GetComponent<EnemyMovement>().jumpAttack();
+            }
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if(Enemy.gameObject.name != "CrabBoy")
         {
-            Enemy.GetComponent<EnemyMovement>().patrol = false; 
-            Enemy.GetComponent<EnemyMovement>().followPlayer = true;
+            if (other.CompareTag("Player"))
+            {
+                Enemy.GetComponent<EnemyMovement>().patrol = false;
+                Enemy.GetComponent<EnemyMovement>().followPlayer = true;
+            }
+        }
+        else
+        {
+            if (other.CompareTag("Player"))
+            {
+                Enemy.GetComponent<EnemyMovement>().jumpAttack();
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (Enemy.gameObject.name != "CrabBoy")
         {
-            Enemy.GetComponent<EnemyMovement>().patrol = true;
-            Enemy.GetComponent<EnemyMovement>().followPlayer = false;
-            Debug.Log("Player Left!");
+            if (other.CompareTag("Player"))
+            {
+                Enemy.GetComponent<EnemyMovement>().patrol = true;
+                Enemy.GetComponent<EnemyMovement>().followPlayer = false;
+                Debug.Log("Player Left!");
+            }
+        }
+        else
+        {
+            if(other.CompareTag("Player"))
+            {
 
+            }
         }
     }
 

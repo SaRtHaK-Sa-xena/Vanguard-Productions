@@ -8,6 +8,7 @@ public class jumpBehaviour : MonoBehaviour
     public float lowJumpMultiplier = 2f;
 
     public Rigidbody rb;
+    public ControlManager CM;
 
     private void Awake()
     {
@@ -23,7 +24,7 @@ public class jumpBehaviour : MonoBehaviour
             {
                 rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
             }
-            else if (rb.velocity.y > 0 && !Input.GetKeyDown(KeyCode.Z))
+            else if (rb.velocity.y > 0 && !Input.GetKeyDown(CM.jump))
             {
                 //Debug.Log("In this");
                 rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
