@@ -21,6 +21,8 @@ public class CheckPoint : MonoBehaviour
     {
         Player.transform.position = spawnPosition.position;
         Player.GetComponent<HealthScript>().health = 100;
+        Player.GetComponent<HealthScript>().UI_health = 100;
+        FindObjectOfType<HealthBar>().gameObject.GetComponent<UnityEngine.UI.Image>().fillAmount = 1;
     }
 
     public void checkTeleportCondition()
