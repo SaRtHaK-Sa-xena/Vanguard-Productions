@@ -51,6 +51,8 @@ MonoBehaviour:
   is_Player: 0
   is_Enemy: 0
   heavy_attack: 0
+  hit_FX_Prefab: {fileID: 0}
+  soundEffect: {fileID: 0}
 --- !u!1 &6778260161570684467
 GameObject:
   m_ObjectHideFlags: 0
@@ -4886,7 +4888,7 @@ ParticleSystemRenderer:
   m_ShadowBias: 0
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
-  m_Flip: {x: 0, y: 0, z: 0}
+  m_Flip: {x: 1, y: 0, z: 0}
   m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1

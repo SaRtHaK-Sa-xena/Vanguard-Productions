@@ -13,7 +13,8 @@ public class AttackUniversal : MonoBehaviour
 
     public bool heavy_attack;
     
-    //public GameObject hit_FX_Prefab;
+    public GameObject hit_FX_Prefab;
+    public GameObject soundEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -52,7 +53,8 @@ public class AttackUniversal : MonoBehaviour
                 //hitFX_Pos.x -= 0.3f;
                 //}
 
-                //Instantiate(hit_FX_Prefab, hitFX_Pos, Quaternion.identity);
+                Instantiate(hit_FX_Prefab, hitFX_Pos, Quaternion.identity);
+                Instantiate(soundEffect, hitFX_Pos, Quaternion.identity);
 
                if (gameObject.CompareTag("begToMid_Point") || gameObject.CompareTag("ranged_attackPoint")) //|| gameObject.CompareTag("begToMid_Point"))
                {

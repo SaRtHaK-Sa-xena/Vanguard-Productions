@@ -8,7 +8,7 @@ public class killPlayer : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            other.GetComponent<HealthScript>().ApplyDamage(200f, true);
+            other.GetComponent<HealthScript>().ApplyDamage(10f, false);
         }
     }
 }
