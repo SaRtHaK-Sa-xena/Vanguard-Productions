@@ -74,6 +74,7 @@ public class AttackUniversal : MonoBehaviour
             if(is_Enemy)
             {
                 hit[0].GetComponent<HealthScript>().ApplyDamage(damage, false);
+                Debug.Log("Damage Done");
             }
 
             Debug.Log("Setting GameObject To InActive");

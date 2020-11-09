@@ -10,10 +10,10 @@ public class CharacterAnimationDelegate : MonoBehaviour
     public GameObject begToMid_Sword_Attack_Point, rangedAttack;
 
     // Enemy
-    public GameObject Left_Arm_Attack_Point, Right_Arm_Attack_Point;
+    public GameObject attackPoint;
 
     private CameraShake shakeCamera;
-    private animationScript animationScript;
+    public animationScript animationScript;
     //void beg_Sword_Attack_On()
     //{
     //    beg_Sword_Attack_Point.SetActive(true);
@@ -30,7 +30,7 @@ public class CharacterAnimationDelegate : MonoBehaviour
     // Camera Shake
     private void Awake()
     {
-        animationScript = FindObjectOfType<animationScript>();
+        animationScript = GetComponent<animationScript>();
         //shakeCamera = GameObject.FindWithTag("MainCamera").GetComponent<CameraShake>();
     }
 
@@ -56,6 +56,7 @@ public class CharacterAnimationDelegate : MonoBehaviour
     void begToMid_Sword_Attack_On()
     {
         begToMid_Sword_Attack_Point.SetActive(true);
+        Debug.Log("Attack on");
     }
 
     void begToMid_Sword_Attack_Off()
@@ -66,29 +67,18 @@ public class CharacterAnimationDelegate : MonoBehaviour
         }
     }
 
-    void leftHandAttack_On()
+    void attackPoint_on()
     {
-        Left_Arm_Attack_Point.SetActive(true);
+        Debug.Log("attack on");
+        attackPoint.SetActive(true);
     }
 
-    void leftHandAttack_Off()
+    void attackPoint_off()
     {
-        if(Left_Arm_Attack_Point.activeInHierarchy)
+        if(attackPoint.activeInHierarchy)
         {
-            Left_Arm_Attack_Point.SetActive(false);
-        }
-    }
-
-    void rightHandAttack_On()
-    {
-        Right_Arm_Attack_Point.SetActive(true);
-    }
-
-    void rightHandAttack_Off()
-    {
-        if(Right_Arm_Attack_Point.activeInHierarchy)
-        {
-            Right_Arm_Attack_Point.SetActive(false);
+            Debug.Log("attack off");
+            attackPoint.SetActive(false);
         }
     }
 
