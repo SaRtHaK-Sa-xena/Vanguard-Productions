@@ -119,7 +119,6 @@ public class CollisionDetector : MonoBehaviour
                 {               
                     transform.GetChild(0).GetComponent<animationScript>().anim.SetFloat("xMov", 0);
                     GetComponent<PlayerControl>().allowMovement = false;
-
                     
                     //if(Input.GetKeyDown(KeyCode.Space))
                     //{
@@ -231,46 +230,5 @@ public class CollisionDetector : MonoBehaviour
         }
         
         return hitDirection;
-    }
-
-
-    public void SetForce(Vector3 m_Velocity)
-    {
-
-        //player.GetComponent<PlayerControl>().allowMovement = true;
-
-        // or Left
-        // Put Force Left
-        //player.GetComponent<Rigidbody>().AddForce(Vector3.left * 20, ForceMode.Impulse);
-
-
-        //Vector3 back = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z + force);
-
-        //GetComponent<Rigidbody>().MovePosition(back);
-
-
-        //==================Previous Attempt ===================================================
-        //Vector3 back = new Vector3(0, 0, player.transform.position.z - 0.01f);
-
-        //a_Velocity = GetComponent<PlayerControl>().publicVelocity;
-
-        //engine.Move(a_Velocity);
-
-        //GetComponent<PlayerControl>().allowMovement = false;
-        //GetComponent<Rigidbody>().velocity = new Vector3(GetComponent<Rigidbody>().velocity.x, GetComponent<Rigidbody>().velocity.y, 0);
-
-        //player.GetComponent<PlayerControl>().allowMovement = false;
-        //player.GetComponent<Rigidbody>().AddForce(Vector3.forward * force, ForceMode.Impulse);
-
-        //player.transform.position += back;
-        //==================Previous Attempt ===================================================
-
-        //player.GetComponent<Rigidbody>().AddForce(Vector3.right * force * Time.deltaTime, ForceMode.Impulse);
-
-
-        //if(hitDirection == HitDirection.None)
-        //{
-        //    player.GetComponent<Rigidbody>().AddForce(Vector3.right* 20, ForceMode.Impulse);
-        //}
     }
 }

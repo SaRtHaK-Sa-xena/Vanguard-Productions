@@ -58,11 +58,11 @@ public class jumpController : MonoBehaviour
     {
         //if(GetComponent<PlayerControl>().allowMovement)
         //{
-            if (IsGrounded() && Input.GetKeyDown(CM.jump))
-            {
-                jumpRequest = true;
-                //GetComponent<Rigidbody>().velocity = Vector3.up * jumpForce;
-            }
+        if (IsGrounded() && Input.GetKeyDown(CM.jump))
+        {
+            jumpRequest = true;
+            //GetComponent<Rigidbody>().velocity = Vector3.up * jumpForce;
+        }
         //}
         
 
@@ -109,6 +109,11 @@ public class jumpController : MonoBehaviour
             GetComponent<Rigidbody>().velocity = new Vector3(GetComponent<Rigidbody>().velocity.x, GetComponent<Rigidbody>().velocity.y, 0);
 
             jumpRequest = false;
+        }
+
+        if(IsGrounded())
+        {
+            anim.Play_IdleAnimation();
         }
         //}
         

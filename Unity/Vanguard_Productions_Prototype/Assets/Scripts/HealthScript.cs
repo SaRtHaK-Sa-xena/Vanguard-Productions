@@ -1,10 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class HealthScript : MonoBehaviour
 {
-    public float health = 100f;
+    public float health;
+    public float UI_health;
+
+    public float MaxHealth = 130f;
 
     private animationScript animationScript;
     private EnemyMovement enemyMovement;
@@ -17,15 +21,26 @@ public class HealthScript : MonoBehaviour
 
     private int noPlayerLayer = 13;
 
+    // Health event UI
+    public event UnityAction<float> OnHealthPctChanged = delegate { }; // pass in null to avoid null check
+
+
     void Awake()
     {
         animationScript = GetComponentInChildren<animationScript>();
+        
+        if(is_Player)
+        {
+            health = MaxHealth;
+            UI_health = health;
+        }
     }
 
     public void ApplyDamage(float damage, bool heavy)
     {
+        
 
-        if(characterDied)
+        if (characterDied)
         {
             return;
         }
@@ -39,19 +54,12 @@ public class HealthScript : MonoBehaviour
         }
         else
         {
-            if(!is_Player)
-            {
-                //GetComponent<EnemyMovement>().enabled = false;
-                //GetComponent<Rigidbody>().velocity = Vector3.zero;
-                //GetComponent<Rigidbody>().AddForce(transform.up * 200f);
-                //GetComponent<Rigidbody>().AddForce(-transform.forward * 300f);
-                //GetComponent<EnemyMovement>().followPlayer = true;
-
-                //GetComponent<EnemyMovement>().enabled = true;
-            }
             // decrement health
             health -= damage;
-            //GetComponent<Rigidbody>().AddForce(-transform.forward * 2f);
+            if(is_Player)
+            {   
+                ModifyHealthValue(-damage);
+            }
         }
 
 
@@ -108,6 +116,14 @@ public class HealthScript : MonoBehaviour
                     // if hit 
                 //}
         }
+    }
+
+    void ModifyHealthValue(float amount)
+    {
+        UI_health += amount;
+
+        float currentHealthPct = UI_health / MaxHealth;
+        OnHealthPctChanged(currentHealthPct);
     }
 
 }
