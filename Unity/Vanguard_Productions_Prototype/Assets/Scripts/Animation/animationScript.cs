@@ -187,7 +187,12 @@ public class animationScript : MonoBehaviour
 
     public void GrappleHook()
     {
-        anim.SetTrigger("Grappling_Hook");
+        anim.SetBool("Grappling", true);
+    }
+
+    public void StopGrapple()
+    {
+        anim.SetBool("Grappling", false);
     }
 
     public void Mid_Air_Attack()

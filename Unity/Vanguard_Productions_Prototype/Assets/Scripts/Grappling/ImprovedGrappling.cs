@@ -90,6 +90,7 @@ public class ImprovedGrappling : MonoBehaviour
             joint.massScale = massScale;
 
             lr.positionCount = 2;           
+            GetComponentInChildren<animationScript>().GrappleHook();
         }
     }
 
@@ -109,6 +110,7 @@ public class ImprovedGrappling : MonoBehaviour
     {
         lr.positionCount = 0;
         Destroy(joint);
+        GetComponentInChildren<animationScript>().StopGrapple();
         //Debug.Log("Destroyed Joint");
     }
 

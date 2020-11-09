@@ -44,6 +44,7 @@ public class Helper_Grapple : MonoBehaviour
         {
             FindObjectOfType<ImprovedGrappling>().grappable = false;
             Destroy(Player.GetComponent<SpringJoint>());
+            Player.GetComponentInChildren<animationScript>().StopGrapple();
             Debug.Log("Remove Spring");
         }
     }
@@ -107,6 +108,7 @@ public class Helper_Grapple : MonoBehaviour
             if (Input.GetKey(CM.grapple) && !grapple)
             {
                 other.GetComponent<ImprovedGrappling>().grappable = true;
+                Player.GetComponentInChildren<animationScript>().GrappleHook();
                 FindObjectOfType<ImprovedGrappling>().grapplePoint = GrapplePoint.transform;
             }
 
