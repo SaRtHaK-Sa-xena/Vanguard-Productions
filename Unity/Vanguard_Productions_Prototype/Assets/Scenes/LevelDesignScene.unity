@@ -850,6 +850,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GrapplePoint: {fileID: 627441306}
   Player: {fileID: 182359204}
+  CM: {fileID: 0}
   inRange: 1
   UIAboveGrapple: {fileID: 0}
 --- !u!65 &55212879
@@ -2374,6 +2375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GrapplePoint: {fileID: 1441287588}
   Player: {fileID: 182359204}
+  CM: {fileID: 0}
   inRange: 1
   UIAboveGrapple: {fileID: 0}
 --- !u!65 &133987651
@@ -4088,6 +4090,7 @@ MonoBehaviour:
   spring: 2
   massScale: 1
   grappable: 0
+  grappling: 0
 --- !u!95 &182359217
 Animator:
   serializedVersion: 3
@@ -15032,6 +15035,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GrapplePoint: {fileID: 241173753}
   Player: {fileID: 182359204}
+  CM: {fileID: 0}
   inRange: 1
   UIAboveGrapple: {fileID: 0}
 --- !u!1001 &604667033
@@ -21031,6 +21035,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GrapplePoint: {fileID: 643859503}
   Player: {fileID: 182359204}
+  CM: {fileID: 0}
   inRange: 1
   UIAboveGrapple: {fileID: 0}
 --- !u!1 &824862609
@@ -22062,6 +22067,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GrapplePoint: {fileID: 236976539}
   Player: {fileID: 182359204}
+  CM: {fileID: 0}
   inRange: 1
   UIAboveGrapple: {fileID: 0}
 --- !u!1 &838858537
@@ -23179,6 +23185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GrapplePoint: {fileID: 1330389679}
   Player: {fileID: 182359204}
+  CM: {fileID: 0}
   inRange: 1
   UIAboveGrapple: {fileID: 0}
 --- !u!1 &873207156
@@ -27176,7 +27183,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030343600}
   m_LocalRotation: {x: 0.048334174, y: -0.7054529, z: 0.04833418, w: 0.7054529}
-  m_LocalPosition: {x: 19.563854, y: 4.0613556, z: 4.6117306}
+  m_LocalPosition: {x: 19.563856, y: 4.0613594, z: 4.6014404}
   m_LocalScale: {x: 0.63304, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1653971910}
@@ -28159,6 +28166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GrapplePoint: {fileID: 622827649}
   Player: {fileID: 182359204}
+  CM: {fileID: 0}
   inRange: 1
   UIAboveGrapple: {fileID: 0}
 --- !u!4 &1089576702 stripped
@@ -29289,6 +29297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GrapplePoint: {fileID: 325866063}
   Player: {fileID: 182359204}
+  CM: {fileID: 0}
   inRange: 1
   UIAboveGrapple: {fileID: 0}
 --- !u!65 &1140064129
@@ -32612,6 +32621,7 @@ MonoBehaviour:
   Menu_txt: {fileID: 0}
   Quit_txt: {fileID: 0}
   Collections_txt: {fileID: 0}
+  Options_txt: {fileID: 0}
   collectionsDisplay: {fileID: 0}
   memoryHolder: {fileID: 0}
   memoryBackgroundGraphic: {fileID: 0}
@@ -32621,6 +32631,9 @@ MonoBehaviour:
   memoryFrags: []
   openedCollections: 0
   openedThroughInteraction: 0
+  optionsDisplay: {fileID: 0}
+  optionsOpen: 0
+  InputManager: {fileID: 0}
 --- !u!1001 &1278655532
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39184,6 +39197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GrapplePoint: {fileID: 1148451625}
   Player: {fileID: 182359204}
+  CM: {fileID: 0}
   inRange: 1
   UIAboveGrapple: {fileID: 0}
 --- !u!1 &1449336440
@@ -39956,7 +39970,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1480007697}
   m_LocalRotation: {x: 0.048334174, y: -0.7054529, z: 0.04833418, w: 0.7054529}
-  m_LocalPosition: {x: 19.563854, y: 1.8392334, z: 4.6117306}
+  m_LocalPosition: {x: 19.563856, y: 1.8392334, z: 4.6014404}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 282145292}
@@ -43147,6 +43161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GrapplePoint: {fileID: 1414621391}
   Player: {fileID: 182359204}
+  CM: {fileID: 0}
   inRange: 1
   UIAboveGrapple: {fileID: 0}
 --- !u!1 &1643596779
@@ -45067,17 +45082,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: af8285e82078480449dba53a5dbda4f6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -39.09
+      value: -73.9
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: af8285e82078480449dba53a5dbda4f6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.47
+      value: -7.9
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: af8285e82078480449dba53a5dbda4f6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15.3
+      value: 24.3
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: af8285e82078480449dba53a5dbda4f6,
         type: 3}
@@ -45118,6 +45133,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: af8285e82078480449dba53a5dbda4f6,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: af8285e82078480449dba53a5dbda4f6,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: af8285e82078480449dba53a5dbda4f6,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: af8285e82078480449dba53a5dbda4f6,
         type: 3}
@@ -48326,6 +48356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GrapplePoint: {fileID: 921715983}
   Player: {fileID: 182359204}
+  CM: {fileID: 0}
   inRange: 1
   UIAboveGrapple: {fileID: 0}
 --- !u!65 &1862432977
