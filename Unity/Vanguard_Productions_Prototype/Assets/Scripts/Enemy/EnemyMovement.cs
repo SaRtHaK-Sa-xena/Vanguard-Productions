@@ -123,6 +123,9 @@ public class EnemyMovement : MonoBehaviour
 
                 // reset tracker
                 timeTracker = 0;
+
+                patrol = true;
+                enemyAnim.GetComponent<animationScript>().Stop_StunAnimation();
             }
             return;
         }
@@ -133,6 +136,7 @@ public class EnemyMovement : MonoBehaviour
                 Attack();
                 if(GetComponentInChildren<animationScript>())
                 {
+                    Debug.Log("Inside");
                     GetComponentInChildren<animationScript>().Stop_StunAnimation();
                     GetComponentInChildren<animationScript>().Walk(true);
                 }
@@ -200,7 +204,7 @@ public class EnemyMovement : MonoBehaviour
     void FollowTarget()
     {
         // if to not follow player
-        if (!followPlayer)
+        if (!followPlayer || stunned)
         {
             // exit
             return;
@@ -289,7 +293,7 @@ public class EnemyMovement : MonoBehaviour
 
         staggered = false;
 
-        Debug.Log("Played!");
+        animationPlaying = false;
 
         if (transform.GetChild(1).transform.childCount > 0)
         {
@@ -302,7 +306,7 @@ public class EnemyMovement : MonoBehaviour
     void Attack()
     {
         // if not attacking
-        if (!attackPlayer)
+        if (!attackPlayer || stunned)
         {
             // exit
             return;

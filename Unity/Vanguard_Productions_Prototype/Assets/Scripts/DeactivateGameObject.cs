@@ -35,6 +35,7 @@ public class DeactivateGameObject : MonoBehaviour
             {
                 // Make Enemy Stunned
                 other.GetComponent<EnemyMovement>().stunned = true;
+                other.GetComponent<EnemyMovement>().enemyAnim.Stun_Enemy();
 
                 //other.GetComponent<EnemyMovement>().stun
             }
