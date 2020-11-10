@@ -269,7 +269,7 @@ public class CrabAI : MonoBehaviour
         }
     }
 
-    void TurnOffStun()
+    public void TurnOffStun()
     {
         stunned = false;
         attackPlayer = true;

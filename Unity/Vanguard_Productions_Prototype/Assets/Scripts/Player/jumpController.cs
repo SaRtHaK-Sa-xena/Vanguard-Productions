@@ -95,6 +95,14 @@ public class jumpController : MonoBehaviour
                 anim.Play_Falling_Animation();
             }
         }
+        if(anim.anim.GetCurrentAnimatorStateInfo(0).IsTag("falling"))
+        {
+            if(IsGrounded())
+            {
+                anim.Stop_Falling_Animation();
+            }
+        }
+
     }
 
 

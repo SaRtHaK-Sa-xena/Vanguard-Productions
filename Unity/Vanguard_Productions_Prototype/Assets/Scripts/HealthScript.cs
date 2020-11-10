@@ -74,9 +74,19 @@ public class HealthScript : MonoBehaviour
                 gameObject.layer = noPlayerLayer;
                 animationScript.Death();
                 characterDied = true;
-                GetComponent<EnemyMovement>().enabled = false;
-                GetComponent<EnemyMovement>().timeTracker = 0;
-                GetComponent<EnemyMovement>().TurnOffStun();
+                if(GetComponent<EnemyMovement>())
+                {
+                    GetComponent<EnemyMovement>().enabled = false;
+                    GetComponent<EnemyMovement>().timeTracker = 0;
+                    GetComponent<EnemyMovement>().TurnOffStun();
+                }
+                if(GetComponent<CrabAI>())
+                {
+                    GetComponent<CrabAI>().enabled = false;
+                    GetComponent<CrabAI>().timeTracker = 0;
+                    GetComponent<CrabAI>().TurnOffStun();
+                }
+                
             }
             else
             {
@@ -95,26 +105,32 @@ public class HealthScript : MonoBehaviour
         {
             animationScript.Hit();
 
-            GetComponent<EnemyMovement>().staggered = true;
-
+            if(GetComponent<EnemyMovement>())
+            {
+                GetComponent<EnemyMovement>().staggered = true;
+            }
+            if(GetComponent<CrabAI>())
+            {
+                GetComponent<CrabAI>().staggered = true;
+            }
             //Debug.Log("Checking Hit Animate");
             //if(Random.Range(0,3) > 1)
             //{
-                //animationScript.Hit();
-                //Debug.Log("Hit Animate");
+            //animationScript.Hit();
+            //Debug.Log("Hit Animate");
             //}
 
-                //if(knockDown)
-                //{
-                    //if(Random.Range(0,2) > 0)
-                    //{
-                        //animationScript.knockDown();
-                    //}
-                //}
-                //else
-                //{
-                    // if hit 
-                //}
+            //if(knockDown)
+            //{
+            //if(Random.Range(0,2) > 0)
+            //{
+            //animationScript.knockDown();
+            //}
+            //}
+            //else
+            //{
+            // if hit 
+            //}
         }
     }
 
