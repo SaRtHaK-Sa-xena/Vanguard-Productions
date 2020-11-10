@@ -13,11 +13,12 @@ public class wardenAI : MonoBehaviour
 
     public Transform playerTarget;
 
-    public bool patrol, attackPlayer;
+    // warden states
+    public bool patrol, attackPlayer, followPlayer;
 
     public Transform[] patrolPoints;
     private int waypointIndex;
-    private float dist;
+    private float dist, distanceToPlayer;
 
     // stunned variables
     private bool stunned;
@@ -28,6 +29,11 @@ public class wardenAI : MonoBehaviour
 
     private float currentTimeTrack = 0;
     private float maxTime = 40f;
+
+    // Cooldown 
+    public bool CoolDown;
+    private float coolDown = 0f;
+    private float coolDownTracker = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -55,22 +61,71 @@ public class wardenAI : MonoBehaviour
         }
         else
         {
-            Attack();
-            //currentTimeTrack++;
-            //if (currentTimeTrack >= maxTime)
-            //{
-            //    currentTimeTrack = 0;
-            //    patrol = true;
-            //}
+            if(!followPlayer && attackPlayer)
+            {
+                Attack();
+            }
         }
     }
 
     private void FixedUpdate()
     {
-        if(!attackPlayer)
+        // manages default attack time of warden
+        if(attackPlayer)
         {
-            //FollowTarget();
+            if (enemyAnim.anim.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
+            {
+                defaultAttackTime = 5f;
+            }
+            else
+            {
+                defaultAttackTime = 0.5f;
+            }
         }
+
+        if(CoolDown)
+        {
+            coolDownTracker--;
+            if(coolDownTracker < coolDown)
+            {
+                // track
+                coolDownTracker = 5f;
+
+                followPlayer = true;
+                CoolDown = false;
+            }
+        }
+
+        if(followPlayer)
+        {
+            distanceToPlayer = Vector3.Distance(transform.position, playerTarget.position);
+
+            //Follow player
+            FollowPlayer(distanceToPlayer);
+        }
+    }
+
+    void FollowPlayer(float dist)
+    {
+        if (dist < 1)
+        {
+            patrol = false;
+            attackPlayer = true;
+            followPlayer = false;
+        }
+        else
+        {
+            if(playerTarget.position.z < transform.position.z)
+            {
+                myBody.velocity = transform.forward * speed;
+            }
+           
+            if(playerTarget.position.z > transform.position.z)
+            {
+                myBody.velocity = -transform.forward * speed;
+            }
+        }
+
     }
 
     void IncreaseIndex()
@@ -80,10 +135,6 @@ public class wardenAI : MonoBehaviour
         {
             waypointIndex = 0;
         }
-    }
-
-    void FollowTarget()
-    {
     }
 
     void Patrol()
@@ -109,8 +160,6 @@ public class wardenAI : MonoBehaviour
 
         if (!attackPlayer || stunned)
         {
-            Debug.Log("Exit");
-
             // exit
             return;
         }
@@ -130,6 +179,16 @@ public class wardenAI : MonoBehaviour
         {
             patrol = false;
             attackPlayer = true;
+            followPlayer = false;
+        }
+    }
+
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            CoolDown = true;
         }
     }
 }

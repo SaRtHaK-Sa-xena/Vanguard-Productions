@@ -63,8 +63,6 @@ public class animationScript : MonoBehaviour
             // if script on player
             if (gameObject.CompareTag("Player"))
             {
-                
-
                 // if key mapping set to wasd
                 if (transform.parent.GetComponent<PlayerControl>().wasd)
                 {
