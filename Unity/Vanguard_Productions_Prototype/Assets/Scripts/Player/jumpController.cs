@@ -85,20 +85,16 @@ public class jumpController : MonoBehaviour
             }
         }
 
+        // checks if jump animation stuck
         if(anim.anim.GetCurrentAnimatorStateInfo(0).IsTag("jumpEnd"))
         {
+            // if stuck
             if(IsGrounded())
             {
-                Debug.Log("On Ground");
+                // play fall and let animator handle rest
                 anim.Play_Falling_Animation();
             }
         }
-
-        //Vector3 v = rb.velocity;
-        //v.y = 0;
-        //v = Vector3.ClampMagnitude(v, MaxVelocity);
-        //v.y = rb.velocity.y;
-        //rb.velocity = v;
     }
 
 

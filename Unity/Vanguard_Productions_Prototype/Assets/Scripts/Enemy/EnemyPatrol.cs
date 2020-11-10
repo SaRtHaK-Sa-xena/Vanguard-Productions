@@ -6,28 +6,42 @@ public class EnemyPatrol : MonoBehaviour
 {
     public GameObject Enemy;
 
+    [SerializeField] bool crab;
+
     private void OnTriggerEnter(Collider other)
     {
-        if(Enemy.gameObject.name != "CrabBoy")
+        if(crab)
+        {
+            if (other.CompareTag("Player"))
+            {
+                Enemy.GetComponent<CrabAI>().patrol = false;
+                Enemy.GetComponent<CrabAI>().attackPlayer = true;
+                Enemy.GetComponent<CrabAI>().enemyAnim.anim.SetBool("isGround", true);
+            }
+        }
+
+        else
         {
             if (other.CompareTag("Player"))
             {
                 Enemy.GetComponent<EnemyMovement>().patrol = false;
                 Enemy.GetComponent<EnemyMovement>().followPlayer = true;
-            }
-        }
-        else
-        {
-            if (other.CompareTag("Player"))
-            {
-                Enemy.GetComponent<EnemyMovement>().jumpAttack();
             }
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if(Enemy.gameObject.name != "CrabBoy")
+        if (crab)
+        {
+            if (other.CompareTag("Player"))
+            {
+                Enemy.GetComponent<CrabAI>().patrol = false;
+                Enemy.GetComponent<CrabAI>().attackPlayer = true;
+            }
+        }
+
+        else
         {
             if (other.CompareTag("Player"))
             {
@@ -35,33 +49,27 @@ public class EnemyPatrol : MonoBehaviour
                 Enemy.GetComponent<EnemyMovement>().followPlayer = true;
             }
         }
-        else
-        {
-            if (other.CompareTag("Player"))
-            {
-                Enemy.GetComponent<EnemyMovement>().jumpAttack();
-            }
-        }
+        
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (Enemy.gameObject.name != "CrabBoy")
+        if (other.CompareTag("Player"))
         {
-            if (other.CompareTag("Player"))
+            if (!crab)
             {
                 Enemy.GetComponent<EnemyMovement>().patrol = true;
                 Enemy.GetComponent<EnemyMovement>().followPlayer = false;
                 Debug.Log("Player Left!");
             }
-        }
-        else
-        {
-            if(other.CompareTag("Player"))
-            {
 
+            else
+            {
+                Enemy.GetComponent<CrabAI>().patrol = true;
+                Enemy.GetComponent<CrabAI>().attackPlayer = false;
             }
         }
+        
     }
 
 }
