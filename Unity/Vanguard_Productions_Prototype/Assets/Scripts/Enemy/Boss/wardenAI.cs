@@ -24,7 +24,7 @@ public class wardenAI : MonoBehaviour
 
     // attack variables
     private float currentAttackTime;
-    private float defaultAttackTime = 1f;
+    private float defaultAttackTime = 5f;
 
     private float currentTimeTrack = 0;
     private float maxTime = 40f;
@@ -55,12 +55,21 @@ public class wardenAI : MonoBehaviour
         }
         else
         {
+            Attack();
             //currentTimeTrack++;
             //if (currentTimeTrack >= maxTime)
             //{
             //    currentTimeTrack = 0;
             //    patrol = true;
             //}
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if(!attackPlayer)
+        {
+            //FollowTarget();
         }
     }
 
@@ -73,6 +82,9 @@ public class wardenAI : MonoBehaviour
         }
     }
 
+    void FollowTarget()
+    {
+    }
 
     void Patrol()
     {
@@ -97,6 +109,8 @@ public class wardenAI : MonoBehaviour
 
         if (!attackPlayer || stunned)
         {
+            Debug.Log("Exit");
+
             // exit
             return;
         }
@@ -105,8 +119,7 @@ public class wardenAI : MonoBehaviour
 
         if (currentAttackTime > defaultAttackTime)
         {
-            enemyAnim.EnemyAttack(0);
-
+            enemyAnim.EnemyAttack(Random.Range(0,3));
             currentAttackTime = 0f;
         }
     }
@@ -116,9 +129,7 @@ public class wardenAI : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             patrol = false;
-            //attackPlayer = true;
-            //Attack();
-            enemyAnim.EnemyAttack(Random.Range(0,3));
+            attackPlayer = true;
         }
     }
 }
