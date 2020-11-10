@@ -262,6 +262,13 @@ public class animationScript : MonoBehaviour
         }
     } // enemy attacks
 
+    // Crab Animation
+    public void crabAttack()
+    {
+        anim.SetTrigger("Attack");
+    }
+
+
     // Play Stunned Animation
     public void Play_StunAnimation()
     {

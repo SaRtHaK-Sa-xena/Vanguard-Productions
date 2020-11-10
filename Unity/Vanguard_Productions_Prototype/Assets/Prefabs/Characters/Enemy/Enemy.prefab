@@ -734,6 +734,7 @@ MonoBehaviour:
   begToMid_Sword_Attack_Point: {fileID: 0}
   rangedAttack: {fileID: 0}
   attackPoint: {fileID: 0}
+  animationScript: {fileID: 0}
 --- !u!1 &89437333912395136
 GameObject:
   m_ObjectHideFlags: 0
@@ -2557,6 +2558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  UI_health: 0
   MaxHealth: 100
   is_Player: 0
 --- !u!135 &4127277631336896424
@@ -2636,6 +2638,8 @@ MonoBehaviour:
   is_Player: 0
   is_Enemy: 1
   heavy_attack: 0
+  hit_FX_Prefab: {fileID: 0}
+  soundEffect: {fileID: 0}
 --- !u!95 &1247397672519662571
 Animator:
   serializedVersion: 3
@@ -2670,6 +2674,7 @@ MonoBehaviour:
   begToMid_Sword_Attack_Point: {fileID: 0}
   rangedAttack: {fileID: 0}
   attackPoint: {fileID: 2355881307197755589}
+  animationScript: {fileID: 0}
 --- !u!1 &1437967174197738444
 GameObject:
   m_ObjectHideFlags: 0
@@ -2721,6 +2726,8 @@ MonoBehaviour:
   is_Player: 0
   is_Enemy: 1
   heavy_attack: 0
+  hit_FX_Prefab: {fileID: 0}
+  soundEffect: {fileID: 0}
 --- !u!1 &2355881307197755589
 GameObject:
   m_ObjectHideFlags: 0
@@ -2772,6 +2779,8 @@ MonoBehaviour:
   is_Player: 0
   is_Enemy: 1
   heavy_attack: 0
+  hit_FX_Prefab: {fileID: 0}
+  soundEffect: {fileID: 0}
 --- !u!1 &2853720304006357439
 GameObject:
   m_ObjectHideFlags: 0
@@ -2802,6 +2811,21 @@ Transform:
   m_Father: {fileID: 89437334921495787}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6057433391360760538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4169063258859766907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01cfa3a4f7706b34dadca3a824dfd008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 6992444152541240082}
+  InputX: 0
+  InputZ: 0
 --- !u!1 &6049133110662442986
 GameObject:
   m_ObjectHideFlags: 0
@@ -2847,6 +2871,7 @@ MonoBehaviour:
   begToMid_Sword_Attack_Point: {fileID: 0}
   rangedAttack: {fileID: 0}
   attackPoint: {fileID: 9197272436497945066}
+  animationScript: {fileID: 0}
 --- !u!1 &9197272436497945066
 GameObject:
   m_ObjectHideFlags: 0
@@ -2898,6 +2923,8 @@ MonoBehaviour:
   is_Player: 0
   is_Enemy: 1
   heavy_attack: 0
+  hit_FX_Prefab: {fileID: 0}
+  soundEffect: {fileID: 0}
 --- !u!1001 &1275546758552635764
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2978,15 +3005,15 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1275546758552635764}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &4823769248247176412 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5999603489583895976, guid: 93809dbf54bf32f4ba7176007d4436d1,
-    type: 3}
-  m_PrefabInstance: {fileID: 1275546758552635764}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6109436129092035182 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 93809dbf54bf32f4ba7176007d4436d1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1275546758552635764}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4823769248247176412 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5999603489583895976, guid: 93809dbf54bf32f4ba7176007d4436d1,
     type: 3}
   m_PrefabInstance: {fileID: 1275546758552635764}
   m_PrefabAsset: {fileID: 0}
@@ -3139,9 +3166,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b44c27b50ed4c1844843455a98c900bf, type: 3}
+--- !u!1 &4169063258859766907 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: b44c27b50ed4c1844843455a98c900bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 5402791126731545970}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1116933565912643176 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: b44c27b50ed4c1844843455a98c900bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 5402791126731545970}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6992444152541240082 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: b44c27b50ed4c1844843455a98c900bf,
     type: 3}
   m_PrefabInstance: {fileID: 5402791126731545970}
   m_PrefabAsset: {fileID: 0}

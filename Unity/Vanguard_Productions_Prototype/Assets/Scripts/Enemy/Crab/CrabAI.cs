@@ -52,6 +52,9 @@ public class CrabAI : MonoBehaviour
     // animation playing will be false
     private bool animationPlaying = false;
 
+    // extra int variable to move enemy if stuck
+    private float offset = 2f;
+
     private void Awake()
     {
         myBody = GetComponent<Rigidbody>();
@@ -80,7 +83,12 @@ public class CrabAI : MonoBehaviour
     {
         if(myBody.velocity == Vector3.zero)
         {
-           myBody.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
+            myBody.AddForce(new Vector3(0, jumpHeight, offset), ForceMode.Impulse);
+            offset = -offset;
+        }
+        if(IsGrounded())
+        {
+            enemyAnim.anim.SetBool("IsGround", true);
         }
 
         distanceFromPlayer = playerTarget.position.z - transform.position.z;
@@ -155,6 +163,9 @@ public class CrabAI : MonoBehaviour
             //transform.LookAt(Target.position);
             //myBody.AddForce(new Vector3(0, jumpHeight, distanceFromPoint), ForceMode.Impulse);
 
+            // play anim
+            enemyAnim.crabAttack();
+
             if (Target.position.z < transform.position.z)
             {
                 myBody.AddForce(new Vector3(0, jumpHeight, -distanceFromPoint), ForceMode.Impulse);
@@ -163,6 +174,7 @@ public class CrabAI : MonoBehaviour
             {
                 myBody.AddForce(new Vector3(0, jumpHeight, distanceFromPoint), ForceMode.Impulse);
             }
+            enemyAnim.anim.SetBool("IsGround", false);
         }
     }
 

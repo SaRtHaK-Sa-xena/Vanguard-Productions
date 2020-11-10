@@ -20,15 +20,15 @@ public class jumpBehaviour : MonoBehaviour
     {
         //if(GetComponent<PlayerControl>().allowMovement)
         //{
-            if (rb.velocity.y < 0)
-            {
-                rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
-            }
-            else if (rb.velocity.y > 0 && !Input.GetKeyDown(CM.jump))
-            {
-                //Debug.Log("In this");
-                rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
-            }
+        if (rb.velocity.y < 0)
+        {
+            rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+        }
+        else if (rb.velocity.y > 0 && !Input.GetKeyDown(CM.jump))
+        {
+            //Debug.Log("In this");
+            rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+        }
         //}
     }
 }
