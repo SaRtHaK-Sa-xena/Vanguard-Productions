@@ -144,7 +144,9 @@ public class EnemyMovement : MonoBehaviour
             }
             else
             {
-                dist = Vector3.Distance(transform.position, patrolPoints[waypointIndex].position);
+                dist = Vector3.Distance(transform.position,
+                    patrolPoints[waypointIndex].position);
+
                 if (dist < 1f)
                 {
                     IncreaseIndex();
@@ -393,25 +395,4 @@ public class EnemyMovement : MonoBehaviour
             (col.bounds.center.x, col.bounds.min.y, col.bounds.center.z),
             col.radius, groundLayers);
     }
-
-    //Patrol--
-    // Enemy go to trnsform points on platform.
-
-    // The enemy will patrol until the player comes into attack distance
-    // 'Attack Distance' what is that
-    // easy method: 
-    // box collider with a trigger
-    // which holds enemy and the
-
-
-
-    // Attack--
-    // Already Created
-
-    // Follow--
-    // Already Created
-
-    // Rules--
-    // Create box collider with layer EnemyBlocker
-    // Make the layer unable to interact with everything but enemy
 }

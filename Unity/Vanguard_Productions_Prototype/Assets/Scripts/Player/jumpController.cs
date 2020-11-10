@@ -85,6 +85,15 @@ public class jumpController : MonoBehaviour
             }
         }
 
+        if(anim.anim.GetCurrentAnimatorStateInfo(0).IsTag("jumpEnd"))
+        {
+            if(IsGrounded())
+            {
+                Debug.Log("On Ground");
+                anim.Play_Falling_Animation();
+            }
+        }
+
         //Vector3 v = rb.velocity;
         //v.y = 0;
         //v = Vector3.ClampMagnitude(v, MaxVelocity);
