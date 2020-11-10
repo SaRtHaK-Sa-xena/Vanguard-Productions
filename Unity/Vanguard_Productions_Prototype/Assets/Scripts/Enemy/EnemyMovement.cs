@@ -98,9 +98,6 @@ public class EnemyMovement : MonoBehaviour
                 // play stun animation
                 enemyAnim.GetComponent<animationScript>().Play_StunAnimation();
 
-                // Debug Purposes
-                Debug.Log("Play Animation");
-
                 // turn the movement anim to false
                 enemyAnim.GetComponent<animationScript>().Walk(false);
 
@@ -136,7 +133,6 @@ public class EnemyMovement : MonoBehaviour
                 Attack();
                 if(GetComponentInChildren<animationScript>())
                 {
-                    Debug.Log("Inside");
                     GetComponentInChildren<animationScript>().Stop_StunAnimation();
                     GetComponentInChildren<animationScript>().Walk(true);
                 }
@@ -153,11 +149,6 @@ public class EnemyMovement : MonoBehaviour
                 }
                 Patrol();
             }
-        }
-
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            jumpAttack();
         }
     }
 
@@ -212,33 +203,6 @@ public class EnemyMovement : MonoBehaviour
             return;
         }
 
-
-        //else if(!patrol)
-        //{
-        //if (Vector3.Distance(transform.position, patrolPoints[0].position) > attack_Distance)
-        //{
-        //    // if the enemy is not staggered
-        //    if (!staggered)
-        //    {
-        //        // if target position z less
-        //        if (playerTarget.position.z < transform.position.z)
-        //        {
-        //            transform.eulerAngles = new Vector3(0, 180, 0);
-        //        }
-        //        if (playerTarget.position.z > transform.position.z)
-        //        {
-        //            transform.eulerAngles = new Vector3(0, 0, 0);
-        //        }
-
-        //        myBody.velocity = transform.forward * speed;
-
-        //        if (myBody.velocity.sqrMagnitude != 0)
-        //        {
-        //            enemyAnim.Walk(true);
-        //        }
-        //    }
-        //}
-        //}
 
         else if (Vector3.Distance(transform.position, playerTarget.position) > attack_Distance)
         {
@@ -353,17 +317,6 @@ public class EnemyMovement : MonoBehaviour
             myBody.transform.LookAt(patrolPoints[waypointIndex]);
 
         myBody.velocity = transform.forward * speed;
-
-        //if (patrolPoints[waypointIndex].position.z < transform.position.z)
-        //{
-        // transform.eulerAngles = new Vector3(0, 180, 0);
-        //}
-        //if (patrolPoints[waypointIndex].position.z > transform.position.z)
-        //{
-        // transform.eulerAngles = new Vector3(0, 0, 0);
-        //}
-
-        //myBody.velocity = transform.forward * speed;
 
         if (myBody.velocity.sqrMagnitude != 0)
         {
