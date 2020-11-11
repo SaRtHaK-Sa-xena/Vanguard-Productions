@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+///  
+/// </summary>
 public class memoryManager : MonoBehaviour
 {
     public Sprite[] memoryFragments;
@@ -18,6 +21,4 @@ public class memoryManager : MonoBehaviour
             spriteNum++;
         }
     }
-
-
 }

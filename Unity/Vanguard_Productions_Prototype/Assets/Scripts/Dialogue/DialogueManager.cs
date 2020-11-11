@@ -15,6 +15,8 @@ public class DialogueManager : MonoBehaviour
 
     GameObject player;
 
+    public bool postMan;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -93,6 +95,11 @@ public class DialogueManager : MonoBehaviour
         GetComponent<BoxCollider>().enabled = false;
 
         player.GetComponent<PlayerControl>().startMovement();
+
+        if(postMan)
+        {
+            transform.GetComponentInChildren<PostMan>().EnableTriggerBox();
+        }
 
         //Debug.Log("End Of Dialogue");
     }

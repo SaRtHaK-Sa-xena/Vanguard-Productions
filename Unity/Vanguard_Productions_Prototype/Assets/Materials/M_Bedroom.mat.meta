@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Unity/Vanguard_Productions_Prototype/Assets/Materials/M_Bedroom.mat.meta
 guid: 6dd9a7aa563d01f48b3f547b32cbd29c
 NativeFormatImporter:
+=======
+guid: 93d9b2e907aef4b4dbe34590eea72499
+PrefabImporter:
+>>>>>>> 183804afd0d3f17a68dffb9731bb5f3ca55a1e30:Unity/Vanguard_Productions_Prototype/Assets/Prefabs/Characters/NPC/PostMan.prefab.meta
   externalObjects: {}
   mainObjectFileID: 0
   userData: 

@@ -225,8 +225,6 @@ public class EnemyMovement : MonoBehaviour
                 {
                     enemyAnim.Walk(true);
                 }
-
-                Debug.Log("Going To Player");
             }
         }
         else if (Vector3.Distance(transform.position, playerTarget.position) <= attack_Distance)

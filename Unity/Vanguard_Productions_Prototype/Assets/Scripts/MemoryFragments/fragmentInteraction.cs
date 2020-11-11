@@ -24,7 +24,7 @@ public class fragmentInteraction : MonoBehaviour
         GameObject fragObjUI = FindObjectOfType<Objectives>().gameObject.transform.GetChild(0).gameObject;
         objText = fragObjUI.GetComponent<TextMeshProUGUI>();
 
-        // get memory display
+        // get memory manager
         memoryManager = GameObject.FindGameObjectWithTag("memoryManager");
     }
 
@@ -43,23 +43,14 @@ public class fragmentInteraction : MonoBehaviour
             // update objective Manager
             FindObjectOfType<Objectives>().UpdateMemoryFragmentObj(objText);
 
-            // set sprite of memory display to fragment sprite
-            //memoryDisplay.GetComponent<Image>().sprite = sprite;
-
-            //memoryManager.GetComponent<memoryManager>().currentMemory = sprite;
-
-
-            //memoryDisplay.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<Image>().sprite = sprite;
-
-            //FindObjectOfType<PauseMenu>().currentMemorySprite = sprite;
-
             // display memory
             FindObjectOfType<PauseMenu>().DisplayMemory();
-
 
             // Destroy Particle
             Destroy(this.gameObject);
         }
     }
+
+    
 
 }

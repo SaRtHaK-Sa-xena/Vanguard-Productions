@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Spawns in Fragments
+/// </summary>
 public class fragSpawner : MonoBehaviour
 {
     public Transform[] spawnPoints;
@@ -9,6 +12,8 @@ public class fragSpawner : MonoBehaviour
     public GameObject memoryFrag;
 
     public Sprite[] Sprites;
+
+    public Sprite finalSprite;
 
     int i = 0;
 
@@ -22,5 +27,12 @@ public class fragSpawner : MonoBehaviour
             frag.GetComponent<fragmentInteraction>().sprite = Sprites[i];
             i++;
         }
+    }
+
+    // spawned when the player finds the postman
+    public void SpawnFinalMemory(Vector3 a_position)
+    {
+        GameObject frag = Instantiate(memoryFrag, a_position, Quaternion.identity);
+        frag.GetComponent<fragmentInteraction>().sprite = finalSprite;
     }
 }

@@ -56,7 +56,6 @@ public class CharacterAnimationDelegate : MonoBehaviour
     void begToMid_Sword_Attack_On()
     {
         begToMid_Sword_Attack_Point.SetActive(true);
-        Debug.Log("Attack on");
     }
 
     void begToMid_Sword_Attack_Off()

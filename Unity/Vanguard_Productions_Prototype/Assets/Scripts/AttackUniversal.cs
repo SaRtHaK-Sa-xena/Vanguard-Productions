@@ -43,6 +43,10 @@ public class AttackUniversal : MonoBehaviour
                 Vector3 hitFX_Pos = hit[0].transform.position;
                 hitFX_Pos.y += 1.3f;
 
+                if(hit[0].transform.parent.gameObject.name == "Warden")
+                {
+                    hitFX_Pos.y -= 1.3f;
+                }
 
                 //if(hit[0].transform.forward.x > 0)
                 //{
@@ -76,10 +80,7 @@ public class AttackUniversal : MonoBehaviour
             if(is_Enemy)
             {
                 hit[0].GetComponent<HealthScript>().ApplyDamage(damage, false);
-                Debug.Log("Damage Done");
             }
-
-            Debug.Log("Setting GameObject To InActive");
             gameObject.SetActive(false); 
         }
     }
