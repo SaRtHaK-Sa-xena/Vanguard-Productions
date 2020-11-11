@@ -89,25 +89,25 @@ public class HealthScript : MonoBehaviour
                     }
                 }
 
-                // player will not be able to touch enemy
-                gameObject.layer = noPlayerLayer;
-                animationScript.Death();
-                characterDied = true;
-                if (GetComponent<EnemyMovement>())
+                else
                 {
-                    GetComponent<EnemyMovement>().enabled = false;
-                    GetComponent<EnemyMovement>().timeTracker = 0;
-                    GetComponent<EnemyMovement>().TurnOffStun();
+                    // player will not be able to touch enemy
+                    gameObject.layer = noPlayerLayer;
+                    animationScript.Death();
+                    characterDied = true;
+                    if (GetComponent<EnemyMovement>())
+                    {
+                        GetComponent<EnemyMovement>().enabled = false;
+                        GetComponent<EnemyMovement>().timeTracker = 0;
+                        GetComponent<EnemyMovement>().TurnOffStun();
+                    }
+                    if (GetComponent<CrabAI>())
+                    {
+                        GetComponent<CrabAI>().enabled = false;
+                        GetComponent<CrabAI>().timeTracker = 0;
+                        GetComponent<CrabAI>().TurnOffStun();
+                    }
                 }
-                if (GetComponent<CrabAI>())
-                {
-                    GetComponent<CrabAI>().enabled = false;
-                    GetComponent<CrabAI>().timeTracker = 0;
-                    GetComponent<CrabAI>().TurnOffStun();
-                }
-                
-
-
             }
             else
             {
