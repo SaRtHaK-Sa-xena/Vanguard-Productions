@@ -18,6 +18,9 @@ public class Objectives : MonoBehaviour
     // holds integer for quest number
     public int displayedObj;
 
+    // default memory Sprite
+    public Sprite defaultMemorySprite;
+
     //====Fragment Collection=====
     public GameObject collection1;
     public GameObject collection2;
@@ -43,6 +46,7 @@ public class Objectives : MonoBehaviour
     private void Awake()
     {
         displayedObj = 1;
+        collection4.GetComponent<Image>().sprite = defaultMemorySprite;
     }
 
     // Change string based upon collected fragments
