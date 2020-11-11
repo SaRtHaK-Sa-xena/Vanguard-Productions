@@ -28,13 +28,15 @@ public class Ranged_Attack : MonoBehaviour
     public bool firedRangedAttack;
 
     // cooldown timer
-    public float cooldown = 10.0f;
+    public float cooldown = 0;
 
     // cooldown max
     public float cooldown_max = 0.0f;
 
     // text to change
     public TextMeshProUGUI cooldownText;
+
+    public GameObject coolDownBar;
 
     private void OnEnable()
     {
@@ -49,10 +51,12 @@ public class Ranged_Attack : MonoBehaviour
     private void Awake()
     {
         firedRangedAttack = false;
-        cooldown = 100.0f;
+        cooldown = 0f;
         cooldown_max = 0.0f;
         attackController = new PlayerControls();
         anim = GetComponentInChildren<animationScript>();
+        coolDownBar.GetComponent<Image>().fillAmount = 1f;
+        cooldownText.text = "Stun Attack Ready";
     }
 
     private void Start()
@@ -68,28 +72,41 @@ public class Ranged_Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // adds cooldown to ranged attack
+        // start cooldown
+        //if (coolDownBar.GetComponent<Image>().fillAmount < 1f)
+        //{
+        //    Debug.Log("CoolDown");
+
+        //    cooldown += 0.001f;
+
+        //    // set fired ranged attack to false
+        //    //firedRangedAttack = false;
+        //    coolDownBar.GetComponent<Image>().fillAmount = cooldown;
+        //}
         if(firedRangedAttack)
         {
-            // start cooldown
-            cooldown--;
-            if (cooldown <= cooldown_max)
+            if (cooldown > 1f)
             {
-                // set fired ranged attack to false
                 firedRangedAttack = false;
-                cooldown = 100f;
+                cooldown = 0f;
+            }
+            else
+            {
+                cooldown += 0.001f;
+                coolDownBar.GetComponent<Image>().fillAmount = cooldown;
             }
         }
+        
 
         // if the attack has been fired 
         // display text of cooldown
         if(firedRangedAttack)
         {
-            cooldownText.text = cooldown.ToString();
+            cooldownText.text = "Charging...";
         }
         else
         {
-            cooldownText.text = "Ready";
+            cooldownText.text = "Stun Attack Ready";
         }
 
         // If player control active
@@ -126,7 +143,10 @@ public class Ranged_Attack : MonoBehaviour
     void RangedAttack()
     {
         firedRangedAttack = true;
-
+        
+        coolDownBar.GetComponent<Image>().fillAmount = 0;
+        cooldown = 0f;
+        
         // play animation
         anim.RangedAttack();
     }
