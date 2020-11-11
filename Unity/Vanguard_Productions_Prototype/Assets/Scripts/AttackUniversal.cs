@@ -70,7 +70,6 @@ public class AttackUniversal : MonoBehaviour
                     else
                     {
                         // set lower damage
-                        Debug.Log(hit[0].gameObject.name);
                         hit[0].GetComponent<HealthScript>().ApplyDamage(damage, false);
                     }
                }
@@ -81,10 +80,7 @@ public class AttackUniversal : MonoBehaviour
             if(is_Enemy)
             {
                 hit[0].GetComponent<HealthScript>().ApplyDamage(damage, false);
-                Debug.Log("Damage Done");
             }
-
-            Debug.Log("Setting GameObject To InActive");
             gameObject.SetActive(false); 
         }
     }

@@ -22,6 +22,7 @@ public class Objectives : MonoBehaviour
     public GameObject collection1;
     public GameObject collection2;
     public GameObject collection3;
+    public GameObject collection4;
 
     // sprite assigned to collection pieces
     public Sprite sprite;
@@ -31,6 +32,13 @@ public class Objectives : MonoBehaviour
 
     // task
     public TextMeshProUGUI secondTask;
+
+    // player Location
+    public GameObject Player;
+
+    // postMan variables
+    public GameObject postMan;
+    public Transform postManPos;
 
     private void Awake()
     {
@@ -77,6 +85,10 @@ public class Objectives : MonoBehaviour
         {
             collection3.GetComponent<Image>().sprite = sprite;
         }
+        if(m_Fragment == 4)
+        {
+            collection4.GetComponent<Image>().sprite = sprite;
+        }
     }
 
     // increment objective if fragments collected greater than total
@@ -85,20 +97,26 @@ public class Objectives : MonoBehaviour
         // if all fragments collected
         if(m_Fragment >= totalFragments)
         {
+            // turn on second objective text in UI
             text.gameObject.SetActive(false);
             secondTask.gameObject.SetActive(true);
+
+            // spawn postman
+            SpawnPostMan();
         }
     }
 
-    public void completeMemoryFragment()
+    public void SpawnPostMan()
     {
-        
+        // spawn postman
+        Instantiate(postMan, postManPos);
+        postManPos.gameObject.GetComponent<BoxCollider>().isTrigger = true;
     }
 
     /// turn text of next objective on
-    public void FindPostMan()
+    public void FoundPostMan()
     {
-
+        FindObjectOfType<fragSpawner>().SpawnFinalMemory(Player.transform);
     }
 
     // set sprite from FragmentInteraction script
