@@ -116,7 +116,7 @@ public class Objectives : MonoBehaviour
     /// turn text of next objective on
     public void FoundPostMan()
     {
-        FindObjectOfType<fragSpawner>().SpawnFinalMemory(Player.transform);
+        FindObjectOfType<fragSpawner>().SpawnFinalMemory(Player.transform.position);
     }
 
     // set sprite from FragmentInteraction script

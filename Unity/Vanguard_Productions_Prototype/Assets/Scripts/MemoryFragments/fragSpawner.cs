@@ -30,9 +30,9 @@ public class fragSpawner : MonoBehaviour
     }
 
     // spawned when the player finds the postman
-    public void SpawnFinalMemory(Transform position)
+    public void SpawnFinalMemory(Vector3 a_position)
     {
-        GameObject frag = Instantiate(memoryFrag, position);
+        GameObject frag = Instantiate(memoryFrag, a_position, Quaternion.identity);
         frag.GetComponent<fragmentInteraction>().sprite = finalSprite;
     }
 }
