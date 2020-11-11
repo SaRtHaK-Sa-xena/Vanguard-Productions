@@ -166,14 +166,12 @@ public class wardenAI : MonoBehaviour
         // if the target is to the left
         if (patrolPoints[waypointIndex].position.z < transform.position.z)
         {
-            Debug.Log("move right");
             myBody.velocity = transform.forward * speed;
         }
         
         // if the target is to the right
         if(patrolPoints[waypointIndex].position.z > transform.position.z)
         {
-            Debug.Log("move left");
             myBody.velocity = -transform.forward * speed;
         }
     }
@@ -197,7 +195,7 @@ public class wardenAI : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if(other.CompareTag("Player"))
         {

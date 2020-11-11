@@ -17,6 +17,10 @@ public class HealthScript : MonoBehaviour
 
     public bool is_Player;
 
+    public bool is_boss;
+
+    public GameObject bossObj;
+
     private float heavyDMG = 5f;
 
     private int noPlayerLayer = 13;
@@ -70,23 +74,40 @@ public class HealthScript : MonoBehaviour
         {
             if (!is_Player)
             {
+                if(is_boss)
+                {
+                    gameObject.layer = noPlayerLayer;
+                    bossObj.GetComponentInChildren<animationScript>().Death();
+                    characterDied = true;
+
+                    bossObj.layer = noPlayerLayer;
+                    if(bossObj.GetComponent<wardenAI>())
+                    {
+                        bossObj.GetComponent<wardenAI>().enabled = false;
+                       //GetComponent<wardenAI>().timeTracker = 0;
+                       //GetComponent<wardenAI>().TurnOffStun();
+                    }
+                }
+
                 // player will not be able to touch enemy
                 gameObject.layer = noPlayerLayer;
                 animationScript.Death();
                 characterDied = true;
-                if(GetComponent<EnemyMovement>())
+                if (GetComponent<EnemyMovement>())
                 {
                     GetComponent<EnemyMovement>().enabled = false;
                     GetComponent<EnemyMovement>().timeTracker = 0;
                     GetComponent<EnemyMovement>().TurnOffStun();
                 }
-                if(GetComponent<CrabAI>())
+                if (GetComponent<CrabAI>())
                 {
                     GetComponent<CrabAI>().enabled = false;
                     GetComponent<CrabAI>().timeTracker = 0;
                     GetComponent<CrabAI>().TurnOffStun();
                 }
                 
+
+
             }
             else
             {
@@ -103,16 +124,22 @@ public class HealthScript : MonoBehaviour
 
         if(!is_Player)
         {
-            animationScript.Hit();
+            if(!is_boss)
+            {
+                //Debug.Log(gameObject.name);
 
-            if(GetComponent<EnemyMovement>())
-            {
-                GetComponent<EnemyMovement>().staggered = true;
+                animationScript.Hit();
+
+                if (GetComponent<EnemyMovement>())
+                {
+                    GetComponent<EnemyMovement>().staggered = true;
+                }
+                if (GetComponent<CrabAI>())
+                {
+                    GetComponent<CrabAI>().staggered = true;
+                }
             }
-            if(GetComponent<CrabAI>())
-            {
-                GetComponent<CrabAI>().staggered = true;
-            }
+            
             //Debug.Log("Checking Hit Animate");
             //if(Random.Range(0,3) > 1)
             //{
