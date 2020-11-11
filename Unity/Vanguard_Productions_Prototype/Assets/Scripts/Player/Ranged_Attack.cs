@@ -51,12 +51,12 @@ public class Ranged_Attack : MonoBehaviour
     private void Awake()
     {
         firedRangedAttack = false;
-        cooldown = 0f;
-        cooldown_max = 0.0f;
+        //cooldown = 0f;
+        //cooldown_max = 0.0f;
         attackController = new PlayerControls();
         anim = GetComponentInChildren<animationScript>();
         coolDownBar.GetComponent<Image>().fillAmount = 1f;
-        cooldownText.text = "Stun Attack Ready";
+        //cooldownText.text = "Stun Attack Ready";
     }
 
     private void Start()
@@ -92,7 +92,7 @@ public class Ranged_Attack : MonoBehaviour
             }
             else
             {
-                cooldown += 0.001f;
+                cooldown += 0.007f;
                 coolDownBar.GetComponent<Image>().fillAmount = cooldown;
             }
         }
