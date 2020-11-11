@@ -33,14 +33,19 @@ public class wardenAI : MonoBehaviour
     // Cooldown 
     public bool CoolDown;
     private float coolDown = 0f;
-    private float coolDownTracker = 5f;
+    private float coolDownTracker = 200f;
+
+    // Collision Check to see if player left
+    private bool playerLeft;
+
+    public float distanceToLeft = 7f;
 
     // Start is called before the first frame update
     void Start()
     {
         patrol = true;
         attackPlayer = false;
-
+        
         myBody = GetComponent<Rigidbody>();
         stunned = false;
     }
@@ -75,6 +80,7 @@ public class wardenAI : MonoBehaviour
         {
             if (enemyAnim.anim.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
             {
+                myBody.velocity = Vector3.zero;
                 defaultAttackTime = 5f;
             }
             else
@@ -83,20 +89,22 @@ public class wardenAI : MonoBehaviour
             }
         }
 
-        if(CoolDown)
+        // have cooldown before chasing player again.
+        if (CoolDown)
         {
             coolDownTracker--;
-            if(coolDownTracker < coolDown)
+            if (coolDownTracker < coolDown)
             {
-                // track
-                coolDownTracker = 5f;
+                //track
+                coolDownTracker = 150f;
 
                 followPlayer = true;
+                attackPlayer = false;
                 CoolDown = false;
             }
         }
 
-        if(followPlayer)
+        if (followPlayer)
         {
             distanceToPlayer = Vector3.Distance(transform.position, playerTarget.position);
 
@@ -117,12 +125,28 @@ public class wardenAI : MonoBehaviour
         {
             if(playerTarget.position.z < transform.position.z)
             {
-                myBody.velocity = transform.forward * speed;
+                //float distance = Vector3.Distance(transform.position, patrolPoints[0].position);
+                //if(distance < distanceToLeft)
+                //{
+
+                //}
+                //else
+                //{
+                    myBody.velocity = transform.forward * speed;
+                ///}
             }
            
             if(playerTarget.position.z > transform.position.z)
             {
-                myBody.velocity = -transform.forward * speed;
+                //float distance = Vector3.Distance(transform.position, patrolPoints[1].position);
+                //if (distance < 2f)
+                //{
+
+                //}
+                //else
+                //{
+                    myBody.velocity = -transform.forward * speed;
+                //}
             }
         }
 
@@ -188,7 +212,10 @@ public class wardenAI : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            //Debug.Log("Left");
             CoolDown = true;
+            attackPlayer = false;
+            //followPlayer = false;
         }
     }
 }
