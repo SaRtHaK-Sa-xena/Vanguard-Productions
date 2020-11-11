@@ -25,15 +25,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_92694E8C:
-        m_Texture: {fileID: 2800000, guid: 48847bedc4813fe47ae2f1364d7d1657, type: 3}
+        m_Texture: {fileID: 2800000, guid: bee7cb2281499d24fa870f4b8b4fe270, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_97700C50:
-        m_Texture: {fileID: 2800000, guid: d2cd5bdf0d0196941b64811d815b64c2, type: 3}
+        m_Texture: {fileID: 2800000, guid: a6fa0e48f202aa941b5ea2b65320e5ff, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_209110F2: 1
+    - Vector1_209110F2: 0.702
     - Vector1_82B81C53: 1
     m_Colors:
     - Vector2_7A9AF3FC: {r: 0, g: 0, b: 0, a: 0}
