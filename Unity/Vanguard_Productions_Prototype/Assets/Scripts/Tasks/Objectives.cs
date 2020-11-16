@@ -34,7 +34,17 @@ public class Objectives : MonoBehaviour
     public GameObject memoryManager;
 
     // task
-    public TextMeshProUGUI secondTask;
+    public TextMeshProUGUI secondTask; // find postman
+
+    // final task
+    public TextMeshProUGUI finalTask; // fight warden
+
+    // final memory position
+    public Transform finalMemory;
+
+    // condition to set finaltask to true
+    bool finalTaskActivated;
+
 
     // player Location
     public GameObject Player;
@@ -42,6 +52,7 @@ public class Objectives : MonoBehaviour
     // postMan variables
     public GameObject postMan;
     public Transform postManPos;
+    public GameObject postManDialogue;
 
     private void Awake()
     {
@@ -99,7 +110,7 @@ public class Objectives : MonoBehaviour
     public void UpdateObjectiveCount(TextMeshProUGUI text)
     {
         // if all fragments collected
-        if(m_Fragment >= totalFragments)
+        if (m_Fragment >= totalFragments && !finalTaskActivated)
         {
             // turn on second objective text in UI
             text.gameObject.SetActive(false);
@@ -108,11 +119,18 @@ public class Objectives : MonoBehaviour
             // spawn postman
             SpawnPostMan();
         }
+        
+        if(finalTaskActivated)
+        {
+            finalTask.gameObject.SetActive(true);
+            secondTask.gameObject.SetActive(false);
+        }
     }
 
     public void SpawnPostMan()
     {
         // spawn postman
+        postManDialogue.SetActive(true);
         Instantiate(postMan, postManPos);
         postManPos.gameObject.GetComponent<BoxCollider>().isTrigger = true;
     }
@@ -120,7 +138,14 @@ public class Objectives : MonoBehaviour
     /// turn text of next objective on
     public void FoundPostMan()
     {
-        FindObjectOfType<fragSpawner>().SpawnFinalMemory(Player.transform.position);
+        FindObjectOfType<fragSpawner>().SpawnFinalMemory(finalMemory);
+    }
+
+    public void DisplayFinalTask()
+    {
+        finalTaskActivated = true;
+        TextMeshProUGUI nullText = new TextMeshProUGUI();
+        UpdateObjectiveCount(nullText);
     }
 
     // set sprite from FragmentInteraction script

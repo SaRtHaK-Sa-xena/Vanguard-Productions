@@ -24,6 +24,12 @@ public class PostMan : MonoBehaviour
         {
             // spawn the final memory.
             objectivesManager.FoundPostMan();
+
+            // update objectives in display
+            objectivesManager.DisplayFinalTask();
+
+            GetComponent<BoxCollider>().enabled = false;
+            transform.parent.gameObject.GetComponent<BoxCollider>().enabled = false;
         }
     }
 
