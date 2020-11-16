@@ -13,12 +13,21 @@ public class memoryManager : MonoBehaviour
 
     public int spriteNum;
 
+    // rumble dialogue
+    public RumbleDialogue rumbleDialogue;
+
     public void setNextSprite()
     {
         if(spriteNum < memoryFragments.Length)
         {
             currentMemory = memoryFragments[spriteNum];
             spriteNum++;
+        }
+
+        if(spriteNum <= 4)
+        {
+            // rumbleDialogue script start
+            rumbleDialogue.startTimer = true;
         }
     }
 }
