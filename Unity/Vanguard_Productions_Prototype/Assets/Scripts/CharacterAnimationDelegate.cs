@@ -12,6 +12,11 @@ public class CharacterAnimationDelegate : MonoBehaviour
     // Enemy
     public GameObject attackPoint;
 
+    // Boss Enemy
+    // Warden attack points
+    public GameObject WardenLeftHand;
+    public GameObject WardenRightHand;
+
     private CameraShake shakeCamera;
     public animationScript animationScript;
     //void beg_Sword_Attack_On()
@@ -78,6 +83,32 @@ public class CharacterAnimationDelegate : MonoBehaviour
         {
             Debug.Log("attack off");
             attackPoint.SetActive(false);
+        }
+    }
+
+    void wardenLeftHand_on()
+    {
+        WardenLeftHand.SetActive(true);
+    }
+
+    void wardenLeftHand_off()
+    {
+        if (WardenLeftHand.activeInHierarchy)
+        {
+            WardenLeftHand.SetActive(false);
+        }
+    }
+
+    void wardenRightHand_on()
+    {
+        WardenRightHand.SetActive(true);
+    }
+
+    void wardenRightHand_off()
+    {
+        if (WardenRightHand.activeInHierarchy)
+        {
+            WardenRightHand.SetActive(false);
         }
     }
 

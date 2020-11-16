@@ -14,7 +14,9 @@ public class CrabAI : MonoBehaviour
     public Transform playerTarget;
 
     // jump attack variables
-    public float jumpHeight = 12f;
+    public float jumpHeight;
+    public float attackHeight = 7.5f;
+    public float defaultJumpHeight = 5f;
     public float distanceFromPlayer;
 
     // sphere collider
@@ -69,6 +71,9 @@ public class CrabAI : MonoBehaviour
         patrol = true;
         currentAttackTime = defaultAttackTime;
 
+        // set jump height
+        jumpHeight = defaultJumpHeight;
+
     }
 
     // GameObject Function
@@ -92,6 +97,7 @@ public class CrabAI : MonoBehaviour
                 myBody.AddForce(new Vector3(0, jumpHeight, offset), ForceMode.Impulse);
                 offset = -offset;
             }
+            jumpHeight = defaultJumpHeight;
         }
         
         
@@ -226,6 +232,8 @@ public class CrabAI : MonoBehaviour
 
             // attack can now deal damage
             turnOnAttack = true;
+
+            jumpHeight = attackHeight;
 
             // jump to player
             //jumpAttack(distanceFromPlayer, playerTarget);
