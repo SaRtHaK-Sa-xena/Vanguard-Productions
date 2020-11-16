@@ -30,11 +30,10 @@ public class Ranged_Attack : MonoBehaviour
     // cooldown timer
     public float cooldown = 0;
 
-    // cooldown max
-    public float cooldown_max = 0.0f;
-
     // text to change
     public TextMeshProUGUI cooldownText;
+
+    public float scalar = 0.007f;
 
     public GameObject coolDownBar;
 
@@ -56,7 +55,7 @@ public class Ranged_Attack : MonoBehaviour
         attackController = new PlayerControls();
         anim = GetComponentInChildren<animationScript>();
         coolDownBar.GetComponent<Image>().fillAmount = 1f;
-        //cooldownText.text = "Stun Attack Ready";
+        cooldownText.text = "Stun Attack Ready";
     }
 
     private void Start()
@@ -92,7 +91,7 @@ public class Ranged_Attack : MonoBehaviour
             }
             else
             {
-                cooldown += 0.007f;
+                cooldown += scalar;
                 coolDownBar.GetComponent<Image>().fillAmount = cooldown;
             }
         }
