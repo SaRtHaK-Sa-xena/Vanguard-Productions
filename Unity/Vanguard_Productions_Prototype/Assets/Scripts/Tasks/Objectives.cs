@@ -33,6 +33,13 @@ public class Objectives : MonoBehaviour
     // memory Manager
     public GameObject memoryManager;
 
+    // pause menu
+    public GameObject pauseMenu;
+
+    // collectionDisplay
+    public GameObject collectionDisplay;
+
+
     // task
     public TextMeshProUGUI secondTask; // find postman
 
@@ -57,10 +64,17 @@ public class Objectives : MonoBehaviour
     private void Awake()
     {
         displayedObj = 1;
+
+        pauseMenu.SetActive(true);
+        collectionDisplay.SetActive(true);
+
         collection1.GetComponent<Image>().sprite = defaultMemorySprite;
         collection2.GetComponent<Image>().sprite = defaultMemorySprite;
         collection3.GetComponent<Image>().sprite = defaultMemorySprite;
         collection4.GetComponent<Image>().sprite = defaultMemorySprite;
+
+        pauseMenu.SetActive(false);
+        collectionDisplay.SetActive(false);
     }
 
     // Change string based upon collected fragments
