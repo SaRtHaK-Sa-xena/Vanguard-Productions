@@ -66,9 +66,6 @@ public class DeactivateGameObject : MonoBehaviour
                 //Turn on Animation
                 //other.transform.GetChild(1).transform.GetChild(0).GetComponent<animationScript>().Play_StunAnimation();
             }
-
-            // Debug
-            Debug.Log("Enemy Struck");
         }
     }
 }
