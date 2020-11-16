@@ -43,7 +43,7 @@ public class Objectives : MonoBehaviour
     public Transform finalMemory;
 
     // condition to set finaltask to true
-    bool finalTaskActivated;
+    bool finalTaskActivated = false;
 
 
     // player Location
@@ -57,6 +57,9 @@ public class Objectives : MonoBehaviour
     private void Awake()
     {
         displayedObj = 1;
+        collection1.GetComponent<Image>().sprite = defaultMemorySprite;
+        collection2.GetComponent<Image>().sprite = defaultMemorySprite;
+        collection3.GetComponent<Image>().sprite = defaultMemorySprite;
         collection4.GetComponent<Image>().sprite = defaultMemorySprite;
     }
 
