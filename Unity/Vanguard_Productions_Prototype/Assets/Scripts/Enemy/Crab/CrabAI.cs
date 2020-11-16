@@ -294,6 +294,12 @@ public class CrabAI : MonoBehaviour
         }
     }
 
+    public void InvokeStun()
+    {
+        Debug.Log("Stun");
+        Invoke("TurnOffStun", stunnedTime);
+    }
+
     // ground check
     public bool IsGrounded()
     {

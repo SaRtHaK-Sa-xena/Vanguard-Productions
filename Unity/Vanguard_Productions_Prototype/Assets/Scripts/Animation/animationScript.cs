@@ -283,7 +283,14 @@ public class animationScript : MonoBehaviour
 
     public void Stun_Enemy()
     {
-        transform.parent.GetComponent<EnemyMovement>().InvokeStun();
+        if(transform.parent.GetComponent<EnemyMovement>())
+        {
+            transform.parent.GetComponent<EnemyMovement>().InvokeStun();
+        }
+        //if(transform.parent.GetComponent<CrabAI>())
+        //{
+        //    transform.parent.GetComponent<CrabAI>().InvokeStun();
+        //}
     }
 
     public void Play_IdleAnimation()

@@ -26,18 +26,35 @@ public class DeactivateGameObject : MonoBehaviour
             DeactivateAfterTime();
 
             // Check if enemy Stunned
-            if(other.GetComponent<EnemyMovement>().stunned == true)
+            if(other.GetComponent<CrabAI>())
             {
-                // set timer back to default max
-                other.GetComponent<EnemyMovement>().timeTracker = 0f;
+                if (other.GetComponent<CrabAI>().stunned == true)
+                {
+                    other.GetComponent<CrabAI>().timeTracker = 0f;
+                }
+                else
+                {
+                    other.GetComponent<CrabAI>().stunned = true;
+                    other.GetComponent<CrabAI>().enemyAnim.Stun_Enemy();
+                }
             }
-            else
-            {
-                // Make Enemy Stunned
-                other.GetComponent<EnemyMovement>().stunned = true;
-                other.GetComponent<EnemyMovement>().enemyAnim.Stun_Enemy();
 
-                //other.GetComponent<EnemyMovement>().stun
+            if (other.GetComponent<EnemyMovement>())
+            {
+                if (other.GetComponent<EnemyMovement>().stunned == true)
+                {
+                    // set timer back to default max
+                    other.GetComponent<EnemyMovement>().timeTracker = 0f;
+
+                }
+                else
+                {
+                    // Make Enemy Stunned
+                    other.GetComponent<EnemyMovement>().stunned = true;
+                    other.GetComponent<EnemyMovement>().enemyAnim.Stun_Enemy();
+
+                    //other.GetComponent<EnemyMovement>().stun
+                }
             }
 
             // Check if stunned particle already on player
