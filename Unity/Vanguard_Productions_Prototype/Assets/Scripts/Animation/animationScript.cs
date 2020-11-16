@@ -226,7 +226,6 @@ public class animationScript : MonoBehaviour
     public void playStaggerEffect()
     {
         GameObject rigidBodyObj = transform.parent.gameObject;
-        Debug.Log("Working");
         rigidBodyObj.GetComponent<Rigidbody>().AddForce(rigidBodyObj.transform.up * 300f);
         rigidBodyObj.GetComponent<Rigidbody>().AddForce(-rigidBodyObj.transform.forward * 600f);
     }
@@ -246,19 +245,16 @@ public class animationScript : MonoBehaviour
     {
         if(attack == 0)
         {
-            Debug.Log("Attack 1");
             anim.SetTrigger("Attack_1");
         }
 
         if (attack == 1)
         {
-            Debug.Log("Attack 2");
             anim.SetTrigger("Attack_2");
         }
 
         if (attack == 2)
         {
-            Debug.Log("Attack 3");
             anim.SetTrigger("Attack_3");
         }
     } // enemy attacks

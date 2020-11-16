@@ -73,7 +73,6 @@ public class CharacterAnimationDelegate : MonoBehaviour
 
     void attackPoint_on()
     {
-        Debug.Log("attack on");
         attackPoint.SetActive(true);
     }
 

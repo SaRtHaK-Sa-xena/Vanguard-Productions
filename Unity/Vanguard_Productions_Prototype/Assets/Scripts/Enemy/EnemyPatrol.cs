@@ -60,7 +60,6 @@ public class EnemyPatrol : MonoBehaviour
             {
                 Enemy.GetComponent<EnemyMovement>().patrol = true;
                 Enemy.GetComponent<EnemyMovement>().followPlayer = false;
-                Debug.Log("Player Left!");
             }
 
             else

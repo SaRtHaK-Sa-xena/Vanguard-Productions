@@ -24,7 +24,7 @@ public class memoryManager : MonoBehaviour
             spriteNum++;
         }
 
-        if(spriteNum <= 4)
+        if(spriteNum >= 4)
         {
             // rumbleDialogue script start
             rumbleDialogue.startTimer = true;
