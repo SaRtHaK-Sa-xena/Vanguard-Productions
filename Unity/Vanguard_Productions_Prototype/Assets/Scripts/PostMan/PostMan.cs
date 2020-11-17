@@ -30,7 +30,8 @@ public class PostMan : MonoBehaviour
 
             GetComponent<BoxCollider>().enabled = false;
             transform.parent.gameObject.GetComponent<BoxCollider>().enabled = false;
-            transform.parent.gameObject.SetActive(false);
+            transform.parent.gameObject.GetComponent<DialogueTrigger>().enabled = false;
+            transform.parent.gameObject.GetComponent<DialogueManager>().enabled = false;
         }
     }
 

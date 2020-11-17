@@ -27,7 +27,7 @@ public class memoryManager : MonoBehaviour
         if(spriteNum >= 4)
         {
             // rumbleDialogue script start
-            rumbleDialogue.startTimer = true;
+            rumbleDialogue.ShakeCamera(10f, .1f);
         }
     }
 }

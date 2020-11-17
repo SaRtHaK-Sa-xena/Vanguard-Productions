@@ -23,7 +23,10 @@ public class SetCamera : MonoBehaviour
             CM_Camera.Priority = 5;
 
             // Set New Follow Object to Player Transform
-            CM_Camera.m_Follow = PlayerObj.transform;
+            if(PlayerObj)
+            {
+                CM_Camera.m_Follow = PlayerObj.transform;
+            }
 
             // set camera to current in camera manager
             FindObjectOfType<CamManager>().currentCam = CM_Camera;
