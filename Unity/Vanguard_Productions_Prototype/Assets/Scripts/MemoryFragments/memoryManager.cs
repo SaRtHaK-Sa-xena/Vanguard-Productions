@@ -13,8 +13,9 @@ public class memoryManager : MonoBehaviour
 
     public int spriteNum;
 
-    // rumble dialogue
-    public RumbleDialogue rumbleDialogue;
+    // colliders to check if the rumble should begin
+    public GameObject boxCollider_A;
+    public GameObject boxCollider_B;
 
     public void setNextSprite()
     {
@@ -26,8 +27,9 @@ public class memoryManager : MonoBehaviour
 
         if(spriteNum >= 4)
         {
-            // rumbleDialogue script start
-            rumbleDialogue.ShakeCamera(10f, .1f);
+            // enable box colliders
+            boxCollider_A.gameObject.SetActive(true);
+            boxCollider_B.gameObject.SetActive(true);
         }
     }
 }
