@@ -25,19 +25,6 @@ public class DeactivateGameObject : MonoBehaviour
             // Remove Blade Effect
             DeactivateAfterTime();
 
-            // Check if enemy Stunned
-            if(other.GetComponent<CrabAI>())
-            {
-                if (other.GetComponent<CrabAI>().stunned == true)
-                {
-                    other.GetComponent<CrabAI>().timeTracker = 0f;
-                }
-                else
-                {
-                    other.GetComponent<CrabAI>().stunned = true;
-                    other.GetComponent<CrabAI>().enemyAnim.Stun_Enemy();
-                }
-            }
 
             if (other.GetComponent<EnemyMovement>())
             {
@@ -55,16 +42,16 @@ public class DeactivateGameObject : MonoBehaviour
 
                     //other.GetComponent<EnemyMovement>().stun
                 }
-            }
 
-            // Check if stunned particle already on player
-            if(other.transform.GetChild(1).transform.childCount == 0)
-            {
-                // Spawn Stun Particle On Enemy
-                Instantiate(FX_Stun, other.transform.GetChild(1));
+                // Check if stunned particle already on player
+                if (other.transform.GetChild(1).transform.childCount == 0)
+                {
+                    // Spawn Stun Particle On Enemy
+                    Instantiate(FX_Stun, other.transform.GetChild(1));
 
-                //Turn on Animation
-                //other.transform.GetChild(1).transform.GetChild(0).GetComponent<animationScript>().Play_StunAnimation();
+                    //Turn on Animation
+                    //other.transform.GetChild(1).transform.GetChild(0).GetComponent<animationScript>().Play_StunAnimation();
+                }
             }
         }
     }
