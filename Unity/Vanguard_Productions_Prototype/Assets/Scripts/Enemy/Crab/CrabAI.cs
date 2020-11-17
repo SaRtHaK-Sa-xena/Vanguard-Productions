@@ -81,9 +81,6 @@ public class CrabAI : MonoBehaviour
     {
         waypointIndex = 0;
 
-        // enemy z points to patrol point
-        //transform.LookAt(patrolPoints[waypointIndex].position);
-
         col = GetComponent<SphereCollider>();
     }
 
@@ -114,86 +111,44 @@ public class CrabAI : MonoBehaviour
         // find distance from player to enemy
         distanceFromPlayer = playerTarget.position.z - transform.position.z;
 
-        // check if jumper stunned
-        if (stunned)
+        // if enemy patrolling
+        if (patrol)
         {
-            // check if stun animation playing
-            if (!animationPlaying)
+            // get distance between patrol point and enemy
+            dist = Vector3.Distance(transform.position,
+                patrolPoints[waypointIndex].position);
+
+            // if on point
+            if (dist < 1f)
             {
-                // play enemy stun animation
-                enemyAnim.GetComponent<animationScript>().Play_StunAnimation();
-
-                // make attack player false
-                attackPlayer = false;
-
-                // set animation playing to true
-                animationPlaying = true;
+                // increase waypoint index
+                IncreaseIndex();
             }
-            attackPlayer = false;
 
-            patrol = false;
-
-            timeTracker += 0.1f;
-
-            if(timeTracker > stunnedTime)
-            {
-                // turns off stun
-                TurnOffStun();
-
-                // reset tracker
-                timeTracker = 0;
-
-                // set patrol to true
-                patrol = true;
-
-                // stop playing stun animation
-                enemyAnim.Stop_StunAnimation();
-            }
-            
-        }
-
-        // if not stunned
-        else
-        {
-            // if enemy patrolling
-            if (patrol)
-            {
-                // get distance between patrol point and enemy
-                dist = Vector3.Distance(transform.position,
-                    patrolPoints[waypointIndex].position);
-
-                // if on point
-                if (dist < 1f)
-                {
-                    // increase waypoint index
-                    IncreaseIndex();
-                }
-
-                // if not close to point
-                else
-                {
-                    // check if the distance greater than 3f
-                    if (dist > 3f)
-                    {
-                        // make the movement slower
-                        ForceToMove = dist / 2f;
-                    }
-
-                    // if it's close
-                    else
-                    {
-                        // bring back original distance movement
-                        ForceToMove = dist;
-                    }
-                }
-
-                // Run Patrol Evemt
-                Patrol();
-            }
+            // if not close to point
             else
             {
-                Attack();
+                // check if the distance greater than 3f
+                if (dist > 3f)
+                {
+                    // make the movement slower
+                    ForceToMove = dist / 2f;
+                }
+
+                // if it's close
+                else
+                {
+                    // bring back original distance movement
+                    ForceToMove = dist;
+                }
             }
+
+            // Run Patrol Evemt
+            Patrol();
+        }
+        else
+        {
+            Attack();
         }
     }
 
