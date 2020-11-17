@@ -1,12 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterAnimationDelegate : MonoBehaviour
 {
-
-    //public GameObject beg_Sword_Attack_Point, begToMid_Sword_Attack_Point, MidToEnd_Sword_Attack_Point, End_Sword_Attack_Point;
-
     public GameObject begToMid_Sword_Attack_Point, rangedAttack;
 
     // Enemy
@@ -19,18 +17,6 @@ public class CharacterAnimationDelegate : MonoBehaviour
 
     private CameraShake shakeCamera;
     public animationScript animationScript;
-    //void beg_Sword_Attack_On()
-    //{
-    //    beg_Sword_Attack_Point.SetActive(true);
-    //}
-
-    //void beg_Sword_Attack_Off()
-    //{
-    //    if(beg_Sword_Attack_Point.activeInHierarchy)
-    //    {
-    //        beg_Sword_Attack_Point.SetActive(false);
-    //    }
-    //}
 
     // Camera Shake
     private void Awake()
@@ -38,11 +24,6 @@ public class CharacterAnimationDelegate : MonoBehaviour
         animationScript = GetComponent<animationScript>();
         //shakeCamera = GameObject.FindWithTag("MainCamera").GetComponent<CameraShake>();
     }
-
-    //void ShakeCameraOnHit()
-    //{
-        //shakeCamera.setShouldShake(true);
-    //}
 
     // Ranged Particle
     void ranged_Attack_On()
@@ -111,41 +92,14 @@ public class CharacterAnimationDelegate : MonoBehaviour
         }
     }
 
-    //void MidToEnd_Sword_Attack_On()
-    //{
-    //    MidToEnd_Sword_Attack_Point.SetActive(true);
-    //}
+    // Warden Anims
+    // End Credits
+    public void EndCredits()
+    {
+        // end credit scene
+        SceneManager.LoadScene(2);
+    }
 
-    //void MidToEnd_Sword_Attack_Off()
-    //{
-    //    if(MidToEnd_Sword_Attack_Point.activeInHierarchy)
-    //    {
-    //        MidToEnd_Sword_Attack_Point.SetActive(false);
-    //    }
-    //}
-
-    //void End_Sword_Attack_On()
-    //{
-    //    End_Sword_Attack_Point.SetActive(true);
-    //}
-
-    //void End_Sword_Attack_Off()
-    //{
-    //    if(End_Sword_Attack_Point.activeInHierarchy)
-    //    {
-    //        End_Sword_Attack_Point.SetActive(false);
-    //    }
-    //}
-
-    //void Tag_Beg_Sword_Point()
-    //{
-    //    beg_Sword_Attack_Point.tag = "beg_Point";
-    //}
-
-    //void UnTag_Beg_Sword_Point()
-    //{
-    //    beg_Sword_Attack_Point.tag = "Untagged";
-    //}
 
     void Tag_BegToMid_Sword_Point()
     {

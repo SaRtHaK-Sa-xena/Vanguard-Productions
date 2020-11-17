@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Handles Animation For Player
@@ -25,15 +26,6 @@ public class animationScript : MonoBehaviour
 
         // Jump
         animationControls.Gameplay.Jump.performed += _ => Jump();
-
-        //animationControls.Animation.Running.performed += ctx => move = ctx.ReadValue<Vector2>();
-        //animationControls.Animation.Running.canceled += ctx => move = Vector2.zero;
-
-        //if (gameObject.CompareTag("Particle"))
-        //{
-        //    Play_StunAnimation();
-        //    Debug.Log("Play Stun");
-        //}
     }
 
     private void OnEnable()
@@ -259,6 +251,7 @@ public class animationScript : MonoBehaviour
         }
     } // enemy attacks
 
+   
     // Crab Animation
     public void crabAttack()
     {
@@ -350,4 +343,12 @@ public class animationScript : MonoBehaviour
     {
         anim.speed = 1;
     }
+
+    // Main Menu Transition
+    public void MainMenu()
+    {
+        // scene
+        SceneManager.LoadScene(0);
+    }
+
 }

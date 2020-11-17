@@ -45,7 +45,6 @@ public class Helper_Grapple : MonoBehaviour
             FindObjectOfType<ImprovedGrappling>().grappable = false;
             Destroy(Player.GetComponent<SpringJoint>());
             Player.GetComponentInChildren<animationScript>().StopGrapple();
-            Debug.Log("Remove Spring");
         }
     }
 

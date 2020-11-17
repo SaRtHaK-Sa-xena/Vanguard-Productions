@@ -187,8 +187,6 @@ public class PauseMenu : MonoBehaviour
     // Whem clicking image
     public void setSpriteInManager(GameObject gO)
     {
-        Debug.Log(this.gameObject.name);
-
         // if image exists
         if(gO.GetComponent<Image>().sprite.name != "MemFrag_0")
         {

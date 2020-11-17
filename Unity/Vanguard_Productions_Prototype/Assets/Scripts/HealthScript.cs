@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class HealthScript : MonoBehaviour
 {
@@ -84,8 +85,6 @@ public class HealthScript : MonoBehaviour
                     if(bossObj.GetComponent<wardenAI>())
                     {
                         bossObj.GetComponent<wardenAI>().enabled = false;
-                       //GetComponent<wardenAI>().timeTracker = 0;
-                       //GetComponent<wardenAI>().TurnOffStun();
                     }
                 }
 

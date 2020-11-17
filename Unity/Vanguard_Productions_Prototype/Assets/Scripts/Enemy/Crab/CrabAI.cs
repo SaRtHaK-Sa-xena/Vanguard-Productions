@@ -183,8 +183,6 @@ public class CrabAI : MonoBehaviour
             // reset attack time
             currentAttackTime = 0f;
 
-            Debug.Log("Now Attacking");
-
             // attack can now deal damage
             turnOnAttack = true;
 
