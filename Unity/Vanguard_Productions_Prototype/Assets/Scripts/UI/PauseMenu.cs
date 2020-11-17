@@ -190,7 +190,7 @@ public class PauseMenu : MonoBehaviour
         Debug.Log(this.gameObject.name);
 
         // if image exists
-        if(gO.GetComponent<Image>().sprite.name != "memoryFragment")
+        if(gO.GetComponent<Image>().sprite.name != "MemFrag_0")
         {
             // set manager sprite though objectives manager
             objectivesManager.GetComponent<Objectives>().setManagerSprite(gO.GetComponent<Image>().sprite);
