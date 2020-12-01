@@ -734,6 +734,8 @@ MonoBehaviour:
   begToMid_Sword_Attack_Point: {fileID: 0}
   rangedAttack: {fileID: 0}
   attackPoint: {fileID: 0}
+  WardenLeftHand: {fileID: 0}
+  WardenRightHand: {fileID: 0}
   animationScript: {fileID: 0}
 --- !u!1 &89437333912395136
 GameObject:
@@ -2561,6 +2563,8 @@ MonoBehaviour:
   UI_health: 0
   MaxHealth: 100
   is_Player: 0
+  is_boss: 0
+  bossObj: {fileID: 0}
 --- !u!135 &4127277631336896424
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2674,6 +2678,8 @@ MonoBehaviour:
   begToMid_Sword_Attack_Point: {fileID: 0}
   rangedAttack: {fileID: 0}
   attackPoint: {fileID: 2355881307197755589}
+  WardenLeftHand: {fileID: 0}
+  WardenRightHand: {fileID: 0}
   animationScript: {fileID: 0}
 --- !u!1 &1437967174197738444
 GameObject:
@@ -2871,6 +2877,8 @@ MonoBehaviour:
   begToMid_Sword_Attack_Point: {fileID: 0}
   rangedAttack: {fileID: 0}
   attackPoint: {fileID: 9197272436497945066}
+  WardenLeftHand: {fileID: 0}
+  WardenRightHand: {fileID: 0}
   animationScript: {fileID: 0}
 --- !u!1 &9197272436497945066
 GameObject:

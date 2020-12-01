@@ -33,7 +33,7 @@ public class Ranged_Attack : MonoBehaviour
     // text to change
     public TextMeshProUGUI cooldownText;
 
-    public float scalar = 0.007f;
+    public float scalar = 0.002f;
 
     public GameObject coolDownBar;
 
